@@ -363,8 +363,8 @@ function displayResults(results) {
             <div style="margin-top: 3rem; text-align: center;">
                 <h3 style="margin-bottom: 2rem; font-size: 1.5rem; font-weight: 700;">Export & Share</h3>
                 <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-                    <button class="btn btn-primary" onclick="exportToPDF()">
-                        📄 Export PDF Report
+                    <button class="btn btn-primary" onclick="showDetailedReport()">
+                        📊 Detailed Report
                     </button>
                     <button class="btn btn-secondary" onclick="exportToExcel()">
                         📊 Export Excel Analysis
@@ -661,23 +661,25 @@ function startNewAnalysis() {
     }
 }
 
-// Export functions
-async function exportToPDF() {
+// Enhanced Reporting Functions
+async function showDetailedReport() {
     if (!appState.analysisResults) {
-        showNotification('No analysis results to export', 'error');
+        showNotification('No analysis results to show', 'error');
         return;
     }
     
     try {
-        showNotification('Generating PDF report...', 'info');
+        showNotification('Generating detailed report...', 'info');
         
         const requestData = {
             results: appState.analysisResults,
             businessModel: appState.businessModel,
-            analysisConfig: appState.analysisConfig || {}
+            analysisConfig: appState.analysisConfig || {},
+            marketingData: appState.uploadedData.marketing,
+            revenueData: appState.uploadedData.revenue
         };
         
-        const response = await fetch('/api/generate-pdf-report', {
+        const response = await fetch('/api/generate-report-data', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -686,26 +688,204 @@ async function exportToPDF() {
         });
         
         if (!response.ok) {
-            throw new Error('Failed to generate PDF report');
+            throw new Error('Failed to generate report data');
         }
         
-        const blob = await response.blob();
-        const url = window.URL.createObjectURL(blob);
-        const a = document.createElement('a');
-        a.style.display = 'none';
-        a.href = url;
-        a.download = `CAC_Analysis_Report_${new Date().toISOString().split('T')[0]}.pdf`;
-        document.body.appendChild(a);
-        a.click();
-        window.URL.revokeObjectURL(url);
-        document.body.removeChild(a);
+        const reportData = await response.json();
+        displayDetailedReport(reportData);
         
-        showNotification('PDF report generated successfully!', 'success');
+        showNotification('Detailed report generated successfully!', 'success');
         
     } catch (error) {
-        console.error('PDF export error:', error);
-        showNotification('Failed to generate PDF report', 'error');
+        console.error('Report generation error:', error);
+        showNotification('Failed to generate detailed report', 'error');
     }
+}
+
+function displayDetailedReport(reportData) {
+    // Create modal or new section for detailed report
+    const reportModal = document.createElement('div');
+    reportModal.className = 'report-modal';
+    reportModal.innerHTML = `
+        <div class="report-modal-content">
+            <div class="report-header">
+                <h2>📊 Comprehensive CAC Analysis Report</h2>
+                <button class="close-report" onclick="closeDetailedReport()">×</button>
+            </div>
+            <div class="report-body">
+                ${generateDetailedReportHTML(reportData)}
+            </div>
+        </div>
+    `;
+    
+    document.body.appendChild(reportModal);
+    setTimeout(() => reportModal.classList.add('show'), 10);
+}
+
+function generateDetailedReportHTML(data) {
+    return `
+        <!-- Executive Summary -->
+        <section class="report-section">
+            <h3>📈 Executive Summary</h3>
+            <div class="summary-cards">
+                <div class="summary-card">
+                    <div class="summary-value">$${data.summary.keyMetrics.totalSpend.toLocaleString()}</div>
+                    <div class="summary-label">Total Marketing Spend</div>
+                </div>
+                <div class="summary-card">
+                    <div class="summary-value">${data.summary.keyMetrics.totalCustomers.toLocaleString()}</div>
+                    <div class="summary-label">Total Customers Acquired</div>
+                </div>
+                <div class="summary-card">
+                    <div class="summary-value">$${data.summary.keyMetrics.averageOrderValue.toFixed(2)}</div>
+                    <div class="summary-label">Average Order Value</div>
+                </div>
+                <div class="summary-card">
+                    <div class="summary-value">${data.summary.keyMetrics.totalCampaigns}</div>
+                    <div class="summary-label">Active Campaigns</div>
+                </div>
+            </div>
+            <div class="business-config-summary">
+                <p><strong>Business Type:</strong> ${data.summary.businessConfig.businessType}</p>
+                <p><strong>Analysis Period:</strong> ${data.summary.businessConfig.analysisPeriod}</p>
+                <p><strong>Report Generated:</strong> ${data.summary.businessConfig.analysisDate}</p>
+            </div>
+        </section>
+        
+        <!-- Channel Deep Dive -->
+        <section class="report-section">
+            <h3>🎯 Channel Performance Deep Dive</h3>
+            <div class="channel-analysis">
+                ${Object.entries(data.channelAnalysis).map(([channel, metrics]) => `
+                    <div class="channel-detail-card">
+                        <div class="channel-detail-header">
+                            <h4>${channel}</h4>
+                            <div class="channel-cac-large">$${metrics.cac.toFixed(2)}</div>
+                        </div>
+                        <div class="channel-metrics-grid">
+                            <div class="metric-item">
+                                <span class="metric-value">$${metrics.spend.toLocaleString()}</span>
+                                <span class="metric-label">Total Spend</span>
+                            </div>
+                            <div class="metric-item">
+                                <span class="metric-value">${metrics.customers}</span>
+                                <span class="metric-label">Customers</span>
+                            </div>
+                            <div class="metric-item">
+                                <span class="metric-value">${metrics.roas.toFixed(2)}x</span>
+                                <span class="metric-label">ROAS</span>
+                            </div>
+                            <div class="metric-item">
+                                <span class="metric-value">$${metrics.averageOrderValue.toFixed(2)}</span>
+                                <span class="metric-label">Avg Order Value</span>
+                            </div>
+                            <div class="metric-item">
+                                <span class="metric-value">${metrics.campaignCount}</span>
+                                <span class="metric-label">Campaigns</span>
+                            </div>
+                            <div class="metric-item">
+                                <span class="metric-value">${metrics.activeDays}</span>
+                                <span class="metric-label">Active Days</span>
+                            </div>
+                        </div>
+                    </div>
+                `).join('')}
+            </div>
+        </section>
+        
+        <!-- Time Analysis -->
+        <section class="report-section">
+            <h3>📊 Performance Trends</h3>
+            <div class="trend-analysis">
+                <div class="trend-card">
+                    <h4>CAC Trend Direction</h4>
+                    <div class="trend-indicator ${data.timeAnalysis.trends?.isImproving ? 'improving' : 'declining'}">
+                        ${data.timeAnalysis.trends?.cacTrend === 'decreasing' ? '📈 Improving' : '📉 Increasing'}
+                    </div>
+                    <p>CAC has ${data.timeAnalysis.trends?.cacTrend === 'decreasing' ? 'decreased' : 'increased'} by 
+                    ${Math.abs(data.timeAnalysis.trends?.cacChange || 0).toFixed(1)}% over the analysis period.</p>
+                </div>
+                <div class="time-periods">
+                    <h4>Period Performance</h4>
+                    <div class="period-tabs">
+                        <button onclick="showPeriodData('weekly')" class="period-tab active">Weekly</button>
+                        <button onclick="showPeriodData('monthly')" class="period-tab">Monthly</button>
+                    </div>
+                    <div id="weeklyData" class="period-data">
+                        ${Object.entries(data.timeAnalysis.weekly || {}).map(([week, metrics]) => `
+                            <div class="period-item">
+                                <span class="period-label">${week}</span>
+                                <span class="period-cac">$${metrics.cac.toFixed(2)}</span>
+                                <span class="period-customers">${metrics.customers} customers</span>
+                            </div>
+                        `).join('')}
+                    </div>
+                    <div id="monthlyData" class="period-data" style="display: none;">
+                        ${Object.entries(data.timeAnalysis.monthly || {}).map(([month, metrics]) => `
+                            <div class="period-item">
+                                <span class="period-label">${moment(month).format('MMM YYYY')}</span>
+                                <span class="period-cac">$${metrics.cac.toFixed(2)}</span>
+                                <span class="period-customers">${metrics.customers} customers</span>
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Key Insights -->
+        <section class="report-section">
+            <h3>💡 Strategic Insights</h3>
+            <div class="insights-list">
+                ${data.insights.map(insight => `
+                    <div class="insight-card ${insight.level}">
+                        <div class="insight-header">
+                            <h4>${insight.title}</h4>
+                            <span class="insight-type">${insight.type}</span>
+                        </div>
+                        <p class="insight-description">${insight.description}</p>
+                        <div class="insight-recommendation">
+                            <strong>Recommendation:</strong> ${insight.recommendation}
+                        </div>
+                    </div>
+                `).join('')}
+            </div>
+        </section>
+        
+        <!-- Methodology Breakdown -->
+        <section class="report-section">
+            <h3>🔍 CAC Methodology Comparison</h3>
+            <div class="methodology-comparison">
+                ${Object.entries(data.cacBreakdown).map(([method, calc]) => `
+                    <div class="methodology-card">
+                        <h4>${method.replace(/([A-Z])/g, ' $1').replace(/^./, str => str.toUpperCase())}</h4>
+                        <div class="methodology-value">$${calc.value.toFixed(2)}</div>
+                        <div class="methodology-confidence">${'★'.repeat(calc.confidence)}${'☆'.repeat(5 - calc.confidence)}</div>
+                        <p class="methodology-explanation">${calc.explanation}</p>
+                    </div>
+                `).join('')}
+            </div>
+        </section>
+    `;
+}
+
+// Helper functions for detailed report
+function closeDetailedReport() {
+    const modal = document.querySelector('.report-modal');
+    if (modal) {
+        modal.classList.remove('show');
+        setTimeout(() => modal.remove(), 300);
+    }
+}
+
+function showPeriodData(period) {
+    // Hide all period data
+    document.querySelectorAll('.period-data').forEach(el => el.style.display = 'none');
+    document.querySelectorAll('.period-tab').forEach(el => el.classList.remove('active'));
+    
+    // Show selected period
+    document.getElementById(`${period}Data`).style.display = 'block';
+    event.target.classList.add('active');
 }
 
 async function exportToExcel() {

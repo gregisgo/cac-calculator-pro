@@ -6,7 +6,6 @@ const csvParser = require('csv-parser');
 const XLSX = require('xlsx');
 const moment = require('moment');
 const ExcelJS = require('exceljs');
-const puppeteer = require('puppeteer');
 
 const app = express();
 const PORT = process.env.PORT || 3002;
@@ -483,38 +482,47 @@ function calculateOverallConfidence(results, dataQuality) {
   return Math.round((avgConfidence * dataQualityFactor) * 100) / 100;
 }
 
-// PDF Report Generation
-app.post('/api/generate-pdf-report', async (req, res) => {
+// Comprehensive Report Data Generation
+app.post('/api/generate-report-data', (req, res) => {
   try {
-    const { results, businessModel, analysisConfig } = req.body;
+    const { results, businessModel, analysisConfig, marketingData, revenueData } = req.body;
     
-    const browser = await puppeteer.launch({ headless: 'new' });
-    const page = await browser.newPage();
+    const reportData = {
+      summary: {
+        businessConfig: {
+          businessType: businessModel?.businessType || 'Not specified',
+          revenueModel: businessModel?.revenueModel || 'Not specified',
+          customerDefinition: businessModel?.customerDefinition || 'Not specified',
+          analysisDate: moment().format('MMMM DD, YYYY'),
+          analysisPeriod: analysisConfig?.period || 'Full dataset'
+        },
+        keyMetrics: {
+          totalSpend: marketingData?.reduce((sum, row) => sum + parseFloat(row.spend || 0), 0) || 0,
+          totalCustomers: revenueData?.reduce((sum, row) => sum + parseInt(row.new_customers || row.customers || 0), 0) || 0,
+          totalRevenue: revenueData?.reduce((sum, row) => sum + parseFloat(row.revenue || 0), 0) || 0,
+          averageOrderValue: 0,
+          totalCampaigns: new Set(marketingData?.map(row => row.campaign)).size || 0
+        }
+      },
+      cacBreakdown: results?.calculations || {},
+      dataQuality: results?.dataQuality || {},
+      recommendations: results?.recommendations || [],
+      channelAnalysis: generateChannelAnalysis(marketingData, revenueData),
+      timeAnalysis: generateTimeAnalysis(marketingData, revenueData),
+      insights: generateKeyInsights(results, marketingData, revenueData)
+    };
     
-    const htmlContent = generateReportHTML(results, businessModel, analysisConfig);
+    // Calculate average order value
+    if (reportData.summary.keyMetrics.totalCustomers > 0) {
+      reportData.summary.keyMetrics.averageOrderValue = 
+        reportData.summary.keyMetrics.totalRevenue / reportData.summary.keyMetrics.totalCustomers;
+    }
     
-    await page.setContent(htmlContent, { waitUntil: 'networkidle0' });
-    
-    const pdf = await page.pdf({
-      format: 'A4',
-      printBackground: true,
-      margin: {
-        top: '20mm',
-        right: '15mm',
-        bottom: '20mm',
-        left: '15mm'
-      }
-    });
-    
-    await browser.close();
-    
-    res.setHeader('Content-Type', 'application/pdf');
-    res.setHeader('Content-Disposition', `attachment; filename="CAC_Analysis_Report_${moment().format('YYYY-MM-DD')}.pdf"`);
-    res.send(pdf);
+    res.json(reportData);
     
   } catch (error) {
-    console.error('PDF generation error:', error);
-    res.status(500).json({ error: 'Failed to generate PDF report' });
+    console.error('Report data generation error:', error);
+    res.status(500).json({ error: 'Failed to generate report data' });
   }
 });
 
@@ -606,256 +614,195 @@ app.post('/api/export-excel', async (req, res) => {
   }
 });
 
-// Helper function to generate HTML for PDF reports
-function generateReportHTML(results, businessModel, analysisConfig) {
-  const currentDate = moment().format('MMMM DD, YYYY');
+// Helper functions for comprehensive report generation
+function generateChannelAnalysis(marketingData, revenueData) {
+  if (!marketingData || !revenueData) return {};
   
-  return `
-  <!DOCTYPE html>
-  <html>
-  <head>
-    <meta charset="UTF-8">
-    <title>CAC Analysis Report</title>
-    <style>
-      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
-      
-      body {
-        font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-        line-height: 1.6;
-        color: #374151;
-        margin: 0;
-        padding: 20px;
-        background: white;
-      }
-      
-      .header {
-        text-align: center;
-        margin-bottom: 40px;
-        padding-bottom: 20px;
-        border-bottom: 3px solid #3B82F6;
-      }
-      
-      .header h1 {
-        color: #1E40AF;
-        margin: 0;
-        font-size: 28px;
-        font-weight: 700;
-      }
-      
-      .header .subtitle {
-        color: #6B7280;
-        font-size: 16px;
-        margin-top: 8px;
-      }
-      
-      .header .date {
-        color: #9CA3AF;
-        font-size: 14px;
-        margin-top: 4px;
-      }
-      
-      .section {
-        margin-bottom: 30px;
-      }
-      
-      .section h2 {
-        color: #1F2937;
-        font-size: 20px;
-        font-weight: 600;
-        margin-bottom: 15px;
-        padding-bottom: 8px;
-        border-bottom: 2px solid #E5E7EB;
-      }
-      
-      .cac-results {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 20px;
-        margin-bottom: 30px;
-      }
-      
-      .cac-card {
-        background: #F9FAFB;
-        border: 1px solid #E5E7EB;
-        border-radius: 8px;
-        padding: 20px;
-      }
-      
-      .cac-card h3 {
-        margin: 0 0 10px 0;
-        color: #1F2937;
-        font-size: 16px;
-        font-weight: 600;
-      }
-      
-      .cac-value {
-        font-size: 24px;
-        font-weight: 700;
-        color: #1E40AF;
-        margin-bottom: 8px;
-      }
-      
-      .confidence {
-        color: #F59E0B;
-        font-size: 18px;
-        margin-bottom: 10px;
-      }
-      
-      .cac-description {
-        font-size: 14px;
-        color: #6B7280;
-      }
-      
-      .data-quality {
-        background: #F0F9FF;
-        border: 1px solid #BAE6FD;
-        border-radius: 8px;
-        padding: 20px;
-        margin-bottom: 20px;
-      }
-      
-      .quality-metric {
-        display: flex;
-        justify-content: space-between;
-        margin-bottom: 8px;
-      }
-      
-      .recommendations {
-        background: #F0FDF4;
-        border: 1px solid #BBF7D0;
-        border-radius: 8px;
-        padding: 20px;
-      }
-      
-      .recommendation {
-        margin-bottom: 15px;
-        padding-left: 20px;
-        border-left: 3px solid #10B981;
-      }
-      
-      .rec-type {
-        font-weight: 600;
-        color: #047857;
-        text-transform: uppercase;
-        font-size: 12px;
-        margin-bottom: 5px;
-      }
-      
-      .business-config {
-        background: #FEF7FF;
-        border: 1px solid #E9D5FF;
-        border-radius: 8px;
-        padding: 20px;
-      }
-      
-      .config-row {
-        display: flex;
-        justify-content: space-between;
-        margin-bottom: 8px;
-      }
-      
-      .config-label {
-        font-weight: 500;
-        color: #7C3AED;
-      }
-      
-      .footer {
-        margin-top: 40px;
-        padding-top: 20px;
-        border-top: 1px solid #E5E7EB;
-        text-align: center;
-        color: #9CA3AF;
-        font-size: 12px;
-      }
-      
-      @media print {
-        body { margin: 0; }
-        .section { page-break-inside: avoid; }
-      }
-    </style>
-  </head>
-  <body>
-    <div class="header">
-      <h1>CAC Analysis Report</h1>
-      <div class="subtitle">Professional Customer Acquisition Cost Analysis</div>
-      <div class="date">Generated on ${currentDate}</div>
-    </div>
+  const channelMetrics = {};
+  
+  // Aggregate marketing spend by channel
+  marketingData.forEach(row => {
+    const channel = row.channel || 'Unknown';
+    if (!channelMetrics[channel]) {
+      channelMetrics[channel] = {
+        spend: 0,
+        customers: 0,
+        revenue: 0,
+        campaigns: new Set(),
+        dates: new Set()
+      };
+    }
+    channelMetrics[channel].spend += parseFloat(row.spend || 0);
+    if (row.campaign) channelMetrics[channel].campaigns.add(row.campaign);
+    if (row.date) channelMetrics[channel].dates.add(row.date);
+  });
+  
+  // Add revenue and customer data
+  revenueData.forEach(row => {
+    const channel = row.channel || 'Unknown';
+    if (channelMetrics[channel]) {
+      channelMetrics[channel].customers += parseInt(row.new_customers || row.customers || 0);
+      channelMetrics[channel].revenue += parseFloat(row.revenue || 0);
+    }
+  });
+  
+  // Calculate derived metrics
+  Object.keys(channelMetrics).forEach(channel => {
+    const metrics = channelMetrics[channel];
+    metrics.cac = metrics.customers > 0 ? metrics.spend / metrics.customers : 0;
+    metrics.roas = metrics.spend > 0 ? metrics.revenue / metrics.spend : 0;
+    metrics.averageOrderValue = metrics.customers > 0 ? metrics.revenue / metrics.customers : 0;
+    metrics.campaignCount = metrics.campaigns.size;
+    metrics.activeDays = metrics.dates.size;
+    metrics.dailySpend = metrics.activeDays > 0 ? metrics.spend / metrics.activeDays : 0;
+  });
+  
+  return channelMetrics;
+}
+
+function generateTimeAnalysis(marketingData, revenueData) {
+  if (!marketingData || !revenueData) return {};
+  
+  const timeMetrics = {};
+  const weeklyMetrics = {};
+  const monthlyMetrics = {};
+  
+  // Daily analysis
+  const allDates = [...new Set([
+    ...(marketingData.map(row => row.date) || []),
+    ...(revenueData.map(row => row.date) || [])
+  ])].filter(Boolean).sort();
+  
+  allDates.forEach(date => {
+    const daySpend = marketingData.filter(row => row.date === date)
+                                 .reduce((sum, row) => sum + parseFloat(row.spend || 0), 0);
+    const dayRevenue = revenueData.filter(row => row.date === date)
+                                 .reduce((sum, row) => sum + parseFloat(row.revenue || 0), 0);
+    const dayCustomers = revenueData.filter(row => row.date === date)
+                                   .reduce((sum, row) => sum + parseInt(row.new_customers || row.customers || 0), 0);
     
-    <div class="section">
-      <h2>Business Configuration</h2>
-      <div class="business-config">
-        <div class="config-row">
-          <span class="config-label">Business Type:</span>
-          <span>${businessModel?.businessType || 'Not specified'}</span>
-        </div>
-        <div class="config-row">
-          <span class="config-label">Revenue Model:</span>
-          <span>${businessModel?.revenueModel || 'Not specified'}</span>
-        </div>
-        <div class="config-row">
-          <span class="config-label">Customer Definition:</span>
-          <span>${businessModel?.customerDefinition || 'Not specified'}</span>
-        </div>
-        <div class="config-row">
-          <span class="config-label">Analysis Period:</span>
-          <span>${analysisConfig?.period || 'Full dataset'}</span>
-        </div>
-      </div>
-    </div>
+    timeMetrics[date] = {
+      spend: daySpend,
+      revenue: dayRevenue,
+      customers: dayCustomers,
+      cac: dayCustomers > 0 ? daySpend / dayCustomers : 0,
+      roas: daySpend > 0 ? dayRevenue / daySpend : 0
+    };
     
-    <div class="section">
-      <h2>CAC Calculation Results</h2>
-      <div class="cac-results">
-        ${Object.entries(results.calculations).map(([method, data]) => `
-          <div class="cac-card">
-            <h3>${method.replace(/([A-Z])/g, ' $1').replace(/^./, str => str.toUpperCase())}</h3>
-            <div class="cac-value">$${data.value.toFixed(2)}</div>
-            <div class="confidence">${'★'.repeat(data.confidence)}${'☆'.repeat(5 - data.confidence)}</div>
-            <div class="cac-description">${data.explanation}</div>
-          </div>
-        `).join('')}
-      </div>
-    </div>
+    // Weekly aggregation
+    const weekKey = moment(date).format('YYYY-[W]WW');
+    if (!weeklyMetrics[weekKey]) {
+      weeklyMetrics[weekKey] = { spend: 0, revenue: 0, customers: 0 };
+    }
+    weeklyMetrics[weekKey].spend += daySpend;
+    weeklyMetrics[weekKey].revenue += dayRevenue;
+    weeklyMetrics[weekKey].customers += dayCustomers;
     
-    <div class="section">
-      <h2>Data Quality Assessment</h2>
-      <div class="data-quality">
-        <div class="quality-metric">
-          <span><strong>Completeness:</strong></span>
-          <span>${results.dataQuality?.completeness || 0}%</span>
-        </div>
-        <div class="quality-metric">
-          <span><strong>Consistency:</strong></span>
-          <span>${results.dataQuality?.consistency || 0}%</span>
-        </div>
-        <div class="quality-metric">
-          <span><strong>Overall Quality:</strong></span>
-          <span>${results.dataQuality?.overall || 0}%</span>
-        </div>
-      </div>
-    </div>
+    // Monthly aggregation
+    const monthKey = moment(date).format('YYYY-MM');
+    if (!monthlyMetrics[monthKey]) {
+      monthlyMetrics[monthKey] = { spend: 0, revenue: 0, customers: 0 };
+    }
+    monthlyMetrics[monthKey].spend += daySpend;
+    monthlyMetrics[monthKey].revenue += dayRevenue;
+    monthlyMetrics[monthKey].customers += dayCustomers;
+  });
+  
+  // Calculate derived metrics for weekly/monthly
+  [weeklyMetrics, monthlyMetrics].forEach(metrics => {
+    Object.keys(metrics).forEach(period => {
+      const data = metrics[period];
+      data.cac = data.customers > 0 ? data.spend / data.customers : 0;
+      data.roas = data.spend > 0 ? data.revenue / data.spend : 0;
+    });
+  });
+  
+  return {
+    daily: timeMetrics,
+    weekly: weeklyMetrics,
+    monthly: monthlyMetrics,
+    trends: calculateTrends(timeMetrics)
+  };
+}
+
+function calculateTrends(dailyMetrics) {
+  const dates = Object.keys(dailyMetrics).sort();
+  if (dates.length < 2) return {};
+  
+  const firstHalf = dates.slice(0, Math.floor(dates.length / 2));
+  const secondHalf = dates.slice(Math.floor(dates.length / 2));
+  
+  const firstHalfAvg = firstHalf.reduce((sum, date) => sum + dailyMetrics[date].cac, 0) / firstHalf.length;
+  const secondHalfAvg = secondHalf.reduce((sum, date) => sum + dailyMetrics[date].cac, 0) / secondHalf.length;
+  
+  return {
+    cacTrend: secondHalfAvg > firstHalfAvg ? 'increasing' : 'decreasing',
+    cacChange: ((secondHalfAvg - firstHalfAvg) / firstHalfAvg) * 100,
+    isImproving: secondHalfAvg < firstHalfAvg
+  };
+}
+
+function generateKeyInsights(results, marketingData, revenueData) {
+  const insights = [];
+  
+  if (!results?.calculations) return insights;
+  
+  // CAC Methodology Insights
+  const cacs = Object.values(results.calculations).map(calc => calc.value);
+  const avgCAC = cacs.reduce((sum, cac) => sum + cac, 0) / cacs.length;
+  const cacVariance = Math.max(...cacs) - Math.min(...cacs);
+  
+  if (cacVariance > avgCAC * 0.5) {
+    insights.push({
+      type: 'methodology',
+      level: 'warning',
+      title: 'High CAC Variance Detected',
+      description: `CAC calculations vary significantly (${cacVariance.toFixed(2)} range). This suggests different attribution models reveal different efficiency stories.`,
+      recommendation: 'Focus on the Fully-Loaded CAC for budget planning and Simple Blended for quick benchmarks.'
+    });
+  }
+  
+  // Channel Performance Insights
+  if (marketingData && revenueData) {
+    const channelAnalysis = generateChannelAnalysis(marketingData, revenueData);
+    const channels = Object.entries(channelAnalysis).sort((a, b) => a[1].cac - b[1].cac);
     
-    ${results.recommendations?.length ? `
-    <div class="section">
-      <h2>Strategic Recommendations</h2>
-      <div class="recommendations">
-        ${results.recommendations.map(rec => `
-          <div class="recommendation">
-            <div class="rec-type">${rec.type} - ${rec.priority}</div>
-            <div>${rec.recommendation}</div>
-          </div>
-        `).join('')}
-      </div>
-    </div>
-    ` : ''}
-    
-    <div class="footer">
-      <p>Generated by CAC Calculator Pro - Professional Marketing Analytics</p>
-      <p>This report contains confidential business information. Handle according to your organization's data security policies.</p>
-    </div>
-  </body>
-  </html>
-  `;
+    if (channels.length > 1) {
+      const bestChannel = channels[0];
+      const worstChannel = channels[channels.length - 1];
+      
+      insights.push({
+        type: 'channel',
+        level: 'success',
+        title: 'Channel Performance Analysis',
+        description: `${bestChannel[0]} has the lowest CAC at $${bestChannel[1].cac.toFixed(2)}, while ${worstChannel[0]} has the highest at $${worstChannel[1].cac.toFixed(2)}.`,
+        recommendation: `Consider reallocating budget from ${worstChannel[0]} to ${bestChannel[0]} for improved efficiency.`
+      });
+    }
+  }
+  
+  // Data Quality Insights
+  if (results.dataQuality) {
+    if (results.dataQuality.overall < 80) {
+      insights.push({
+        type: 'data-quality',
+        level: 'warning',
+        title: 'Data Quality Concerns',
+        description: `Overall data quality is ${results.dataQuality.overall}%. This may impact calculation accuracy.`,
+        recommendation: 'Review data collection processes and consider data cleaning before final analysis.'
+      });
+    } else if (results.dataQuality.overall > 95) {
+      insights.push({
+        type: 'data-quality',
+        level: 'success',
+        title: 'Excellent Data Quality',
+        description: `Data quality score of ${results.dataQuality.overall}% indicates highly reliable calculations.`,
+        recommendation: 'Maintain current data collection standards for consistent analysis quality.'
+      });
+    }
+  }
+  
+  return insights;
 }
 
 // Health check
