@@ -1,0 +1,1124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAC Calculator Pro - Professional Consulting Tool</title>
+    <meta name="description" content="Professional Customer Acquisition Cost (CAC) calculator with multiple methodologies, transparency, and client-ready reporting.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary-color: #2563eb;
+            --primary-dark: #1d4ed8;
+            --secondary-color: #64748b;
+            --accent-color: #10b981;
+            --warning-color: #f59e0b;
+            --error-color: #ef4444;
+            --background: #ffffff;
+            --surface: #f8fafc;
+            --border: #e2e8f0;
+            --text-primary: #0f172a;
+            --text-secondary: #475569;
+            --text-muted: #94a3b8;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background: var(--background);
+            font-weight: 400;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            letter-spacing: -0.025em;
+        }
+        
+        .header .subtitle {
+            font-size: 1.25rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            font-weight: 400;
+        }
+        
+        .header .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .header .feature {
+            text-align: center;
+        }
+        
+        .header .feature-icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .header .feature-title {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        
+        .header .feature-desc {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        /* Navigation */
+        .nav {
+            background: var(--surface);
+            border-bottom: 1px solid var(--border);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .nav-steps {
+            display: flex;
+            gap: 2rem;
+        }
+        
+        .nav-step {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-step.active {
+            background: var(--primary-color);
+            color: white;
+        }
+        
+        .nav-step.completed {
+            background: var(--accent-color);
+            color: white;
+        }
+        
+        .nav-step:hover:not(.active) {
+            background: var(--border);
+        }
+        
+        .step-number {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        
+        .nav-step.active .step-number,
+        .nav-step.completed .step-number {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+        }
+        
+        /* Main Content */
+        .main {
+            padding: 3rem 0;
+        }
+        
+        .section {
+            display: none;
+            animation: fadeIn 0.3s ease;
+        }
+        
+        .section.active {
+            display: block;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .card {
+            background: var(--background);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .card-header {
+            margin-bottom: 2rem;
+        }
+        
+        .card-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        
+        .card-description {
+            color: var(--text-secondary);
+            font-size: 1rem;
+        }
+        
+        /* Forms */
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+        
+        .form-input {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid var(--border);
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+            font-family: inherit;
+        }
+        
+        .form-input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+        
+        .form-select {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid var(--border);
+            border-radius: 8px;
+            font-size: 1rem;
+            background: white;
+            font-family: inherit;
+            cursor: pointer;
+        }
+        
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            font-family: inherit;
+        }
+        
+        .btn-primary {
+            background: var(--primary-color);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-1px);
+        }
+        
+        .btn-secondary {
+            background: var(--surface);
+            color: var(--text-primary);
+            border: 1px solid var(--border);
+        }
+        
+        .btn-secondary:hover {
+            background: var(--border);
+        }
+        
+        .btn-success {
+            background: var(--accent-color);
+            color: white;
+        }
+        
+        .btn-lg {
+            padding: 1rem 2rem;
+            font-size: 1.1rem;
+        }
+        
+        /* File Upload */
+        .file-upload {
+            border: 2px dashed var(--border);
+            border-radius: 12px;
+            padding: 3rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background: var(--surface);
+        }
+        
+        .file-upload:hover {
+            border-color: var(--primary-color);
+            background: var(--background);
+        }
+        
+        .file-upload.dragover {
+            border-color: var(--primary-color);
+            background: var(--primary-color);
+            background-opacity: 0.05;
+        }
+        
+        .file-upload-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--text-muted);
+        }
+        
+        .file-upload-text {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        
+        .file-upload-hint {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+        
+        /* Results */
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .result-card {
+            background: var(--background);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .result-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .result-value {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .result-label {
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+        
+        .result-description {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+        
+        .confidence-indicator {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.25rem;
+            margin-top: 0.5rem;
+        }
+        
+        .confidence-star {
+            color: var(--warning-color);
+            font-size: 0.8rem;
+        }
+        
+        .confidence-star.empty {
+            color: var(--border);
+        }
+        
+        /* Methodology Details */
+        .methodology {
+            margin-bottom: 2rem;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .methodology-header {
+            background: var(--surface);
+            padding: 1rem 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .methodology-header:hover {
+            background: var(--border);
+        }
+        
+        .methodology-title {
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+        
+        .methodology-content {
+            padding: 1.5rem;
+            display: none;
+        }
+        
+        .methodology-content.expanded {
+            display: block;
+            animation: slideDown 0.3s ease;
+        }
+        
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .calculation-steps {
+            background: var(--surface);
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+        }
+        
+        /* Progress Bar */
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: var(--border);
+            border-radius: 4px;
+            overflow: hidden;
+            margin: 1rem 0;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+            border-radius: 4px;
+            transition: width 0.5s ease;
+        }
+        
+        /* Interactive Analytics Styles */
+        .analytics-section {
+            background: var(--background);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .analytics-section h4 {
+            color: var(--text-primary);
+            font-weight: 600;
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 0.5rem;
+        }
+        
+        .chart-controls, .cohort-controls {
+            background: var(--surface);
+            padding: 1rem;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+        }
+        
+        .chart-controls label, .cohort-controls label {
+            font-weight: 500;
+        }
+        
+        .chart-controls select, .cohort-controls select {
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            background: var(--background);
+            color: var(--text-primary);
+            font-size: 0.9rem;
+        }
+        
+        .channel-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .channel-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            border-color: var(--primary-color);
+        }
+        
+        .channel-card.selected {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.1);
+        }
+        
+        .channel-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        
+        .channel-name {
+            font-weight: 600;
+            color: var(--text-primary);
+            font-size: 1.1rem;
+        }
+        
+        .channel-cac {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+        
+        .channel-metrics {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .metric {
+            text-align: center;
+            padding: 0.5rem;
+            background: var(--background);
+            border-radius: 6px;
+        }
+        
+        .metric-value {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+        
+        .metric-label {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            margin-top: 0.25rem;
+        }
+        
+        .data-quality-item {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .data-quality-item:hover {
+            border-color: var(--primary-color);
+        }
+        
+        .data-quality-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.5rem;
+        }
+        
+        .quality-score {
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        
+        .quality-score.excellent {
+            background: #dcfce7;
+            color: #166534;
+        }
+        
+        .quality-score.good {
+            background: #fef3c7;
+            color: #92400e;
+        }
+        
+        .quality-score.needs-attention {
+            background: #fee2e2;
+            color: #991b1b;
+        }
+        
+        .fix-suggestion {
+            background: var(--background);
+            border-left: 3px solid var(--accent-color);
+            padding: 0.75rem;
+            margin-top: 0.75rem;
+            border-radius: 0 6px 6px 0;
+        }
+        
+        .fix-button {
+            background: var(--accent-color);
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            cursor: pointer;
+            margin-top: 0.5rem;
+        }
+        
+        .fix-button:hover {
+            background: #059669;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 1rem;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .nav-steps {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .results-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* Loading States */
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255,255,255,.3);
+            border-radius: 50%;
+            border-top-color: #fff;
+            animation: spin 1s ease-in-out infinite;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        /* Notifications */
+        .notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            color: white;
+            font-weight: 500;
+            z-index: 1000;
+            animation: slideInRight 0.3s ease;
+            max-width: 400px;
+        }
+        
+        .notification.success { background: var(--accent-color); }
+        .notification.error { background: var(--error-color); }
+        .notification.warning { background: var(--warning-color); }
+        
+        @keyframes slideInRight {
+            from { transform: translateX(100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <h1>CAC Calculator Pro</h1>
+            <p class="subtitle">Professional Customer Acquisition Cost Analysis with Full Methodology Transparency</p>
+            
+            <div class="features">
+                <div class="feature">
+                    <div class="feature-icon">📊</div>
+                    <div class="feature-title">5 Methodologies</div>
+                    <div class="feature-desc">From simple blended to contribution margin CAC</div>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🔍</div>
+                    <div class="feature-title">Full Transparency</div>
+                    <div class="feature-desc">See every calculation step and assumption</div>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">📈</div>
+                    <div class="feature-title">Professional Reports</div>
+                    <div class="feature-desc">Client-ready presentations and analysis</div>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">⚡</div>
+                    <div class="feature-title">Data Quality</div>
+                    <div class="feature-desc">Automatic assessment and recommendations</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="container">
+            <div class="nav-content">
+                <div class="nav-steps">
+                    <div class="nav-step active" data-step="setup">
+                        <span class="step-number">1</span>
+                        <span>Project Setup</span>
+                    </div>
+                    <div class="nav-step" data-step="business">
+                        <span class="step-number">2</span>
+                        <span>Business Model</span>
+                    </div>
+                    <div class="nav-step" data-step="data">
+                        <span class="step-number">3</span>
+                        <span>Data Input</span>
+                    </div>
+                    <div class="nav-step" data-step="analysis">
+                        <span class="step-number">4</span>
+                        <span>CAC Analysis</span>
+                    </div>
+                    <div class="nav-step" data-step="results">
+                        <span class="step-number">5</span>
+                        <span>Results & Export</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main">
+        <div class="container">
+            <!-- Step 1: Project Setup -->
+            <section class="section active" data-section="setup">
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="card-title">Project Setup</h2>
+                        <p class="card-description">Set up your CAC analysis project with client information and branding.</p>
+                    </div>
+                    
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label class="form-label">Client/Project Name</label>
+                            <input type="text" class="form-input" id="projectName" placeholder="Enter client or project name">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Analysis Date Range</label>
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                                <input type="date" class="form-input" id="startDate">
+                                <input type="date" class="form-input" id="endDate">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Consultant/Agency</label>
+                            <input type="text" class="form-input" id="consultantName" placeholder="Your name or agency">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Analysis Purpose</label>
+                            <select class="form-select" id="analysisPurpose">
+                                <option value="">Select purpose</option>
+                                <option value="audit">CAC Audit & Optimization</option>
+                                <option value="planning">Budget Planning</option>
+                                <option value="benchmarking">Performance Benchmarking</option>
+                                <option value="investment">Investment Analysis</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div style="margin-top: 2rem; text-align: right;">
+                        <button class="btn btn-primary btn-lg" onclick="nextStep('business')">
+                            Next: Configure Business Model →
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Step 2: Business Model Configuration -->
+            <section class="section" data-section="business">
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="card-title">Business Model Configuration</h2>
+                        <p class="card-description">Configure the business model parameters that will affect CAC calculations.</p>
+                    </div>
+                    
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label class="form-label">Business Type</label>
+                            <select class="form-select" id="businessType" onchange="handleBusinessTypeChange()">
+                                <option value="">Select business type</option>
+                                <option value="saas">SaaS (Subscription)</option>
+                                <option value="ecommerce">E-commerce (Transactional)</option>
+                                <option value="b2b">B2B Services</option>
+                                <option value="marketplace">Marketplace</option>
+                                <option value="custom">Custom Business Model</option>
+                            </select>
+                        </div>
+                        
+                        <!-- Custom Business Type Configuration (Hidden by default) -->
+                        <div class="form-group" id="customBusinessConfig" style="display: none; grid-column: 1 / -1;">
+                            <div class="card" style="background: var(--surface); padding: 1.5rem; border: 2px solid var(--primary-color);">
+                                <h4 style="margin-bottom: 1rem; color: var(--primary-color);">🔧 Custom Business Model Configuration</h4>
+                                <div class="form-grid" style="grid-template-columns: 1fr 1fr;">
+                                    <div class="form-group">
+                                        <label class="form-label">Business Description</label>
+                                        <input type="text" class="form-input" id="customBusinessDescription" placeholder="e.g., EdTech Platform, Healthcare Services" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label">Primary Revenue Source</label>
+                                        <input type="text" class="form-input" id="customRevenueSource" placeholder="e.g., Course fees, Consulting retainers" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label">Average Deal Size ($)</label>
+                                        <input type="number" class="form-input" id="customDealSize" placeholder="e.g., 1200" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label">Sales Cycle (days)</label>
+                                        <input type="number" class="form-input" id="customSalesCycle" placeholder="e.g., 45" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Revenue Model</label>
+                            <select class="form-select" id="revenueModel">
+                                <option value="">Select revenue model</option>
+                                <option value="mrr">Monthly Recurring Revenue</option>
+                                <option value="arr">Annual Subscriptions</option>
+                                <option value="onetime">One-time Purchase</option>
+                                <option value="commission">Commission-based</option>
+                                <option value="freemium">Freemium</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Customer Definition</label>
+                            <select class="form-select" id="customerDefinition" onchange="handleCustomerDefinitionChange()">
+                                <option value="">How do you define a customer?</option>
+                                <option value="paid">Paid customers only</option>
+                                <option value="trial_to_paid">Trial-to-paid conversions</option>
+                                <option value="active">Active users</option>
+                                <option value="qualified">Sales qualified leads</option>
+                                <option value="custom">Custom definition</option>
+                            </select>
+                        </div>
+                        
+                        <!-- Custom Customer Definition Configuration (Hidden by default) -->
+                        <div class="form-group" id="customCustomerConfig" style="display: none; grid-column: 1 / -1;">
+                            <div class="card" style="background: var(--surface); padding: 1.5rem; border: 2px solid var(--accent-color);">
+                                <h4 style="margin-bottom: 1rem; color: var(--accent-color);">👤 Custom Customer Definition</h4>
+                                <div class="form-grid" style="grid-template-columns: 1fr 1fr;">
+                                    <div class="form-group">
+                                        <label class="form-label">Customer Criteria</label>
+                                        <textarea class="form-input" id="customCustomerCriteria" rows="3" placeholder="e.g., Users who complete onboarding AND make first purchase OR reach 7-day activity threshold"></textarea>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label">Minimum Value Threshold ($)</label>
+                                        <input type="number" class="form-input" id="customValueThreshold" placeholder="e.g., 100" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Attribution Window</label>
+                            <select class="form-select" id="attributionWindow" onchange="handleAttributionWindowChange()">
+                                <option value="30">30 days</option>
+                                <option value="60">60 days</option>
+                                <option value="90">90 days</option>
+                                <option value="custom">Custom timeframe</option>
+                            </select>
+                        </div>
+                        
+                        <!-- Custom Attribution Window Configuration (Hidden by default) -->
+                        <div class="form-group" id="customAttributionConfig" style="display: none; grid-column: 1 / -1;">
+                            <div class="card" style="background: var(--surface); padding: 1.5rem; border: 2px solid var(--warning-color);">
+                                <h4 style="margin-bottom: 1rem; color: var(--warning-color);">⏰ Custom Attribution Settings</h4>
+                                <div class="form-grid" style="grid-template-columns: repeat(3, 1fr);">
+                                    <div class="form-group">
+                                        <label class="form-label">Attribution Window (days)</label>
+                                        <input type="number" class="form-input" id="customAttributionDays" placeholder="e.g., 120" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label">Attribution Model</label>
+                                        <select class="form-select" id="customAttributionModel">
+                                            <option value="first_touch">First Touch</option>
+                                            <option value="last_touch">Last Touch</option>
+                                            <option value="linear">Linear (Equal Weight)</option>
+                                            <option value="time_decay">Time Decay</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label">Lookback Period (days)</label>
+                                        <input type="number" class="form-input" id="customLookbackPeriod" placeholder="e.g., 365" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Time Period for Analysis</label>
+                            <select class="form-select" id="timePeriod">
+                                <option value="monthly">Monthly</option>
+                                <option value="quarterly">Quarterly</option>
+                                <option value="custom">Custom date ranges</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Average Customer Lifetime (months)</label>
+                            <input type="number" class="form-input" id="avgLifetime" placeholder="12" min="1">
+                        </div>
+                    </div>
+                    
+                    <div style="margin-top: 2rem; display: flex; justify-content: space-between;">
+                        <button class="btn btn-secondary" onclick="prevStep('setup')">
+                            ← Back
+                        </button>
+                        <button class="btn btn-primary btn-lg" onclick="nextStep('data')">
+                            Next: Upload Data →
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Step 3: Data Input -->
+            <section class="section" data-section="data">
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="card-title">Data Input</h2>
+                        <p class="card-description">Upload your marketing, revenue, and customer data files. CSV and Excel formats supported.</p>
+                    </div>
+                    
+                    <div class="form-grid">
+                        <div>
+                            <h3 style="margin-bottom: 1rem; color: var(--text-primary);">📊 Marketing Spend Data</h3>
+                            <div class="file-upload" id="marketingUpload">
+                                <div class="file-upload-icon">📁</div>
+                                <div class="file-upload-text">Click or drag marketing spend data</div>
+                                <div class="file-upload-hint">CSV/Excel with columns: Date, Channel, Spend, Campaign (optional)</div>
+                            </div>
+                            <input type="file" id="marketingFile" accept=".csv,.xlsx,.xls" style="display: none;">
+                            <div id="marketingPreview" style="margin-top: 1rem; display: none;"></div>
+                        </div>
+                        
+                        <div>
+                            <h3 style="margin-bottom: 1rem; color: var(--text-primary);">💰 Revenue/Customer Data</h3>
+                            <div class="file-upload" id="revenueUpload">
+                                <div class="file-upload-icon">📁</div>
+                                <div class="file-upload-text">Click or drag revenue/customer data</div>
+                                <div class="file-upload-hint">CSV/Excel with columns: Date, Revenue, Customers, Channel (optional)</div>
+                            </div>
+                            <input type="file" id="revenueFile" accept=".csv,.xlsx,.xls" style="display: none;">
+                            <div id="revenuePreview" style="margin-top: 1rem; display: none;"></div>
+                        </div>
+                        
+                        <div>
+                            <h3 style="margin-bottom: 1rem; color: var(--text-primary);">👥 Customer Data <span style="font-size: 0.8rem; color: var(--text-muted);">(Optional)</span></h3>
+                            <div class="file-upload" id="customerUpload">
+                                <div class="file-upload-icon">📁</div>
+                                <div class="file-upload-text">Click or drag customer data</div>
+                                <div class="file-upload-hint">CSV/Excel with columns: Customer ID, Acquisition Date, LTV, Source</div>
+                            </div>
+                            <input type="file" id="customerFile" accept=".csv,.xlsx,.xls" style="display: none;">
+                            <div id="customerPreview" style="margin-top: 1rem; display: none;"></div>
+                        </div>
+                        
+                        <div>
+                            <h3 style="margin-bottom: 1rem; color: var(--text-primary);">💼 Additional Costs <span style="font-size: 0.8rem; color: var(--text-muted);">(For Fully-Loaded CAC)</span></h3>
+                            <div class="form-group">
+                                <label class="form-label">Monthly Team Costs ($)</label>
+                                <input type="number" class="form-input" id="teamCosts" placeholder="15000" min="0">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Monthly Tool/Software Costs ($)</label>
+                                <input type="number" class="form-input" id="toolCosts" placeholder="2500" min="0">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Monthly Overhead Allocation ($)</label>
+                                <input type="number" class="form-input" id="overheadCosts" placeholder="5000" min="0">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div style="margin-top: 2rem; display: flex; justify-content: space-between;">
+                        <button class="btn btn-secondary" onclick="prevStep('business')">
+                            ← Back
+                        </button>
+                        <button class="btn btn-primary btn-lg" id="analyzeBtn" onclick="runAnalysis()" disabled>
+                            Run CAC Analysis →
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Step 4: Analysis (Loading) -->
+            <section class="section" data-section="analysis">
+                <div class="card" style="text-align: center;">
+                    <div class="card-header">
+                        <h2 class="card-title">Running CAC Analysis</h2>
+                        <p class="card-description">Calculating all 5 methodologies and assessing data quality...</p>
+                    </div>
+                    
+                    <div style="margin: 3rem 0;">
+                        <div class="loading" style="width: 50px; height: 50px; border-width: 5px; margin: 0 auto 2rem;"></div>
+                        <div id="analysisProgress">Initializing analysis...</div>
+                        <div class="progress-bar" style="max-width: 400px; margin: 2rem auto;">
+                            <div class="progress-fill" id="progressFill" style="width: 0%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Step 5: Results -->
+            <section class="section" data-section="results">
+                <div id="resultsContent">
+                    <!-- Results will be populated by JavaScript -->
+                </div>
+                
+                <!-- Interactive Analytics Dashboard -->
+                <div id="analyticsPanel" style="display: none; margin-top: 3rem;">
+                    <div class="card">
+                        <h3 style="margin-bottom: 2rem; display: flex; align-items: center; gap: 1rem;">
+                            📊 Interactive Analytics
+                            <button id="toggleAnalytics" class="btn btn-secondary" style="margin-left: auto; padding: 0.5rem 1rem; font-size: 0.9rem;">
+                                Show Details
+                            </button>
+                        </h3>
+                        
+                        <div id="analyticsContent" style="display: none;">
+                            <!-- Time Series Charts -->
+                            <div class="analytics-section">
+                                <h4 style="margin-bottom: 1.5rem;">📈 CAC Trends Over Time</h4>
+                                <div class="chart-controls" style="margin-bottom: 1rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+                                    <div>
+                                        <label style="font-size: 0.9rem; color: var(--text-secondary);">Date Range:</label>
+                                        <select id="timeRangeFilter" style="margin-left: 0.5rem; padding: 0.25rem 0.5rem;">
+                                            <option value="all">All Data</option>
+                                            <option value="30">Last 30 Days</option>
+                                            <option value="60">Last 60 Days</option>
+                                            <option value="90">Last 90 Days</option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <label style="font-size: 0.9rem; color: var(--text-secondary);">Channel:</label>
+                                        <select id="channelFilter" style="margin-left: 0.5rem; padding: 0.25rem 0.5rem;">
+                                            <option value="all">All Channels</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div style="height: 400px; margin-bottom: 2rem;">
+                                    <canvas id="cacTrendChart"></canvas>
+                                </div>
+                            </div>
+                            
+                            <!-- Channel Performance Breakdown -->
+                            <div class="analytics-section">
+                                <h4 style="margin-bottom: 1.5rem;">🎯 Channel Performance Deep Dive</h4>
+                                <div id="channelBreakdown" class="channel-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-bottom: 2rem;">
+                                    <!-- Channel cards will be populated by JavaScript -->
+                                </div>
+                            </div>
+                            
+                            <!-- Cohort Analysis -->
+                            <div class="analytics-section">
+                                <h4 style="margin-bottom: 1.5rem;">👥 Interactive Cohort Analysis</h4>
+                                <div class="cohort-controls" style="margin-bottom: 1rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+                                    <div>
+                                        <label style="font-size: 0.9rem; color: var(--text-secondary);">Cohort Period:</label>
+                                        <select id="cohortPeriod" style="margin-left: 0.5rem; padding: 0.25rem 0.5rem;">
+                                            <option value="week">Weekly</option>
+                                            <option value="month" selected>Monthly</option>
+                                            <option value="quarter">Quarterly</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div style="height: 350px; margin-bottom: 2rem;">
+                                    <canvas id="cohortChart"></canvas>
+                                </div>
+                            </div>
+                            
+                            <!-- Data Quality Interactive Dashboard -->
+                            <div class="analytics-section">
+                                <h4 style="margin-bottom: 1.5rem;">🔍 Data Quality Deep Dive</h4>
+                                <div id="dataQualityDashboard">
+                                    <!-- Data quality details will be populated by JavaScript -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>

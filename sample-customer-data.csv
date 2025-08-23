@@ -1,0 +1,21 @@
+customer_id,acquisition_date,ltv,source,segment
+CUST-001,2024-01-01,2400,Google Ads,Enterprise
+CUST-002,2024-01-01,1200,Facebook,SMB
+CUST-003,2024-01-01,3600,LinkedIn,Enterprise
+CUST-004,2024-01-02,1800,Google Ads,Mid-Market
+CUST-005,2024-01-02,900,Facebook,SMB
+CUST-006,2024-01-02,2800,LinkedIn,Enterprise
+CUST-007,2024-01-03,2200,Google Ads,Mid-Market
+CUST-008,2024-01-03,1500,Facebook,SMB
+CUST-009,2024-01-03,4200,LinkedIn,Enterprise
+CUST-010,2024-01-04,2600,Google Ads,Enterprise
+CUST-011,2024-01-04,1100,Facebook,SMB
+CUST-012,2024-01-04,3200,LinkedIn,Enterprise
+CUST-013,2024-01-05,1900,Google Ads,Mid-Market
+CUST-014,2024-01-05,1300,Facebook,SMB
+CUST-015,2024-01-05,3800,LinkedIn,Enterprise
+CUST-016,2024-01-06,2100,Google Ads,Mid-Market
+CUST-017,2024-01-06,1000,Facebook,SMB
+CUST-018,2024-01-06,2900,LinkedIn,Enterprise
+CUST-019,2024-01-07,2500,Google Ads,Enterprise
+CUST-020,2024-01-07,1400,Facebook,Mid-Market
