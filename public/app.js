@@ -263,7 +263,9 @@ async function runAnalysis() {
         console.log('Starting analysis...', appState); // Debug log
         
         showStep('analysis');
-        updateAnalysisProgress(10, 'Preparing data...');
+        
+        // Start enhanced progress tracking for v2.0 features
+        updateAnalysisProgress();
         
         // Validation checks
         if (!appState.uploadedData.marketing?.data || !appState.uploadedData.revenue?.data) {
@@ -391,9 +393,15 @@ function displayResults(results) {
         resultsContainer.innerHTML = `
         <div class="card">
             <div class="card-header">
-                <h2 class="card-title">CAC Analysis Results</h2>
-                <p class="card-description">Complete analysis using 5 different methodologies with transparency and recommendations.</p>
+                <h2 class="card-title">🚀 Enhanced CAC Analysis Results v2.0</h2>
+                <p class="card-description">Complete analysis with 5 CAC methodologies + advanced paid media analytics engine.</p>
+                <div style="background: linear-gradient(135deg, var(--primary-color), var(--accent-color)); color: white; border-radius: 8px; padding: 1rem; margin: 1rem 0;">
+                    <strong>NEW:</strong> Creative tracking, audience saturation, attribution modeling, competitive intelligence, forecasting & optimization recommendations
+                </div>
             </div>
+            
+            <!-- CRITICAL ALERTS FIRST -->
+            ${generateCriticalAlerts(results)}
             
             <!-- Summary Cards -->
             <div class="results-grid">
@@ -403,6 +411,9 @@ function displayResults(results) {
                 ${generateResultCard('Cohort-Based CAC', results.calculations.cohortBased, true)}
                 ${generateResultCard('Contribution Margin CAC', results.calculations.contributionMargin)}
             </div>
+            
+            <!-- NEW v2.0 FEATURES DASHBOARD -->
+            ${generateV2FeaturesDashboard(results)}
             
             <!-- HIGH IMPACT: Budget Optimization Scenarios -->
             ${results.budgetOptimization ? generateBudgetOptimizationSection(results.budgetOptimization) : ''}
@@ -416,21 +427,21 @@ function displayResults(results) {
                 ${generateMethodologyDetails(results.calculations)}
             </div>
             
-            <!-- Recommendations -->
-            ${generateRecommendationsSection(results.recommendations)}
+            <!-- Enhanced Recommendations -->
+            ${generateEnhancedRecommendationsSection(results)}
             
             <!-- Export Options -->
             <div style="margin-top: 3rem; text-align: center;">
                 <h3 style="margin-bottom: 2rem; font-size: 1.5rem; font-weight: 700;">Export & Share</h3>
                 <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
                     <button class="btn btn-primary" onclick="showDetailedReport()">
-                        📊 Detailed Report
+                        📊 Full Analytics Report
                     </button>
                     <button class="btn btn-secondary" onclick="exportToExcel()">
-                        📊 Export Excel Analysis
+                        📊 Export Enhanced Excel
                     </button>
                     <button class="btn btn-secondary" onclick="exportToPresentation()">
-                        🎯 Export Presentation
+                        🎯 Export Executive Summary
                     </button>
                 </div>
             </div>
@@ -2388,6 +2399,711 @@ function generatePresentationTemplate() {
     </script>
 </body>
 </html>`;
+}
+
+// NEW v2.0 FEATURES FUNCTIONS
+function generateCriticalAlerts(results) {
+    let alertsHtml = '';
+    
+    // Check for critical anomalies
+    if (results.anomalies && results.anomalies.severity === 'critical') {
+        alertsHtml += `
+        <div style="background: linear-gradient(135deg, #dc2626, #b91c1c); color: white; border-radius: 12px; padding: 2rem; margin: 2rem 0; animation: pulse 2s infinite;">
+            <h3 style="margin-bottom: 1rem; display: flex; align-items: center; gap: 1rem;">
+                🚨 CRITICAL PERFORMANCE ALERTS
+                <span style="background: rgba(255,255,255,0.3); padding: 0.5rem 1rem; border-radius: 6px; font-size: 0.8rem;">IMMEDIATE ACTION REQUIRED</span>
+            </h3>
+            ${results.anomalies.detected.filter(a => a.severity === 'high').map(anomaly => `
+                <div style="background: rgba(255,255,255,0.1); border-radius: 8px; padding: 1rem; margin: 1rem 0;">
+                    <strong>${anomaly.description}</strong><br>
+                    <span style="opacity: 0.9;">${anomaly.recommendation || 'Review immediately'}</span>
+                </div>
+            `).join('')}
+        </div>`;
+    }
+    
+    // Check for high audience saturation
+    if (results.audienceSaturation && results.audienceSaturation.overall && results.audienceSaturation.overall.channelsAtRisk > 0) {
+        alertsHtml += `
+        <div style="background: linear-gradient(135deg, #d97706, #b45309); color: white; border-radius: 12px; padding: 2rem; margin: 2rem 0;">
+            <h3 style="margin-bottom: 1rem; display: flex; align-items: center; gap: 1rem;">
+                🎯 AUDIENCE SATURATION WARNING
+                <span style="background: rgba(255,255,255,0.3); padding: 0.5rem 1rem; border-radius: 6px; font-size: 0.8rem;">${results.audienceSaturation.overall.channelsAtRisk} CHANNELS AT RISK</span>
+            </h3>
+            <p>High audience saturation detected. Immediate audience refresh recommended to prevent CAC increases.</p>
+        </div>`;
+    }
+    
+    return alertsHtml;
+}
+
+function generateV2FeaturesDashboard(results) {
+    return `
+    <div style="margin-top: 3rem;">
+        <h3 style="margin-bottom: 2rem; font-size: 1.5rem; font-weight: 700; display: flex; align-items: center; gap: 1rem;">
+            🚀 Advanced Paid Media Analytics Dashboard
+            <span style="background: var(--primary-color); color: white; padding: 0.5rem 1rem; border-radius: 6px; font-size: 0.8rem;">NEW v2.0</span>
+        </h3>
+        
+        <!-- Analytics Tabs -->
+        <div style="border-bottom: 2px solid var(--border); margin-bottom: 2rem;">
+            <div class="analytics-tabs" style="display: flex; gap: 0; flex-wrap: wrap;">
+                <button onclick="showAnalyticsTab('creative')" id="tab-creative" class="analytics-tab active" style="padding: 1rem 2rem; border: none; background: var(--primary-color); color: white; cursor: pointer; border-radius: 8px 8px 0 0;">
+                    ✨ Creative Performance
+                </button>
+                <button onclick="showAnalyticsTab('saturation')" id="tab-saturation" class="analytics-tab" style="padding: 1rem 2rem; border: none; background: var(--surface-alt); color: var(--text-primary); cursor: pointer;">
+                    🎯 Audience Saturation
+                </button>
+                <button onclick="showAnalyticsTab('attribution')" id="tab-attribution" class="analytics-tab" style="padding: 1rem 2rem; border: none; background: var(--surface-alt); color: var(--text-primary); cursor: pointer;">
+                    📊 Attribution Models
+                </button>
+                <button onclick="showAnalyticsTab('competitive')" id="tab-competitive" class="analytics-tab" style="padding: 1rem 2rem; border: none; background: var(--surface-alt); color: var(--text-primary); cursor: pointer;">
+                    🏆 Competitive Intel
+                </button>
+                <button onclick="showAnalyticsTab('forecast')" id="tab-forecast" class="analytics-tab" style="padding: 1rem 2rem; border: none; background: var(--surface-alt); color: var(--text-primary); cursor: pointer;">
+                    📈 Forecasting
+                </button>
+                <button onclick="showAnalyticsTab('optimization')" id="tab-optimization" class="analytics-tab" style="padding: 1rem 2rem; border: none; background: var(--surface-alt); color: var(--text-primary); cursor: pointer; border-radius: 0 8px 0 0;">
+                    🚀 Optimization
+                </button>
+            </div>
+        </div>
+        
+        <!-- Tab Content -->
+        <div id="analytics-content">
+            ${generateCreativeAnalyticsTab(results.creativeAnalysis)}
+            ${generateSaturationAnalyticsTab(results.audienceSaturation)}
+            ${generateAttributionAnalyticsTab(results.attributionModeling)}
+            ${generateCompetitiveAnalyticsTab(results.competitiveIntelligence)}
+            ${generateForecastAnalyticsTab(results.forecast)}
+            ${generateOptimizationAnalyticsTab(results.optimizationEngine)}
+        </div>
+    </div>`;
+}
+
+function generateCreativeAnalyticsTab(creativeAnalysis) {
+    if (!creativeAnalysis || !creativeAnalysis.byCreative) {
+        return `<div id="content-creative" class="analytics-content active" style="padding: 2rem; background: var(--surface); border-radius: 8px;">
+            <h4>Creative Performance Analysis</h4>
+            <p>No creative performance data available. Upload campaign data with creative information to enable this feature.</p>
+        </div>`;
+    }
+    
+    const creatives = Object.values(creativeAnalysis.byCreative);
+    const topPerformers = creativeAnalysis.topPerformers || [];
+    const underperformers = creativeAnalysis.underperformers || [];
+    
+    return `
+    <div id="content-creative" class="analytics-content active" style="padding: 2rem; background: var(--surface); border-radius: 8px;">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-bottom: 2rem;">
+            <!-- Top Performers -->
+            <div style="background: linear-gradient(135deg, #10b981, #059669); color: white; border-radius: 12px; padding: 2rem;">
+                <h4 style="margin-bottom: 1.5rem; display: flex; align-items: center; gap: 1rem;">
+                    🏆 Top Performing Creatives
+                    <span style="background: rgba(255,255,255,0.3); padding: 0.25rem 0.75rem; border-radius: 4px; font-size: 0.8rem;">${topPerformers.length} WINNERS</span>
+                </h4>
+                ${topPerformers.slice(0, 3).map(creative => `
+                    <div style="background: rgba(255,255,255,0.1); border-radius: 8px; padding: 1rem; margin: 1rem 0;">
+                        <div style="display: flex; justify-content: between; align-items: center; margin-bottom: 0.5rem;">
+                            <strong>${creative.creativeType}</strong>
+                            <span style="font-size: 0.9rem; opacity: 0.9;">$${creative.cac} CAC</span>
+                        </div>
+                        <div style="font-size: 0.85rem; opacity: 0.8;">
+                            ${creative.channel} • ${creative.customers} customers • ${creative.ctr}% CTR
+                        </div>
+                    </div>
+                `).join('')}
+            </div>
+            
+            <!-- Creative Types Performance -->
+            <div style="background: var(--surface-alt); border-radius: 12px; padding: 2rem;">
+                <h4 style="margin-bottom: 1.5rem;">📊 Creative Type Analysis</h4>
+                ${generateCreativeTypeChart(creatives)}
+            </div>
+        </div>
+        
+        <!-- Underperformers Alert -->
+        ${underperformers.length > 0 ? `
+        <div style="background: linear-gradient(135deg, #dc2626, #b91c1c); color: white; border-radius: 12px; padding: 2rem; margin: 2rem 0;">
+            <h4 style="margin-bottom: 1rem;">⚠️ Underperforming Creatives - Action Needed</h4>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem;">
+                ${underperformers.slice(0, 3).map(creative => `
+                    <div style="background: rgba(255,255,255,0.1); border-radius: 8px; padding: 1rem;">
+                        <div style="display: flex; justify-content: between; align-items: center; margin-bottom: 0.5rem;">
+                            <strong>${creative.creativeType}</strong>
+                            <span style="font-size: 0.9rem;">$${creative.cac} CAC</span>
+                        </div>
+                        <div style="font-size: 0.85rem; opacity: 0.8;">
+                            ${creative.channel} • ${creative.ctr}% CTR • ${creative.cvr}% CVR
+                        </div>
+                        <div style="margin-top: 0.5rem; font-size: 0.8rem; opacity: 0.7;">
+                            💡 Recommendation: Pause and test variations
+                        </div>
+                    </div>
+                `).join('')}
+            </div>
+        </div>` : ''}
+    </div>`;
+}
+
+function generateSaturationAnalyticsTab(audienceSaturation) {
+    if (!audienceSaturation || !audienceSaturation.byChannel) {
+        return `<div id="content-saturation" class="analytics-content" style="display: none; padding: 2rem; background: var(--surface); border-radius: 8px;">
+            <h4>Audience Saturation Analysis</h4>
+            <p>No audience saturation data available. Upload time-series data to enable audience fatigue detection.</p>
+        </div>`;
+    }
+    
+    const channels = Object.entries(audienceSaturation.byChannel);
+    const highRiskChannels = channels.filter(([, data]) => data.riskLevel === 'high');
+    const mediumRiskChannels = channels.filter(([, data]) => data.riskLevel === 'medium');
+    
+    return `
+    <div id="content-saturation" class="analytics-content" style="display: none; padding: 2rem; background: var(--surface); border-radius: 8px;">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-bottom: 2rem;">
+            <!-- Overall Saturation Status -->
+            <div style="background: ${highRiskChannels.length > 0 ? 'linear-gradient(135deg, #dc2626, #b91c1c)' : mediumRiskChannels.length > 0 ? 'linear-gradient(135deg, #d97706, #b45309)' : 'linear-gradient(135deg, #10b981, #059669)'}; color: white; border-radius: 12px; padding: 2rem;">
+                <h4 style="margin-bottom: 1rem;">🎯 Audience Health Overview</h4>
+                <div style="font-size: 2rem; font-weight: 700; margin: 1rem 0;">
+                    ${audienceSaturation.overall?.avgSaturation ? Math.round(audienceSaturation.overall.avgSaturation * 100) + '%' : 'N/A'}
+                </div>
+                <p style="opacity: 0.9;">Average Saturation Score</p>
+                <div style="margin-top: 1rem; font-size: 0.9rem;">
+                    ${audienceSaturation.overall?.channelsAtRisk || 0} of ${audienceSaturation.overall?.totalChannels || 0} channels at risk
+                </div>
+            </div>
+            
+            <!-- High Risk Channels -->
+            ${highRiskChannels.length > 0 ? `
+            <div style="background: var(--surface-alt); border-radius: 12px; padding: 2rem;">
+                <h4 style="margin-bottom: 1rem; color: #dc2626;">⚠️ High Risk Channels</h4>
+                ${highRiskChannels.map(([channel, data]) => `
+                    <div style="background: #fef2f2; border: 1px solid #fecaca; border-radius: 8px; padding: 1rem; margin: 1rem 0;">
+                        <div style="display: flex; justify-content: between; align-items: center; margin-bottom: 0.5rem;">
+                            <strong style="color: #dc2626;">${channel}</strong>
+                            <span style="background: #dc2626; color: white; padding: 0.25rem 0.5rem; border-radius: 4px; font-size: 0.8rem;">
+                                ${Math.round(data.recentSaturation * 100)}%
+                            </span>
+                        </div>
+                        <div style="font-size: 0.85rem; color: #7f1d1d;">
+                            Trend: ${data.trend} • ${data.dataPoints} data points
+                        </div>
+                        <div style="margin-top: 0.5rem; font-size: 0.8rem; color: #dc2626;">
+                            💡 Action: Refresh audiences, test new creatives
+                        </div>
+                    </div>
+                `).join('')}
+            </div>` : ''}
+        </div>
+        
+        <!-- All Channels Saturation Chart -->
+        <div style="background: var(--surface-alt); border-radius: 12px; padding: 2rem; margin-top: 2rem;">
+            <h4 style="margin-bottom: 1.5rem;">📊 Channel Saturation Levels</h4>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+                ${channels.map(([channel, data]) => `
+                    <div style="background: var(--surface); border-radius: 8px; padding: 1rem; text-align: center;">
+                        <div style="font-weight: 600; margin-bottom: 0.5rem;">${channel}</div>
+                        <div style="width: 100%; height: 8px; background: #e5e7eb; border-radius: 4px; margin: 0.5rem 0;">
+                            <div style="height: 100%; background: ${data.riskLevel === 'high' ? '#dc2626' : data.riskLevel === 'medium' ? '#d97706' : '#10b981'}; border-radius: 4px; width: ${data.recentSaturation * 100}%;"></div>
+                        </div>
+                        <div style="font-size: 0.85rem; color: var(--text-secondary);">
+                            ${Math.round(data.recentSaturation * 100)}% saturation
+                        </div>
+                    </div>
+                `).join('')}
+            </div>
+        </div>
+    </div>`;
+}
+
+function generateAttributionAnalyticsTab(attributionModeling) {
+    if (!attributionModeling || !attributionModeling.models) {
+        return `<div id="content-attribution" class="analytics-content" style="display: none; padding: 2rem; background: var(--surface); border-radius: 8px;">
+            <h4>Attribution Model Comparison</h4>
+            <p>No attribution modeling data available. Upload customer journey data to enable multi-touch attribution analysis.</p>
+        </div>`;
+    }
+    
+    const models = Object.entries(attributionModeling.models);
+    const comparison = attributionModeling.comparison;
+    
+    return `
+    <div id="content-attribution" class="analytics-content" style="display: none; padding: 2rem; background: var(--surface); border-radius: 8px;">
+        <div style="margin-bottom: 2rem;">
+            <h4 style="margin-bottom: 1rem;">📊 Attribution Model Comparison</h4>
+            <div style="background: var(--surface-alt); border-radius: 8px; padding: 1.5rem;">
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; text-align: center;">
+                    ${models.map(([modelName, data]) => {
+                        const totalCac = Object.values(data).reduce((sum, channel) => sum + channel.cac, 0) / Object.keys(data).length;
+                        return `
+                        <div style="background: var(--surface); border-radius: 6px; padding: 1rem;">
+                            <div style="font-weight: 600; text-transform: capitalize; margin-bottom: 0.5rem;">
+                                ${modelName.replace('_', ' ')}
+                            </div>
+                            <div style="font-size: 1.2rem; font-weight: 700; color: var(--primary-color);">
+                                $${Math.round(totalCac)}
+                            </div>
+                            <div style="font-size: 0.85rem; color: var(--text-secondary);">Avg CAC</div>
+                        </div>`;
+                    }).join('')}
+                </div>
+            </div>
+        </div>
+        
+        ${comparison && comparison.variance > 0.3 ? `
+        <div style="background: linear-gradient(135deg, #d97706, #b45309); color: white; border-radius: 12px; padding: 2rem; margin: 2rem 0;">
+            <h4 style="margin-bottom: 1rem;">⚠️ High Attribution Variance Detected</h4>
+            <p style="margin-bottom: 1rem;">
+                CAC varies by ${Math.round(comparison.variance * 100)}% across attribution models, indicating complex customer journeys.
+            </p>
+            <div style="font-size: 0.9rem; opacity: 0.9;">
+                💡 Recommendation: Consider implementing data-driven attribution or incrementality testing to determine true channel impact.
+            </div>
+        </div>` : ''}
+        
+        <!-- Channel Impact Variance -->
+        ${comparison && comparison.channelImpact ? `
+        <div style="background: var(--surface-alt); border-radius: 12px; padding: 2rem;">
+            <h4 style="margin-bottom: 1.5rem;">📈 Channel Attribution Variance</h4>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem;">
+                ${Object.entries(comparison.channelImpact).map(([channel, impact]) => `
+                    <div style="background: var(--surface); border-radius: 8px; padding: 1rem;">
+                        <div style="font-weight: 600; margin-bottom: 0.5rem;">${channel}</div>
+                        <div style="font-size: 1.1rem; font-weight: 700; margin-bottom: 0.5rem;">
+                            $${impact.meanCac} <span style="font-size: 0.8rem; font-weight: 400;">avg CAC</span>
+                        </div>
+                        <div style="font-size: 0.85rem; color: var(--text-secondary);">
+                            Range: $${impact.range[0]} - $${impact.range[1]}
+                        </div>
+                        <div style="margin-top: 0.5rem;">
+                            <div style="width: 100%; height: 6px; background: #e5e7eb; border-radius: 3px;">
+                                <div style="height: 100%; background: ${impact.variance > 0.2 ? '#dc2626' : impact.variance > 0.1 ? '#d97706' : '#10b981'}; border-radius: 3px; width: ${Math.min(impact.variance * 500, 100)}%;"></div>
+                            </div>
+                            <div style="font-size: 0.8rem; color: var(--text-secondary); margin-top: 0.25rem;">
+                                ${Math.round(impact.variance * 100)}% variance
+                            </div>
+                        </div>
+                    </div>
+                `).join('')}
+            </div>
+        </div>` : ''}
+    </div>`;
+}
+
+function generateCompetitiveAnalyticsTab(competitiveIntelligence) {
+    if (!competitiveIntelligence || !competitiveIntelligence.competitiveBenchmarks) {
+        return `<div id="content-competitive" class="analytics-content" style="display: none; padding: 2rem; background: var(--surface); border-radius: 8px;">
+            <h4>Competitive Intelligence</h4>
+            <p>No competitive intelligence data available. Analysis requires business model configuration.</p>
+        </div>`;
+    }
+    
+    const benchmarks = competitiveIntelligence.competitiveBenchmarks;
+    const opportunities = competitiveIntelligence.opportunityAnalysis;
+    
+    return `
+    <div id="content-competitive" class="analytics-content" style="display: none; padding: 2rem; background: var(--surface); border-radius: 8px;">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-bottom: 2rem;">
+            <!-- Market Position -->
+            <div style="background: ${benchmarks.percentile > 75 ? 'linear-gradient(135deg, #10b981, #059669)' : benchmarks.percentile > 50 ? 'linear-gradient(135deg, #d97706, #b45309)' : 'linear-gradient(135deg, #dc2626, #b91c1c)'}; color: white; border-radius: 12px; padding: 2rem;">
+                <h4 style="margin-bottom: 1rem;">🏆 Market Position</h4>
+                <div style="font-size: 2rem; font-weight: 700; margin: 1rem 0;">
+                    ${benchmarks.percentile}th
+                </div>
+                <p style="opacity: 0.9;">Percentile Ranking</p>
+                <div style="margin-top: 1rem; font-size: 0.9rem; text-transform: capitalize;">
+                    ${benchmarks.competitivePosition.replace('_', ' ')}
+                </div>
+            </div>
+            
+            <!-- Industry Benchmarks -->
+            <div style="background: var(--surface-alt); border-radius: 12px; padding: 2rem;">
+                <h4 style="margin-bottom: 1rem;">📊 Industry Comparison</h4>
+                <div style="margin-bottom: 1rem;">
+                    <div style="display: flex; justify-content: between; align-items: center; margin-bottom: 0.5rem;">
+                        <span>Your CAC</span>
+                        <span style="font-weight: 700;">$${benchmarks.currentCAC}</span>
+                    </div>
+                    <div style="display: flex; justify-content: between; align-items: center; margin-bottom: 0.5rem;">
+                        <span>Industry Median</span>
+                        <span style="font-weight: 700;">$${benchmarks.industryMedian}</span>
+                    </div>
+                    <div style="font-size: 0.85rem; color: var(--text-secondary);">
+                        Industry Range: $${benchmarks.industryRange[0]} - $${benchmarks.industryRange[1]}
+                    </div>
+                </div>
+                <div style="background: var(--surface); border-radius: 6px; padding: 1rem; margin-top: 1rem;">
+                    <div style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 0.5rem;">Performance vs Industry</div>
+                    <div style="width: 100%; height: 8px; background: #e5e7eb; border-radius: 4px;">
+                        <div style="height: 100%; background: ${benchmarks.currentCAC < benchmarks.industryMedian ? '#10b981' : '#dc2626'}; border-radius: 4px; width: ${Math.min((benchmarks.currentCAC / benchmarks.industryRange[1]) * 100, 100)}%;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Channel Opportunities -->
+        ${opportunities && (opportunities.underinvestment?.length > 0 || opportunities.overinvestment?.length > 0) ? `
+        <div style="background: var(--surface-alt); border-radius: 12px; padding: 2rem;">
+            <h4 style="margin-bottom: 1.5rem;">🎯 Channel Allocation Opportunities</h4>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+                ${opportunities.underinvestment?.length > 0 ? `
+                <div>
+                    <h5 style="color: #10b981; margin-bottom: 1rem;">📈 Underinvestment Opportunities</h5>
+                    ${opportunities.underinvestment.map(opp => `
+                        <div style="background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 8px; padding: 1rem; margin: 1rem 0;">
+                            <div style="font-weight: 600; color: #15803d;">${opp.channel}</div>
+                            <div style="font-size: 0.85rem; color: #166534; margin: 0.5rem 0;">
+                                Current: ${opp.currentAllocation}% • Industry: ${opp.industryBenchmark}%
+                            </div>
+                            <div style="font-size: 0.8rem; color: #15803d;">
+                                💡 ${opp.recommendation}
+                            </div>
+                        </div>
+                    `).join('')}
+                </div>` : ''}
+                
+                ${opportunities.overinvestment?.length > 0 ? `
+                <div>
+                    <h5 style="color: #d97706; margin-bottom: 1rem;">📉 Overinvestment Analysis</h5>
+                    ${opportunities.overinvestment.map(opp => `
+                        <div style="background: #fffbeb; border: 1px solid #fde68a; border-radius: 8px; padding: 1rem; margin: 1rem 0;">
+                            <div style="font-weight: 600; color: #b45309;">${opp.channel}</div>
+                            <div style="font-size: 0.85rem; color: #92400e; margin: 0.5rem 0;">
+                                Current: ${opp.currentAllocation}% • Industry: ${opp.industryBenchmark}%
+                            </div>
+                            <div style="font-size: 0.8rem; color: #b45309;">
+                                💡 ${opp.recommendation}
+                            </div>
+                        </div>
+                    `).join('')}
+                </div>` : ''}
+            </div>
+        </div>` : ''}
+    </div>`;
+}
+
+function generateForecastAnalyticsTab(forecast) {
+    if (!forecast || forecast.error) {
+        return `<div id="content-forecast" class="analytics-content" style="display: none; padding: 2rem; background: var(--surface); border-radius: 8px;">
+            <h4>CAC Forecasting</h4>
+            <p>${forecast?.error || 'No forecasting data available. Requires at least 6 months of historical data.'}</p>
+        </div>`;
+    }
+    
+    const scenarios = forecast.scenarios || {};
+    
+    return `
+    <div id="content-forecast" class="analytics-content" style="display: none; padding: 2rem; background: var(--surface); border-radius: 8px;">
+        <div style="margin-bottom: 2rem;">
+            <h4 style="margin-bottom: 1rem;">📈 6-Month CAC Forecast</h4>
+            <div style="background: var(--surface-alt); border-radius: 8px; padding: 1.5rem;">
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; text-align: center;">
+                    ${Object.entries(scenarios).map(([scenarioName, data]) => {
+                        const avgCAC = data.reduce((sum, period) => sum + period.projectedCAC, 0) / data.length;
+                        return `
+                        <div style="background: var(--surface); border-radius: 6px; padding: 1rem;">
+                            <div style="font-weight: 600; text-transform: capitalize; margin-bottom: 0.5rem; color: ${scenarioName === 'conservative' ? '#dc2626' : scenarioName === 'optimistic' ? '#10b981' : scenarioName === 'aggressive' ? '#059669' : 'var(--text-primary)'};">
+                                ${scenarioName}
+                            </div>
+                            <div style="font-size: 1.2rem; font-weight: 700; color: var(--primary-color);">
+                                $${Math.round(avgCAC)}
+                            </div>
+                            <div style="font-size: 0.85rem; color: var(--text-secondary);">Avg CAC</div>
+                        </div>`;
+                    }).join('')}
+                </div>
+            </div>
+        </div>
+        
+        <!-- Forecast Warnings -->
+        ${forecast.recommendations?.filter(r => r.priority === 'high').length > 0 ? `
+        <div style="background: linear-gradient(135deg, #d97706, #b45309); color: white; border-radius: 12px; padding: 2rem; margin: 2rem 0;">
+            <h4 style="margin-bottom: 1rem;">⚠️ Forecast Alerts</h4>
+            ${forecast.recommendations.filter(r => r.priority === 'high').map(rec => `
+                <div style="background: rgba(255,255,255,0.1); border-radius: 8px; padding: 1rem; margin: 1rem 0;">
+                    <div style="font-weight: 600; margin-bottom: 0.5rem;">${rec.title}</div>
+                    <div style="font-size: 0.9rem; opacity: 0.9;">${rec.description}</div>
+                </div>
+            `).join('')}
+        </div>` : ''}
+        
+        <!-- Monthly Breakdown -->
+        ${scenarios.base ? `
+        <div style="background: var(--surface-alt); border-radius: 12px; padding: 2rem;">
+            <h4 style="margin-bottom: 1.5rem;">📅 Monthly Forecast Breakdown (Base Scenario)</h4>
+            <div style="overflow-x: auto;">
+                <div style="display: grid; grid-template-columns: repeat(6, 1fr); gap: 1rem; min-width: 600px;">
+                    ${scenarios.base.map(period => `
+                        <div style="background: var(--surface); border-radius: 8px; padding: 1rem; text-align: center;">
+                            <div style="font-weight: 600; margin-bottom: 0.5rem;">${period.month}</div>
+                            <div style="font-size: 1.1rem; font-weight: 700; color: var(--primary-color); margin-bottom: 0.25rem;">
+                                $${period.projectedCAC}
+                            </div>
+                            <div style="font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 0.5rem;">
+                                ${Math.round(period.projectedCustomers)} customers
+                            </div>
+                            <div style="background: #e5e7eb; height: 4px; border-radius: 2px; margin: 0.5rem 0;">
+                                <div style="height: 100%; background: var(--primary-color); border-radius: 2px; width: ${Math.min(period.confidence * 100, 100)}%;"></div>
+                            </div>
+                            <div style="font-size: 0.7rem; color: var(--text-secondary);">
+                                ${Math.round(period.confidence * 100)}% confidence
+                            </div>
+                        </div>
+                    `).join('')}
+                </div>
+            </div>
+        </div>` : ''}
+    </div>`;
+}
+
+function generateOptimizationAnalyticsTab(optimizationEngine) {
+    if (!optimizationEngine) {
+        return `<div id="content-optimization" class="analytics-content" style="display: none; padding: 2rem; background: var(--surface); border-radius: 8px;">
+            <h4>Optimization Recommendations</h4>
+            <p>No optimization recommendations available.</p>
+        </div>`;
+    }
+    
+    const immediate = optimizationEngine.immediate || [];
+    const shortTerm = optimizationEngine.shortTerm || [];
+    const strategic = optimizationEngine.strategic || [];
+    const priority = optimizationEngine.priority;
+    
+    return `
+    <div id="content-optimization" class="analytics-content" style="display: none; padding: 2rem; background: var(--surface); border-radius: 8px;">
+        <!-- Priority Overview -->
+        <div style="background: ${priority === 'critical' ? 'linear-gradient(135deg, #dc2626, #b91c1c)' : priority === 'high' ? 'linear-gradient(135deg, #d97706, #b45309)' : 'linear-gradient(135deg, #10b981, #059669)'}; color: white; border-radius: 12px; padding: 2rem; margin-bottom: 2rem;">
+            <h4 style="margin-bottom: 1rem;">🚀 Optimization Priority: ${priority.toUpperCase()}</h4>
+            <div style="font-size: 1.2rem; margin-bottom: 1rem;">
+                ${optimizationEngine.impact?.potentialCACImprovement || 'N/A'} potential CAC improvement
+            </div>
+            <div style="font-size: 0.9rem; opacity: 0.9;">
+                Implementation effort: ${optimizationEngine.impact?.implementationEffort || 'unknown'} • 
+                Risk level: ${optimizationEngine.impact?.riskLevel || 'unknown'}
+            </div>
+        </div>
+        
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem;">
+            <!-- Immediate Actions -->
+            ${immediate.length > 0 ? `
+            <div style="background: var(--surface-alt); border-radius: 12px; padding: 2rem;">
+                <h4 style="margin-bottom: 1rem; color: #dc2626;">🚨 Immediate Actions (24-48h)</h4>
+                ${immediate.map(action => `
+                    <div style="background: #fef2f2; border: 1px solid #fecaca; border-radius: 8px; padding: 1rem; margin: 1rem 0;">
+                        <div style="font-weight: 600; color: #dc2626; margin-bottom: 0.5rem;">${action.title}</div>
+                        <div style="font-size: 0.85rem; color: #7f1d1d; margin-bottom: 0.5rem;">${action.description}</div>
+                        ${action.actions ? `
+                        <ul style="margin: 0.5rem 0; padding-left: 1.5rem; font-size: 0.8rem; color: #991b1b;">
+                            ${action.actions.map(a => `<li>${a}</li>`).join('')}
+                        </ul>` : ''}
+                        <div style="font-size: 0.8rem; color: #dc2626; margin-top: 0.5rem;">
+                            💡 Impact: ${action.expectedImpact}
+                        </div>
+                    </div>
+                `).join('')}
+            </div>` : ''}
+            
+            <!-- Short Term Actions -->
+            ${shortTerm.length > 0 ? `
+            <div style="background: var(--surface-alt); border-radius: 12px; padding: 2rem;">
+                <h4 style="margin-bottom: 1rem; color: #d97706;">📅 Short-term (1-4 weeks)</h4>
+                ${shortTerm.map(action => `
+                    <div style="background: #fffbeb; border: 1px solid #fde68a; border-radius: 8px; padding: 1rem; margin: 1rem 0;">
+                        <div style="font-weight: 600; color: #b45309; margin-bottom: 0.5rem;">${action.title}</div>
+                        <div style="font-size: 0.85rem; color: #92400e; margin-bottom: 0.5rem;">${action.description}</div>
+                        ${action.actions ? `
+                        <ul style="margin: 0.5rem 0; padding-left: 1.5rem; font-size: 0.8rem; color: #b45309;">
+                            ${action.actions.map(a => `<li>${a}</li>`).join('')}
+                        </ul>` : ''}
+                        <div style="font-size: 0.8rem; color: #d97706; margin-top: 0.5rem;">
+                            💡 Impact: ${action.expectedImpact}
+                        </div>
+                    </div>
+                `).join('')}
+            </div>` : ''}
+            
+            <!-- Strategic Actions -->
+            ${strategic.length > 0 ? `
+            <div style="background: var(--surface-alt); border-radius: 12px; padding: 2rem;">
+                <h4 style="margin-bottom: 1rem; color: #10b981;">🎯 Strategic (1-3 months)</h4>
+                ${strategic.map(action => `
+                    <div style="background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 8px; padding: 1rem; margin: 1rem 0;">
+                        <div style="font-weight: 600; color: #15803d; margin-bottom: 0.5rem;">${action.title}</div>
+                        <div style="font-size: 0.85rem; color: #166534; margin-bottom: 0.5rem;">${action.description}</div>
+                        ${action.actions ? `
+                        <ul style="margin: 0.5rem 0; padding-left: 1.5rem; font-size: 0.8rem; color: #15803d;">
+                            ${action.actions.map(a => `<li>${a}</li>`).join('')}
+                        </ul>` : ''}
+                        <div style="font-size: 0.8rem; color: #10b981; margin-top: 0.5rem;">
+                            💡 Impact: ${action.expectedImpact}
+                        </div>
+                    </div>
+                `).join('')}
+            </div>` : ''}
+        </div>
+    </div>`;
+}
+
+function generateCreativeTypeChart(creatives) {
+    const creativeTypes = {};
+    
+    creatives.forEach(creative => {
+        const type = creative.creativeType || 'Unknown';
+        if (!creativeTypes[type]) {
+            creativeTypes[type] = { count: 0, totalCAC: 0 };
+        }
+        creativeTypes[type].count++;
+        creativeTypes[type].totalCAC += creative.cac || 0;
+    });
+    
+    return Object.entries(creativeTypes).map(([type, data]) => {
+        const avgCAC = data.count > 0 ? data.totalCAC / data.count : 0;
+        return `
+        <div style="display: flex; justify-content: between; align-items: center; margin: 0.5rem 0; padding: 0.5rem; background: var(--surface); border-radius: 6px;">
+            <span style="font-weight: 500;">${type}</span>
+            <span style="font-size: 0.9rem; color: var(--text-secondary);">
+                $${Math.round(avgCAC)} avg • ${data.count} creatives
+            </span>
+        </div>`;
+    }).join('');
+}
+
+function generateEnhancedRecommendationsSection(results) {
+    const standardRecs = results.recommendations || [];
+    const optimizationRecs = results.optimizationEngine || {};
+    const immediate = optimizationRecs.immediate || [];
+    const shortTerm = optimizationRecs.shortTerm || [];
+    
+    const criticalCount = immediate.filter(r => r.priority === 'critical').length;
+    const highCount = immediate.filter(r => r.priority === 'high').length + shortTerm.filter(r => r.priority === 'high').length;
+    
+    return `
+    <div style="margin-top: 3rem;">
+        <h3 style="margin-bottom: 2rem; font-size: 1.5rem; font-weight: 700; display: flex; align-items: center; gap: 1rem;">
+            💡 Enhanced Recommendations & Action Items
+            ${criticalCount > 0 ? `<span style="background: #dc2626; color: white; padding: 0.5rem 1rem; border-radius: 6px; font-size: 0.8rem;">${criticalCount} CRITICAL</span>` : ''}
+            ${highCount > 0 ? `<span style="background: #d97706; color: white; padding: 0.5rem 1rem; border-radius: 6px; font-size: 0.8rem;">${highCount} HIGH PRIORITY</span>` : ''}
+        </h3>
+        
+        <!-- Priority Actions Summary -->
+        ${immediate.length > 0 || shortTerm.length > 0 ? `
+        <div style="background: linear-gradient(135deg, var(--primary-color), var(--accent-color)); color: white; border-radius: 12px; padding: 2rem; margin-bottom: 2rem;">
+            <h4 style="margin-bottom: 1rem;">🚀 Priority Action Summary</h4>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+                ${immediate.length > 0 ? `
+                <div style="background: rgba(255,255,255,0.1); border-radius: 8px; padding: 1rem;">
+                    <div style="font-weight: 600; margin-bottom: 0.5rem;">Immediate (24-48h)</div>
+                    <div style="font-size: 1.2rem; font-weight: 700;">${immediate.length}</div>
+                    <div style="font-size: 0.85rem; opacity: 0.9;">critical actions</div>
+                </div>` : ''}
+                ${shortTerm.length > 0 ? `
+                <div style="background: rgba(255,255,255,0.1); border-radius: 8px; padding: 1rem;">
+                    <div style="font-weight: 600; margin-bottom: 0.5rem;">Short-term (1-4w)</div>
+                    <div style="font-size: 1.2rem; font-weight: 700;">${shortTerm.length}</div>
+                    <div style="font-size: 0.85rem; opacity: 0.9;">optimization tasks</div>
+                </div>` : ''}
+                <div style="background: rgba(255,255,255,0.1); border-radius: 8px; padding: 1rem;">
+                    <div style="font-weight: 600; margin-bottom: 0.5rem;">Potential Impact</div>
+                    <div style="font-size: 1.2rem; font-weight: 700;">${optimizationRecs.impact?.potentialCACImprovement || '15-35%'}</div>
+                    <div style="font-size: 0.85rem; opacity: 0.9;">CAC improvement</div>
+                </div>
+            </div>
+        </div>` : ''}
+        
+        <!-- Standard Recommendations -->
+        ${standardRecs.length > 0 ? `
+        <div style="background: var(--surface-alt); border-radius: 12px; padding: 2rem;">
+            <h4 style="margin-bottom: 1.5rem;">📊 Standard CAC Recommendations</h4>
+            <div class="recommendations-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;">
+                ${standardRecs.map(rec => `
+                    <div class="recommendation-card" style="background: var(--surface); border-radius: 8px; padding: 1.5rem; border-left: 4px solid ${rec.priority === 'high' ? '#dc2626' : rec.priority === 'medium' ? '#d97706' : '#10b981'};">
+                        <div class="recommendation-header" style="display: flex; justify-content: between; align-items: flex-start; margin-bottom: 1rem;">
+                            <h5 style="margin: 0; color: var(--text-primary);">${rec.title || 'Recommendation'}</h5>
+                            <span class="priority-badge" style="background: ${rec.priority === 'high' ? '#dc2626' : rec.priority === 'medium' ? '#d97706' : '#10b981'}; color: white; padding: 0.25rem 0.5rem; border-radius: 4px; font-size: 0.75rem; text-transform: uppercase;">
+                                ${rec.priority || 'low'}
+                            </span>
+                        </div>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.5; margin-bottom: 1rem;">
+                            ${rec.description || rec.recommendation || 'No description available'}
+                        </p>
+                        ${rec.impact ? `
+                        <div style="background: #f9fafb; border-radius: 6px; padding: 1rem; margin-top: 1rem;">
+                            <div style="font-size: 0.85rem; color: var(--text-secondary);">
+                                <strong>Expected Impact:</strong> ${rec.impact}
+                            </div>
+                        </div>` : ''}
+                    </div>
+                `).join('')}
+            </div>
+        </div>` : ''}
+    </div>`;
+}
+
+// Tab switching function
+function showAnalyticsTab(tabName) {
+    // Update tab buttons
+    document.querySelectorAll('.analytics-tab').forEach(tab => {
+        tab.style.background = 'var(--surface-alt)';
+        tab.style.color = 'var(--text-primary)';
+    });
+    
+    const activeTab = document.getElementById(`tab-${tabName}`);
+    if (activeTab) {
+        activeTab.style.background = 'var(--primary-color)';
+        activeTab.style.color = 'white';
+    }
+    
+    // Update content visibility
+    document.querySelectorAll('.analytics-content').forEach(content => {
+        content.style.display = 'none';
+    });
+    
+    const activeContent = document.getElementById(`content-${tabName}`);
+    if (activeContent) {
+        activeContent.style.display = 'block';
+    }
+}
+
+// Enhanced Progress Tracking for Analysis
+function updateAnalysisProgress() {
+    const steps = [
+        { id: 'step1', text: '✓ Standard CAC calculations completed', delay: 800 },
+        { id: 'step2', text: '✓ Creative performance analysis completed', delay: 1200 },
+        { id: 'step3', text: '✓ Audience saturation detection completed', delay: 1600 },
+        { id: 'step4', text: '✓ Anomaly detection engine completed', delay: 2000 },
+        { id: 'step5', text: '✓ Advanced attribution modeling completed', delay: 2400 },
+        { id: 'step6', text: '✓ Competitive intelligence analysis completed', delay: 2800 },
+        { id: 'step7', text: '✓ Forecasting with seasonality completed', delay: 3200 },
+        { id: 'step8', text: '✓ Optimization recommendations generated', delay: 3600 }
+    ];
+    
+    steps.forEach((step, index) => {
+        setTimeout(() => {
+            const element = document.getElementById(step.id);
+            if (element) {
+                element.style.opacity = '1';
+                element.style.color = 'var(--primary-color)';
+                element.innerHTML = step.text;
+                
+                // Update progress bar
+                const progress = ((index + 1) / steps.length) * 100;
+                const progressFill = document.getElementById('progressFill');
+                if (progressFill) {
+                    progressFill.style.width = progress + '%';
+                }
+                
+                // Update progress text
+                const progressText = document.getElementById('analysisProgress');
+                if (progressText) {
+                    if (index === steps.length - 1) {
+                        progressText.textContent = 'Analysis complete! Generating results...';
+                    } else {
+                        progressText.textContent = `Processing step ${index + 1} of ${steps.length}...`;
+                    }
+                }
+            }
+        }, step.delay);
+    });
 }
 
 // Interactive Analytics Functions

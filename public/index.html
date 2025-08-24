@@ -1400,13 +1400,29 @@
             <section class="section" data-section="data">
                 <div class="card">
                     <div class="card-header">
-                        <h2 class="card-title">Data Input</h2>
-                        <p class="card-description">Upload your marketing, revenue, and customer data files. CSV and Excel formats supported.</p>
+                        <h2 class="card-title">Enhanced Data Input v2.0</h2>
+                        <p class="card-description">Upload your marketing, revenue, and customer data files. <strong>NEW:</strong> Enhanced creative tracking, attribution analysis, and competitive intelligence features.</p>
+                        
+                        <!-- NEW Features Alert -->
+                        <div style="background: linear-gradient(135deg, var(--primary-color), var(--accent-color)); color: white; border-radius: 12px; padding: 2rem; margin: 2rem 0;">
+                            <h4 style="margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
+                                🚀 NEW v2.0 Analytics Features 
+                                <span style="background: rgba(255,255,255,0.2); padding: 0.25rem 0.5rem; border-radius: 4px; font-size: 0.7rem;">ENHANCED</span>
+                            </h4>
+                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; font-size: 0.9rem;">
+                                <div>✨ Creative Performance Tracking</div>
+                                <div>🎯 Audience Saturation Detection</div>
+                                <div>⚠️ Real-Time Anomaly Alerts</div>
+                                <div>📊 5 Attribution Models</div>
+                                <div>🏆 Competitive Intelligence</div>
+                                <div>📈 6-Month Forecasting</div>
+                            </div>
+                        </div>
                         
                         <!-- Demo Data Button -->
                         <div style="background: var(--surface-alt); border: 1px solid var(--border); border-radius: 8px; padding: 1.5rem; margin: 2rem 0; text-align: center;">
                             <h4 style="margin-bottom: 1rem; color: var(--text-primary);">🚀 Quick Start</h4>
-                            <p style="margin-bottom: 1.5rem; color: var(--text-secondary);">Want to test the calculator? Use our sample marketing data with 18 months of multi-channel performance.</p>
+                            <p style="margin-bottom: 1.5rem; color: var(--text-secondary);">Want to test the calculator? Use our sample marketing data with 18 months of multi-channel performance <strong>+ new creative tracking data</strong>.</p>
                             <button class="btn btn-secondary" onclick="loadDemoData()" style="margin-right: 1rem;">Load Demo Data</button>
                             <button class="btn btn-primary" onclick="uploadOwnData()" style="">Upload Your Own Data</button>
                         </div>
@@ -1418,10 +1434,23 @@
                             <div class="file-upload" id="marketingUpload">
                                 <div class="file-upload-icon">📁</div>
                                 <div class="file-upload-text">Click or drag marketing spend data</div>
-                                <div class="file-upload-hint">CSV/Excel with columns: Date, Channel, Spend, Campaign (optional)</div>
+                                <div class="file-upload-hint">
+                                    <strong>Required:</strong> Date, Channel, Spend<br>
+                                    <strong>Enhanced (NEW):</strong> Campaign, Creative_ID, Ad_Set, Audience, Creative_Type
+                                </div>
                             </div>
                             <input type="file" id="marketingFile" accept=".csv,.xlsx,.xls" style="display: none;">
                             <div id="marketingPreview" style="margin-top: 1rem; display: none;"></div>
+                            
+                            <!-- Enhanced Data Benefits -->
+                            <div style="background: var(--surface); border: 1px solid var(--border); border-radius: 6px; padding: 1rem; margin-top: 1rem; font-size: 0.85rem;">
+                                <strong>📈 Enhanced Analytics Available:</strong>
+                                <ul style="margin: 0.5rem 0; padding-left: 1.5rem;">
+                                    <li><strong>Creative Performance:</strong> CTR, CVR, CPC by creative type</li>
+                                    <li><strong>Audience Analysis:</strong> Saturation detection and refresh alerts</li>
+                                    <li><strong>Attribution:</strong> 5 models with cross-channel journey mapping</li>
+                                </ul>
+                            </div>
                         </div>
                         
                         <div>
@@ -1429,10 +1458,23 @@
                             <div class="file-upload" id="revenueUpload">
                                 <div class="file-upload-icon">📁</div>
                                 <div class="file-upload-text">Click or drag revenue/customer data</div>
-                                <div class="file-upload-hint">CSV/Excel with columns: Date, Revenue, Customers, Channel (optional)</div>
+                                <div class="file-upload-hint">
+                                    <strong>Required:</strong> Date, Revenue, Customers<br>
+                                    <strong>Enhanced (NEW):</strong> Channel, Campaign, Customer_ID, Cohort, LTV
+                                </div>
                             </div>
                             <input type="file" id="revenueFile" accept=".csv,.xlsx,.xls" style="display: none;">
                             <div id="revenuePreview" style="margin-top: 1rem; display: none;"></div>
+                            
+                            <!-- Enhanced Data Benefits -->
+                            <div style="background: var(--surface); border: 1px solid var(--border); border-radius: 6px; padding: 1rem; margin-top: 1rem; font-size: 0.85rem;">
+                                <strong>🎯 Advanced Insights Available:</strong>
+                                <ul style="margin: 0.5rem 0; padding-left: 1.5rem;">
+                                    <li><strong>Cohort Analysis:</strong> Customer acquisition trends over time</li>
+                                    <li><strong>LTV:CAC Ratios:</strong> Customer profitability analysis</li>
+                                    <li><strong>Channel Attribution:</strong> Multi-touch customer journey mapping</li>
+                                </ul>
+                            </div>
                         </div>
                         
                         <div>
@@ -1481,15 +1523,29 @@
             <section class="section" data-section="analysis">
                 <div class="card" style="text-align: center;">
                     <div class="card-header">
-                        <h2 class="card-title">Running CAC Analysis</h2>
-                        <p class="card-description">Calculating all 5 methodologies and assessing data quality...</p>
+                        <h2 class="card-title">Running Enhanced CAC Analysis v2.0</h2>
+                        <p class="card-description">Calculating 5 methodologies + 7 advanced analytics engines...</p>
                     </div>
                     
                     <div style="margin: 3rem 0;">
                         <div class="loading" style="width: 50px; height: 50px; border-width: 5px; margin: 0 auto 2rem;"></div>
-                        <div id="analysisProgress">Initializing analysis...</div>
+                        <div id="analysisProgress">Initializing enhanced analysis...</div>
                         <div class="progress-bar" style="max-width: 400px; margin: 2rem auto;">
                             <div class="progress-fill" id="progressFill" style="width: 0%;"></div>
+                        </div>
+                        
+                        <!-- Analysis Steps Display -->
+                        <div style="margin-top: 2rem; text-align: left; max-width: 500px; margin-left: auto; margin-right: auto;">
+                            <div style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.8;">
+                                <div id="step1" style="opacity: 0.5;">✓ Standard CAC calculations (5 methodologies)</div>
+                                <div id="step2" style="opacity: 0.5;">⚡ Creative performance analysis</div>
+                                <div id="step3" style="opacity: 0.5;">🎯 Audience saturation detection</div>
+                                <div id="step4" style="opacity: 0.5;">⚠️ Anomaly detection engine</div>
+                                <div id="step5" style="opacity: 0.5;">📊 Advanced attribution modeling</div>
+                                <div id="step6" style="opacity: 0.5;">🏆 Competitive intelligence analysis</div>
+                                <div id="step7" style="opacity: 0.5;">📈 Forecasting with seasonality</div>
+                                <div id="step8" style="opacity: 0.5;">🚀 Optimization recommendations</div>
+                            </div>
                         </div>
                     </div>
                 </div>
