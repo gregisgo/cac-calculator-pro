@@ -1470,11 +1470,14 @@ function displaySimpleResults(results) {
         const channelCount = Object.keys(results.calculations.channelSpecific.channels || {}).length;
         const confidence = Math.round((results.metadata?.confidence || 0) * 10) / 10;
         
-        // Build the HTML step by step to avoid template string issues
-        let html = '<div class="card">';
+        // Executive Summary at the top
+        let html = generateExecutiveSummary(results);
+        
+        // Main analysis card
+        html += '<div class="card" style="margin-top: 2rem;">';
         html += '<div class="card-header">';
-        html += '<h2 class="card-title">🎉 CAC Analysis Complete!</h2>';
-        html += '<p class="card-description">Your customer acquisition cost analysis is ready with actionable insights.</p>';
+        html += '<h2 class="card-title">📊 Detailed CAC Analysis</h2>';
+        html += '<p class="card-description">Complete methodology breakdown and channel performance analysis.</p>';
         html += '</div>';
         
         // Main metrics grid
@@ -1577,6 +1580,191 @@ function displaySimpleResults(results) {
             </div>
         `;
     }
+}
+
+// EXECUTIVE SUMMARY GENERATOR
+function generateExecutiveSummary(results) {
+    const simpleCAC = Math.round(results.calculations.simpleBlended.value || 0);
+    const fullyLoadedCAC = Math.round(results.calculations.fullyLoaded.value || 0);
+    
+    // Calculate key executive metrics
+    const executiveMetrics = calculateExecutiveMetrics(results);
+    
+    let html = '';
+    
+    // Board-Ready Executive Summary
+    html += '<div style="background: linear-gradient(135deg, #6b5b95, #5a4a7c); color: white; padding: 3rem 2rem; border-radius: 12px; margin-bottom: 2rem;">';
+    html += '<div style="text-align: center; margin-bottom: 2rem;">';
+    html += '<h1 style="font-size: 2.5rem; margin-bottom: 0.5rem; font-weight: 700;">Executive Summary</h1>';
+    html += '<p style="font-size: 1.1rem; opacity: 0.9;">Board-ready CAC analysis with strategic recommendations</p>';
+    html += '</div>';
+    
+    // Key metrics row
+    html += '<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; margin-bottom: 2rem;">';
+    
+    // Primary CAC with benchmark
+    const benchmark = 150; // Industry benchmark
+    const performance = simpleCAC <= benchmark ? 'STRONG' : simpleCAC <= benchmark * 1.5 ? 'AVERAGE' : 'WEAK';
+    const perfColor = simpleCAC <= benchmark ? '#10b981' : simpleCAC <= benchmark * 1.5 ? '#f59e0b' : '#ef4444';
+    
+    html += '<div style="background: rgba(255, 255, 255, 0.1); padding: 2rem; border-radius: 12px; text-align: center; border: 2px solid rgba(255, 255, 255, 0.2);">';
+    html += '<div style="font-size: 3rem; font-weight: 700; margin-bottom: 0.5rem;">$' + simpleCAC + '</div>';
+    html += '<div style="font-size: 1.1rem; margin-bottom: 0.5rem;">Blended CAC</div>';
+    html += '<div style="background: ' + perfColor + '; color: white; padding: 0.25rem 1rem; border-radius: 20px; font-size: 0.8rem; font-weight: 600; display: inline-block;">' + performance + '</div>';
+    html += '</div>';
+    
+    // LTV:CAC Ratio
+    html += '<div style="background: rgba(255, 255, 255, 0.1); padding: 2rem; border-radius: 12px; text-align: center; border: 2px solid rgba(255, 255, 255, 0.2);">';
+    html += '<div style="font-size: 3rem; font-weight: 700; margin-bottom: 0.5rem;">' + executiveMetrics.ltvCacRatio + ':1</div>';
+    html += '<div style="font-size: 1.1rem; margin-bottom: 0.5rem;">LTV:CAC Ratio</div>';
+    html += '<div style="font-size: 0.9rem; opacity: 0.8;">' + executiveMetrics.ltvCacHealth + '</div>';
+    html += '</div>';
+    
+    // Payback Period
+    html += '<div style="background: rgba(255, 255, 255, 0.1); padding: 2rem; border-radius: 12px; text-align: center; border: 2px solid rgba(255, 255, 255, 0.2);">';
+    html += '<div style="font-size: 3rem; font-weight: 700; margin-bottom: 0.5rem;">' + executiveMetrics.paybackMonths + '</div>';
+    html += '<div style="font-size: 1.1rem; margin-bottom: 0.5rem;">Payback (Months)</div>';
+    html += '<div style="font-size: 0.9rem; opacity: 0.8;">' + executiveMetrics.paybackHealth + '</div>';
+    html += '</div>';
+    
+    // Growth Efficiency
+    html += '<div style="background: rgba(255, 255, 255, 0.1); padding: 2rem; border-radius: 12px; text-align: center; border: 2px solid rgba(255, 255, 255, 0.2);">';
+    html += '<div style="font-size: 3rem; font-weight: 700; margin-bottom: 0.5rem;">' + executiveMetrics.efficiencyScore + '</div>';
+    html += '<div style="font-size: 1.1rem; margin-bottom: 0.5rem;">Efficiency Score</div>';
+    html += '<div style="font-size: 0.9rem; opacity: 0.8;">Capital efficiency rating</div>';
+    html += '</div>';
+    
+    html += '</div>';
+    
+    // Strategic Insight
+    html += '<div style="background: rgba(255, 255, 255, 0.15); padding: 2rem; border-radius: 12px; border-left: 4px solid #10b981;">';
+    html += '<h3 style="margin-bottom: 1rem; font-size: 1.3rem;">🎯 Strategic Recommendation</h3>';
+    html += '<div style="font-size: 1.1rem; line-height: 1.6; margin-bottom: 1rem;">' + executiveMetrics.strategicRec + '</div>';
+    html += '<div style="font-size: 0.9rem; opacity: 0.9;"><strong>Next Board Meeting:</strong> ' + executiveMetrics.boardTalking + '</div>';
+    html += '</div>';
+    
+    // Export buttons for executives
+    html += '<div style="text-align: center; margin-top: 2rem;">';
+    html += '<button class="btn" onclick="exportBoardSlides()" style="background: white; color: #6b5b95; border: 2px solid white; margin-right: 1rem; font-weight: 600;">📊 Export Board Slides</button>';
+    html += '<button class="btn" onclick="exportExecutivePDF()" style="background: rgba(255,255,255,0.2); color: white; border: 2px solid rgba(255,255,255,0.3); font-weight: 600;">📄 Executive Summary PDF</button>';
+    html += '</div>';
+    
+    html += '</div>';
+    
+    return html;
+}
+
+function calculateExecutiveMetrics(results) {
+    const simpleCAC = results.calculations.simpleBlended.value || 0;
+    const businessModel = results.metadata?.businessModel || {};
+    const ltv = businessModel.ltValue || 1788; // Default from our SaaS model
+    
+    // LTV:CAC Ratio
+    const ltvCacRatio = Math.round((ltv / simpleCAC) * 10) / 10;
+    let ltvCacHealth = 'Excellent (>3:1)';
+    if (ltvCacRatio < 3) ltvCacHealth = 'Needs improvement (<3:1)';
+    else if (ltvCacRatio > 5) ltvCacHealth = 'Outstanding (>5:1)';
+    
+    // Payback Period (assuming monthly revenue)
+    const monthlyRevenue = businessModel.avgRevenue || 149;
+    const paybackMonths = Math.round(simpleCAC / monthlyRevenue);
+    let paybackHealth = 'Healthy (<12mo)';
+    if (paybackMonths > 12) paybackHealth = 'Too long (>12mo)';
+    else if (paybackMonths < 6) paybackHealth = 'Excellent (<6mo)';
+    
+    // Efficiency Score (0-100)
+    let efficiencyScore = 85;
+    if (ltvCacRatio < 3) efficiencyScore -= 20;
+    if (paybackMonths > 12) efficiencyScore -= 15;
+    if (simpleCAC > 200) efficiencyScore -= 10;
+    efficiencyScore = Math.max(Math.min(efficiencyScore, 100), 0);
+    
+    // Strategic Recommendation
+    let strategicRec = '';
+    let boardTalking = '';
+    
+    if (ltvCacRatio > 4 && paybackMonths < 8) {
+        strategicRec = 'SCALE AGGRESSIVELY. Your unit economics are strong enough to support rapid growth. Consider increasing marketing budget by 50-75%.';
+        boardTalking = '"Our CAC efficiency supports aggressive scaling. I recommend doubling down on growth."';
+    } else if (ltvCacRatio < 3 || paybackMonths > 15) {
+        strategicRec = 'OPTIMIZE BEFORE SCALING. Focus on improving conversion rates and reducing acquisition costs before increasing spend.';
+        boardTalking = '"We need to improve unit economics before scaling. Focus on efficiency over growth for next 2 quarters."';
+    } else {
+        strategicRec = 'BALANCED GROWTH. Maintain current acquisition levels while testing optimization opportunities.';
+        boardTalking = '"Our unit economics support steady growth with selective optimization opportunities."';
+    }
+    
+    return {
+        ltvCacRatio,
+        ltvCacHealth,
+        paybackMonths,
+        paybackHealth,
+        efficiencyScore,
+        strategicRec,
+        boardTalking
+    };
+}
+
+function exportBoardSlides() {
+    if (!window.fullResults) {
+        showNotification('No analysis data available', 'error');
+        return;
+    }
+    
+    const executiveMetrics = calculateExecutiveMetrics(window.fullResults);
+    const simpleCAC = Math.round(window.fullResults.calculations.simpleBlended.value || 0);
+    
+    // Generate PowerPoint-style content
+    let slideContent = `BOARD PRESENTATION - CAC ANALYSIS
+    
+==== SLIDE 1: EXECUTIVE SUMMARY ====
+• Blended CAC: $${simpleCAC}
+• LTV:CAC Ratio: ${executiveMetrics.ltvCacRatio}:1
+• Payback Period: ${executiveMetrics.paybackMonths} months
+• Efficiency Score: ${executiveMetrics.efficiencyScore}/100
+
+==== SLIDE 2: STRATEGIC RECOMMENDATION ====
+${executiveMetrics.strategicRec}
+
+Next Steps:
+- Review channel allocation priorities
+- Set growth vs efficiency targets for next quarter
+- Establish CAC monitoring and alerting
+
+==== SLIDE 3: CHANNEL PERFORMANCE ====`;
+
+    Object.entries(window.fullResults.calculations.channelSpecific.channels).forEach(([channel, data]) => {
+        slideContent += `\n• ${channel}: $${Math.round(data.value)} CAC (${data.customers} customers)`;
+    });
+
+    slideContent += `
+
+==== TALKING POINTS ====
+${executiveMetrics.boardTalking}
+
+Key Questions to Address:
+- Are we growing efficiently or just growing?
+- Where should we allocate the next $100K in marketing spend?
+- What's our competitive position on acquisition costs?
+
+Generated by CAC Calculator Pro | Greg Breeden Consulting`;
+
+    // Download as text file for easy copy-paste into slides
+    const blob = new Blob([slideContent], { type: 'text/plain' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'Board_Presentation_CAC_Analysis.txt';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+    
+    showNotification('Board slides exported! Copy content into your PowerPoint 📊', 'success');
+}
+
+function exportExecutivePDF() {
+    showNotification('Executive PDF export coming in next version! Use board slides for now. 📄', 'info');
 }
 
 // Missing button functions
