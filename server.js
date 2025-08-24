@@ -516,6 +516,65 @@ function calculateOverallConfidence(results, dataQuality) {
   return Math.round((avgConfidence * dataQualityFactor) * 100) / 100;
 }
 
+function calculateBudgetReallocation(marketingData, revenueData, channelResults) {
+  try {
+    const reallocation = {
+      scenarios: [],
+      recommendations: [],
+      currentAllocation: {},
+      optimizedAllocation: {}
+    };
+
+    // Calculate current allocation
+    const totalSpend = marketingData.reduce((sum, row) => sum + parseFloat(row.spend || 0), 0);
+    
+    marketingData.forEach(row => {
+      const channel = row.channel || 'Unknown';
+      reallocation.currentAllocation[channel] = (reallocation.currentAllocation[channel] || 0) + parseFloat(row.spend || 0);
+    });
+
+    // Convert to percentages
+    Object.keys(reallocation.currentAllocation).forEach(channel => {
+      reallocation.currentAllocation[channel] = Math.round((reallocation.currentAllocation[channel] / totalSpend) * 100);
+    });
+
+    // Simple optimization recommendation
+    if (channelResults && channelResults.channels) {
+      const channels = Object.entries(channelResults.channels)
+        .map(([name, data]) => ({
+          channel: name,
+          cac: data.value || 0,
+          efficiency: data.customers ? (data.customers / (data.spend / 1000)) : 0
+        }))
+        .sort((a, b) => a.cac - b.cac);
+
+      if (channels.length > 1) {
+        const bestChannel = channels[0];
+        const worstChannel = channels[channels.length - 1];
+        
+        reallocation.recommendations.push({
+          type: 'reallocation',
+          title: 'Budget Optimization Opportunity',
+          description: `Consider shifting 10-20% budget from ${worstChannel.channel} (CAC: $${worstChannel.cac}) to ${bestChannel.channel} (CAC: $${bestChannel.cac})`,
+          expectedImpact: 'Potential 15-25% improvement in overall CAC',
+          risk: 'Low'
+        });
+      }
+    }
+
+    return reallocation;
+  } catch (error) {
+    console.error('Budget reallocation error:', error);
+    return {
+      scenarios: [],
+      recommendations: [],
+      currentAllocation: {},
+      optimizedAllocation: {},
+      error: 'Budget calculation failed'
+    };
+  }
+}
+
 // Comprehensive Report Data Generation
 app.post('/api/generate-report-data', (req, res) => {
   try {
