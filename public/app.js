@@ -1423,6 +1423,52 @@ function clearData(type) {
     showNotification(`${type.charAt(0).toUpperCase() + type.slice(1)} data cleared`, 'info');
 }
 
+// AUTOFILL FUNCTIONS FOR TESTING
+function autofillProjectSetup() {
+    document.getElementById('projectName').value = 'ACME SaaS Marketing Analysis';
+    document.getElementById('startDate').value = '2023-01-01';
+    document.getElementById('endDate').value = '2024-06-30';
+    document.getElementById('consultantName').value = 'Greg Breeden - Fractional CMO';
+    document.getElementById('analysisPurpose').value = 'audit';
+    
+    showNotification('Project setup auto-filled! ⚡', 'success');
+}
+
+function autofillBusinessModel() {
+    // Fill business model type
+    document.getElementById('businessType').value = 'saas_subscription';
+    
+    // Trigger the change event to show SaaS fields
+    document.getElementById('businessType').dispatchEvent(new Event('change'));
+    
+    // Wait a moment for the DOM to update, then fill SaaS fields
+    setTimeout(() => {
+        const avgRevenueField = document.getElementById('avgRevenue');
+        const ltValueField = document.getElementById('ltValue');
+        const churnRateField = document.getElementById('churnRate');
+        const avgLifetimeField = document.getElementById('avgLifetime');
+        
+        if (avgRevenueField) avgRevenueField.value = '149';
+        if (ltValueField) ltValueField.value = '1788';
+        if (churnRateField) churnRateField.value = '3.5';
+        if (avgLifetimeField) avgLifetimeField.value = '24';
+    }, 100);
+    
+    showNotification('Business model auto-filled for SaaS! ⚡', 'success');
+}
+
+function autofillDataInput() {
+    // Fill additional costs
+    document.getElementById('teamCosts').value = '15000';
+    document.getElementById('toolCosts').value = '3500';
+    document.getElementById('overheadCosts').value = '2000';
+    
+    // Auto-load demo data
+    loadDemoData();
+    
+    showNotification('Data input auto-filled with demo data! ⚡', 'success');
+}
+
 // Full Results Display Function
 function displayFullResults() {
     if (!window.fullResults) {

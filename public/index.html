@@ -1233,7 +1233,10 @@
                         </div>
                     </div>
                     
-                    <div style="margin-top: 2rem; text-align: right;">
+                    <div style="margin-top: 2rem; display: flex; justify-content: space-between; align-items: center; gap: 1rem;">
+                        <button class="btn btn-secondary" onclick="autofillProjectSetup()" style="background: var(--warning-color); border-color: var(--warning-color);">
+                            ⚡ Auto-fill for Testing
+                        </button>
                         <button class="btn btn-primary btn-lg" onclick="nextStep('business')">
                             Next: Configure Business Model →
                         </button>
@@ -1379,9 +1382,12 @@
                         </div>
                     </div>
                     
-                    <div style="margin-top: 2rem; display: flex; justify-content: space-between;">
+                    <div style="margin-top: 2rem; display: flex; justify-content: space-between; align-items: center;">
                         <button class="btn btn-secondary" onclick="prevStep('setup')">
                             ← Back
+                        </button>
+                        <button class="btn btn-secondary" onclick="autofillBusinessModel()" style="background: var(--warning-color); border-color: var(--warning-color);">
+                            ⚡ Auto-fill for Testing
                         </button>
                         <button class="btn btn-primary btn-lg" onclick="nextStep('data')">
                             Next: Upload Data →
@@ -1457,9 +1463,12 @@
                         </div>
                     </div>
                     
-                    <div style="margin-top: 2rem; display: flex; justify-content: space-between;">
+                    <div style="margin-top: 2rem; display: flex; justify-content: space-between; align-items: center;">
                         <button class="btn btn-secondary" onclick="prevStep('business')">
                             ← Back
+                        </button>
+                        <button class="btn btn-secondary" onclick="autofillDataInput()" style="background: var(--warning-color); border-color: var(--warning-color);">
+                            ⚡ Auto-fill for Testing
                         </button>
                         <button class="btn btn-primary btn-lg" id="analyzeBtn" onclick="runAnalysis()" disabled>
                             Run CAC Analysis →
