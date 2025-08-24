@@ -334,77 +334,7 @@ async function runAnalysis() {
         
         setTimeout(() => {
             showStep('results');
-            
-            // Simple test first
-            const resultsContainer = document.getElementById('resultsContent');
-            console.log('About to display results:', results);
-            console.log('Container found:', !!resultsContainer);
-            
-            if (!resultsContainer) {
-                console.error('No results container found!');
-                return;
-            }
-            
-            // Try simple HTML first with error handling
-            try {
-                console.log('Rendering simple results...', results.calculations);
-                
-                resultsContainer.innerHTML = `
-                    <div class="card">
-                        <div class="card-header">
-                            <h2 class="card-title">🎉 Analysis Complete!</h2>
-                            <p class="card-description">Your CAC analysis has been completed successfully.</p>
-                        </div>
-                        <div style="padding: 2rem; text-align: center;">
-                            <h3>Simple Blended CAC: $${results.calculations?.simpleBlended?.value || 'N/A'}</h3>
-                            <p style="margin-top: 1rem; color: var(--text-secondary);">Analysis includes 5 methodologies and budget optimization scenarios.</p>
-                            <button class="btn btn-primary" onclick="displayFullResults()" style="margin-top: 2rem;">
-                                📊 Show Full Analysis & Budget Scenarios
-                            </button>
-                            
-                            <!-- Quick Stats -->
-                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; margin-top: 2rem;">
-                                <div style="background: var(--surface); padding: 1rem; border-radius: 8px;">
-                                    <div style="font-size: 1.2rem; font-weight: 600; color: var(--primary-color);">$${results.calculations?.fullyLoaded?.value || 'N/A'}</div>
-                                    <div style="font-size: 0.8rem; color: var(--text-secondary);">Fully-Loaded CAC</div>
-                                </div>
-                                <div style="background: var(--surface); padding: 1rem; border-radius: 8px;">
-                                    <div style="font-size: 1.2rem; font-weight: 600; color: var(--accent-color);">${Object.keys(results.calculations?.channelSpecific?.channels || {}).length}</div>
-                                    <div style="font-size: 0.8rem; color: var(--text-secondary);">Channels Analyzed</div>
-                                </div>
-                                <div style="background: var(--surface); padding: 1rem; border-radius: 8px;">
-                                    <div style="font-size: 1.2rem; font-weight: 600; color: var(--warning-color);">${Math.round(results.metadata?.confidence * 10 || 0)}/10</div>
-                                    <div style="font-size: 0.8rem; color: var(--text-secondary);">Data Confidence</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                `;
-                
-                console.log('Simple results rendered successfully');
-                
-            } catch (renderError) {
-                console.error('Error rendering simple results:', renderError);
-                resultsContainer.innerHTML = `
-                    <div class="card">
-                        <div class="card-header">
-                            <h2 class="card-title">⚠️ Partial Results</h2>
-                        </div>
-                        <div style="padding: 2rem;">
-                            <p>Analysis completed but display encountered an error:</p>
-                            <div style="background: var(--surface); padding: 1rem; border-radius: 8px; margin: 1rem 0; font-family: monospace; font-size: 0.9rem;">
-                                ${renderError.message}
-                            </div>
-                            <button class="btn btn-primary" onclick="console.log('Full results:', window.fullResults)">
-                                🔍 Log Full Results to Console
-                            </button>
-                        </div>
-                    </div>
-                `;
-            }
-            
-            // Store results globally for the detailed view
-            window.fullResults = results;
+            displaySimpleResults(results);
         }, 1000);
         
     } catch (error) {
@@ -1526,6 +1456,59 @@ function autofillDataInput() {
     loadDemoData();
     
     showNotification('Data input auto-filled with demo data! ⚡', 'success');
+}
+
+// Simple working results display
+function displaySimpleResults(results) {
+    const resultsContainer = document.getElementById('resultsContent');
+    if (!resultsContainer) return;
+    
+    // Store results globally
+    window.fullResults = results;
+    
+    const simpleCAC = results.calculations.simpleBlended.value || 0;
+    const fullyLoadedCAC = results.calculations.fullyLoaded.value || 0;
+    const channelCount = Object.keys(results.calculations.channelSpecific.channels || {}).length;
+    
+    resultsContainer.innerHTML = `
+        <div class="card">
+            <div class="card-header">
+                <h2 class="card-title">🎉 CAC Analysis Complete!</h2>
+                <p class="card-description">Your customer acquisition cost analysis is ready with actionable insights.</p>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; margin: 2rem 0;">
+                <div style="background: var(--surface); padding: 2rem; border-radius: 12px; text-align: center; border-left: 4px solid var(--primary-color);">
+                    <div style="font-size: 2.5rem; font-weight: 700; color: var(--primary-color); margin-bottom: 0.5rem;">$${simpleCAC}</div>
+                    <div style="font-size: 1.1rem; font-weight: 600; margin-bottom: 0.5rem;">Simple Blended CAC</div>
+                    <div style="font-size: 0.9rem; color: var(--text-secondary);">Most commonly used metric</div>
+                </div>
+                
+                <div style="background: var(--surface); padding: 2rem; border-radius: 12px; text-align: center; border-left: 4px solid var(--accent-color);">
+                    <div style="font-size: 2.5rem; font-weight: 700; color: var(--accent-color); margin-bottom: 0.5rem;">$${fullyLoadedCAC}</div>
+                    <div style="font-size: 1.1rem; font-weight: 600; margin-bottom: 0.5rem;">Fully-Loaded CAC</div>
+                    <div style="font-size: 0.9rem; color: var(--text-secondary);">Includes all overhead costs</div>
+                </div>
+                
+                <div style="background: var(--surface); padding: 2rem; border-radius: 12px; text-align: center; border-left: 4px solid var(--warning-color);">
+                    <div style="font-size: 2.5rem; font-weight: 700; color: var(--warning-color); margin-bottom: 0.5rem;">${channelCount}</div>
+                    <div style="font-size: 1.1rem; font-weight: 600; margin-bottom: 0.5rem;">Channels Analyzed</div>
+                    <div style="font-size: 0.9rem; color: var(--text-secondary);">Marketing channels evaluated</div>
+                </div>
+            </div>
+            
+            ${results.budgetOptimization ? generateBudgetOptimizationSection(results.budgetOptimization) : ''}
+            
+            <div style="text-align: center; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border);">
+                <button class="btn btn-primary" onclick="showDetailedReport()" style="margin-right: 1rem;">
+                    📊 View Detailed Analysis
+                </button>
+                <button class="btn btn-secondary" onclick="exportToExcel()">
+                    📄 Export Report
+                </button>
+            </div>
+        </div>
+    `;
 }
 
 // Full Results Display Function
