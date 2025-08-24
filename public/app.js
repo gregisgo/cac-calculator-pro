@@ -1531,6 +1531,11 @@ function displaySimpleResults(results) {
             
             html += '</div></div>';
         }
+
+        // DEEP PERFORMANCE ANALYSIS - NEW COMPREHENSIVE SECTION
+        if (results.performanceAnalysis) {
+            html += generateDeepAnalysisSection(results.performanceAnalysis);
+        }
         
         // Recommendations
         if (results.recommendations && results.recommendations.length > 0) {
@@ -2960,4 +2965,268 @@ function handleDataQualityFix(issue) {
         // Refresh the data quality dashboard
         initializeDataQualityDashboard();
     }, 1500);
+}
+
+// DEEP PERFORMANCE ANALYSIS FRONTEND INTEGRATION
+function generateDeepAnalysisSection(performanceAnalysis) {
+    let html = '<div class="deep-analysis-container" style="margin: 3rem 0;">';
+    html += '<div class="card">';
+    html += '<div class="card-header">';
+    html += '<h2 class="card-title">🔍 Deep Performance Analysis</h2>';
+    html += '<p class="card-description">Comprehensive, granular analysis of your marketing performance with actionable insights.</p>';
+    html += '</div>';
+    
+    // Temporal Performance Analysis
+    if (performanceAnalysis.temporal) {
+        html += generateTemporalAnalysisHTML(performanceAnalysis.temporal);
+    }
+    
+    // Channel Efficiency Deep Dive
+    if (performanceAnalysis.channelEfficiency) {
+        html += generateChannelEfficiencyHTML(performanceAnalysis.channelEfficiency);
+    }
+    
+    // Campaign Performance Breakdown
+    if (performanceAnalysis.campaignPerformance) {
+        html += generateCampaignAnalysisHTML(performanceAnalysis.campaignPerformance);
+    }
+    
+    // Funnel Analysis
+    if (performanceAnalysis.funnelAnalysis) {
+        html += generateFunnelAnalysisHTML(performanceAnalysis.funnelAnalysis);
+    }
+    
+    // Cohort Analysis
+    if (performanceAnalysis.cohortAnalysis) {
+        html += generateCohortAnalysisHTML(performanceAnalysis.cohortAnalysis);
+    }
+    
+    // Optimization Opportunities
+    if (performanceAnalysis.optimizationOpportunities) {
+        html += generateOptimizationHTML(performanceAnalysis.optimizationOpportunities);
+    }
+    
+    // Predictive Insights
+    if (performanceAnalysis.predictiveModeling) {
+        html += generatePredictiveHTML(performanceAnalysis.predictiveModeling);
+    }
+    
+    html += '</div></div>';
+    return html;
+}
+
+function generateTemporalAnalysisHTML(temporal) {
+    let html = '<div class="analysis-section" style="margin: 2rem 0; padding: 1.5rem; background: var(--surface); border-radius: 12px;">';
+    html += '<h3 style="margin-bottom: 1rem; color: var(--primary-color);">📈 Temporal Performance Trends</h3>';
+    
+    if (temporal.trends && temporal.trends.monthly) {
+        html += '<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin-bottom: 1.5rem;">';
+        
+        temporal.trends.monthly.slice(-6).forEach(month => {
+            html += '<div style="background: white; padding: 1rem; border-radius: 8px; border: 1px solid var(--border);">';
+            html += '<div style="font-weight: 600; margin-bottom: 0.5rem;">' + month.month + '</div>';
+            html += '<div style="display: flex; justify-content: between; align-items: center;">';
+            html += '<div style="flex: 1;">';
+            html += '<div style="font-size: 1.2rem; font-weight: 700; color: var(--primary-color);">$' + month.cac + '</div>';
+            html += '<div style="font-size: 0.8rem; color: var(--text-secondary);">CAC</div>';
+            html += '</div>';
+            html += '<div style="flex: 1; text-align: right;">';
+            html += '<div style="font-size: 1.2rem; font-weight: 700; color: var(--accent-color);">' + month.roas + 'x</div>';
+            html += '<div style="font-size: 0.8rem; color: var(--text-secondary);">ROAS</div>';
+            html += '</div>';
+            html += '</div>';
+            html += '<div style="margin-top: 0.5rem; font-size: 0.9rem; color: var(--text-secondary);">';
+            html += month.customers + ' customers from $' + month.spend.toLocaleString();
+            html += '</div>';
+            html += '</div>';
+        });
+        
+        html += '</div>';
+    }
+    
+    // Display insights
+    if (temporal.insights && temporal.insights.length > 0) {
+        html += '<div style="margin-top: 1rem;">';
+        temporal.insights.forEach(insight => {
+            const iconMap = { warning: '⚠️', alert: '🚨', positive: '✅' };
+            html += '<div style="background: #fef3cd; border: 1px solid #fde68a; border-radius: 8px; padding: 1rem; margin-bottom: 0.5rem;">';
+            html += '<div style="font-weight: 600; margin-bottom: 0.5rem;">' + (iconMap[insight.type] || '💡') + ' ' + insight.title + '</div>';
+            html += '<p style="margin-bottom: 0.5rem; color: #7c2d12;">' + insight.description + '</p>';
+            html += '<div style="font-size: 0.9rem; color: #92400e;"><strong>Recommendation:</strong> ' + insight.recommendation + '</div>';
+            html += '</div>';
+        });
+        html += '</div>';
+    }
+    
+    html += '</div>';
+    return html;
+}
+
+function generateChannelEfficiencyHTML(channelEfficiency) {
+    let html = '<div class="analysis-section" style="margin: 2rem 0; padding: 1.5rem; background: var(--surface); border-radius: 12px;">';
+    html += '<h3 style="margin-bottom: 1rem; color: var(--primary-color);">🎯 Channel Efficiency Deep Dive</h3>';
+    
+    if (channelEfficiency.ranking && channelEfficiency.ranking.length > 0) {
+        html += '<div style="overflow-x: auto;">';
+        html += '<table style="width: 100%; border-collapse: collapse; margin-bottom: 1.5rem;">';
+        html += '<thead><tr style="background: #f8fafc; border-bottom: 2px solid var(--border);">';
+        html += '<th style="text-align: left; padding: 0.75rem; font-weight: 600;">Channel</th>';
+        html += '<th style="text-align: right; padding: 0.75rem; font-weight: 600;">CAC</th>';
+        html += '<th style="text-align: right; padding: 0.75rem; font-weight: 600;">ROAS</th>';
+        html += '<th style="text-align: right; padding: 0.75rem; font-weight: 600;">Volume</th>';
+        html += '<th style="text-align: right; padding: 0.75rem; font-weight: 600;">Efficiency</th>';
+        html += '</tr></thead><tbody>';
+        
+        channelEfficiency.ranking.forEach((channel, index) => {
+            const rowClass = index === 0 ? 'style="background: #f0fdf4;"' : index === channelEfficiency.ranking.length - 1 ? 'style="background: #fef2f2;"' : '';
+            html += '<tr ' + rowClass + ' style="border-bottom: 1px solid var(--border);">';
+            html += '<td style="padding: 0.75rem; font-weight: 600;">' + channel.channel + '</td>';
+            html += '<td style="padding: 0.75rem; text-align: right;">$' + channel.cac + '</td>';
+            html += '<td style="padding: 0.75rem; text-align: right;">' + channel.roas + 'x</td>';
+            html += '<td style="padding: 0.75rem; text-align: right;">' + channel.volume + '</td>';
+            html += '<td style="padding: 0.75rem; text-align: right; font-weight: 700; color: var(--primary-color);">' + channel.efficiency + '</td>';
+            html += '</tr>';
+        });
+        
+        html += '</tbody></table></div>';
+    }
+    
+    // Channel insights
+    if (channelEfficiency.insights && channelEfficiency.insights.length > 0) {
+        html += '<div style="margin-top: 1rem;">';
+        html += '<h4 style="margin-bottom: 1rem;">🔍 Channel Insights</h4>';
+        channelEfficiency.insights.forEach(insight => {
+            const iconMap = { opportunity: '🚀', warning: '⚠️' };
+            html += '<div style="background: #f0f9ff; border: 1px solid #bae6fd; border-radius: 8px; padding: 1rem; margin-bottom: 0.5rem;">';
+            html += '<div style="font-weight: 600; margin-bottom: 0.5rem;">' + (iconMap[insight.type] || '💡') + ' ' + insight.title + '</div>';
+            html += '<p style="margin-bottom: 0.5rem; color: #0c4a6e;">' + insight.description + '</p>';
+            html += '<div style="font-size: 0.9rem; color: #0369a1;"><strong>Recommendation:</strong> ' + insight.recommendation + '</div>';
+            html += '</div>';
+        });
+        html += '</div>';
+    }
+    
+    html += '</div>';
+    return html;
+}
+
+function generateOptimizationHTML(opportunities) {
+    let html = '<div class="analysis-section" style="margin: 2rem 0; padding: 1.5rem; background: var(--surface); border-radius: 12px;">';
+    html += '<h3 style="margin-bottom: 1rem; color: var(--primary-color);">🚀 Optimization Opportunities</h3>';
+    
+    // Immediate opportunities
+    if (opportunities.immediate && opportunities.immediate.length > 0) {
+        html += '<div style="margin-bottom: 1.5rem;">';
+        html += '<h4 style="color: #dc2626; margin-bottom: 1rem;">🔥 Immediate Actions (High Impact)</h4>';
+        opportunities.immediate.forEach(opp => {
+            html += '<div style="background: #fef2f2; border: 1px solid #fecaca; border-radius: 8px; padding: 1rem; margin-bottom: 1rem;">';
+            html += '<div style="font-weight: 600; color: #dc2626; margin-bottom: 0.5rem;">' + opp.title + '</div>';
+            html += '<p style="margin-bottom: 0.5rem; color: #7f1d1d;">' + opp.description + '</p>';
+            html += '<div style="font-size: 0.9rem; margin-bottom: 0.5rem; color: #991b1b;"><strong>Action:</strong> ' + opp.action + '</div>';
+            html += '<div style="font-size: 0.9rem; font-weight: 600; color: #16a34a;"><strong>Expected Impact:</strong> ' + opp.expectedImpact + '</div>';
+            html += '</div>';
+        });
+        html += '</div>';
+    }
+    
+    // Strategic opportunities
+    if (opportunities.strategic && opportunities.strategic.length > 0) {
+        html += '<div style="margin-bottom: 1.5rem;">';
+        html += '<h4 style="color: #d97706; margin-bottom: 1rem;">📈 Strategic Improvements</h4>';
+        opportunities.strategic.forEach(opp => {
+            html += '<div style="background: #fffbeb; border: 1px solid #fed7aa; border-radius: 8px; padding: 1rem; margin-bottom: 1rem;">';
+            html += '<div style="font-weight: 600; color: #d97706; margin-bottom: 0.5rem;">' + opp.title + '</div>';
+            html += '<p style="margin-bottom: 0.5rem; color: #92400e;">' + opp.description + '</p>';
+            html += '<div style="font-size: 0.9rem; margin-bottom: 0.5rem; color: #a16207;"><strong>Action:</strong> ' + opp.action + '</div>';
+            html += '<div style="font-size: 0.9rem; font-weight: 600; color: #16a34a;"><strong>Expected Impact:</strong> ' + opp.expectedImpact + '</div>';
+            html += '</div>';
+        });
+        html += '</div>';
+    }
+    
+    html += '</div>';
+    return html;
+}
+
+// Simplified versions for other analysis components
+function generateCampaignAnalysisHTML(campaignPerformance) {
+    let html = '<div class="analysis-section" style="margin: 2rem 0; padding: 1.5rem; background: var(--surface); border-radius: 12px;">';
+    html += '<h3 style="margin-bottom: 1rem; color: var(--primary-color);">🎪 Campaign Performance Analysis</h3>';
+    
+    if (campaignPerformance.topPerformers && campaignPerformance.topPerformers.length > 0) {
+        html += '<div style="margin-bottom: 1.5rem;">';
+        html += '<h4 style="color: #16a34a; margin-bottom: 1rem;">🏆 Top Performing Campaigns</h4>';
+        
+        campaignPerformance.topPerformers.slice(0, 3).forEach(campaign => {
+            html += '<div style="background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 8px; padding: 1rem; margin-bottom: 0.5rem;">';
+            html += '<div style="font-weight: 600; margin-bottom: 0.5rem;">' + campaign.campaign + ' (' + campaign.channel + ')</div>';
+            html += '<div style="display: flex; justify-content: space-between;">';
+            html += '<span>CAC: <strong>$' + campaign.cac + '</strong></span>';
+            html += '<span>ROAS: <strong>' + campaign.roas.toFixed(2) + 'x</strong></span>';
+            html += '<span>Customers: <strong>' + campaign.customers + '</strong></span>';
+            html += '</div>';
+            html += '</div>';
+        });
+        
+        html += '</div>';
+    }
+    
+    html += '</div>';
+    return html;
+}
+
+function generateFunnelAnalysisHTML(funnelAnalysis) {
+    if (!funnelAnalysis || !funnelAnalysis.stages) return '';
+    
+    let html = '<div class="analysis-section" style="margin: 2rem 0; padding: 1.5rem; background: var(--surface); border-radius: 12px;">';
+    html += '<h3 style="margin-bottom: 1rem; color: var(--primary-color);">🔄 Conversion Funnel Analysis</h3>';
+    
+    const stages = funnelAnalysis.stages;
+    html += '<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem;">';
+    
+    if (stages.impressions) {
+        html += '<div style="background: white; border: 1px solid var(--border); border-radius: 8px; padding: 1rem; text-align: center;">';
+        html += '<div style="font-size: 1.5rem; font-weight: 700; color: var(--primary-color);">' + stages.impressions.toLocaleString() + '</div>';
+        html += '<div style="font-size: 0.9rem; color: var(--text-secondary);">Impressions</div>';
+        html += '</div>';
+    }
+    
+    if (stages.customers) {
+        html += '<div style="background: white; border: 1px solid var(--border); border-radius: 8px; padding: 1rem; text-align: center;">';
+        html += '<div style="font-size: 1.5rem; font-weight: 700; color: var(--accent-color);">' + stages.customers.toLocaleString() + '</div>';
+        html += '<div style="font-size: 0.9rem; color: var(--text-secondary);">Customers</div>';
+        html += '</div>';
+    }
+    
+    html += '</div></div>';
+    return html;
+}
+
+function generateCohortAnalysisHTML(cohortAnalysis) {
+    if (!cohortAnalysis || !cohortAnalysis.analysis) return '';
+    
+    let html = '<div class="analysis-section" style="margin: 2rem 0; padding: 1.5rem; background: var(--surface); border-radius: 12px;">';
+    html += '<h3 style="margin-bottom: 1rem; color: var(--primary-color);">👥 Cohort Performance</h3>';
+    html += '<p style="color: var(--text-secondary);">Customer acquisition trends by month showing retention and value patterns.</p>';
+    html += '</div>';
+    return html;
+}
+
+function generatePredictiveHTML(predictiveModeling) {
+    if (!predictiveModeling || !predictiveModeling.trends) return '';
+    
+    let html = '<div class="analysis-section" style="margin: 2rem 0; padding: 1.5rem; background: var(--surface); border-radius: 12px;">';
+    html += '<h3 style="margin-bottom: 1rem; color: var(--primary-color);">🔮 Predictive Insights</h3>';
+    
+    const trends = predictiveModeling.trends;
+    if (trends.cac) {
+        const color = trends.cac.direction === 'increasing' ? '#dc2626' : '#16a34a';
+        html += '<div style="background: white; border: 1px solid var(--border); border-radius: 8px; padding: 1rem; margin-bottom: 1rem;">';
+        html += '<div style="font-weight: 600; color: ' + color + ';">CAC Trend: ' + trends.cac.direction.toUpperCase() + '</div>';
+        html += '<div style="font-size: 0.9rem; color: var(--text-secondary);">Confidence: ' + Math.round(trends.cac.confidence * 100) + '%</div>';
+        html += '</div>';
+    }
+    
+    html += '</div>';
+    return html;
 }

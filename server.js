@@ -151,14 +151,18 @@ app.post('/api/analyze-cac', (req, res) => {
     // Generate recommendations
     const recommendations = generateRecommendations(results, businessModel, dataQuality);
 
-    // Calculate budget reallocation scenarios (HIGH IMPACT FEATURE)
+    // DEEP PERFORMANCE ANALYTICS - Granular Insights
+    const performanceAnalysis = generateDeepPerformanceAnalysis(marketingData, revenueData, results, businessModel, additionalCosts);
+    
+    // Calculate budget reallocation scenarios
     const budgetOptimization = calculateBudgetReallocation(marketingData, revenueData, results.channelSpecific);
 
     res.json({
       calculations: results,
       dataQuality,
       recommendations,
-      budgetOptimization, // New actionable feature
+      budgetOptimization,
+      performanceAnalysis, // NEW: Deep granular analytics
       metadata: {
         analysisDate: new Date().toISOString(),
         businessModel,
@@ -695,6 +699,764 @@ function generateChannelAnalysis(marketingData, revenueData) {
   return channelMetrics;
 }
 
+// Deep Performance Analytics Engine
+function generateDeepPerformanceAnalysis(marketingData, revenueData, businessModel) {
+  const analysis = {
+    temporal: analyzeTemporalPerformance(marketingData, revenueData),
+    channelEfficiency: analyzeChannelEfficiency(marketingData, revenueData),
+    campaignPerformance: analyzeCampaignPerformance(marketingData, revenueData),
+    funnelAnalysis: analyzeFunnelPerformance(marketingData, revenueData),
+    cohortAnalysis: analyzeCohortPerformance(marketingData, revenueData),
+    optimizationOpportunities: identifyOptimizationOpportunities(marketingData, revenueData),
+    predictiveModeling: generatePredictiveInsights(marketingData, revenueData),
+    contextualInsights: generateContextualInsights(marketingData, revenueData, businessModel)
+  };
+  
+  return analysis;
+}
+
+function analyzeTemporalPerformance(marketingData, revenueData) {
+  const temporal = {
+    trends: {},
+    seasonality: {},
+    volatility: {},
+    growth: {},
+    insights: []
+  };
+  
+  // Group data by month and channel
+  const monthlyData = {};
+  
+  marketingData.forEach(row => {
+    const date = moment(row.date);
+    const month = date.format('YYYY-MM');
+    const channel = row.channel || 'Unknown';
+    
+    if (!monthlyData[month]) {
+      monthlyData[month] = { spend: 0, channels: {}, campaigns: new Set(), date: date };
+    }
+    
+    monthlyData[month].spend += parseFloat(row.spend || 0);
+    
+    if (!monthlyData[month].channels[channel]) {
+      monthlyData[month].channels[channel] = { spend: 0, campaigns: new Set() };
+    }
+    
+    monthlyData[month].channels[channel].spend += parseFloat(row.spend || 0);
+    if (row.campaign) {
+      monthlyData[month].channels[channel].campaigns.add(row.campaign);
+      monthlyData[month].campaigns.add(row.campaign);
+    }
+  });
+  
+  // Add revenue and customer data
+  revenueData.forEach(row => {
+    const date = moment(row.date);
+    const month = date.format('YYYY-MM');
+    const channel = row.channel || 'Unknown';
+    
+    if (monthlyData[month]) {
+      monthlyData[month].revenue = (monthlyData[month].revenue || 0) + parseFloat(row.revenue || 0);
+      monthlyData[month].customers = (monthlyData[month].customers || 0) + parseInt(row.customers || row.new_customers || 0);
+      
+      if (monthlyData[month].channels[channel]) {
+        monthlyData[month].channels[channel].revenue = (monthlyData[month].channels[channel].revenue || 0) + parseFloat(row.revenue || 0);
+        monthlyData[month].channels[channel].customers = (monthlyData[month].channels[channel].customers || 0) + parseInt(row.customers || row.new_customers || 0);
+      }
+    }
+  });
+  
+  // Calculate monthly CAC and efficiency metrics
+  const months = Object.keys(monthlyData).sort();
+  temporal.trends.monthly = months.map(month => {
+    const data = monthlyData[month];
+    const cac = data.customers > 0 ? data.spend / data.customers : 0;
+    const roas = data.spend > 0 ? (data.revenue || 0) / data.spend : 0;
+    const efficiency = cac > 0 && roas > 0 ? roas / (cac / 100) : 0;
+    
+    return {
+      month,
+      spend: data.spend,
+      customers: data.customers || 0,
+      revenue: data.revenue || 0,
+      cac: Math.round(cac * 100) / 100,
+      roas: Math.round(roas * 100) / 100,
+      efficiency: Math.round(efficiency * 100) / 100,
+      campaignCount: data.campaigns.size,
+      channelCount: Object.keys(data.channels).length
+    };
+  });
+  
+  // Calculate volatility
+  if (temporal.trends.monthly.length > 1) {
+    const cacValues = temporal.trends.monthly.map(m => m.cac).filter(v => v > 0);
+    const roasValues = temporal.trends.monthly.map(m => m.roas).filter(v => v > 0);
+    
+    temporal.volatility.cac = calculateVolatility(cacValues);
+    temporal.volatility.roas = calculateVolatility(roasValues);
+  }
+  
+  // Growth analysis
+  if (temporal.trends.monthly.length > 2) {
+    const recent = temporal.trends.monthly.slice(-3);
+    const older = temporal.trends.monthly.slice(0, 3);
+    
+    temporal.growth.spend = calculateGrowthRate(
+      older.reduce((sum, m) => sum + m.spend, 0),
+      recent.reduce((sum, m) => sum + m.spend, 0)
+    );
+    
+    temporal.growth.customers = calculateGrowthRate(
+      older.reduce((sum, m) => sum + m.customers, 0),
+      recent.reduce((sum, m) => sum + m.customers, 0)
+    );
+    
+    temporal.growth.efficiency = calculateGrowthRate(
+      older.reduce((sum, m) => sum + m.efficiency, 0) / older.length,
+      recent.reduce((sum, m) => sum + m.efficiency, 0) / recent.length
+    );
+  }
+  
+  // Generate insights
+  if (temporal.volatility.cac > 0.3) {
+    temporal.insights.push({
+      type: 'warning',
+      title: 'High CAC Volatility',
+      description: `Your CAC shows ${Math.round(temporal.volatility.cac * 100)}% volatility, indicating inconsistent acquisition costs across periods.`,
+      recommendation: 'Investigate campaign timing, audience quality, or seasonal factors affecting acquisition efficiency.'
+    });
+  }
+  
+  if (temporal.growth.efficiency && temporal.growth.efficiency < -0.1) {
+    temporal.insights.push({
+      type: 'alert',
+      title: 'Declining Efficiency Trend',
+      description: `Acquisition efficiency has declined by ${Math.round(Math.abs(temporal.growth.efficiency) * 100)}% in recent periods.`,
+      recommendation: 'Review recent campaign changes, audience saturation, or competitive pressure impacts.'
+    });
+  }
+  
+  return temporal;
+}
+
+function analyzeChannelEfficiency(marketingData, revenueData) {
+  const channels = {};
+  const efficiency = {
+    ranking: [],
+    scalability: {},
+    saturation: {},
+    insights: []
+  };
+  
+  // Aggregate channel data
+  marketingData.forEach(row => {
+    const channel = row.channel || 'Unknown';
+    if (!channels[channel]) {
+      channels[channel] = {
+        spend: 0,
+        customers: 0,
+        revenue: 0,
+        campaigns: new Set(),
+        dates: new Set(),
+        dailyData: {}
+      };
+    }
+    
+    channels[channel].spend += parseFloat(row.spend || 0);
+    if (row.campaign) channels[channel].campaigns.add(row.campaign);
+    if (row.date) {
+      channels[channel].dates.add(row.date);
+      const date = row.date;
+      if (!channels[channel].dailyData[date]) {
+        channels[channel].dailyData[date] = { spend: 0, customers: 0, revenue: 0 };
+      }
+      channels[channel].dailyData[date].spend += parseFloat(row.spend || 0);
+    }
+  });
+  
+  revenueData.forEach(row => {
+    const channel = row.channel || 'Unknown';
+    if (channels[channel]) {
+      const customers = parseInt(row.customers || row.new_customers || 0);
+      const revenue = parseFloat(row.revenue || 0);
+      channels[channel].customers += customers;
+      channels[channel].revenue += revenue;
+      
+      if (row.date && channels[channel].dailyData[row.date]) {
+        channels[channel].dailyData[row.date].customers += customers;
+        channels[channel].dailyData[row.date].revenue += revenue;
+      }
+    }
+  });
+  
+  // Calculate efficiency metrics for each channel
+  Object.keys(channels).forEach(channelName => {
+    const channel = channels[channelName];
+    const cac = channel.customers > 0 ? channel.spend / channel.customers : 0;
+    const roas = channel.spend > 0 ? channel.revenue / channel.spend : 0;
+    const aov = channel.customers > 0 ? channel.revenue / channel.customers : 0;
+    
+    // Calculate scalability score
+    const dailyValues = Object.values(channel.dailyData);
+    const scalabilityScore = calculateScalabilityScore(dailyValues);
+    
+    efficiency.ranking.push({
+      channel: channelName,
+      cac: Math.round(cac * 100) / 100,
+      roas: Math.round(roas * 100) / 100,
+      aov: Math.round(aov * 100) / 100,
+      efficiency: roas > 1 ? Math.round((roas / (cac / 100)) * 100) / 100 : 0,
+      volume: channel.customers,
+      spend: channel.spend,
+      campaignCount: channel.campaigns.size,
+      scalability: scalabilityScore,
+      consistency: calculateConsistency(dailyValues)
+    });
+  });
+  
+  // Sort by efficiency score
+  efficiency.ranking.sort((a, b) => b.efficiency - a.efficiency);
+  
+  // Generate channel-specific insights
+  efficiency.ranking.forEach(channel => {
+    if (channel.scalability < 0.3 && channel.volume > 50) {
+      efficiency.insights.push({
+        type: 'opportunity',
+        channel: channel.channel,
+        title: 'Low Scalability Channel',
+        description: `${channel.channel} shows limited scalability (${Math.round(channel.scalability * 100)}% score) despite high volume.`,
+        recommendation: 'Consider diversifying campaigns or exploring new audience segments within this channel.'
+      });
+    }
+    
+    if (channel.efficiency > 5 && channel.volume < 20) {
+      efficiency.insights.push({
+        type: 'opportunity',
+        channel: channel.channel,
+        title: 'High-Efficiency, Low-Volume Channel',
+        description: `${channel.channel} shows excellent efficiency (${channel.efficiency} score) but low volume (${channel.volume} customers).`,
+        recommendation: 'Consider increasing budget allocation to scale this high-performing channel.'
+      });
+    }
+  });
+  
+  return efficiency;
+}
+
+function analyzeCampaignPerformance(marketingData, revenueData) {
+  const campaigns = {};
+  const performance = {
+    topPerformers: [],
+    underperformers: [],
+    insights: [],
+    patterns: {}
+  };
+  
+  // Aggregate campaign data
+  marketingData.forEach(row => {
+    const campaign = row.campaign || 'Unknown';
+    const channel = row.channel || 'Unknown';
+    
+    if (!campaigns[campaign]) {
+      campaigns[campaign] = {
+        spend: 0,
+        customers: 0,
+        revenue: 0,
+        channel: channel,
+        dates: new Set(),
+        dailyPerformance: []
+      };
+    }
+    
+    campaigns[campaign].spend += parseFloat(row.spend || 0);
+    if (row.date) campaigns[campaign].dates.add(row.date);
+  });
+  
+  revenueData.forEach(row => {
+    const campaign = row.campaign;
+    if (campaign && campaigns[campaign]) {
+      campaigns[campaign].customers += parseInt(row.customers || row.new_customers || 0);
+      campaigns[campaign].revenue += parseFloat(row.revenue || 0);
+    }
+  });
+  
+  // Calculate performance metrics
+  const campaignMetrics = Object.keys(campaigns).map(campaignName => {
+    const campaign = campaigns[campaignName];
+    const cac = campaign.customers > 0 ? campaign.spend / campaign.customers : 0;
+    const roas = campaign.spend > 0 ? campaign.revenue / campaign.spend : 0;
+    const duration = campaign.dates.size;
+    
+    return {
+      campaign: campaignName,
+      channel: campaign.channel,
+      cac: Math.round(cac * 100) / 100,
+      roas: Math.round(roas * 100) / 100,
+      customers: campaign.customers,
+      spend: campaign.spend,
+      revenue: campaign.revenue,
+      duration: duration,
+      dailySpend: duration > 0 ? campaign.spend / duration : 0,
+      efficiency: roas > 1 ? Math.round((roas / (cac / 100)) * 100) / 100 : 0
+    };
+  }).filter(c => c.spend > 0);
+  
+  // Identify top and bottom performers
+  const sortedByCac = [...campaignMetrics].sort((a, b) => a.cac - b.cac);
+  const sortedByRoas = [...campaignMetrics].sort((a, b) => b.roas - a.roas);
+  
+  performance.topPerformers = sortedByCac.slice(0, 5).map(c => ({
+    ...c,
+    reason: 'Low CAC',
+    insight: `Acquiring customers at $${c.cac} CAC with ${c.roas.toFixed(2)}x ROAS`
+  }));
+  
+  performance.underperformers = sortedByCac.slice(-5).map(c => ({
+    ...c,
+    reason: 'High CAC',
+    insight: `High acquisition cost of $${c.cac} with ${c.roas.toFixed(2)}x ROAS`
+  }));
+  
+  // Pattern analysis
+  const channelPerformance = {};
+  campaignMetrics.forEach(campaign => {
+    if (!channelPerformance[campaign.channel]) {
+      channelPerformance[campaign.channel] = [];
+    }
+    channelPerformance[campaign.channel].push(campaign);
+  });
+  
+  // Generate insights
+  Object.keys(channelPerformance).forEach(channel => {
+    const channelCampaigns = channelPerformance[channel];
+    const avgCac = channelCampaigns.reduce((sum, c) => sum + c.cac, 0) / channelCampaigns.length;
+    const cacStdDev = Math.sqrt(
+      channelCampaigns.reduce((sum, c) => sum + Math.pow(c.cac - avgCac, 2), 0) / channelCampaigns.length
+    );
+    
+    if (cacStdDev / avgCac > 0.5 && channelCampaigns.length > 3) {
+      performance.insights.push({
+        type: 'insight',
+        channel: channel,
+        title: 'Inconsistent Campaign Performance',
+        description: `${channel} campaigns show high CAC variation (${Math.round((cacStdDev / avgCac) * 100)}% coefficient of variation).`,
+        recommendation: 'Analyze top-performing campaigns in this channel and replicate successful elements.'
+      });
+    }
+  });
+  
+  return performance;
+}
+
+// Continue with remaining analytics functions
+function analyzeFunnelPerformance(marketingData, revenueData) {
+  const funnel = {
+    stages: {},
+    conversionRates: {},
+    dropoffAnalysis: {},
+    insights: []
+  };
+  
+  // Calculate aggregated funnel metrics
+  const totalSpend = marketingData.reduce((sum, row) => sum + parseFloat(row.spend || 0), 0);
+  const totalCustomers = revenueData.reduce((sum, row) => sum + parseInt(row.customers || row.new_customers || 0), 0);
+  const totalRevenue = revenueData.reduce((sum, row) => sum + parseFloat(row.revenue || 0), 0);
+  
+  // Estimate funnel stages based on available data
+  const estimatedImpressions = totalSpend * 1000; // Rough estimate: $1 = 1000 impressions
+  const estimatedClicks = estimatedImpressions * 0.02; // 2% CTR estimate
+  const estimatedLeads = estimatedClicks * 0.1; // 10% conversion to lead
+  
+  funnel.stages = {
+    impressions: Math.round(estimatedImpressions),
+    clicks: Math.round(estimatedClicks),
+    leads: Math.round(estimatedLeads),
+    customers: totalCustomers,
+    revenue: totalRevenue
+  };
+  
+  // Calculate conversion rates
+  if (funnel.stages.impressions > 0) {
+    funnel.conversionRates.ctr = (funnel.stages.clicks / funnel.stages.impressions * 100).toFixed(3);
+    funnel.conversionRates.leadRate = (funnel.stages.leads / funnel.stages.clicks * 100).toFixed(2);
+    funnel.conversionRates.conversionRate = (funnel.stages.customers / funnel.stages.leads * 100).toFixed(2);
+    funnel.conversionRates.overallConversion = (funnel.stages.customers / funnel.stages.impressions * 100).toFixed(4);
+  }
+  
+  // Analyze by channel
+  const channelFunnels = {};
+  marketingData.forEach(row => {
+    const channel = row.channel || 'Unknown';
+    if (!channelFunnels[channel]) {
+      channelFunnels[channel] = { spend: 0, customers: 0, revenue: 0 };
+    }
+    channelFunnels[channel].spend += parseFloat(row.spend || 0);
+  });
+  
+  revenueData.forEach(row => {
+    const channel = row.channel || 'Unknown';
+    if (channelFunnels[channel]) {
+      channelFunnels[channel].customers += parseInt(row.customers || row.new_customers || 0);
+      channelFunnels[channel].revenue += parseFloat(row.revenue || 0);
+    }
+  });
+  
+  // Generate funnel insights
+  Object.keys(channelFunnels).forEach(channel => {
+    const data = channelFunnels[channel];
+    const conversionRate = data.spend > 0 ? (data.customers / (data.spend * 20)).toFixed(4) : 0; // Rough estimate
+    
+    if (parseFloat(conversionRate) < 0.001) {
+      funnel.insights.push({
+        type: 'warning',
+        channel: channel,
+        title: 'Low Conversion Rate',
+        description: `${channel} shows very low estimated conversion rate (${conversionRate}%).`,
+        recommendation: 'Review targeting, creative, and landing page optimization for this channel.'
+      });
+    }
+  });
+  
+  return funnel;
+}
+
+function analyzeCohortPerformance(marketingData, revenueData) {
+  const cohorts = {
+    monthly: {},
+    analysis: {},
+    insights: []
+  };
+  
+  // Group customers by acquisition month (cohorts)
+  revenueData.forEach(row => {
+    const cohortMonth = moment(row.date).format('YYYY-MM');
+    const channel = row.channel || 'Unknown';
+    const customers = parseInt(row.customers || row.new_customers || 0);
+    const revenue = parseFloat(row.revenue || 0);
+    
+    if (!cohorts.monthly[cohortMonth]) {
+      cohorts.monthly[cohortMonth] = {
+        customers: 0,
+        revenue: 0,
+        channels: {},
+        averageOrderValue: 0,
+        spend: 0
+      };
+    }
+    
+    cohorts.monthly[cohortMonth].customers += customers;
+    cohorts.monthly[cohortMonth].revenue += revenue;
+    
+    if (!cohorts.monthly[cohortMonth].channels[channel]) {
+      cohorts.monthly[cohortMonth].channels[channel] = { customers: 0, revenue: 0, spend: 0 };
+    }
+    cohorts.monthly[cohortMonth].channels[channel].customers += customers;
+    cohorts.monthly[cohortMonth].channels[channel].revenue += revenue;
+  });
+  
+  // Add spend data to cohorts
+  marketingData.forEach(row => {
+    const cohortMonth = moment(row.date).format('YYYY-MM');
+    const channel = row.channel || 'Unknown';
+    const spend = parseFloat(row.spend || 0);
+    
+    if (cohorts.monthly[cohortMonth] && cohorts.monthly[cohortMonth].channels[channel]) {
+      cohorts.monthly[cohortMonth].channels[channel].spend += spend;
+      cohorts.monthly[cohortMonth].spend += spend;
+    }
+  });
+  
+  // Calculate cohort metrics
+  const cohortKeys = Object.keys(cohorts.monthly).sort();
+  cohorts.analysis.byMonth = cohortKeys.map(month => {
+    const cohort = cohorts.monthly[month];
+    const aov = cohort.customers > 0 ? cohort.revenue / cohort.customers : 0;
+    const cac = cohort.customers > 0 ? cohort.spend / cohort.customers : 0;
+    
+    return {
+      month,
+      customers: cohort.customers,
+      revenue: cohort.revenue,
+      spend: cohort.spend,
+      aov: Math.round(aov * 100) / 100,
+      cac: Math.round(cac * 100) / 100,
+      channels: Object.keys(cohort.channels).length
+    };
+  });
+  
+  // Cohort performance trends
+  if (cohorts.analysis.byMonth.length > 2) {
+    const recent = cohorts.analysis.byMonth.slice(-3);
+    const earlier = cohorts.analysis.byMonth.slice(0, 3);
+    
+    const recentAvgAov = recent.reduce((sum, c) => sum + c.aov, 0) / recent.length;
+    const earlierAvgAov = earlier.reduce((sum, c) => sum + c.aov, 0) / earlier.length;
+    const aovTrend = ((recentAvgAov - earlierAvgAov) / earlierAvgAov * 100).toFixed(1);
+    
+    cohorts.analysis.trends = {
+      aovTrend: parseFloat(aovTrend),
+      customerGrowth: calculateGrowthRate(
+        earlier.reduce((sum, c) => sum + c.customers, 0),
+        recent.reduce((sum, c) => sum + c.customers, 0)
+      )
+    };
+    
+    // Generate cohort insights
+    if (Math.abs(cohorts.analysis.trends.aovTrend) > 15) {
+      cohorts.insights.push({
+        type: cohorts.analysis.trends.aovTrend > 0 ? 'positive' : 'warning',
+        title: 'Average Order Value Trend',
+        description: `AOV has ${cohorts.analysis.trends.aovTrend > 0 ? 'increased' : 'decreased'} by ${Math.abs(cohorts.analysis.trends.aovTrend)}% in recent cohorts.`,
+        recommendation: cohorts.analysis.trends.aovTrend > 0 ? 
+          'Continue optimizing for higher-value customers and upselling strategies.' :
+          'Investigate factors causing AOV decline and implement value optimization strategies.'
+      });
+    }
+  }
+  
+  return cohorts;
+}
+
+function identifyOptimizationOpportunities(marketingData, revenueData) {
+  const opportunities = {
+    immediate: [],
+    strategic: [],
+    experimental: [],
+    scores: {}
+  };
+  
+  // Budget reallocation opportunities
+  const channelMetrics = generateChannelAnalysis(marketingData, revenueData);
+  const channels = Object.keys(channelMetrics).map(channel => ({
+    channel,
+    ...channelMetrics[channel],
+    efficiency: channelMetrics[channel].roas / (channelMetrics[channel].cac / 100)
+  })).sort((a, b) => b.efficiency - a.efficiency);
+  
+  if (channels.length > 1) {
+    const topChannel = channels[0];
+    const bottomChannel = channels[channels.length - 1];
+    
+    if (topChannel.efficiency > bottomChannel.efficiency * 2) {
+      opportunities.immediate.push({
+        type: 'budget_reallocation',
+        priority: 'high',
+        title: 'Channel Budget Optimization',
+        description: `${topChannel.channel} is ${(topChannel.efficiency / bottomChannel.efficiency).toFixed(1)}x more efficient than ${bottomChannel.channel}.`,
+        action: `Consider reallocating 20-30% of budget from ${bottomChannel.channel} to ${topChannel.channel}`,
+        expectedImpact: 'CAC improvement of 15-25%'
+      });
+    }
+  }
+  
+  // Campaign optimization opportunities
+  const campaignPerf = analyzeCampaignPerformance(marketingData, revenueData);
+  if (campaignPerf.topPerformers.length > 0 && campaignPerf.underperformers.length > 0) {
+    opportunities.strategic.push({
+      type: 'campaign_optimization',
+      priority: 'medium',
+      title: 'Campaign Performance Gap',
+      description: `Top campaigns achieve ${campaignPerf.topPerformers[0].cac} CAC vs ${campaignPerf.underperformers[0].cac} for bottom campaigns.`,
+      action: 'Analyze top campaign elements (targeting, creative, timing) and apply to underperforming campaigns',
+      expectedImpact: 'CAC reduction of 10-20%'
+    });
+  }
+  
+  // Seasonal optimization
+  const temporal = analyzeTemporalPerformance(marketingData, revenueData);
+  if (temporal.trends.monthly && temporal.trends.monthly.length > 6) {
+    const monthlyVariance = calculateVolatility(temporal.trends.monthly.map(m => m.efficiency));
+    
+    if (monthlyVariance > 0.25) {
+      opportunities.experimental.push({
+        type: 'seasonal_optimization',
+        priority: 'medium',
+        title: 'Seasonal Performance Patterns',
+        description: `Performance varies significantly by month (${Math.round(monthlyVariance * 100)}% volatility).`,
+        action: 'Implement seasonal budget adjustments and campaign timing optimization',
+        expectedImpact: 'Efficiency improvement of 8-15%'
+      });
+    }
+  }
+  
+  // Calculate overall optimization score
+  opportunities.scores.overall = Math.min(100, 
+    (opportunities.immediate.length * 30) + 
+    (opportunities.strategic.length * 20) + 
+    (opportunities.experimental.length * 10)
+  );
+  
+  return opportunities;
+}
+
+function generatePredictiveInsights(marketingData, revenueData) {
+  const predictions = {
+    trends: {},
+    forecasts: {},
+    recommendations: {},
+    confidence: 0
+  };
+  
+  // Trend analysis for predictions
+  const temporal = analyzeTemporalPerformance(marketingData, revenueData);
+  if (temporal.trends.monthly && temporal.trends.monthly.length >= 6) {
+    const recentMonths = temporal.trends.monthly.slice(-6);
+    
+    // CAC trend prediction
+    const cacTrend = calculateTrendSlope(recentMonths.map(m => m.cac).filter(v => v > 0));
+    const roasTrend = calculateTrendSlope(recentMonths.map(m => m.roas).filter(v => v > 0));
+    
+    predictions.trends.cac = {
+      direction: cacTrend > 0.05 ? 'increasing' : cacTrend < -0.05 ? 'decreasing' : 'stable',
+      magnitude: Math.abs(cacTrend),
+      confidence: recentMonths.length >= 6 ? 0.7 : 0.4
+    };
+    
+    predictions.trends.roas = {
+      direction: roasTrend > 0.05 ? 'increasing' : roasTrend < -0.05 ? 'decreasing' : 'stable',
+      magnitude: Math.abs(roasTrend),
+      confidence: recentMonths.length >= 6 ? 0.7 : 0.4
+    };
+    
+    // Generate predictive recommendations
+    if (predictions.trends.cac.direction === 'increasing' && predictions.trends.cac.confidence > 0.6) {
+      predictions.recommendations.immediate = {
+        title: 'Rising CAC Alert',
+        description: 'CAC is trending upward, suggesting increasing acquisition difficulty.',
+        actions: [
+          'Review and optimize underperforming channels',
+          'Test new audience segments to combat saturation',
+          'Implement retention strategies to improve LTV:CAC ratio'
+        ]
+      };
+    }
+    
+    predictions.confidence = Math.min(0.85, (predictions.trends.cac.confidence + predictions.trends.roas.confidence) / 2);
+  }
+  
+  return predictions;
+}
+
+function generateContextualInsights(marketingData, revenueData, businessModel) {
+  const insights = {
+    businessSpecific: [],
+    benchmarks: {},
+    recommendations: []
+  };
+  
+  const totalSpend = marketingData.reduce((sum, row) => sum + parseFloat(row.spend || 0), 0);
+  const totalCustomers = revenueData.reduce((sum, row) => sum + parseInt(row.customers || row.new_customers || 0), 0);
+  const totalRevenue = revenueData.reduce((sum, row) => sum + parseFloat(row.revenue || 0), 0);
+  
+  const avgCac = totalCustomers > 0 ? totalSpend / totalCustomers : 0;
+  const avgAov = totalCustomers > 0 ? totalRevenue / totalCustomers : 0;
+  const roas = totalSpend > 0 ? totalRevenue / totalSpend : 0;
+  
+  // Business model specific insights
+  const businessType = businessModel?.businessType?.toLowerCase() || '';
+  const revenueModel = businessModel?.revenueModel?.toLowerCase() || '';
+  
+  if (businessType.includes('saas') || revenueModel.includes('subscription')) {
+    // SaaS-specific insights
+    const estimatedLtv = avgAov * 12; // Simple LTV estimate
+    const ltvCacRatio = avgCac > 0 ? estimatedLtv / avgCac : 0;
+    
+    insights.benchmarks.ltv_cac_ratio = ltvCacRatio;
+    
+    if (ltvCacRatio < 3) {
+      insights.businessSpecific.push({
+        type: 'warning',
+        title: 'Low LTV:CAC Ratio',
+        description: `Current LTV:CAC ratio of ${ltvCacRatio.toFixed(1)}:1 is below healthy SaaS benchmark of 3:1.`,
+        recommendation: 'Focus on increasing customer lifetime value through retention and expansion revenue.'
+      });
+    }
+    
+    if (avgCac > avgAov * 2) {
+      insights.businessSpecific.push({
+        type: 'alert',
+        title: 'High Payback Period',
+        description: 'CAC exceeds 2x monthly revenue, indicating long payback periods.',
+        recommendation: 'Optimize onboarding and early expansion to reduce payback time.'
+      });
+    }
+  }
+  
+  if (businessType.includes('ecommerce') || businessType.includes('retail')) {
+    // E-commerce specific insights
+    if (roas < 4) {
+      insights.businessSpecific.push({
+        type: 'warning',
+        title: 'Low ROAS for E-commerce',
+        description: `ROAS of ${roas.toFixed(2)}x is below typical e-commerce benchmark of 4:1.`,
+        recommendation: 'Focus on conversion optimization and customer retention strategies.'
+      });
+    }
+    
+    if (avgAov < avgCac) {
+      insights.businessSpecific.push({
+        type: 'alert',
+        title: 'Negative First Purchase Margin',
+        description: 'CAC exceeds average order value, requiring repeat purchases for profitability.',
+        recommendation: 'Implement upselling, cross-selling, or increase AOV through bundling.'
+      });
+    }
+  }
+  
+  return insights;
+}
+
+// Helper functions for calculations
+function calculateVolatility(values) {
+  if (values.length < 2) return 0;
+  const mean = values.reduce((sum, v) => sum + v, 0) / values.length;
+  const variance = values.reduce((sum, v) => sum + Math.pow(v - mean, 2), 0) / values.length;
+  return Math.sqrt(variance) / mean;
+}
+
+function calculateGrowthRate(oldValue, newValue) {
+  if (oldValue === 0) return newValue > 0 ? 1 : 0;
+  return (newValue - oldValue) / oldValue;
+}
+
+function calculateScalabilityScore(dailyValues) {
+  if (dailyValues.length < 5) return 0.5;
+  
+  const spendValues = dailyValues.map(d => d.spend).filter(v => v > 0);
+  const customerValues = dailyValues.map(d => d.customers).filter(v => v > 0);
+  
+  if (spendValues.length < 3 || customerValues.length < 3) return 0.3;
+  
+  const spendGrowth = (Math.max(...spendValues) - Math.min(...spendValues)) / Math.min(...spendValues);
+  const customerGrowth = (Math.max(...customerValues) - Math.min(...customerValues)) / Math.min(...customerValues);
+  
+  return Math.min(1, Math.max(0, customerGrowth / (spendGrowth + 0.1)));
+}
+
+function calculateConsistency(dailyValues) {
+  if (dailyValues.length < 2) return 0.5;
+  
+  const cacValues = dailyValues
+    .filter(d => d.customers > 0 && d.spend > 0)
+    .map(d => d.spend / d.customers);
+  
+  if (cacValues.length < 2) return 0.3;
+  
+  return 1 - calculateVolatility(cacValues);
+}
+
+function calculateTrendSlope(values) {
+  if (values.length < 3) return 0;
+  
+  const n = values.length;
+  const sumX = (n * (n + 1)) / 2;
+  const sumY = values.reduce((sum, v) => sum + v, 0);
+  const sumXY = values.reduce((sum, v, i) => sum + (i + 1) * v, 0);
+  const sumX2 = (n * (n + 1) * (2 * n + 1)) / 6;
+  
+  return (n * sumXY - sumX * sumY) / (n * sumX2 - sumX * sumX);
+}
+
 function generateTimeAnalysis(marketingData, revenueData) {
   if (!marketingData || !revenueData) return {};
   
@@ -745,10 +1507,11 @@ function generateTimeAnalysis(marketingData, revenueData) {
   
   // Calculate derived metrics for weekly/monthly
   [weeklyMetrics, monthlyMetrics].forEach(metrics => {
-    Object.keys(metrics).forEach(period => {
-      const data = metrics[period];
+    Object.keys(metrics).forEach(key => {
+      const data = metrics[key];
       data.cac = data.customers > 0 ? data.spend / data.customers : 0;
       data.roas = data.spend > 0 ? data.revenue / data.spend : 0;
+      data.aov = data.customers > 0 ? data.revenue / data.customers : 0;
     });
   });
   
@@ -756,83 +1519,85 @@ function generateTimeAnalysis(marketingData, revenueData) {
     daily: timeMetrics,
     weekly: weeklyMetrics,
     monthly: monthlyMetrics,
-    trends: calculateTrends(timeMetrics)
+    trends: {
+      dailyAvgSpend: allDates.length > 0 ? Object.values(timeMetrics).reduce((sum, d) => sum + d.spend, 0) / allDates.length : 0,
+      totalDays: allDates.length,
+      dateRange: allDates.length > 0 ? `${allDates[0]} to ${allDates[allDates.length - 1]}` : 'No data'
+    }
   };
 }
 
-function calculateTrends(dailyMetrics) {
-  const dates = Object.keys(dailyMetrics).sort();
-  if (dates.length < 2) return {};
-  
-  const firstHalf = dates.slice(0, Math.floor(dates.length / 2));
-  const secondHalf = dates.slice(Math.floor(dates.length / 2));
-  
-  const firstHalfAvg = firstHalf.reduce((sum, date) => sum + dailyMetrics[date].cac, 0) / firstHalf.length;
-  const secondHalfAvg = secondHalf.reduce((sum, date) => sum + dailyMetrics[date].cac, 0) / secondHalf.length;
-  
-  return {
-    cacTrend: secondHalfAvg > firstHalfAvg ? 'increasing' : 'decreasing',
-    cacChange: ((secondHalfAvg - firstHalfAvg) / firstHalfAvg) * 100,
-    isImproving: secondHalfAvg < firstHalfAvg
-  };
-}
+// Integrate deep analytics into main calculation endpoint
+app.post('/api/calculate', (req, res) => {
+  try {
+    const { marketingData, revenueData, customerData, businessModel, analysisConfig } = req.body;
 
+    // Validate input data
+    if (!marketingData || !revenueData) {
+      return res.status(400).json({ error: 'Marketing and revenue data are required' });
+    }
+
+    // Calculate all CAC methodologies
+    const calculations = {
+      simpleBlended: calculateSimpleBlended(marketingData, revenueData),
+      fullyLoaded: calculateFullyLoaded(marketingData, revenueData, analysisConfig?.teamCosts || {}),
+      channelSpecific: calculateChannelSpecific(marketingData, revenueData),
+      cohortBased: calculateCohortBased(marketingData, revenueData, analysisConfig?.cohortPeriod || 30),
+      contributionMargin: calculateContributionMargin(marketingData, revenueData, customerData)
+    };
+
+    // Data quality assessment
+    const dataQuality = assessDataQuality(marketingData, revenueData, customerData);
+    
+    // Generate recommendations
+    const recommendations = generateRecommendations(calculations, businessModel, dataQuality);
+    
+    // Calculate confidence
+    const overallConfidence = calculateOverallConfidence({ calculations }, dataQuality);
+
+    // DEEP PERFORMANCE ANALYSIS - NEW COMPREHENSIVE ANALYTICS
+    const performanceAnalysis = generateDeepPerformanceAnalysis(marketingData, revenueData, businessModel);
+
+    // Response structure
+    const results = {
+      calculations,
+      dataQuality,
+      recommendations,
+      confidence: overallConfidence,
+      performanceAnalysis,  // This is the new comprehensive analytics
+      summary: {
+        totalSpend: marketingData.reduce((sum, row) => sum + parseFloat(row.spend || 0), 0),
+        totalCustomers: revenueData.reduce((sum, row) => sum + parseInt(row.customers || row.new_customers || 0), 0),
+        totalRevenue: revenueData.reduce((sum, row) => sum + parseFloat(row.revenue || 0), 0),
+        analysisDate: moment().format('MMMM DD, YYYY'),
+        dataPoints: marketingData.length + revenueData.length
+      }
+    };
+
+    res.json(results);
+    
+  } catch (error) {
+    console.error('Calculation error:', error);
+    res.status(500).json({ error: 'Failed to calculate CAC' });
+  }
+});
+
+// Clean up any remaining functions
 function generateKeyInsights(results, marketingData, revenueData) {
   const insights = [];
   
-  if (!results?.calculations) return insights;
-  
-  // CAC Methodology Insights
-  const cacs = Object.values(results.calculations).map(calc => calc.value);
-  const avgCAC = cacs.reduce((sum, cac) => sum + cac, 0) / cacs.length;
-  const cacVariance = Math.max(...cacs) - Math.min(...cacs);
-  
-  if (cacVariance > avgCAC * 0.5) {
-    insights.push({
-      type: 'methodology',
-      level: 'warning',
-      title: 'High CAC Variance Detected',
-      description: `CAC calculations vary significantly (${cacVariance.toFixed(2)} range). This suggests different attribution models reveal different efficiency stories.`,
-      recommendation: 'Focus on the Fully-Loaded CAC for budget planning and Simple Blended for quick benchmarks.'
-    });
-  }
-  
-  // Channel Performance Insights
-  if (marketingData && revenueData) {
-    const channelAnalysis = generateChannelAnalysis(marketingData, revenueData);
-    const channels = Object.entries(channelAnalysis).sort((a, b) => a[1].cac - b[1].cac);
-    
-    if (channels.length > 1) {
-      const bestChannel = channels[0];
-      const worstChannel = channels[channels.length - 1];
+  if (results && results.calculations) {
+    const cacs = Object.values(results.calculations).map(calc => calc.value).filter(v => v > 0);
+    if (cacs.length > 1) {
+      const maxCac = Math.max(...cacs);
+      const minCac = Math.min(...cacs);
+      const variation = ((maxCac - minCac) / minCac * 100).toFixed(1);
       
       insights.push({
-        type: 'channel',
-        level: 'success',
-        title: 'Channel Performance Analysis',
-        description: `${bestChannel[0]} has the lowest CAC at $${bestChannel[1].cac.toFixed(2)}, while ${worstChannel[0]} has the highest at $${worstChannel[1].cac.toFixed(2)}.`,
-        recommendation: `Consider reallocating budget from ${worstChannel[0]} to ${bestChannel[0]} for improved efficiency.`
-      });
-    }
-  }
-  
-  // Data Quality Insights
-  if (results.dataQuality) {
-    if (results.dataQuality.overall < 80) {
-      insights.push({
-        type: 'data-quality',
-        level: 'warning',
-        title: 'Data Quality Concerns',
-        description: `Overall data quality is ${results.dataQuality.overall}%. This may impact calculation accuracy.`,
-        recommendation: 'Review data collection processes and consider data cleaning before final analysis.'
-      });
-    } else if (results.dataQuality.overall > 95) {
-      insights.push({
-        type: 'data-quality',
-        level: 'success',
-        title: 'Excellent Data Quality',
-        description: `Data quality score of ${results.dataQuality.overall}% indicates highly reliable calculations.`,
-        recommendation: 'Maintain current data collection standards for consistent analysis quality.'
+        type: 'methodology',
+        title: 'CAC Methodology Variance',
+        description: `Your CAC ranges from $${minCac.toFixed(2)} to $${maxCac.toFixed(2)} (${variation}% variation) depending on methodology.`,
+        recommendation: 'Use the most appropriate methodology for your business context.'
       });
     }
   }
@@ -840,216 +1605,8 @@ function generateKeyInsights(results, marketingData, revenueData) {
   return insights;
 }
 
-// HIGH IMPACT: Budget Reallocation Functions
-function calculateBudgetReallocation(marketingData, revenueData, channelSpecificResults) {
-  if (!channelSpecificResults?.channels) return null;
-  
-  const channels = Object.entries(channelSpecificResults.channels);
-  const totalBudget = marketingData.reduce((sum, row) => sum + parseFloat(row.spend || 0), 0);
-  
-  // Calculate current performance metrics
-  const currentPerformance = channels.map(([channel, data]) => ({
-    channel,
-    currentSpend: data.calculation?.spend || 0,
-    currentCustomers: data.customers || 0,
-    cac: data.value,
-    efficiency: data.customers / (data.calculation?.spend || 1), // customers per dollar
-  }));
-  
-  // Sort by efficiency (customers per dollar spent)
-  const rankedChannels = currentPerformance.sort((a, b) => b.efficiency - a.efficiency);
-  
-  // Generate reallocation scenarios
-  const scenarios = [
-    {
-      name: "Double Down on Winner",
-      description: `Move 30% more budget to ${rankedChannels[0].channel}`,
-      changes: calculateDoubleDownScenario(rankedChannels, totalBudget),
-      confidence: 8,
-      riskLevel: "Low"
-    },
-    {
-      name: "Kill the Loser", 
-      description: `Remove worst performer (${rankedChannels[rankedChannels.length-1].channel}) and redistribute`,
-      changes: calculateKillLoserScenario(rankedChannels, totalBudget),
-      confidence: 6,
-      riskLevel: "High"
-    },
-    {
-      name: "Efficiency Rebalance",
-      description: "Reallocate based purely on cost per customer metrics",
-      changes: calculateEfficiencyRebalance(rankedChannels, totalBudget),
-      confidence: 7,
-      riskLevel: "Medium"
-    }
-  ];
-  
-  return {
-    currentPerformance: rankedChannels,
-    totalBudget,
-    scenarios: scenarios.map(scenario => ({
-      ...scenario,
-      projectedOutcome: calculateScenarioOutcome(scenario.changes, rankedChannels, totalBudget)
-    }))
-  };
-}
-
-function calculateDoubleDownScenario(rankedChannels, totalBudget) {
-  const winner = rankedChannels[0];
-  const changes = {};
-  
-  // Give winner 30% more of total budget
-  const additionalBudget = totalBudget * 0.3;
-  changes[winner.channel] = {
-    currentSpend: winner.currentSpend,
-    newSpend: winner.currentSpend + additionalBudget,
-    change: additionalBudget
-  };
-  
-  // Reduce others proportionally
-  const otherChannels = rankedChannels.slice(1);
-  const otherTotalSpend = otherChannels.reduce((sum, ch) => sum + ch.currentSpend, 0);
-  
-  otherChannels.forEach(channel => {
-    const proportionalReduction = (channel.currentSpend / otherTotalSpend) * additionalBudget;
-    changes[channel.channel] = {
-      currentSpend: channel.currentSpend,
-      newSpend: Math.max(channel.currentSpend - proportionalReduction, channel.currentSpend * 0.3), // Don't reduce by more than 70%
-      change: -proportionalReduction
-    };
-  });
-  
-  return changes;
-}
-
-function calculateKillLoserScenario(rankedChannels, totalBudget) {
-  const changes = {};
-  const loser = rankedChannels[rankedChannels.length - 1];
-  const survivors = rankedChannels.slice(0, -1);
-  
-  // Kill the loser
-  changes[loser.channel] = {
-    currentSpend: loser.currentSpend,
-    newSpend: 0,
-    change: -loser.currentSpend
-  };
-  
-  // Redistribute loser's budget based on efficiency
-  const totalEfficiency = survivors.reduce((sum, ch) => sum + ch.efficiency, 0);
-  
-  survivors.forEach(channel => {
-    const efficiencyShare = channel.efficiency / totalEfficiency;
-    const additionalBudget = loser.currentSpend * efficiencyShare;
-    
-    changes[channel.channel] = {
-      currentSpend: channel.currentSpend,
-      newSpend: channel.currentSpend + additionalBudget,
-      change: additionalBudget
-    };
-  });
-  
-  return changes;
-}
-
-function calculateEfficiencyRebalance(rankedChannels, totalBudget) {
-  const changes = {};
-  const totalEfficiency = rankedChannels.reduce((sum, ch) => sum + ch.efficiency, 0);
-  
-  // Reallocate budget purely based on efficiency ratios
-  rankedChannels.forEach(channel => {
-    const efficiencyShare = channel.efficiency / totalEfficiency;
-    const idealSpend = totalBudget * efficiencyShare;
-    
-    changes[channel.channel] = {
-      currentSpend: channel.currentSpend,
-      newSpend: idealSpend,
-      change: idealSpend - channel.currentSpend
-    };
-  });
-  
-  return changes;
-}
-
-function calculateScenarioOutcome(changes, rankedChannels, totalBudget) {
-  let newTotalCustomers = 0;
-  let newTotalSpend = 0;
-  let channelOutcomes = {};
-  
-  Object.entries(changes).forEach(([channel, change]) => {
-    const channelData = rankedChannels.find(ch => ch.channel === channel);
-    if (!channelData) return;
-    
-    const newSpend = change.newSpend;
-    const spendMultiplier = newSpend / (channelData.currentSpend || 1);
-    
-    // Assume diminishing returns: efficiency decreases as spend increases
-    let efficiencyMultiplier = 1;
-    if (spendMultiplier > 1.5) {
-      efficiencyMultiplier = 0.85; // 15% efficiency loss for heavy scaling
-    } else if (spendMultiplier > 1.2) {
-      efficiencyMultiplier = 0.95; // 5% efficiency loss for moderate scaling
-    } else if (spendMultiplier < 0.5) {
-      efficiencyMultiplier = 1.1; // 10% efficiency gain for focusing spend
-    }
-    
-    const projectedCustomers = (channelData.currentCustomers * spendMultiplier * efficiencyMultiplier);
-    const projectedCAC = newSpend / (projectedCustomers || 1);
-    
-    channelOutcomes[channel] = {
-      newSpend,
-      projectedCustomers: Math.round(projectedCustomers),
-      projectedCAC: Math.round(projectedCAC * 100) / 100,
-      spendChange: change.change,
-      efficiencyChange: (efficiencyMultiplier - 1) * 100
-    };
-    
-    newTotalCustomers += projectedCustomers;
-    newTotalSpend += newSpend;
-  });
-  
-  return {
-    totalCustomers: Math.round(newTotalCustomers),
-    totalSpend: Math.round(newTotalSpend),
-    blendedCAC: Math.round((newTotalSpend / newTotalCustomers) * 100) / 100,
-    channels: channelOutcomes,
-    efficiency: newTotalCustomers / newTotalSpend
-  };
-}
-
-function calculateReallocationRisk(currentAllocations, proposedAllocations) {
-  let totalChange = 0;
-  let maxChannelChange = 0;
-  
-  Object.keys(currentAllocations).forEach(channel => {
-    const currentSpend = currentAllocations[channel] || 0;
-    const proposedSpend = proposedAllocations[channel] || 0;
-    const change = Math.abs(proposedSpend - currentSpend);
-    const changePercent = currentSpend > 0 ? change / currentSpend : 1;
-    
-    totalChange += changePercent;
-    maxChannelChange = Math.max(maxChannelChange, changePercent);
-  });
-  
-  if (maxChannelChange > 0.8) return 'High';
-  if (maxChannelChange > 0.4 || totalChange > 1.5) return 'Medium';
-  return 'Low';
-}
-
-// Health check
-app.get('/health', (req, res) => {
-  res.json({ status: 'OK', service: 'CAC Calculator Pro' });
-});
-
-// Serve main app
-app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'index.html'));
-});
-
-// Handle all other routes
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'index.html'));
-});
-
+// Start server
+const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {
-  console.log(`CAC Calculator Pro running on port ${PORT}`);
+  console.log(`CAC Calculator Server running on port ${PORT}`);
 });
