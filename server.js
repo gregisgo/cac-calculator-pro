@@ -1606,7 +1606,6 @@ function generateKeyInsights(results, marketingData, revenueData) {
 }
 
 // Start server
-const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {
   console.log(`CAC Calculator Server running on port ${PORT}`);
 });
