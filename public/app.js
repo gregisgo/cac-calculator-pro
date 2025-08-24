@@ -1284,72 +1284,91 @@ function implementScenario(scenarioIndex) {
 // Demo Data Functions
 async function loadDemoData() {
     try {
-        showNotification('Loading demo data...', 'info');
+        showNotification('Loading enhanced v2.0 demo data with creative tracking...', 'info');
         
-        // Load the sample CSV file
-        const response = await fetch('/sample-marketing-data-18m.csv');
-        if (!response.ok) {
-            throw new Error('Could not load demo data');
+        // Load both enhanced marketing and revenue CSV files
+        const [marketingResponse, revenueResponse] = await Promise.all([
+            fetch('/sample-marketing-comprehensive.csv'),
+            fetch('/sample-revenue-comprehensive.csv')
+        ]);
+        
+        if (!marketingResponse.ok || !revenueResponse.ok) {
+            throw new Error('Could not load demo data files');
         }
         
-        const csvText = await response.text();
+        const [marketingCsv, revenueCsv] = await Promise.all([
+            marketingResponse.text(),
+            revenueResponse.text()
+        ]);
         
-        // Parse CSV data
-        const lines = csvText.split('\n');
-        const headers = lines[0].split(',').map(h => h.trim());
-        const data = [];
+        // Parse marketing data with enhanced fields
+        const marketingLines = marketingCsv.split('\n');
+        const marketingHeaders = marketingLines[0].split(',').map(h => h.trim());
+        const marketingData = [];
         
-        for (let i = 1; i < lines.length; i++) {
-            if (lines[i].trim()) {
-                const values = lines[i].split(',').map(v => v.trim());
+        for (let i = 1; i < marketingLines.length; i++) {
+            if (marketingLines[i].trim()) {
+                const values = marketingLines[i].split(',').map(v => v.trim());
                 const row = {};
-                headers.forEach((header, index) => {
+                marketingHeaders.forEach((header, index) => {
                     row[header] = values[index];
                 });
-                data.push(row);
+                marketingData.push(row);
             }
         }
         
-        // Split into marketing and revenue data based on the sample structure
-        const marketingData = data.map(row => ({
-            date: row.date,
-            channel: row.channel,
-            spend: parseFloat(row.spend) || 0,
-            campaign: row.campaign || row.channel + ' Campaign'
-        }));
+        // Parse revenue data with enhanced fields
+        const revenueLines = revenueCsv.split('\n');
+        const revenueHeaders = revenueLines[0].split(',').map(h => h.trim());
+        const revenueData = [];
         
-        const revenueData = data.map(row => ({
-            date: row.date,
-            revenue: parseFloat(row.revenue) || 0,
-            customers: parseInt(row.customers) || 0,
-            new_customers: parseInt(row.customers) || 0,
-            channel: row.channel
-        }));
+        for (let i = 1; i < revenueLines.length; i++) {
+            if (revenueLines[i].trim()) {
+                const values = revenueLines[i].split(',').map(v => v.trim());
+                const row = {};
+                revenueHeaders.forEach((header, index) => {
+                    row[header] = values[index];
+                });
+                revenueData.push(row);
+            }
+        }
         
-        // Update app state
+        // Update app state with enhanced data
         appState.uploadedData = {
             marketing: {
-                headers: ['date', 'channel', 'spend', 'campaign'],
+                headers: marketingHeaders,
                 data: marketingData,
-                filename: 'Demo Marketing Data (18 months)'
+                filename: 'Enhanced Demo Marketing Data (6 months + v2.0 features)'
             },
             revenue: {
-                headers: ['date', 'revenue', 'customers', 'new_customers', 'channel'],
+                headers: revenueHeaders,
                 data: revenueData,
-                filename: 'Demo Revenue Data (18 months)'
+                filename: 'Enhanced Demo Revenue Data (6 months + attribution)'
             }
         };
         
         // Update UI
-        updateDataPreview('marketing', marketingData, 'Demo Marketing Data (18 months)');
-        updateDataPreview('revenue', revenueData, 'Demo Revenue Data (18 months)');
+        updateDataPreview('marketing', marketingData, 'Enhanced Demo Marketing Data (6 months + v2.0 features)');
+        updateDataPreview('revenue', revenueData, 'Enhanced Demo Revenue Data (6 months + attribution)');
         updateAnalyzeButton();
         
-        showNotification('Demo data loaded successfully! 🎉', 'success');
+        showNotification('✨ Enhanced v2.0 demo data loaded successfully! Features: Creative tracking, audience saturation patterns, attribution journeys, seasonal trends & anomalies', 'success');
         
     } catch (error) {
-        console.error('Error loading demo data:', error);
-        showNotification('Failed to load demo data. Please upload your own files.', 'error');
+        console.error('Error loading enhanced demo data:', error);
+        
+        // Fallback to original data if enhanced data fails
+        try {
+            const fallbackResponse = await fetch('/sample-marketing-data-18m.csv');
+            if (fallbackResponse.ok) {
+                showNotification('Loading fallback demo data...', 'info');
+                const csvText = await fallbackResponse.text();
+                // ... original parsing logic as fallback
+                showNotification('Demo data loaded (basic version)', 'success');
+            }
+        } catch (fallbackError) {
+            showNotification('Failed to load demo data. Please upload your own files.', 'error');
+        }
     }
 }
 

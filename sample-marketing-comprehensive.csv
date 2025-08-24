@@ -1,0 +1,61 @@
+date,channel,spend,campaign,creative_id,creative_type,ad_set,audience,impressions,clicks,ctr,cpc
+2024-01-01,Google Ads,2500,Brand Search,cr_001,Text,Brand_Keywords,Brand_Searchers,125000,3125,2.5,0.8
+2024-01-01,Facebook,1800,Lookalike Campaign,cr_002,Video,Video_Ads,Lookalike_1pct,90000,1620,1.8,1.11
+2024-01-01,LinkedIn,1200,B2B Targeting,cr_003,Image,Sponsored_Content,IT_Directors,24000,288,1.2,4.17
+2024-01-01,TikTok,800,Gen Z Campaign,cr_004,Video,Short_Form,Gen_Z_Audience,40000,800,2.0,1.0
+2024-01-02,Google Ads,2300,Brand Search,cr_001,Text,Brand_Keywords,Brand_Searchers,115000,2875,2.5,0.8
+2024-01-02,Facebook,1900,Interest Targeting,cr_005,Carousel,Interest_Based,Marketing_Professionals,95000,1710,1.8,1.11
+2024-01-02,LinkedIn,1100,Industry Targeting,cr_006,Video,Video_Ads,SaaS_Companies,22000,264,1.2,4.17
+2024-01-02,TikTok,850,Trending Campaign,cr_007,Video,Trend_Content,Millennials,42500,850,2.0,1.0
+2024-01-03,Google Ads,2600,Competitor Keywords,cr_008,Text,Competitor_Terms,Competitor_Audiences,130000,3900,3.0,0.67
+2024-01-03,Facebook,2100,Video Campaign,cr_009,Video,Video_Ads,Cold_Audience,105000,2100,2.0,1.0
+2024-01-03,LinkedIn,1400,Job Title Targeting,cr_010,Image,Job_Title_Ads,VP_Marketing,28000,392,1.4,3.57
+2024-01-03,TikTok,900,Viral Content,cr_011,Video,Viral_Attempt,Broad_Audience,45000,1350,3.0,0.67
+2024-01-15,Google Ads,3200,Black Friday Sale,cr_034,Text,Sale_Keywords,Sale_Searchers,160000,6400,4.0,0.5
+2024-01-15,Facebook,2800,Black Friday Video,cr_035,Video,Sale_Ads,Shoppers,140000,4200,3.0,0.67
+2024-01-15,LinkedIn,1800,Holiday Promotion,cr_036,Image,Holiday_Ads,B2B_Buyers,36000,720,2.0,2.5
+2024-01-15,TikTok,1200,Holiday Trends,cr_037,Video,Holiday_Content,Holiday_Shoppers,60000,1800,3.0,0.67
+2024-02-01,Google Ads,2400,Brand Search,cr_001,Text,Brand_Keywords,Brand_Searchers,120000,3000,2.5,0.8
+2024-02-01,Facebook,1700,Lookalike Campaign,cr_002,Video,Video_Ads,Lookalike_1pct,85000,1530,1.8,1.11
+2024-02-01,LinkedIn,1100,B2B Targeting,cr_003,Image,Sponsored_Content,IT_Directors,22000,264,1.2,4.17
+2024-02-01,TikTok,750,Winter Campaign,cr_038,Video,Winter_Content,Gen_Z_Audience,37500,750,2.0,1.0
+2024-02-14,Google Ads,2900,Valentine Sale,cr_039,Text,Valentine_Keywords,Romance_Shoppers,145000,4350,3.0,0.67
+2024-02-14,Facebook,2500,Valentine Video,cr_040,Video,Romance_Ads,Couples,125000,2500,2.0,1.0
+2024-02-14,LinkedIn,1600,Valentine B2B,cr_041,Image,Valentine_Professional,Business_Couples,32000,448,1.4,3.57
+2024-02-14,TikTok,1100,Valentine Trends,cr_042,Video,Romance_Trends,Young_Couples,55000,1100,2.0,1.0
+2024-03-01,Google Ads,2600,Brand Search,cr_001,Text,Brand_Keywords,Brand_Searchers_Saturated,130000,2600,2.0,1.0
+2024-03-01,Facebook,1800,Lookalike Campaign,cr_002,Video,Video_Ads,Lookalike_1pct_Saturated,90000,1350,1.5,1.33
+2024-03-01,LinkedIn,1200,B2B Targeting,cr_003,Image,Sponsored_Content,IT_Directors_Saturated,24000,240,1.0,5.0
+2024-03-01,TikTok,800,Spring Campaign,cr_043,Video,Spring_Content,Gen_Z_Audience_Saturated,40000,600,1.5,1.33
+2024-03-15,Google Ads,2800,Spring Sale,cr_044,Text,Spring_Keywords,Spring_Shoppers,140000,4200,3.0,0.67
+2024-03-15,Facebook,2400,Spring Video,cr_045,Video,Spring_Ads,Outdoor_Enthusiasts,120000,2400,2.0,1.0
+2024-03-15,LinkedIn,1500,Spring B2B,cr_046,Image,Spring_Professional,Outdoor_Professionals,30000,420,1.4,3.57
+2024-03-15,TikTok,1000,Spring Trends,cr_047,Video,Spring_Trends,Nature_Lovers,50000,1000,2.0,1.0
+2024-04-01,Google Ads,2700,Brand Search,cr_001,Text,Brand_Keywords,Brand_Searchers_High_Sat,135000,2025,1.5,1.33
+2024-04-01,Facebook,1900,Lookalike Campaign,cr_002,Video,Video_Ads,Lookalike_1pct_High_Sat,95000,1140,1.2,1.67
+2024-04-01,LinkedIn,1300,B2B Targeting,cr_003,Image,Sponsored_Content,IT_Directors_High_Sat,26000,234,0.9,5.56
+2024-04-01,TikTok,850,Easter Campaign,cr_048,Video,Easter_Content,Gen_Z_High_Sat,42500,510,1.2,1.67
+2024-04-15,Google Ads,3100,Easter Sale,cr_049,Text,Easter_Keywords,Easter_Shoppers,155000,4650,3.0,0.67
+2024-04-15,Facebook,2600,Easter Video,cr_050,Video,Easter_Ads,Family_Audience,130000,2600,2.0,1.0
+2024-04-15,LinkedIn,1700,Easter B2B,cr_051,Image,Easter_Professional,Family_Professionals,34000,476,1.4,3.57
+2024-04-15,TikTok,1150,Easter Trends,cr_052,Video,Easter_Trends,Young_Families,57500,1150,2.0,1.0
+2024-05-01,Google Ads,2900,Brand Search,cr_001,Text,Brand_Keywords,Brand_Searchers_Critical,145000,1450,1.0,2.0
+2024-05-01,Facebook,2100,Lookalike Campaign,cr_002,Video,Video_Ads,Lookalike_1pct_Critical,105000,840,0.8,2.5
+2024-05-01,LinkedIn,1400,B2B Targeting,cr_003,Image,Sponsored_Content,IT_Directors_Critical,28000,196,0.7,7.14
+2024-05-01,TikTok,950,May Campaign,cr_053,Video,May_Content,Gen_Z_Critical,47500,380,0.8,2.5
+2024-05-15,Google Ads,3300,Mother Day Sale,cr_054,Text,Mother_Keywords,Mother_Shoppers,165000,4950,3.0,0.67
+2024-05-15,Facebook,2800,Mother Day Video,cr_055,Video,Mother_Ads,Mothers,140000,2800,2.0,1.0
+2024-05-15,LinkedIn,1800,Mother Day B2B,cr_056,Image,Mother_Professional,Working_Mothers,36000,504,1.4,3.57
+2024-05-15,TikTok,1200,Mother Trends,cr_057,Video,Mother_Trends,Young_Mothers,60000,1200,2.0,1.0
+2024-06-01,Google Ads,3100,Brand Search,cr_001,Text,Brand_Keywords,Brand_Searchers_Recovery,155000,2325,1.5,1.33
+2024-06-01,Facebook,2200,Lookalike Campaign,cr_058,Video,Video_Ads,Lookalike_2pct,110000,1650,1.5,1.33
+2024-06-01,LinkedIn,1500,B2B Targeting,cr_059,Image,Sponsored_Content,New_IT_Directors,30000,360,1.2,4.17
+2024-06-01,TikTok,1000,Summer Campaign,cr_060,Video,Summer_Content,Summer_Audience,50000,750,1.5,1.33
+2024-06-15,Google Ads,3500,Summer Sale,cr_061,Text,Summer_Keywords,Summer_Shoppers,175000,5250,3.0,0.67
+2024-06-15,Facebook,3000,Summer Video,cr_062,Video,Summer_Ads,Beach_Lovers,150000,3000,2.0,1.0
+2024-06-15,LinkedIn,2000,Summer B2B,cr_063,Image,Summer_Professional,Vacation_Planners,40000,560,1.4,3.57
+2024-06-15,TikTok,1300,Summer Trends,cr_064,Video,Summer_Trends,Beach_Content,65000,1300,2.0,1.0
+2024-06-30,Google Ads,2800,Brand Search,cr_001,Text,Brand_Keywords,Brand_Searchers,140000,3500,2.5,0.8
+2024-06-30,Facebook,2000,Lookalike Campaign,cr_058,Video,Video_Ads,Lookalike_2pct,100000,1800,1.8,1.11
+2024-06-30,LinkedIn,1300,B2B Targeting,cr_059,Image,Sponsored_Content,New_IT_Directors,26000,312,1.2,4.17
+2024-06-30,TikTok,900,End Q2 Campaign,cr_065,Video,Q2_Recap,Engaged_Users,45000,900,2.0,1.0

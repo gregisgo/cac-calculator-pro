@@ -1,0 +1,109 @@
+date,revenue,customers,new_customers,channel,customer_id,ltv,cohort,attribution_source
+2024-01-01,15000,45,32,Google Ads,cust_0001,850,2024-01-W1,Brand Search
+2024-01-01,12000,38,28,Facebook,cust_0002,650,2024-01-W1,Lookalike Campaign
+2024-01-01,8500,25,18,LinkedIn,cust_0003,1200,2024-01-W1,B2B Targeting
+2024-01-01,3200,12,8,Google Ads,cust_0004,950,2024-01-W1,Generic Keywords
+2024-01-01,2800,10,7,Facebook,cust_0005,720,2024-01-W1,Interest Targeting
+2024-01-02,14500,42,30,Google Ads,cust_0006,820,2024-01-W1,Brand Search
+2024-01-02,13200,40,29,Facebook,cust_0007,680,2024-01-W1,Interest Targeting
+2024-01-02,7800,22,16,LinkedIn,cust_0008,1150,2024-01-W1,Industry Targeting
+2024-01-02,4100,15,11,Google Ads,cust_0009,890,2024-01-W1,Competitor Keywords
+2024-01-02,3500,12,9,Facebook,cust_0010,750,2024-01-W1,Video Campaign
+2024-01-03,16200,48,34,Google Ads,cust_0011,870,2024-01-W1,Competitor Keywords
+2024-01-03,14800,44,31,Facebook,cust_0012,710,2024-01-W1,Video Campaign
+2024-01-03,9200,28,20,LinkedIn,cust_0013,1100,2024-01-W1,Job Title Targeting
+2024-01-03,3800,14,10,Google Ads,cust_0014,940,2024-01-W1,Shopping Ads
+2024-01-03,3200,11,8,Facebook,cust_0015,780,2024-01-W1,Retargeting
+2024-01-04,15800,46,33,Google Ads,cust_0016,840,2024-01-W1,Brand Search
+2024-01-04,11900,36,26,Facebook,cust_0017,660,2024-01-W1,Retargeting
+2024-01-04,8900,26,19,LinkedIn,cust_0018,1180,2024-01-W1,Company Targeting
+2024-01-04,4200,16,12,Google Ads,cust_0019,880,2024-01-W1,Generic Keywords
+2024-01-04,3600,13,10,Facebook,cust_0020,790,2024-01-W1,Cold Outreach
+2024-01-05,17500,52,37,Google Ads,cust_0021,900,2024-01-W1,Generic Keywords
+2024-01-05,15600,47,33,Facebook,cust_0022,740,2024-01-W1,Cold Outreach
+2024-01-05,10200,31,22,LinkedIn,cust_0023,1220,2024-01-W1,Content Promotion
+2024-01-05,4500,17,13,Google Ads,cust_0024,920,2024-01-W1,Brand Search
+2024-01-05,3900,14,11,Facebook,cust_0025,800,2024-01-W1,Event Promotion
+2024-01-06,14200,43,31,Google Ads,cust_0026,860,2024-01-W2,Brand Search
+2024-01-06,10800,33,24,Facebook,cust_0027,690,2024-01-W2,Event Promotion
+2024-01-06,6800,20,15,LinkedIn,cust_0028,1160,2024-01-W2,Webinar Ads
+2024-01-06,3700,14,11,Google Ads,cust_0029,930,2024-01-W2,Shopping Ads
+2024-01-06,3100,11,8,Facebook,cust_0030,770,2024-01-W2,Lookalike Campaign
+2024-01-07,16800,50,36,Google Ads,cust_0031,910,2024-01-W2,Shopping Ads
+2024-01-07,14200,42,30,Facebook,cust_0032,720,2024-01-W2,Lookalike Campaign
+2024-01-07,8600,26,19,LinkedIn,cust_0033,1140,2024-01-W2,Industry Targeting
+2024-01-07,4400,16,12,Google Ads,cust_0034,950,2024-01-W2,Competitor Keywords
+2024-01-07,3800,13,10,Facebook,cust_0035,810,2024-01-W2,Interest Targeting
+2024-01-08,15500,47,34,Google Ads,cust_0036,890,2024-01-W2,Brand Search
+2024-01-08,12800,39,28,Facebook,cust_0037,700,2024-01-W2,Interest Targeting
+2024-01-08,9100,27,20,LinkedIn,cust_0038,1190,2024-01-W2,B2B Targeting
+2024-01-08,4000,15,11,Google Ads,cust_0039,920,2024-01-W2,Generic Keywords
+2024-01-08,3400,12,9,Facebook,cust_0040,760,2024-01-W2,Video Campaign
+2024-01-09,17200,51,37,Google Ads,cust_0041,940,2024-01-W2,Competitor Keywords
+2024-01-09,15100,45,32,Facebook,cust_0042,750,2024-01-W2,Video Campaign
+2024-01-09,9800,29,21,LinkedIn,cust_0043,1170,2024-01-W2,Job Title Targeting
+2024-01-09,4600,17,13,Google Ads,cust_0044,960,2024-01-W2,Shopping Ads
+2024-01-09,4000,14,11,Facebook,cust_0045,820,2024-01-W2,Retargeting
+2024-01-10,14800,44,32,Google Ads,cust_0046,880,2024-01-W2,Brand Search
+2024-01-10,11200,34,25,Facebook,cust_0047,680,2024-01-W2,Retargeting
+2024-01-10,8200,25,18,LinkedIn,cust_0048,1130,2024-01-W2,Company Targeting
+2024-01-10,3900,14,11,Google Ads,cust_0049,910,2024-01-W2,Generic Keywords
+2024-01-10,3300,12,9,Facebook,cust_0050,740,2024-01-W2,Cold Outreach
+2024-01-11,18500,55,40,Google Ads,cust_0051,970,2024-01-W2,Generic Keywords
+2024-01-11,16200,48,35,Facebook,cust_0052,780,2024-01-W2,Cold Outreach
+2024-01-11,11500,34,25,LinkedIn,cust_0053,1250,2024-01-W2,Content Promotion
+2024-01-11,4800,18,14,Google Ads,cust_0054,980,2024-01-W2,Brand Search
+2024-01-11,4200,15,12,Facebook,cust_0055,840,2024-01-W2,Event Promotion
+2024-01-12,15200,46,33,Google Ads,cust_0056,900,2024-01-W2,Brand Search
+2024-01-12,12600,38,27,Facebook,cust_0057,720,2024-01-W2,Event Promotion
+2024-01-12,7400,22,16,LinkedIn,cust_0058,1180,2024-01-W2,Webinar Ads
+2024-01-12,4100,15,12,Google Ads,cust_0059,950,2024-01-W2,Shopping Ads
+2024-01-12,3500,12,9,Facebook,cust_0060,790,2024-01-W2,Lookalike Campaign
+2024-01-13,17800,53,38,Google Ads,cust_0061,930,2024-01-W3,Shopping Ads
+2024-01-13,15400,46,33,Facebook,cust_0062,760,2024-01-W3,Lookalike Campaign
+2024-01-13,9600,28,21,LinkedIn,cust_0063,1200,2024-01-W3,Industry Targeting
+2024-01-13,4700,17,13,Google Ads,cust_0064,990,2024-01-W3,Competitor Keywords
+2024-01-13,4100,14,11,Facebook,cust_0065,830,2024-01-W3,Interest Targeting
+2024-01-14,16500,49,36,Google Ads,cust_0066,920,2024-01-W3,Brand Search
+2024-01-14,13800,41,30,Facebook,cust_0067,730,2024-01-W3,Interest Targeting
+2024-01-14,9400,28,21,LinkedIn,cust_0068,1210,2024-01-W3,B2B Targeting
+2024-01-14,4300,16,12,Google Ads,cust_0069,940,2024-01-W3,Generic Keywords
+2024-01-14,3700,13,10,Facebook,cust_0070,780,2024-01-W3,Video Campaign
+2024-01-15,22000,65,48,Google Ads,cust_0071,1100,2024-01-W3,Black Friday Sale
+2024-01-15,19600,58,42,Facebook,cust_0072,900,2024-01-W3,Black Friday Video
+2024-01-15,13200,38,28,LinkedIn,cust_0073,1400,2024-01-W3,Holiday Promotion
+2024-01-15,5200,19,15,Google Ads,cust_0074,1050,2024-01-W3,Brand Search
+2024-01-15,4500,16,13,Facebook,cust_0075,950,2024-01-W3,Lookalike Campaign
+2024-01-16,15800,47,34,Google Ads,cust_0076,890,2024-01-W3,Brand Search
+2024-01-16,12200,37,27,Facebook,cust_0077,710,2024-01-W3,Lookalike Campaign
+2024-01-16,7900,24,17,LinkedIn,cust_0078,1150,2024-01-W3,Industry Targeting
+2024-01-16,4200,15,12,Google Ads,cust_0079,920,2024-01-W3,Generic Keywords
+2024-01-16,3600,13,10,Facebook,cust_0080,760,2024-01-W3,Interest Targeting
+2024-01-17,18200,54,39,Google Ads,cust_0081,950,2024-01-W3,Competitor Keywords
+2024-01-17,15800,47,34,Facebook,cust_0082,780,2024-01-W3,Video Campaign
+2024-01-17,10800,32,24,LinkedIn,cust_0083,1230,2024-01-W3,Job Title Targeting
+2024-01-17,4900,18,14,Google Ads,cust_0084,980,2024-01-W3,Shopping Ads
+2024-01-17,4300,15,12,Facebook,cust_0085,850,2024-01-W3,Retargeting
+2024-01-18,16200,48,35,Google Ads,cust_0086,910,2024-01-W3,Brand Search
+2024-01-18,13400,40,29,Facebook,cust_0087,740,2024-01-W3,Retargeting
+2024-01-18,8800,26,19,LinkedIn,cust_0088,1170,2024-01-W3,Company Targeting
+2024-01-18,4400,16,12,Google Ads,cust_0089,940,2024-01-W3,Generic Keywords
+2024-01-18,3800,14,11,Facebook,cust_0090,790,2024-01-W3,Cold Outreach
+2024-01-19,17600,52,38,Google Ads,cust_0091,960,2024-01-W3,Generic Keywords
+2024-01-19,15200,45,33,Facebook,cust_0092,800,2024-01-W3,Cold Outreach
+2024-01-19,10600,31,23,LinkedIn,cust_0093,1260,2024-01-W3,Content Promotion
+2024-01-19,4700,17,13,Google Ads,cust_0094,980,2024-01-W3,Brand Search
+2024-01-19,4100,14,11,Facebook,cust_0095,860,2024-01-W3,Event Promotion
+2024-01-20,15600,46,33,Google Ads,cust_0096,900,2024-01-W4,Brand Search
+2024-01-20,12800,38,28,Facebook,cust_0097,750,2024-01-W4,Event Promotion
+2024-01-20,8200,24,18,LinkedIn,cust_0098,1190,2024-01-W4,Webinar Ads
+2024-01-20,4300,16,12,Google Ads,cust_0099,960,2024-01-W4,Shopping Ads
+2024-01-20,3700,13,10,Facebook,cust_0100,810,2024-01-W4,Lookalike Campaign
+2024-01-21,16800,50,36,Google Ads,cust_0101,920,2024-01-W4,Shopping Ads
+2024-01-21,14200,42,31,Facebook,cust_0102,770,2024-01-W4,Lookalike Campaign
+2024-01-21,8600,26,19,LinkedIn,cust_0103,1160,2024-01-W4,Industry Targeting
+2024-01-21,4500,17,13,Google Ads,cust_0104,970,2024-01-W4,Competitor Keywords
+2024-01-21,3900,14,11,Facebook,cust_0105,830,2024-01-W4,Interest Targeting
+2024-01-22,17200,51,37,Google Ads,cust_0106,940,2024-01-W4,Brand Search
+2024-01-22,14800,44,32,Facebook,cust_0107,780,2024-01-W4,Interest Targeting
+2024-01-22,9800,29,22,LinkedIn,cust_0108,1210,2024-01-W4,B2B Targeting

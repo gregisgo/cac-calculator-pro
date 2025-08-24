@@ -1,0 +1,67 @@
+date,channel,spend,campaign,creative_id,creative_type,ad_set,audience,impressions,clicks,ctr,cpc
+2024-01-01,Google Ads,2500,Brand Search,cr_001,Text,Brand_Keywords,Brand_Searchers,125000,3125,2.5,0.8
+2024-01-01,Facebook,1800,Lookalike Campaign,cr_002,Video,Video_Ads,Lookalike_1pct,90000,1620,1.8,1.11
+2024-01-01,LinkedIn,1200,B2B Targeting,cr_003,Image,Sponsored_Content,IT_Directors,24000,288,1.2,4.17
+2024-01-02,Google Ads,2300,Brand Search,cr_001,Text,Brand_Keywords,Brand_Searchers,115000,2875,2.5,0.8
+2024-01-02,Facebook,1900,Interest Targeting,cr_004,Carousel,Interest_Based,Marketing_Professionals,95000,1710,1.8,1.11
+2024-01-02,LinkedIn,1100,Industry Targeting,cr_005,Video,Video_Ads,SaaS_Companies,22000,264,1.2,4.17
+2024-01-03,Google Ads,2600,Competitor Keywords,cr_006,Text,Competitor_Terms,Competitor_Audiences,130000,3900,3.0,0.67
+2024-01-03,Facebook,2100,Video Campaign,cr_007,Video,Video_Ads,Cold_Audience,105000,2100,2.0,1.0
+2024-01-03,LinkedIn,1400,Job Title Targeting,cr_008,Image,Job_Title_Ads,VP_Marketing,28000,392,1.4,3.57
+2024-01-04,Google Ads,2400,Brand Search,cr_001,Text,Brand_Keywords,Brand_Searchers,120000,3000,2.5,0.8
+2024-01-04,Facebook,1700,Retargeting,cr_009,Image,Retargeting_Ads,Website_Visitors,85000,1700,2.0,1.0
+2024-01-04,LinkedIn,1300,Company Targeting,cr_010,Video,Company_Ads,Fortune_500,26000,364,1.4,3.57
+2024-01-05,Google Ads,2800,Generic Keywords,cr_011,Text,Generic_Terms,Generic_Search,140000,4200,3.0,0.67
+2024-01-05,Facebook,2000,Cold Outreach,cr_012,Carousel,Cold_Ads,Interest_Expansion,100000,2000,2.0,1.0
+2024-01-05,LinkedIn,1500,Content Promotion,cr_013,Image,Content_Ads,Industry_Leaders,30000,450,1.5,3.33
+2024-01-06,Google Ads,2200,Brand Search,cr_001,Text,Brand_Keywords,Brand_Searchers,110000,2750,2.5,0.8
+2024-01-06,Facebook,1600,Event Promotion,cr_014,Video,Event_Ads,Event_Interested,80000,1600,2.0,1.0
+2024-01-06,LinkedIn,1000,Webinar Ads,cr_015,Image,Webinar_Ads,Webinar_Attendees,20000,300,1.5,3.33
+2024-01-07,Google Ads,2700,Shopping Ads,cr_016,Shopping,Shopping_Campaign,Product_Searchers,135000,4050,3.0,0.67
+2024-01-07,Facebook,1850,Lookalike Campaign,cr_017,Video,Video_Ads,Lookalike_2pct,92500,1665,1.8,1.11
+2024-01-07,LinkedIn,1200,Industry Targeting,cr_005,Video,Video_Ads,SaaS_Companies,24000,288,1.2,4.17
+2024-01-08,Google Ads,2550,Brand Search,cr_001,Text,Brand_Keywords,Brand_Searchers,127500,3187,2.5,0.8
+2024-01-08,Facebook,1950,Interest Targeting,cr_018,Image,Interest_Based,Tech_Enthusiasts,97500,1755,1.8,1.11
+2024-01-08,LinkedIn,1350,B2B Targeting,cr_019,Carousel,B2B_Ads,C_Suite,27000,378,1.4,3.57
+2024-01-09,Google Ads,2450,Competitor Keywords,cr_006,Text,Competitor_Terms,Competitor_Audiences,122500,3675,3.0,0.67
+2024-01-09,Facebook,2200,Video Campaign,cr_020,Video,Video_Ads,Engaged_Audience,110000,2200,2.0,1.0
+2024-01-09,LinkedIn,1450,Job Title Targeting,cr_021,Image,Job_Title_Ads,CMO_Audience,29000,406,1.4,3.57
+2024-01-10,Google Ads,2300,Brand Search,cr_001,Text,Brand_Keywords,Brand_Searchers,115000,2875,2.5,0.8
+2024-01-10,Facebook,1750,Retargeting,cr_022,Carousel,Retargeting_Ads,Cart_Abandoners,87500,1750,2.0,1.0
+2024-01-10,LinkedIn,1250,Company Targeting,cr_023,Video,Company_Ads,Enterprise_Companies,25000,350,1.4,3.57
+2024-01-11,Google Ads,2900,Generic Keywords,cr_024,Text,Generic_Terms,Broad_Audience,145000,4350,3.0,0.67
+2024-01-11,Facebook,2100,Cold Outreach,cr_025,Image,Cold_Ads,Lookalike_5pct,105000,2100,2.0,1.0
+2024-01-11,LinkedIn,1600,Content Promotion,cr_026,Video,Content_Ads,Thought_Leaders,32000,480,1.5,3.33
+2024-01-12,Google Ads,2400,Brand Search,cr_001,Text,Brand_Keywords,Brand_Searchers,120000,3000,2.5,0.8
+2024-01-12,Facebook,1800,Event Promotion,cr_027,Video,Event_Ads,Conference_Goers,90000,1800,2.0,1.0
+2024-01-12,LinkedIn,1100,Webinar Ads,cr_028,Image,Webinar_Ads,Educational_Content,22000,330,1.5,3.33
+2024-01-13,Google Ads,2800,Shopping Ads,cr_029,Shopping,Shopping_Campaign,Purchase_Intent,140000,4200,3.0,0.67
+2024-01-13,Facebook,1950,Lookalike Campaign,cr_030,Carousel,Video_Ads,Lookalike_3pct,97500,1755,1.8,1.11
+2024-01-13,LinkedIn,1300,Industry Targeting,cr_031,Image,Industry_Ads,Tech_Companies,26000,364,1.4,3.57
+2024-01-14,Google Ads,2650,Brand Search,cr_001,Text,Brand_Keywords,Brand_Searchers,132500,3312,2.5,0.8
+2024-01-14,Facebook,2000,Interest Targeting,cr_032,Video,Interest_Based,Business_Leaders,100000,1800,1.8,1.11
+2024-01-14,LinkedIn,1400,B2B Targeting,cr_033,Video,B2B_Ads,Decision_Makers,28000,392,1.4,3.57
+2024-01-15,Google Ads,3200,Black Friday Sale,cr_034,Text,Sale_Keywords,Sale_Searchers,160000,6400,4.0,0.5
+2024-01-15,Facebook,2800,Black Friday Video,cr_035,Video,Sale_Ads,Shoppers,140000,4200,3.0,0.67
+2024-01-15,LinkedIn,1800,Holiday Promotion,cr_036,Image,Holiday_Ads,B2B_Buyers,36000,720,2.0,2.5
+2024-01-16,Google Ads,2500,Brand Search,cr_001,Text,Brand_Keywords,Brand_Searchers,125000,3125,2.5,0.8
+2024-01-16,Facebook,1900,Lookalike Campaign,cr_037,Image,Lookalike_Ads,Lookalike_4pct,95000,1710,1.8,1.11
+2024-01-16,LinkedIn,1200,Industry Targeting,cr_038,Carousel,Industry_Ads,Manufacturing,24000,288,1.2,4.17
+2024-01-17,Google Ads,2700,Competitor Keywords,cr_039,Text,Competitor_Terms,Switching_Audience,135000,4050,3.0,0.67
+2024-01-17,Facebook,2200,Video Campaign,cr_040,Video,Video_Ads,Engagement_Audience,110000,2200,2.0,1.0
+2024-01-17,LinkedIn,1500,Job Title Targeting,cr_041,Image,Job_Title_Ads,Director_Level,30000,450,1.5,3.33
+2024-01-18,Google Ads,2600,Brand Search,cr_001,Text,Brand_Keywords,Brand_Searchers,130000,3250,2.5,0.8
+2024-01-18,Facebook,2000,Retargeting,cr_042,Carousel,Retargeting_Ads,Email_Subscribers,100000,2000,2.0,1.0
+2024-01-18,LinkedIn,1350,Company Targeting,cr_043,Video,Company_Ads,Tech_Startups,27000,378,1.4,3.57
+2024-01-19,Google Ads,2750,Generic Keywords,cr_044,Text,Generic_Terms,Research_Phase,137500,4125,3.0,0.67
+2024-01-19,Facebook,2100,Cold Outreach,cr_045,Image,Cold_Ads,Broad_Interest,105000,2100,2.0,1.0
+2024-01-19,LinkedIn,1450,Content Promotion,cr_046,Video,Content_Ads,Industry_Experts,29000,435,1.5,3.33
+2024-01-20,Google Ads,2550,Brand Search,cr_001,Text,Brand_Keywords,Brand_Searchers,127500,3187,2.5,0.8
+2024-01-20,Facebook,1850,Event Promotion,cr_047,Video,Event_Ads,Summit_Attendees,92500,1850,2.0,1.0
+2024-01-20,LinkedIn,1250,Webinar Ads,cr_048,Image,Webinar_Ads,Learning_Focused,25000,375,1.5,3.33
+2024-01-21,Google Ads,2400,Shopping Ads,cr_049,Shopping,Shopping_Campaign,Ready_to_Buy,120000,3600,3.0,0.67
+2024-01-21,Facebook,1750,Lookalike Campaign,cr_050,Carousel,Lookalike_Ads,Lookalike_6pct,87500,1575,1.8,1.11
+2024-01-21,LinkedIn,1150,Industry Targeting,cr_051,Image,Industry_Ads,Healthcare,23000,322,1.4,3.57
+2024-01-22,Google Ads,2650,Brand Search,cr_001,Text,Brand_Keywords,Brand_Searchers,132500,3312,2.5,0.8
+2024-01-22,Facebook,2050,Interest Targeting,cr_052,Video,Interest_Based,Growth_Marketers,102500,1845,1.8,1.11
+2024-01-22,LinkedIn,1400,B2B Targeting,cr_053,Video,B2B_Ads,Sales_Leaders,28000,392,1.4,3.57

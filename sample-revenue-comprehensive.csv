@@ -1,0 +1,61 @@
+date,revenue,customers,new_customers,channel,customer_id,ltv,cohort,attribution_source,journey_length,touchpoints
+2024-01-01,15000,45,32,Google Ads,cust_0001,850,2024-01-W1,Brand Search,1,Google Ads
+2024-01-01,12000,38,28,Facebook,cust_0002,650,2024-01-W1,Lookalike Campaign,2,Facebook->Google Ads
+2024-01-01,8500,25,18,LinkedIn,cust_0003,1200,2024-01-W1,B2B Targeting,1,LinkedIn
+2024-01-01,3200,12,8,TikTok,cust_0004,450,2024-01-W1,Gen Z Campaign,3,TikTok->Facebook->Google Ads
+2024-01-02,14500,42,30,Google Ads,cust_0005,820,2024-01-W1,Brand Search,1,Google Ads
+2024-01-02,13200,40,29,Facebook,cust_0006,680,2024-01-W1,Interest Targeting,2,Facebook->LinkedIn
+2024-01-02,7800,22,16,LinkedIn,cust_0007,1150,2024-01-W1,Industry Targeting,1,LinkedIn
+2024-01-02,4100,15,11,TikTok,cust_0008,480,2024-01-W1,Trending Campaign,1,TikTok
+2024-01-03,16200,48,34,Google Ads,cust_0009,870,2024-01-W1,Competitor Keywords,2,Google Ads->Facebook
+2024-01-03,14800,44,31,Facebook,cust_0010,710,2024-01-W1,Video Campaign,1,Facebook
+2024-01-03,9200,28,20,LinkedIn,cust_0011,1100,2024-01-W1,Job Title Targeting,3,LinkedIn->Google Ads->Facebook
+2024-01-03,5200,18,13,TikTok,cust_0012,520,2024-01-W1,Viral Content,2,TikTok->Facebook
+2024-01-15,22000,65,48,Google Ads,cust_0013,1100,2024-01-W3,Black Friday Sale,1,Google Ads
+2024-01-15,19600,58,42,Facebook,cust_0014,900,2024-01-W3,Black Friday Video,1,Facebook
+2024-01-15,13200,38,28,LinkedIn,cust_0015,1400,2024-01-W3,Holiday Promotion,2,LinkedIn->Google Ads
+2024-01-15,7800,28,20,TikTok,cust_0016,600,2024-01-W3,Holiday Trends,1,TikTok
+2024-02-01,15800,47,34,Google Ads,cust_0017,890,2024-02-W1,Brand Search,1,Google Ads
+2024-02-01,11200,37,27,Facebook,cust_0018,710,2024-02-W1,Lookalike Campaign,1,Facebook
+2024-02-01,7900,24,17,LinkedIn,cust_0019,1150,2024-02-W1,B2B Targeting,1,LinkedIn
+2024-02-01,4800,18,13,TikTok,cust_0020,460,2024-02-W1,Winter Campaign,2,TikTok->Google Ads
+2024-02-14,18500,55,40,Google Ads,cust_0021,950,2024-02-W2,Valentine Sale,1,Google Ads
+2024-02-14,16200,48,35,Facebook,cust_0022,780,2024-02-W2,Valentine Video,1,Facebook
+2024-02-14,10600,31,23,LinkedIn,cust_0023,1260,2024-02-W2,Valentine B2B,1,LinkedIn
+2024-02-14,6800,24,17,TikTok,cust_0024,580,2024-02-W2,Valentine Trends,1,TikTok
+2024-03-01,13500,40,29,Google Ads,cust_0025,720,2024-03-W1,Brand Search,1,Google Ads
+2024-03-01,9800,32,23,Facebook,cust_0026,580,2024-03-W1,Lookalike Campaign,1,Facebook
+2024-03-01,6200,19,14,LinkedIn,cust_0027,950,2024-03-W1,B2B Targeting,1,LinkedIn
+2024-03-01,3800,14,10,TikTok,cust_0028,380,2024-03-W1,Spring Campaign,1,TikTok
+2024-03-15,17200,51,37,Google Ads,cust_0029,870,2024-03-W3,Spring Sale,1,Google Ads
+2024-03-15,14800,44,32,Facebook,cust_0030,720,2024-03-W3,Spring Video,1,Facebook
+2024-03-15,9400,28,21,LinkedIn,cust_0031,1180,2024-03-W3,Spring B2B,1,LinkedIn
+2024-03-15,6200,22,16,TikTok,cust_0032,520,2024-03-W3,Spring Trends,1,TikTok
+2024-04-01,11800,35,25,Google Ads,cust_0033,650,2024-04-W1,Brand Search,1,Google Ads
+2024-04-01,8400,28,20,Facebook,cust_0034,520,2024-04-W1,Lookalike Campaign,1,Facebook
+2024-04-01,5200,16,12,LinkedIn,cust_0035,820,2024-04-W1,B2B Targeting,1,LinkedIn
+2024-04-01,3200,12,9,TikTok,cust_0036,340,2024-04-W1,Easter Campaign,1,TikTok
+2024-04-15,19800,59,43,Google Ads,cust_0037,920,2024-04-W3,Easter Sale,1,Google Ads
+2024-04-15,17200,51,37,Facebook,cust_0038,760,2024-04-W3,Easter Video,1,Facebook
+2024-04-15,11400,34,25,LinkedIn,cust_0039,1220,2024-04-W3,Easter B2B,1,LinkedIn
+2024-04-15,7600,27,20,TikTok,cust_0040,560,2024-04-W3,Easter Trends,1,TikTok
+2024-05-01,9600,29,21,Google Ads,cust_0041,580,2024-05-W1,Brand Search,1,Google Ads
+2024-05-01,6800,23,17,Facebook,cust_0042,440,2024-05-W1,Lookalike Campaign,1,Facebook
+2024-05-01,4200,13,10,LinkedIn,cust_0043,720,2024-05-W1,B2B Targeting,1,LinkedIn
+2024-05-01,2800,10,8,TikTok,cust_0044,300,2024-05-W1,May Campaign,1,TikTok
+2024-05-15,21000,62,45,Google Ads,cust_0045,980,2024-05-W3,Mother Day Sale,1,Google Ads
+2024-05-15,18400,55,40,Facebook,cust_0046,820,2024-05-W3,Mother Day Video,1,Facebook
+2024-05-15,12600,37,27,LinkedIn,cust_0047,1300,2024-05-W3,Mother Day B2B,1,LinkedIn
+2024-05-15,8400,30,22,TikTok,cust_0048,620,2024-05-W3,Mother Trends,1,TikTok
+2024-06-01,16800,50,36,Google Ads,cust_0049,820,2024-06-W1,Brand Search,1,Google Ads
+2024-06-01,13200,40,29,Facebook,cust_0050,680,2024-06-W1,Lookalike Campaign,2,Facebook->Google Ads
+2024-06-01,8800,26,19,LinkedIn,cust_0051,1120,2024-06-W1,B2B Targeting,1,LinkedIn
+2024-06-01,6000,22,16,TikTok,cust_0052,480,2024-06-W1,Summer Campaign,1,TikTok
+2024-06-15,23500,70,51,Google Ads,cust_0053,1050,2024-06-W3,Summer Sale,1,Google Ads
+2024-06-15,21000,62,45,Facebook,cust_0054,880,2024-06-W3,Summer Video,1,Facebook
+2024-06-15,14200,42,31,LinkedIn,cust_0055,1380,2024-06-W3,Summer B2B,1,LinkedIn
+2024-06-15,9800,35,26,TikTok,cust_0056,680,2024-06-W3,Summer Trends,1,TikTok
+2024-06-30,18500,55,40,Google Ads,cust_0057,900,2024-06-W4,Brand Search,1,Google Ads
+2024-06-30,15200,45,33,Facebook,cust_0058,750,2024-06-W4,Lookalike Campaign,1,Facebook
+2024-06-30,9800,29,21,LinkedIn,cust_0059,1180,2024-06-W4,B2B Targeting,1,LinkedIn
+2024-06-30,6800,25,18,TikTok,cust_0060,520,2024-06-W4,End Q2 Campaign,1,TikTok
