@@ -8,7 +8,7 @@ const moment = require('moment');
 const ExcelJS = require('exceljs');
 
 const app = express();
-const PORT = process.env.PORT || 3002;
+const PORT = process.env.PORT || 3006;
 
 // Configure multer for file uploads (memory storage)
 const upload = multer({
@@ -3140,6 +3140,86 @@ function generateOptimizationRecommendations(marketingData, revenueData, current
 
   return recommendations;
 }
+
+// Analysis endpoint
+app.post('/api/analyze', (req, res) => {
+  try {
+    const { marketing, revenue, channels, businessModel, projectConfig } = req.body;
+    
+    // Combine all data sources
+    let allMarketingData = [...(marketing || [])];
+    
+    // Add channel-specific data to marketing data
+    if (channels) {
+      Object.values(channels).forEach(channelData => {
+        if (Array.isArray(channelData)) {
+          allMarketingData = allMarketingData.concat(channelData);
+        }
+      });
+    }
+    
+    // Basic CAC calculations
+    const totalSpend = allMarketingData.reduce((sum, row) => {
+      return sum + (parseFloat(row.spend) || 0);
+    }, 0);
+    
+    const totalCustomers = allMarketingData.reduce((sum, row) => {
+      return sum + (parseInt(row.customers) || parseInt(row.new_customers) || 0);
+    }, 0);
+    
+    const blendedCAC = totalCustomers > 0 ? (totalSpend / totalCustomers).toFixed(2) : 0;
+    
+    // Channel breakdown
+    const channelPerformance = {};
+    allMarketingData.forEach(row => {
+      const channel = row.channel || 'Unknown';
+      if (!channelPerformance[channel]) {
+        channelPerformance[channel] = { spend: 0, customers: 0 };
+      }
+      channelPerformance[channel].spend += parseFloat(row.spend) || 0;
+      channelPerformance[channel].customers += parseInt(row.customers) || parseInt(row.new_customers) || 0;
+    });
+    
+    // Calculate CAC per channel
+    Object.keys(channelPerformance).forEach(channel => {
+      const data = channelPerformance[channel];
+      data.cac = data.customers > 0 ? (data.spend / data.customers).toFixed(2) : 0;
+    });
+    
+    const analysisResults = {
+      blendedCAC: blendedCAC,
+      totalSpend: totalSpend.toFixed(2),
+      totalCustomers: totalCustomers,
+      channelPerformance: channelPerformance,
+      dataQuality: {
+        marketingRows: allMarketingData.length,
+        revenueRows: (revenue || []).length,
+        completeness: allMarketingData.length > 0 ? 'Good' : 'Insufficient'
+      },
+      timestamp: new Date().toISOString(),
+      recommendations: [
+        {
+          title: 'Focus on High-Performing Channels',
+          description: 'Allocate more budget to channels with lower CAC',
+          priority: 'high'
+        }
+      ]
+    };
+    
+    console.log('Analysis completed:', {
+      totalSpend,
+      totalCustomers,
+      blendedCAC,
+      channelCount: Object.keys(channelPerformance).length
+    });
+    
+    res.json(analysisResults);
+    
+  } catch (error) {
+    console.error('Analysis error:', error);
+    res.status(500).json({ error: 'Analysis failed: ' + error.message });
+  }
+});
 
 // Start server
 app.listen(PORT, () => {
