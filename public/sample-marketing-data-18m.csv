@@ -1,0 +1,58 @@
+date,channel,spend,campaign,revenue,customers
+2023-07-01,Google Ads,2500,Brand Search,7500,50
+2023-07-01,Facebook,1800,Lookalike Campaign,5400,36
+2023-07-01,LinkedIn,1200,B2B Targeting,4800,24
+2023-07-02,Google Ads,2300,Brand Search,6900,46
+2023-07-02,Facebook,1900,Interest Targeting,5700,38
+2023-07-02,LinkedIn,1100,Industry Targeting,4400,22
+2023-07-03,Google Ads,2600,Competitor Keywords,7800,52
+2023-07-03,Facebook,2100,Video Campaign,6300,42
+2023-07-03,LinkedIn,1400,Job Title Targeting,5600,28
+2023-07-04,Google Ads,2400,Brand Search,7200,48
+2023-07-04,Facebook,1700,Lookalike Campaign,5100,34
+2023-07-04,LinkedIn,1300,B2B Targeting,5200,26
+2023-07-05,Google Ads,2800,Competitor Keywords,8400,56
+2023-07-05,Facebook,2200,Interest Targeting,6600,44
+2023-07-05,LinkedIn,1500,Industry Targeting,6000,30
+2023-08-01,Google Ads,2700,Brand Search,8100,54
+2023-08-01,Facebook,2000,Video Campaign,6000,40
+2023-08-01,LinkedIn,1350,Job Title Targeting,5400,27
+2023-08-02,Google Ads,2450,Brand Search,7350,49
+2023-08-02,Facebook,1850,Lookalike Campaign,5550,37
+2023-08-02,LinkedIn,1250,B2B Targeting,5000,25
+2023-08-03,Google Ads,2650,Competitor Keywords,7950,53
+2023-08-03,Facebook,2150,Interest Targeting,6450,43
+2023-08-03,LinkedIn,1450,Industry Targeting,5800,29
+2023-09-01,Google Ads,2750,Brand Search,8250,55
+2023-09-01,Facebook,2050,Video Campaign,6150,41
+2023-09-01,LinkedIn,1400,Job Title Targeting,5600,28
+2023-09-02,Google Ads,2500,Brand Search,7500,50
+2023-09-02,Facebook,1900,Lookalike Campaign,5700,38
+2023-09-02,LinkedIn,1300,B2B Targeting,5200,26
+2023-10-01,Google Ads,2900,Competitor Keywords,8700,58
+2023-10-01,Facebook,2300,Interest Targeting,6900,46
+2023-10-01,LinkedIn,1550,Industry Targeting,6200,31
+2023-11-01,Google Ads,3100,Brand Search,9300,62
+2023-11-01,Facebook,2400,Video Campaign,7200,48
+2023-11-01,LinkedIn,1600,Job Title Targeting,6400,32
+2023-12-01,Google Ads,3300,Competitor Keywords,9900,66
+2023-12-01,Facebook,2600,Interest Targeting,7800,52
+2023-12-01,LinkedIn,1750,Industry Targeting,7000,35
+2024-01-01,Google Ads,3500,Brand Search,10500,70
+2024-01-01,Facebook,2800,Lookalike Campaign,8400,56
+2024-01-01,LinkedIn,1850,B2B Targeting,7400,37
+2024-02-01,Google Ads,3200,Brand Search,9600,64
+2024-02-01,Facebook,2500,Video Campaign,7500,50
+2024-02-01,LinkedIn,1700,Job Title Targeting,6800,34
+2024-03-01,Google Ads,3400,Competitor Keywords,10200,68
+2024-03-01,Facebook,2700,Interest Targeting,8100,54
+2024-03-01,LinkedIn,1800,Industry Targeting,7200,36
+2024-04-01,Google Ads,3600,Brand Search,10800,72
+2024-04-01,Facebook,2900,Lookalike Campaign,8700,58
+2024-04-01,LinkedIn,1950,B2B Targeting,7800,39
+2024-05-01,Google Ads,3800,Competitor Keywords,11400,76
+2024-05-01,Facebook,3100,Video Campaign,9300,62
+2024-05-01,LinkedIn,2100,Job Title Targeting,8400,42
+2024-06-01,Google Ads,4000,Brand Search,12000,80
+2024-06-01,Facebook,3300,Interest Targeting,9900,66
+2024-06-01,LinkedIn,2250,Industry Targeting,9000,45
