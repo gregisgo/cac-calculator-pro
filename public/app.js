@@ -1424,24 +1424,19 @@ function autofillProjectSetup() {
 }
 
 function autofillBusinessModel() {
-    // Fill business model type
-    document.getElementById('businessType').value = 'saas_subscription';
+    // Fill business model type - correct value is 'saas' not 'saas_subscription'
+    document.getElementById('businessType').value = 'saas';
     
-    // Trigger the change event to show SaaS fields
-    document.getElementById('businessType').dispatchEvent(new Event('change'));
+    // Fill the fields that are always visible
+    const avgRevenueField = document.getElementById('avgRevenue');
+    const ltValueField = document.getElementById('ltValue');
+    const churnRateField = document.getElementById('churnRate');
+    const avgLifetimeField = document.getElementById('avgLifetime');
     
-    // Wait a moment for the DOM to update, then fill SaaS fields
-    setTimeout(() => {
-        const avgRevenueField = document.getElementById('avgRevenue');
-        const ltValueField = document.getElementById('ltValue');
-        const churnRateField = document.getElementById('churnRate');
-        const avgLifetimeField = document.getElementById('avgLifetime');
-        
-        if (avgRevenueField) avgRevenueField.value = '149';
-        if (ltValueField) ltValueField.value = '1788';
-        if (churnRateField) churnRateField.value = '3.5';
-        if (avgLifetimeField) avgLifetimeField.value = '24';
-    }, 100);
+    if (avgRevenueField) avgRevenueField.value = '149';
+    if (ltValueField) ltValueField.value = '1788';
+    if (churnRateField) churnRateField.value = '3.5';
+    if (avgLifetimeField) avgLifetimeField.value = '24';
     
     showNotification('Business model auto-filled for SaaS! ⚡', 'success');
 }
@@ -1461,54 +1456,164 @@ function autofillDataInput() {
 // Simple working results display
 function displaySimpleResults(results) {
     const resultsContainer = document.getElementById('resultsContent');
-    if (!resultsContainer) return;
+    if (!resultsContainer) {
+        console.error('Results container not found');
+        return;
+    }
     
     // Store results globally
     window.fullResults = results;
     
-    const simpleCAC = results.calculations.simpleBlended.value || 0;
-    const fullyLoadedCAC = results.calculations.fullyLoaded.value || 0;
-    const channelCount = Object.keys(results.calculations.channelSpecific.channels || {}).length;
+    try {
+        const simpleCAC = Math.round(results.calculations.simpleBlended.value || 0);
+        const fullyLoadedCAC = Math.round(results.calculations.fullyLoaded.value || 0);
+        const channelCount = Object.keys(results.calculations.channelSpecific.channels || {}).length;
+        const confidence = Math.round((results.metadata?.confidence || 0) * 10) / 10;
+        
+        // Build the HTML step by step to avoid template string issues
+        let html = '<div class="card">';
+        html += '<div class="card-header">';
+        html += '<h2 class="card-title">🎉 CAC Analysis Complete!</h2>';
+        html += '<p class="card-description">Your customer acquisition cost analysis is ready with actionable insights.</p>';
+        html += '</div>';
+        
+        // Main metrics grid
+        html += '<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; margin: 2rem 0;">';
+        
+        // Simple CAC card
+        html += '<div style="background: var(--surface); padding: 2rem; border-radius: 12px; text-align: center; border-left: 4px solid var(--primary-color);">';
+        html += '<div style="font-size: 2.5rem; font-weight: 700; color: var(--primary-color); margin-bottom: 0.5rem;">$' + simpleCAC + '</div>';
+        html += '<div style="font-size: 1.1rem; font-weight: 600; margin-bottom: 0.5rem;">Simple Blended CAC</div>';
+        html += '<div style="font-size: 0.9rem; color: var(--text-secondary);">Most commonly used metric</div>';
+        html += '</div>';
+        
+        // Fully-loaded CAC card
+        html += '<div style="background: var(--surface); padding: 2rem; border-radius: 12px; text-align: center; border-left: 4px solid var(--accent-color);">';
+        html += '<div style="font-size: 2.5rem; font-weight: 700; color: var(--accent-color); margin-bottom: 0.5rem;">$' + fullyLoadedCAC + '</div>';
+        html += '<div style="font-size: 1.1rem; font-weight: 600; margin-bottom: 0.5rem;">Fully-Loaded CAC</div>';
+        html += '<div style="font-size: 0.9rem; color: var(--text-secondary);">Includes all overhead costs</div>';
+        html += '</div>';
+        
+        // Channel count card
+        html += '<div style="background: var(--surface); padding: 2rem; border-radius: 12px; text-align: center; border-left: 4px solid var(--warning-color);">';
+        html += '<div style="font-size: 2.5rem; font-weight: 700; color: var(--warning-color); margin-bottom: 0.5rem;">' + channelCount + '</div>';
+        html += '<div style="font-size: 1.1rem; font-weight: 600; margin-bottom: 0.5rem;">Channels Analyzed</div>';
+        html += '<div style="font-size: 0.9rem; color: var(--text-secondary);">Marketing channels evaluated</div>';
+        html += '</div>';
+        
+        html += '</div>'; // End metrics grid
+        
+        // Channel breakdown
+        if (results.calculations.channelSpecific.channels) {
+            html += '<div style="margin: 2rem 0;">';
+            html += '<h3 style="margin-bottom: 1.5rem;">Channel Performance</h3>';
+            html += '<div style="display: grid; gap: 1rem;">';
+            
+            Object.entries(results.calculations.channelSpecific.channels).forEach(([channel, data]) => {
+                const cac = Math.round(data.value || 0);
+                const customers = data.customers || 0;
+                const spend = data.spend || 0;
+                
+                html += '<div style="display: flex; justify-content: space-between; align-items: center; padding: 1rem; background: var(--surface); border-radius: 8px;">';
+                html += '<div>';
+                html += '<div style="font-weight: 600;">' + channel + '</div>';
+                html += '<div style="font-size: 0.9rem; color: var(--text-secondary);">' + customers + ' customers from $' + spend.toLocaleString() + '</div>';
+                html += '</div>';
+                html += '<div style="text-align: right;">';
+                html += '<div style="font-size: 1.5rem; font-weight: 700; color: var(--primary-color);">$' + cac + '</div>';
+                html += '<div style="font-size: 0.8rem; color: var(--text-secondary);">CAC</div>';
+                html += '</div>';
+                html += '</div>';
+            });
+            
+            html += '</div></div>';
+        }
+        
+        // Recommendations
+        if (results.recommendations && results.recommendations.length > 0) {
+            html += '<div style="margin: 2rem 0;">';
+            html += '<h3 style="margin-bottom: 1.5rem;">Key Recommendations</h3>';
+            
+            results.recommendations.forEach(rec => {
+                html += '<div style="background: var(--surface); padding: 1.5rem; border-radius: 8px; margin-bottom: 1rem; border-left: 4px solid var(--accent-color);">';
+                html += '<h4 style="margin-bottom: 0.5rem; color: var(--text-primary);">' + rec.title + '</h4>';
+                html += '<p style="margin-bottom: 1rem; color: var(--text-secondary);">' + rec.description + '</p>';
+                html += '<div style="font-weight: 600; color: var(--primary-color);">Action: ' + rec.action + '</div>';
+                html += '</div>';
+            });
+            
+            html += '</div>';
+        }
+        
+        // Action buttons
+        html += '<div style="text-align: center; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border);">';
+        html += '<button class="btn btn-primary" onclick="showDetailedReport()" style="margin-right: 1rem;">📊 View Detailed Analysis</button>';
+        html += '<button class="btn btn-secondary" onclick="exportToExcel()">📄 Export Report</button>';
+        html += '<button class="btn btn-secondary" onclick="startNewAnalysis()" style="margin-left: 1rem;">🔄 New Analysis</button>';
+        html += '</div>';
+        
+        html += '</div>'; // End card
+        
+        resultsContainer.innerHTML = html;
+        console.log('Results displayed successfully');
+        
+    } catch (error) {
+        console.error('Error displaying results:', error);
+        resultsContainer.innerHTML = `
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-title">❌ Display Error</h2>
+                </div>
+                <div style="padding: 2rem;">
+                    <p style="color: var(--error-color); margin-bottom: 1rem;">Error displaying results: ${error.message}</p>
+                    <p>Raw CAC Values:</p>
+                    <ul>
+                        <li>Simple: $${results?.calculations?.simpleBlended?.value || 'N/A'}</li>
+                        <li>Fully-Loaded: $${results?.calculations?.fullyLoaded?.value || 'N/A'}</li>
+                        <li>Channels: ${Object.keys(results?.calculations?.channelSpecific?.channels || {}).length || 0}</li>
+                    </ul>
+                    <button class="btn btn-primary" onclick="console.log('Results:', results)">Log to Console</button>
+                </div>
+            </div>
+        `;
+    }
+}
+
+// Missing button functions
+function showDetailedReport() {
+    if (!window.fullResults) {
+        showNotification('No analysis data available', 'error');
+        return;
+    }
     
-    resultsContainer.innerHTML = `
-        <div class="card">
-            <div class="card-header">
-                <h2 class="card-title">🎉 CAC Analysis Complete!</h2>
-                <p class="card-description">Your customer acquisition cost analysis is ready with actionable insights.</p>
-            </div>
-            
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; margin: 2rem 0;">
-                <div style="background: var(--surface); padding: 2rem; border-radius: 12px; text-align: center; border-left: 4px solid var(--primary-color);">
-                    <div style="font-size: 2.5rem; font-weight: 700; color: var(--primary-color); margin-bottom: 0.5rem;">$${simpleCAC}</div>
-                    <div style="font-size: 1.1rem; font-weight: 600; margin-bottom: 0.5rem;">Simple Blended CAC</div>
-                    <div style="font-size: 0.9rem; color: var(--text-secondary);">Most commonly used metric</div>
-                </div>
-                
-                <div style="background: var(--surface); padding: 2rem; border-radius: 12px; text-align: center; border-left: 4px solid var(--accent-color);">
-                    <div style="font-size: 2.5rem; font-weight: 700; color: var(--accent-color); margin-bottom: 0.5rem;">$${fullyLoadedCAC}</div>
-                    <div style="font-size: 1.1rem; font-weight: 600; margin-bottom: 0.5rem;">Fully-Loaded CAC</div>
-                    <div style="font-size: 0.9rem; color: var(--text-secondary);">Includes all overhead costs</div>
-                </div>
-                
-                <div style="background: var(--surface); padding: 2rem; border-radius: 12px; text-align: center; border-left: 4px solid var(--warning-color);">
-                    <div style="font-size: 2.5rem; font-weight: 700; color: var(--warning-color); margin-bottom: 0.5rem;">${channelCount}</div>
-                    <div style="font-size: 1.1rem; font-weight: 600; margin-bottom: 0.5rem;">Channels Analyzed</div>
-                    <div style="font-size: 0.9rem; color: var(--text-secondary);">Marketing channels evaluated</div>
-                </div>
-            </div>
-            
-            ${results.budgetOptimization ? generateBudgetOptimizationSection(results.budgetOptimization) : ''}
-            
-            <div style="text-align: center; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border);">
-                <button class="btn btn-primary" onclick="showDetailedReport()" style="margin-right: 1rem;">
-                    📊 View Detailed Analysis
-                </button>
-                <button class="btn btn-secondary" onclick="exportToExcel()">
-                    📄 Export Report
-                </button>
-            </div>
-        </div>
-    `;
+    showNotification('Detailed report feature coming soon!', 'info');
+}
+
+function exportToExcel() {
+    if (!window.fullResults) {
+        showNotification('No analysis data to export', 'error');
+        return;
+    }
+    
+    showNotification('Excel export feature coming soon!', 'info');
+}
+
+function startNewAnalysis() {
+    if (confirm('Start a new analysis? This will clear current data.')) {
+        // Reset state
+        appState.currentStep = 'setup';
+        appState.uploadedData = {
+            marketing: null,
+            revenue: null, 
+            customer: null
+        };
+        appState.analysisResults = null;
+        window.fullResults = null;
+        
+        // Go back to setup
+        showStep('setup');
+        showNotification('Ready for new analysis', 'success');
+    }
 }
 
 // Full Results Display Function
