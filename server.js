@@ -470,7 +470,7 @@ function generateRecommendations(results, businessModel, dataQuality) {
   const recommendations = [];
 
   // Quick wins
-  if (results.simpleBlended.value > 0 && results.fullyLoaded.value > 0) {
+  if (results.simpleBlended && results.fullyLoaded && results.simpleBlended.value > 0 && results.fullyLoaded.value > 0) {
     const difference = results.fullyLoaded.value - results.simpleBlended.value;
     if (difference > results.simpleBlended.value * 0.5) {
       recommendations.push({
@@ -507,16 +507,11 @@ function generateRecommendations(results, businessModel, dataQuality) {
 }
 
 function calculateOverallConfidence(results, dataQuality) {
-  const confidenceScores = [
-    results.simpleBlended.confidence,
-    results.fullyLoaded.confidence,
-    results.channelSpecific.confidence,
-    results.cohortBased.confidence,
-    results.contributionMargin.confidence
-  ];
-
+  if (!results || !results.calculations) return 3;
+  
+  const confidenceScores = Object.values(results.calculations).map(calc => calc.confidence || 3);
   const avgConfidence = confidenceScores.reduce((sum, score) => sum + score, 0) / confidenceScores.length;
-  const dataQualityFactor = dataQuality.overall / 100;
+  const dataQualityFactor = (dataQuality?.overall || 70) / 100;
   
   return Math.round((avgConfidence * dataQualityFactor) * 100) / 100;
 }
@@ -1539,11 +1534,11 @@ app.post('/api/calculate', (req, res) => {
 
     // Calculate all CAC methodologies
     const calculations = {
-      simpleBlended: calculateSimpleBlended(marketingData, revenueData),
-      fullyLoaded: calculateFullyLoaded(marketingData, revenueData, analysisConfig?.teamCosts || {}),
-      channelSpecific: calculateChannelSpecific(marketingData, revenueData),
-      cohortBased: calculateCohortBased(marketingData, revenueData, analysisConfig?.cohortPeriod || 30),
-      contributionMargin: calculateContributionMargin(marketingData, revenueData, customerData)
+      simpleBlended: calculateSimpleBlendedCAC(marketingData, revenueData),
+      fullyLoaded: calculateFullyLoadedCAC(marketingData, revenueData, analysisConfig?.teamCosts || {}),
+      channelSpecific: calculateChannelSpecificCAC(marketingData, revenueData),
+      cohortBased: calculateCohortBasedCAC(marketingData, revenueData, analysisConfig?.cohortPeriod || 30),
+      contributionMargin: calculateContributionMarginCAC(marketingData, revenueData, customerData)
     };
 
     // Data quality assessment
