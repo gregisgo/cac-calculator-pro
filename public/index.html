@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CAC Calculator Pro - Professional Consulting Tool</title>
-    <meta name="description" content="Professional Customer Acquisition Cost (CAC) calculator with multiple methodologies, transparency, and client-ready reporting.">
+    <title>CAC Calculator Pro - Professional Customer Acquisition Cost Analysis | Greg Breeden</title>
+    <meta name="description" content="Get the CAC clarity you need for your next board meeting. Professional 5-methodology analysis with budget reallocation scenarios and actionable insights."
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,26 +20,30 @@
         }
         
         :root {
-            --primary-color: #2563eb;
-            --primary-dark: #1d4ed8;
-            --secondary-color: #64748b;
-            --accent-color: #10b981;
-            --warning-color: #f59e0b;
-            --error-color: #ef4444;
-            --background: #ffffff;
-            --surface: #f8fafc;
-            --border: #e2e8f0;
-            --text-primary: #0f172a;
-            --text-secondary: #475569;
-            --text-muted: #94a3b8;
+            /* Greg Breeden Brand Colors - Exact Match */
+            --primary-color: #6b5b95;      /* Main purple from website */
+            --primary-dark: #5a4a7c;       /* Darker purple on hover */
+            --secondary-color: #64748b;     /* Keep secondary blue-gray */
+            --accent-color: #10b981;        /* Keep green for positive metrics */
+            --lavender-color: #a07cc8;      /* Lavender for highlights */
+            --warning-color: #f59e0b;       /* Keep amber for warnings */
+            --error-color: #ef4444;         /* Keep red for errors */
+            --background: #ffffff;          /* White background */
+            --surface: #f8fafc;             /* Light surface */
+            --surface-alt: #f7eed5;         /* Warm beige background like website */
+            --border: #e2e8f0;              /* Border gray */
+            --text-primary: #0f1419;        /* Almost black text - exact match */
+            --text-secondary: #1a1a1a;      /* Secondary text */
+            --text-muted: #475569;          /* Muted text */
         }
         
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             line-height: 1.6;
             color: var(--text-primary);
             background: var(--background);
             font-weight: 400;
+            font-feature-settings: 'cv11', 'ss01';
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
         }
@@ -47,56 +51,141 @@
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 2rem;
+            padding: 0 20px;
         }
         
-        /* Header */
-        .header {
-            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
-            color: white;
-            padding: 3rem 0;
-            text-align: center;
+        /* Site Header - Exact Match to Greg's Website */
+        .site-header {
+            background: rgba(255, 255, 255, 0.95);
+            color: var(--text-primary);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            border-bottom: 1px solid var(--border);
+            backdrop-filter: blur(10px);
         }
         
-        .header h1 {
-            font-size: 3rem;
-            font-weight: 800;
-            margin-bottom: 1rem;
+        .site-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .site-logo {
+            font-size: 1.5rem;
+            font-weight: 600;
             letter-spacing: -0.025em;
+            color: var(--text-primary);
+            text-decoration: none;
         }
         
-        .header .subtitle {
+        .nav-cta {
+            background: var(--primary-color);
+            color: #ffffff;
+            padding: 0.7rem 1.5rem;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid var(--primary-color);
+            cursor: pointer;
+        }
+        
+        .nav-cta:hover {
+            background: var(--primary-dark);
+            color: #ffffff;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(107, 91, 149, 0.3);
+        }
+
+        /* Hero Section - Like Greg's Website */
+        .hero {
+            background-color: var(--surface-alt);
+            background-image: repeating-radial-gradient( circle at 0 0, transparent 0, var(--surface-alt) 80px ), repeating-linear-gradient( #d6d3ee25, #d6d3ee );
+            color: var(--text-primary);
+            padding: 60px 0 50px;
+            text-align: center;
+            margin-top: 80px; /* Account for fixed header */
+        }
+
+        /* Content Module - Like Greg's Website */
+        .content-module {
+            background: #ffffff;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 3rem 4rem;
+            margin: 0 auto;
+            max-width: 1100px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+        
+        .hero h1 {
+            font-size: 3.2rem;
+            margin: 2rem auto 1.5rem;
+            font-weight: 700;
+            line-height: 1.2;
+            letter-spacing: -0.025em;
+            max-width: 900px;
+        }
+        
+        .hero .subtitle {
             font-size: 1.25rem;
+            margin-bottom: 3rem;
+            max-width: 750px;
+            margin-left: auto;
+            margin-right: auto;
             opacity: 0.9;
-            max-width: 600px;
-            margin: 0 auto 2rem;
+            line-height: 1.6;
             font-weight: 400;
+            color: var(--text-secondary);
         }
         
-        .header .features {
+        .hero .features {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 2rem;
             margin-top: 2rem;
         }
         
-        .header .feature {
-            text-align: center;
+        .hero .feature {
+            background: #ffffff;
+            padding: 1.75rem 1.5rem;
+            border-radius: 10px;
+            border: 2px solid var(--border);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .hero .feature:nth-child(1) { border-left: 4px solid var(--primary-color); }
+        .hero .feature:nth-child(2) { border-left: 4px solid var(--lavender-color); }
+        .hero .feature:nth-child(3) { border-left: 4px solid var(--accent-color); }
+        
+        .hero .feature:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+            border-color: var(--text-primary);
         }
         
-        .header .feature-icon {
+        .hero .feature-icon {
             font-size: 2rem;
             margin-bottom: 0.5rem;
         }
         
-        .header .feature-title {
+        .hero .feature-title {
             font-weight: 600;
             margin-bottom: 0.5rem;
+            color: var(--text-primary);
         }
         
-        .header .feature-desc {
+        .hero .feature-desc {
             font-size: 0.9rem;
-            opacity: 0.8;
+            color: var(--text-secondary);
         }
         
         /* Navigation */
@@ -162,18 +251,32 @@
             color: white;
         }
         
-        /* Main Content */
+        /* Main Content - Greg's Website Style */
         .main {
-            padding: 3rem 0;
+            padding: 0; /* Remove padding, sections handle it */
         }
         
         .section {
             display: none;
             animation: fadeIn 0.3s ease;
+            padding: 60px 0;
         }
         
         .section.active {
             display: block;
+        }
+
+        /* Alternating section backgrounds like Greg's website */
+        .section:nth-child(even) {
+            background-color: var(--surface-alt);
+            border-top: 1px solid #e8e2d4;
+            background-image: repeating-radial-gradient( circle at 100% 100%, transparent 0, var(--surface-alt) 80px ), repeating-linear-gradient( #d6d3ee30, #d6d3ee );
+        }
+        
+        .section:nth-child(odd):not(:first-child) {
+            background-color: var(--surface-alt);
+            border-top: 1px solid #e8e2d4; 
+            background-image: repeating-radial-gradient( circle at 0 0, transparent 0, var(--surface-alt) 80px ), repeating-linear-gradient( #d6d3ee35, #d6d3ee );
         }
         
         @keyframes fadeIn {
@@ -182,11 +285,20 @@
         }
         
         .card {
-            background: var(--background);
+            background: #ffffff;
             border: 1px solid var(--border);
             border-radius: 12px;
-            padding: 2rem;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            padding: 3rem 4rem;
+            margin: 0 auto;
+            max-width: 1100px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        @media (max-width: 768px) {
+            .card {
+                padding: 2rem;
+                max-width: 95%;
+            }
         }
         
         .card-header {
@@ -248,51 +360,69 @@
             gap: 2rem;
         }
         
-        /* Buttons */
+        /* Buttons - Greg's Website Style */
         .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
-            padding: 0.75rem 1.5rem;
-            border: none;
+            display: inline-block;
+            padding: 1rem 2rem;
+            text-decoration: none;
             border-radius: 8px;
-            font-size: 1rem;
+            font-size: 1.1rem;
             font-weight: 600;
             cursor: pointer;
             transition: all 0.3s ease;
-            text-decoration: none;
+            border: 2px solid transparent;
+            text-align: center;
             font-family: inherit;
+            line-height: 1.2;
         }
         
         .btn-primary {
             background: var(--primary-color);
-            color: white;
+            color: #ffffff;
+            border: 2px solid var(--primary-color);
         }
         
         .btn-primary:hover {
             background: var(--primary-dark);
-            transform: translateY(-1px);
+            color: #ffffff;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(107, 91, 149, 0.3);
         }
         
         .btn-secondary {
-            background: var(--surface);
-            color: var(--text-primary);
-            border: 1px solid var(--border);
+            background: transparent;
+            border: 2px solid #374151;
+            color: var(--text-secondary);
         }
         
         .btn-secondary:hover {
-            background: var(--border);
+            background: #374151;
+            color: #ffffff;
+            box-shadow: 0 8px 25px rgba(55, 65, 81, 0.3);
+            transform: translateY(-2px);
         }
         
         .btn-success {
             background: var(--accent-color);
-            color: white;
+            color: #ffffff;
+            border: 2px solid var(--accent-color);
+        }
+
+        .btn-success:hover {
+            background: #059669;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(16, 185, 129, 0.3);
         }
         
         .btn-lg {
-            padding: 1rem 2rem;
-            font-size: 1.1rem;
+            padding: 1.25rem 2.5rem;
+            font-size: 1.2rem;
+        }
+
+        /* Small button variant */
+        .btn-sm {
+            padding: 0.5rem 1rem;
+            font-size: 0.9rem;
         }
         
         /* File Upload */
@@ -994,36 +1124,41 @@
     </style>
 </head>
 <body>
-    <!-- Header -->
-    <header class="header">
+    <!-- Site Header - Exact Match to Greg's Website -->
+    <header class="site-header">
+        <div class="site-nav">
+            <a href="/" class="site-logo">Greg Breeden: Fractional CMO</a>
+            <a href="/" class="nav-cta">Back to Main Site</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
         <div class="container">
-            <h1>CAC Calculator Pro</h1>
-            <p class="subtitle">Professional Customer Acquisition Cost Analysis with Full Methodology Transparency</p>
-            
-            <div class="features">
-                <div class="feature">
-                    <div class="feature-icon">📊</div>
-                    <div class="feature-title">5 Methodologies</div>
-                    <div class="feature-desc">From simple blended to contribution margin CAC</div>
-                </div>
-                <div class="feature">
-                    <div class="feature-icon">🔍</div>
-                    <div class="feature-title">Full Transparency</div>
-                    <div class="feature-desc">See every calculation step and assumption</div>
-                </div>
-                <div class="feature">
-                    <div class="feature-icon">📈</div>
-                    <div class="feature-title">Professional Reports</div>
-                    <div class="feature-desc">Client-ready presentations and analysis</div>
-                </div>
-                <div class="feature">
-                    <div class="feature-icon">⚡</div>
-                    <div class="feature-title">Data Quality</div>
-                    <div class="feature-desc">Automatic assessment and recommendations</div>
+            <div class="content-module">
+                <h1>CAC Calculator Pro</h1>
+                <p class="subtitle">Professional Customer Acquisition Cost Analysis with Full Methodology Transparency & Budget Optimization</p>
+                
+                <div class="features">
+                    <div class="feature">
+                        <div class="feature-icon">📊</div>
+                        <div class="feature-title">5 Methodologies</div>
+                        <div class="feature-desc">From simple blended to contribution margin CAC</div>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">💰</div>
+                        <div class="feature-title">Budget Optimization</div>
+                        <div class="feature-desc">3 reallocation scenarios with ROI projections</div>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">📈</div>
+                        <div class="feature-title">Board-Ready Reports</div>
+                        <div class="feature-desc">Professional presentations with actionable insights</div>
+                    </div>
                 </div>
             </div>
         </div>
-    </header>
+    </section>
 
     <!-- Navigation -->
     <nav class="nav">

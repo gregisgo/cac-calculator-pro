@@ -151,10 +151,14 @@ app.post('/api/analyze-cac', (req, res) => {
     // Generate recommendations
     const recommendations = generateRecommendations(results, businessModel, dataQuality);
 
+    // Calculate budget reallocation scenarios (HIGH IMPACT FEATURE)
+    const budgetOptimization = calculateBudgetReallocation(marketingData, revenueData, results.channelSpecific);
+
     res.json({
       calculations: results,
       dataQuality,
       recommendations,
+      budgetOptimization, // New actionable feature
       metadata: {
         analysisDate: new Date().toISOString(),
         businessModel,
@@ -166,6 +170,37 @@ app.post('/api/analyze-cac', (req, res) => {
   } catch (error) {
     console.error('CAC analysis error:', error);
     res.status(500).json({ error: 'Failed to analyze CAC: ' + error.message });
+  }
+});
+
+// Budget Reallocation endpoint - for real-time "what if" scenarios
+app.post('/api/budget-reallocation', (req, res) => {
+  try {
+    const { 
+      currentAllocations, 
+      proposedAllocations, 
+      channelPerformance,
+      totalBudget 
+    } = req.body;
+
+    const reallocationAnalysis = {
+      current: calculateScenarioOutcome(currentAllocations, channelPerformance, totalBudget),
+      proposed: calculateScenarioOutcome(proposedAllocations, channelPerformance, totalBudget),
+    };
+
+    // Calculate the difference
+    reallocationAnalysis.impact = {
+      customerChange: reallocationAnalysis.proposed.totalCustomers - reallocationAnalysis.current.totalCustomers,
+      cacChange: reallocationAnalysis.proposed.blendedCAC - reallocationAnalysis.current.blendedCAC,
+      efficiencyChange: ((reallocationAnalysis.proposed.efficiency - reallocationAnalysis.current.efficiency) / reallocationAnalysis.current.efficiency) * 100,
+      riskLevel: calculateReallocationRisk(currentAllocations, proposedAllocations)
+    };
+
+    res.json(reallocationAnalysis);
+
+  } catch (error) {
+    console.error('Budget reallocation error:', error);
+    res.status(500).json({ error: 'Failed to calculate reallocation: ' + error.message });
   }
 });
 
@@ -803,6 +838,201 @@ function generateKeyInsights(results, marketingData, revenueData) {
   }
   
   return insights;
+}
+
+// HIGH IMPACT: Budget Reallocation Functions
+function calculateBudgetReallocation(marketingData, revenueData, channelSpecificResults) {
+  if (!channelSpecificResults?.channels) return null;
+  
+  const channels = Object.entries(channelSpecificResults.channels);
+  const totalBudget = marketingData.reduce((sum, row) => sum + parseFloat(row.spend || 0), 0);
+  
+  // Calculate current performance metrics
+  const currentPerformance = channels.map(([channel, data]) => ({
+    channel,
+    currentSpend: data.calculation?.spend || 0,
+    currentCustomers: data.customers || 0,
+    cac: data.value,
+    efficiency: data.customers / (data.calculation?.spend || 1), // customers per dollar
+  }));
+  
+  // Sort by efficiency (customers per dollar spent)
+  const rankedChannels = currentPerformance.sort((a, b) => b.efficiency - a.efficiency);
+  
+  // Generate reallocation scenarios
+  const scenarios = [
+    {
+      name: "Double Down on Winner",
+      description: `Move 30% more budget to ${rankedChannels[0].channel}`,
+      changes: calculateDoubleDownScenario(rankedChannels, totalBudget),
+      confidence: 8,
+      riskLevel: "Low"
+    },
+    {
+      name: "Kill the Loser", 
+      description: `Remove worst performer (${rankedChannels[rankedChannels.length-1].channel}) and redistribute`,
+      changes: calculateKillLoserScenario(rankedChannels, totalBudget),
+      confidence: 6,
+      riskLevel: "High"
+    },
+    {
+      name: "Efficiency Rebalance",
+      description: "Reallocate based purely on cost per customer metrics",
+      changes: calculateEfficiencyRebalance(rankedChannels, totalBudget),
+      confidence: 7,
+      riskLevel: "Medium"
+    }
+  ];
+  
+  return {
+    currentPerformance: rankedChannels,
+    totalBudget,
+    scenarios: scenarios.map(scenario => ({
+      ...scenario,
+      projectedOutcome: calculateScenarioOutcome(scenario.changes, rankedChannels, totalBudget)
+    }))
+  };
+}
+
+function calculateDoubleDownScenario(rankedChannels, totalBudget) {
+  const winner = rankedChannels[0];
+  const changes = {};
+  
+  // Give winner 30% more of total budget
+  const additionalBudget = totalBudget * 0.3;
+  changes[winner.channel] = {
+    currentSpend: winner.currentSpend,
+    newSpend: winner.currentSpend + additionalBudget,
+    change: additionalBudget
+  };
+  
+  // Reduce others proportionally
+  const otherChannels = rankedChannels.slice(1);
+  const otherTotalSpend = otherChannels.reduce((sum, ch) => sum + ch.currentSpend, 0);
+  
+  otherChannels.forEach(channel => {
+    const proportionalReduction = (channel.currentSpend / otherTotalSpend) * additionalBudget;
+    changes[channel.channel] = {
+      currentSpend: channel.currentSpend,
+      newSpend: Math.max(channel.currentSpend - proportionalReduction, channel.currentSpend * 0.3), // Don't reduce by more than 70%
+      change: -proportionalReduction
+    };
+  });
+  
+  return changes;
+}
+
+function calculateKillLoserScenario(rankedChannels, totalBudget) {
+  const changes = {};
+  const loser = rankedChannels[rankedChannels.length - 1];
+  const survivors = rankedChannels.slice(0, -1);
+  
+  // Kill the loser
+  changes[loser.channel] = {
+    currentSpend: loser.currentSpend,
+    newSpend: 0,
+    change: -loser.currentSpend
+  };
+  
+  // Redistribute loser's budget based on efficiency
+  const totalEfficiency = survivors.reduce((sum, ch) => sum + ch.efficiency, 0);
+  
+  survivors.forEach(channel => {
+    const efficiencyShare = channel.efficiency / totalEfficiency;
+    const additionalBudget = loser.currentSpend * efficiencyShare;
+    
+    changes[channel.channel] = {
+      currentSpend: channel.currentSpend,
+      newSpend: channel.currentSpend + additionalBudget,
+      change: additionalBudget
+    };
+  });
+  
+  return changes;
+}
+
+function calculateEfficiencyRebalance(rankedChannels, totalBudget) {
+  const changes = {};
+  const totalEfficiency = rankedChannels.reduce((sum, ch) => sum + ch.efficiency, 0);
+  
+  // Reallocate budget purely based on efficiency ratios
+  rankedChannels.forEach(channel => {
+    const efficiencyShare = channel.efficiency / totalEfficiency;
+    const idealSpend = totalBudget * efficiencyShare;
+    
+    changes[channel.channel] = {
+      currentSpend: channel.currentSpend,
+      newSpend: idealSpend,
+      change: idealSpend - channel.currentSpend
+    };
+  });
+  
+  return changes;
+}
+
+function calculateScenarioOutcome(changes, rankedChannels, totalBudget) {
+  let newTotalCustomers = 0;
+  let newTotalSpend = 0;
+  let channelOutcomes = {};
+  
+  Object.entries(changes).forEach(([channel, change]) => {
+    const channelData = rankedChannels.find(ch => ch.channel === channel);
+    if (!channelData) return;
+    
+    const newSpend = change.newSpend;
+    const spendMultiplier = newSpend / (channelData.currentSpend || 1);
+    
+    // Assume diminishing returns: efficiency decreases as spend increases
+    let efficiencyMultiplier = 1;
+    if (spendMultiplier > 1.5) {
+      efficiencyMultiplier = 0.85; // 15% efficiency loss for heavy scaling
+    } else if (spendMultiplier > 1.2) {
+      efficiencyMultiplier = 0.95; // 5% efficiency loss for moderate scaling
+    } else if (spendMultiplier < 0.5) {
+      efficiencyMultiplier = 1.1; // 10% efficiency gain for focusing spend
+    }
+    
+    const projectedCustomers = (channelData.currentCustomers * spendMultiplier * efficiencyMultiplier);
+    const projectedCAC = newSpend / (projectedCustomers || 1);
+    
+    channelOutcomes[channel] = {
+      newSpend,
+      projectedCustomers: Math.round(projectedCustomers),
+      projectedCAC: Math.round(projectedCAC * 100) / 100,
+      spendChange: change.change,
+      efficiencyChange: (efficiencyMultiplier - 1) * 100
+    };
+    
+    newTotalCustomers += projectedCustomers;
+    newTotalSpend += newSpend;
+  });
+  
+  return {
+    totalCustomers: Math.round(newTotalCustomers),
+    totalSpend: Math.round(newTotalSpend),
+    blendedCAC: Math.round((newTotalSpend / newTotalCustomers) * 100) / 100,
+    channels: channelOutcomes,
+    efficiency: newTotalCustomers / newTotalSpend
+  };
+}
+
+function calculateReallocationRisk(currentAllocations, proposedAllocations) {
+  let totalChange = 0;
+  let maxChannelChange = 0;
+  
+  Object.keys(currentAllocations).forEach(channel => {
+    const currentSpend = currentAllocations[channel] || 0;
+    const proposedSpend = proposedAllocations[channel] || 0;
+    const change = Math.abs(proposedSpend - currentSpend);
+    const changePercent = currentSpend > 0 ? change / currentSpend : 1;
+    
+    totalChange += changePercent;
+    maxChannelChange = Math.max(maxChannelChange, changePercent);
+  });
+  
+  if (maxChannelChange > 0.8) return 'High';
+  if (maxChannelChange > 0.4 || totalChange > 1.5) return 'Medium';
+  return 'Low';
 }
 
 // Health check
