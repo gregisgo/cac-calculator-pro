@@ -1121,6 +1121,757 @@
             from { transform: translateX(100%); opacity: 0; }
             to { transform: translateX(0); opacity: 1; }
         }
+        
+        /* Channel-specific upload styles */
+        .method-selection {
+            margin-bottom: 2rem;
+        }
+        
+        .method-buttons {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .method-btn {
+            flex: 1;
+            padding: 1rem;
+            border: 2px solid var(--border);
+            border-radius: 12px;
+            background: white;
+            cursor: pointer;
+            text-align: center;
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+        
+        .method-btn:hover {
+            border-color: var(--primary-color);
+            background: var(--surface);
+        }
+        
+        .method-btn.active {
+            border-color: var(--primary-color);
+            background: var(--primary-color);
+            color: white;
+        }
+        
+        .channel-tabs {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+            background: var(--surface);
+            padding: 0.5rem;
+            border-radius: 12px;
+            overflow-x: auto;
+        }
+        
+        .channel-tab {
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+        
+        .channel-tab:hover {
+            background: var(--border);
+        }
+        
+        .channel-tab.active {
+            background: var(--primary-color);
+            color: white;
+        }
+        
+        .channel-upload-section {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            border: 1px solid var(--border);
+        }
+        
+        .channel-header h3 {
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
+        }
+        
+        .export-instructions {
+            margin-bottom: 2rem;
+            background: var(--surface);
+            padding: 1.5rem;
+            border-radius: 8px;
+        }
+        
+        .export-instructions h4 {
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+        
+        .export-steps {
+            margin: 0;
+            padding-left: 1.5rem;
+        }
+        
+        .export-steps li {
+            margin-bottom: 0.75rem;
+            line-height: 1.6;
+        }
+        
+        .field-mapping {
+            margin-bottom: 2rem;
+        }
+        
+        .field-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .field-group h4 {
+            margin-bottom: 0.75rem;
+            font-size: 1rem;
+            color: var(--text-primary);
+        }
+        
+        .field-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        
+        .field-tag {
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+        
+        .field-tag.required {
+            background: #fee2e2;
+            color: #dc2626;
+            border: 1px solid #fecaca;
+        }
+        
+        .field-tag.optional {
+            background: #eff6ff;
+            color: #2563eb;
+            border: 1px solid #dbeafe;
+        }
+        
+        .sample-data {
+            margin-bottom: 2rem;
+        }
+        
+        .sample-data h4 {
+            margin-bottom: 0.75rem;
+            color: var(--text-primary);
+        }
+        
+        .sample-code {
+            background: #f8fafc;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 1rem;
+            font-family: 'Monaco', 'Consolas', monospace;
+            font-size: 0.8rem;
+            overflow-x: auto;
+            white-space: pre;
+        }
+        
+        .upload-area h4 {
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+        
+        .file-upload-zone {
+            border: 2px dashed var(--border);
+            border-radius: 12px;
+            padding: 3rem 2rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background: var(--surface);
+        }
+        
+        .file-upload-zone:hover {
+            border-color: var(--primary-color);
+            background: var(--primary-color)10;
+        }
+        
+        .upload-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .upload-text {
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+        
+        .upload-subtext {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-top: 0.5rem;
+            font-weight: normal;
+        }
+        
+        .data-preview {
+            margin-top: 1.5rem;
+        }
+        
+        .preview-header h5 {
+            margin-bottom: 1rem;
+            color: var(--success-color);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .preview-table-container {
+            overflow-x: auto;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+        }
+        
+        .preview-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        .preview-table th,
+        .preview-table td {
+            padding: 0.75rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+            font-size: 0.9rem;
+        }
+        
+        .preview-table th {
+            background: var(--surface);
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+        
+        .preview-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        /* Detailed Analysis Dashboard Styles */
+        .detailed-analysis-dashboard {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .key-metrics-strip {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background: var(--surface);
+            border-radius: 12px;
+            border: 1px solid var(--border);
+        }
+        
+        .metric-item {
+            flex: 1;
+            text-align: center;
+            padding: 1rem;
+            border-radius: 8px;
+            background: white;
+        }
+        
+        .metric-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 0.25rem;
+        }
+        
+        .metric-label {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+        
+        .analysis-tabs-container {
+            background: white;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            overflow: hidden;
+        }
+        
+        .analysis-tabs {
+            display: flex;
+            background: var(--surface);
+            border-bottom: 1px solid var(--border);
+            overflow-x: auto;
+        }
+        
+        .analysis-tab {
+            padding: 1rem 1.5rem;
+            border: none;
+            background: transparent;
+            cursor: pointer;
+            font-weight: 500;
+            white-space: nowrap;
+            transition: all 0.3s ease;
+            border-bottom: 3px solid transparent;
+        }
+        
+        .analysis-tab:hover {
+            background: var(--border);
+        }
+        
+        .analysis-tab.active {
+            background: white;
+            color: var(--primary-color);
+            border-bottom-color: var(--primary-color);
+        }
+        
+        .analysis-tab-content {
+            min-height: 600px;
+        }
+        
+        .tab-panel {
+            display: none;
+            padding: 2rem;
+        }
+        
+        .tab-panel.active {
+            display: block;
+        }
+        
+        .table-section {
+            margin-bottom: 3rem;
+        }
+        
+        .table-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+        }
+        
+        .table-header h3 {
+            margin: 0;
+            color: var(--text-primary);
+        }
+        
+        .section-description {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin: 0.5rem 0 0 0;
+        }
+        
+        .table-controls {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+        
+        .filter-input {
+            padding: 0.5rem;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            font-size: 0.9rem;
+        }
+        
+        .sort-select {
+            padding: 0.5rem;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            font-size: 0.9rem;
+        }
+        
+        .btn-small {
+            padding: 0.5rem 1rem;
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+        
+        .btn-small:hover {
+            background: var(--accent-color);
+        }
+        
+        .data-table-container {
+            overflow-x: auto;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+        }
+        
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+        }
+        
+        .data-table th {
+            background: var(--surface);
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+            border-bottom: 2px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 1;
+        }
+        
+        .data-table td {
+            padding: 0.75rem 1rem;
+            border-bottom: 1px solid var(--border);
+            vertical-align: top;
+        }
+        
+        .data-table tbody tr:hover {
+            background: var(--surface);
+        }
+        
+        .currency {
+            font-weight: 600;
+        }
+        
+        .currency.warning {
+            color: #d97706;
+        }
+        
+        .currency.good {
+            color: #16a34a;
+        }
+        
+        .channel-badge {
+            background: var(--primary-color);
+            color: white;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+        
+        .efficiency-badge {
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        
+        .efficiency-badge.excellent {
+            background: #dcfce7;
+            color: #166534;
+        }
+        
+        .efficiency-badge.good {
+            background: #dbeafe;
+            color: #1e40af;
+        }
+        
+        .efficiency-badge.medium {
+            background: #fef3c7;
+            color: #92400e;
+        }
+        
+        .efficiency-badge.poor {
+            background: #fee2e2;
+            color: #dc2626;
+        }
+        
+        .issue-tag {
+            background: #fee2e2;
+            color: #dc2626;
+            padding: 0.2rem 0.4rem;
+            border-radius: 3px;
+            font-size: 0.75rem;
+            margin-right: 0.25rem;
+        }
+        
+        .trend-indicator {
+            font-weight: 600;
+        }
+        
+        .trend-indicator.positive {
+            color: #16a34a;
+        }
+        
+        .trend-indicator.negative {
+            color: #dc2626;
+        }
+        
+        .trend-indicator.neutral {
+            color: var(--text-secondary);
+        }
+        
+        .recommendations {
+            font-size: 0.85rem;
+            max-width: 200px;
+        }
+        
+        .no-data-message {
+            text-align: center;
+            padding: 3rem;
+            color: var(--text-secondary);
+            background: var(--surface);
+            border-radius: 8px;
+        }
+        
+        .anomaly-type {
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+        
+        .anomaly-type.spike {
+            background: #fee2e2;
+            color: #dc2626;
+        }
+        
+        .anomaly-type.drop {
+            background: #fef3c7;
+            color: #d97706;
+        }
+        
+        .severity-badge {
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        
+        .severity-badge.high {
+            background: #fee2e2;
+            color: #dc2626;
+        }
+        
+        .severity-badge.medium {
+            background: #fef3c7;
+            color: #d97706;
+        }
+        
+        .deviation {
+            font-weight: 600;
+        }
+        
+        .negative {
+            color: #dc2626;
+        }
+        
+        .positive {
+            color: #16a34a;
+        }
+        
+        .action-required {
+            font-size: 0.85rem;
+            max-width: 180px;
+        }
+        
+        .attribution-models {
+            margin-bottom: 2rem;
+        }
+        
+        .model-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+        
+        .model-card {
+            background: var(--surface);
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+            border: 1px solid var(--border);
+        }
+        
+        .model-name {
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        
+        .model-value {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 0.25rem;
+        }
+        
+        .model-share {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+        
+        .journey-analysis h4 {
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+        
+        .saturation-overview {
+            margin-bottom: 2rem;
+        }
+        
+        .risk-indicators {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+        }
+        
+        .risk-card {
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: 600;
+            min-width: 120px;
+        }
+        
+        .risk-card.high {
+            background: #fee2e2;
+            color: #dc2626;
+        }
+        
+        .risk-card.medium {
+            background: #fef3c7;
+            color: #d97706;
+        }
+        
+        .risk-card.low {
+            background: #dcfce7;
+            color: #166534;
+        }
+        
+        .risk-card span {
+            display: block;
+            font-size: 0.8rem;
+            margin-top: 0.25rem;
+        }
+        
+        .risk-badge {
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        
+        .risk-badge.high {
+            background: #fee2e2;
+            color: #dc2626;
+        }
+        
+        .risk-badge.medium {
+            background: #fef3c7;
+            color: #d97706;
+        }
+        
+        .risk-badge.low {
+            background: #dcfce7;
+            color: #166534;
+        }
+        
+        .creative-type {
+            background: var(--accent-color);
+            color: white;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+        
+        .performance-score {
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        
+        .performance-score.aplus {
+            background: #dcfce7;
+            color: #166534;
+        }
+        
+        .performance-score.a {
+            background: #dbeafe;
+            color: #1e40af;
+        }
+        
+        .performance-score.bplus {
+            background: #e0f2fe;
+            color: #0369a1;
+        }
+        
+        .performance-score.c {
+            background: #fef3c7;
+            color: #92400e;
+        }
+        
+        .status {
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+        
+        .status.active {
+            background: #dcfce7;
+            color: #166534;
+        }
+        
+        .status.paused {
+            background: #fee2e2;
+            color: #dc2626;
+        }
+        
+        .forecast-summary {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            justify-content: center;
+        }
+        
+        .forecast-metric {
+            text-align: center;
+            padding: 1.5rem;
+            background: var(--surface);
+            border-radius: 8px;
+            border: 1px solid var(--border);
+        }
+        
+        .forecast-metric .metric-value {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        
+        .trend-up {
+            color: #dc2626;
+        }
+        
+        .trend-down {
+            color: #16a34a;
+        }
+        
+        .data-controls {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+        
+        .raw-data-table {
+            font-size: 0.8rem;
+        }
+        
+        .raw-data-table th {
+            font-size: 0.75rem;
+            padding: 0.5rem;
+        }
+        
+        .raw-data-table td {
+            padding: 0.5rem;
+        }
+        
     </style>
 </head>
 <body>
@@ -1428,68 +2179,119 @@
                         </div>
                     </div>
                     
-                    <div class="form-grid">
-                        <div>
-                            <h3 style="margin-bottom: 1rem; color: var(--text-primary);">📊 Marketing Spend Data</h3>
-                            <div class="file-upload" id="marketingUpload">
-                                <div class="file-upload-icon">📁</div>
-                                <div class="file-upload-text">Click or drag marketing spend data</div>
-                                <div class="file-upload-hint">
-                                    <strong>Required:</strong> Date, Channel, Spend<br>
-                                    <strong>Enhanced (NEW):</strong> Campaign, Creative_ID, Ad_Set, Audience, Creative_Type
+                    <!-- Upload Method Selection -->
+                    <div style="background: var(--surface-alt); border-radius: 12px; padding: 2rem; margin-bottom: 2rem;">
+                        <h3 style="margin-bottom: 1.5rem; color: var(--text-primary);">📤 Choose Your Upload Method</h3>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem;">
+                            <button onclick="selectUploadMethod('channel')" id="channelUploadBtn" class="upload-method-btn active" style="padding: 1.5rem; border: 2px solid var(--primary-color); border-radius: 8px; background: var(--primary-color); color: white; cursor: pointer; transition: all 0.3s;">
+                                <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">🎯</div>
+                                <div style="font-weight: 600; margin-bottom: 0.5rem;">Channel-by-Channel</div>
+                                <div style="font-size: 0.85rem; opacity: 0.9;">Upload exports from each platform separately (Recommended)</div>
+                            </button>
+                            <button onclick="selectUploadMethod('unified')" id="unifiedUploadBtn" class="upload-method-btn" style="padding: 1.5rem; border: 2px solid var(--border); border-radius: 8px; background: var(--surface); color: var(--text-primary); cursor: pointer; transition: all 0.3s;">
+                                <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">📊</div>
+                                <div style="font-weight: 600; margin-bottom: 0.5rem;">Unified Data</div>
+                                <div style="font-size: 0.85rem; color: var(--text-secondary);">Upload pre-combined data files</div>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Channel-by-Channel Upload (Default) -->
+                    <div id="channelUploadSection" style="display: block;">
+                        <h3 style="margin-bottom: 2rem; color: var(--text-primary);">🎯 Upload Channel Data</h3>
+                        
+                        <!-- Channel Upload Tabs -->
+                        <div style="border-bottom: 2px solid var(--border); margin-bottom: 2rem;">
+                            <div class="channel-tabs" style="display: flex; gap: 0; flex-wrap: wrap; overflow-x: auto;">
+                                <button onclick="showChannelTab('google-ads')" id="tab-google-ads" class="channel-tab active" style="padding: 1rem 2rem; border: none; background: var(--primary-color); color: white; cursor: pointer; border-radius: 8px 8px 0 0; white-space: nowrap;">
+                                    📊 Google Ads
+                                </button>
+                                <button onclick="showChannelTab('facebook')" id="tab-facebook" class="channel-tab" style="padding: 1rem 2rem; border: none; background: var(--surface-alt); color: var(--text-primary); cursor: pointer; white-space: nowrap;">
+                                    📘 Facebook Ads
+                                </button>
+                                <button onclick="showChannelTab('linkedin')" id="tab-linkedin" class="channel-tab" style="padding: 1rem 2rem; border: none; background: var(--surface-alt); color: var(--text-primary); cursor: pointer; white-space: nowrap;">
+                                    💼 LinkedIn
+                                </button>
+                                <button onclick="showChannelTab('tiktok')" id="tab-tiktok" class="channel-tab" style="padding: 1rem 2rem; border: none; background: var(--surface-alt); color: var(--text-primary); cursor: pointer; white-space: nowrap;">
+                                    🎵 TikTok
+                                </button>
+                                <button onclick="showChannelTab('other')" id="tab-other" class="channel-tab" style="padding: 1rem 2rem; border: none; background: var(--surface-alt); color: var(--text-primary); cursor: pointer; border-radius: 0 8px 0 0; white-space: nowrap;">
+                                    🔧 Other Channel
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Channel Upload Content -->
+                        <div id="channel-content">
+                            ${generateChannelUploadTab('google-ads', '📊', 'Google Ads', 'Export from Google Ads → Reports → Predefined → Campaign Performance', ['Date', 'Campaign', 'Ad group', 'Impressions', 'Clicks', 'Cost', 'Conversions'])}
+                            ${generateChannelUploadTab('facebook', '📘', 'Facebook Ads', 'Export from Ads Manager → Reports → Campaigns → Export', ['Date', 'Campaign Name', 'Ad Set Name', 'Impressions', 'Clicks', 'Amount Spent', 'Results'])}
+                            ${generateChannelUploadTab('linkedin', '💼', 'LinkedIn', 'Export from Campaign Manager → Analytics → Download CSV', ['Date', 'Campaign Name', 'Impressions', 'Clicks', 'Spent', 'Conversions'])}
+                            ${generateChannelUploadTab('tiktok', '🎵', 'TikTok Ads', 'Export from TikTok Ads Manager → Reports → Campaign Report', ['Date', 'Campaign Name', 'Ad Group Name', 'Impressions', 'Clicks', 'Cost', 'Conversions'])}
+                            ${generateChannelUploadTab('other', '🔧', 'Other Channel', 'Export data with standard performance metrics', ['Date', 'Campaign', 'Spend', 'Conversions'])}
+                        </div>
+
+                        <!-- Revenue/Conversion Data -->
+                        <div style="background: var(--surface-alt); border-radius: 12px; padding: 2rem; margin-top: 2rem;">
+                            <h3 style="margin-bottom: 1.5rem; color: var(--text-primary);">💰 Revenue & Conversion Data</h3>
+                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+                                <div>
+                                    <h4 style="margin-bottom: 1rem;">📈 Analytics/CRM Export</h4>
+                                    <div class="file-upload" id="revenueUpload">
+                                        <div class="file-upload-icon">📁</div>
+                                        <div class="file-upload-text">Upload Google Analytics/CRM data</div>
+                                        <div class="file-upload-hint">From GA4, HubSpot, Salesforce, etc.</div>
+                                    </div>
+                                    <input type="file" id="revenueFile" accept=".csv,.xlsx,.xls" style="display: none;">
+                                    <div id="revenuePreview" style="margin-top: 1rem; display: none;"></div>
+                                </div>
+                                <div>
+                                    <div style="background: var(--surface); border-radius: 8px; padding: 1.5rem;">
+                                        <h5 style="margin-bottom: 1rem; color: var(--primary-color);">📋 What to Export:</h5>
+                                        <ul style="font-size: 0.9rem; color: var(--text-secondary); margin: 0; padding-left: 1.5rem;">
+                                            <li><strong>Required:</strong> Date, Revenue, Customers/Conversions</li>
+                                            <li><strong>Enhanced:</strong> Source/Channel, Customer ID, Order Value</li>
+                                            <li><strong>Advanced:</strong> Cohort, LTV, Attribution Source</li>
+                                        </ul>
+                                        <div style="margin-top: 1rem; padding: 1rem; background: #f0fdf4; border-radius: 6px; font-size: 0.85rem;">
+                                            <strong style="color: #15803d;">💡 Pro Tip:</strong> Include UTM source data for better attribution analysis
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                            <input type="file" id="marketingFile" accept=".csv,.xlsx,.xls" style="display: none;">
-                            <div id="marketingPreview" style="margin-top: 1rem; display: none;"></div>
-                            
-                            <!-- Enhanced Data Benefits -->
-                            <div style="background: var(--surface); border: 1px solid var(--border); border-radius: 6px; padding: 1rem; margin-top: 1rem; font-size: 0.85rem;">
-                                <strong>📈 Enhanced Analytics Available:</strong>
-                                <ul style="margin: 0.5rem 0; padding-left: 1.5rem;">
-                                    <li><strong>Creative Performance:</strong> CTR, CVR, CPC by creative type</li>
-                                    <li><strong>Audience Analysis:</strong> Saturation detection and refresh alerts</li>
-                                    <li><strong>Attribution:</strong> 5 models with cross-channel journey mapping</li>
-                                </ul>
-                            </div>
                         </div>
-                        
-                        <div>
-                            <h3 style="margin-bottom: 1rem; color: var(--text-primary);">💰 Revenue/Customer Data</h3>
-                            <div class="file-upload" id="revenueUpload">
-                                <div class="file-upload-icon">📁</div>
-                                <div class="file-upload-text">Click or drag revenue/customer data</div>
-                                <div class="file-upload-hint">
-                                    <strong>Required:</strong> Date, Revenue, Customers<br>
-                                    <strong>Enhanced (NEW):</strong> Channel, Campaign, Customer_ID, Cohort, LTV
+                    </div>
+
+                    <!-- Unified Upload (Hidden by Default) -->
+                    <div id="unifiedUploadSection" style="display: none;">
+                        <h3 style="margin-bottom: 2rem; color: var(--text-primary);">📊 Upload Combined Data Files</h3>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+                            <div>
+                                <h4 style="margin-bottom: 1rem;">📊 Marketing Spend Data</h4>
+                                <div class="file-upload" id="marketingUpload">
+                                    <div class="file-upload-icon">📁</div>
+                                    <div class="file-upload-text">Click or drag marketing spend data</div>
+                                    <div class="file-upload-hint">Combined data from all channels</div>
                                 </div>
+                                <input type="file" id="marketingFile" accept=".csv,.xlsx,.xls" style="display: none;">
+                                <div id="marketingPreview" style="margin-top: 1rem; display: none;"></div>
                             </div>
-                            <input type="file" id="revenueFile" accept=".csv,.xlsx,.xls" style="display: none;">
-                            <div id="revenuePreview" style="margin-top: 1rem; display: none;"></div>
-                            
-                            <!-- Enhanced Data Benefits -->
-                            <div style="background: var(--surface); border: 1px solid var(--border); border-radius: 6px; padding: 1rem; margin-top: 1rem; font-size: 0.85rem;">
-                                <strong>🎯 Advanced Insights Available:</strong>
-                                <ul style="margin: 0.5rem 0; padding-left: 1.5rem;">
-                                    <li><strong>Cohort Analysis:</strong> Customer acquisition trends over time</li>
-                                    <li><strong>LTV:CAC Ratios:</strong> Customer profitability analysis</li>
-                                    <li><strong>Channel Attribution:</strong> Multi-touch customer journey mapping</li>
-                                </ul>
+                            <div>
+                                <h4 style="margin-bottom: 1rem;">💰 Revenue/Customer Data</h4>
+                                <div class="file-upload" id="revenueUploadUnified">
+                                    <div class="file-upload-icon">📁</div>
+                                    <div class="file-upload-text">Click or drag revenue data</div>
+                                    <div class="file-upload-hint">Combined revenue and customer data</div>
+                                </div>
+                                <input type="file" id="revenueFileUnified" accept=".csv,.xlsx,.xls" style="display: none;">
+                                <div id="revenuePreviewUnified" style="margin-top: 1rem; display: none;"></div>
                             </div>
                         </div>
-                        
-                        <div>
-                            <h3 style="margin-bottom: 1rem; color: var(--text-primary);">👥 Customer Data <span style="font-size: 0.8rem; color: var(--text-muted);">(Optional)</span></h3>
-                            <div class="file-upload" id="customerUpload">
-                                <div class="file-upload-icon">📁</div>
-                                <div class="file-upload-text">Click or drag customer data</div>
-                                <div class="file-upload-hint">CSV/Excel with columns: Customer ID, Acquisition Date, LTV, Source</div>
-                            </div>
-                            <input type="file" id="customerFile" accept=".csv,.xlsx,.xls" style="display: none;">
-                            <div id="customerPreview" style="margin-top: 1rem; display: none;"></div>
-                        </div>
-                        
-                        <div>
-                            <h3 style="margin-bottom: 1rem; color: var(--text-primary);">💼 Additional Costs <span style="font-size: 0.8rem; color: var(--text-muted);">(For Fully-Loaded CAC)</span></h3>
+                    </div>
+
+                    <!-- Additional Costs -->
+                    <div style="background: var(--surface-alt); border-radius: 12px; padding: 2rem; margin-top: 2rem;">
+                        <h3 style="margin-bottom: 1.5rem; color: var(--text-primary);">💼 Additional Costs <span style="font-size: 0.8rem; color: var(--text-muted);">(For Fully-Loaded CAC)</span></h3>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
                             <div class="form-group">
                                 <label class="form-label">Monthly Team Costs ($)</label>
                                 <input type="number" class="form-input" id="teamCosts" placeholder="15000" min="0">
