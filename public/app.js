@@ -257,53 +257,77 @@ function updateAnalyzeButton() {
     }
 }
 
-// CAC Analysis
+// CAC Analysis with Enhanced Error Handling
 async function runAnalysis() {
     try {
+        console.log('Starting analysis...', appState); // Debug log
+        
         showStep('analysis');
         updateAnalysisProgress(10, 'Preparing data...');
         
+        // Validation checks
+        if (!appState.uploadedData.marketing?.data || !appState.uploadedData.revenue?.data) {
+            throw new Error('Missing required data. Please upload both marketing and revenue data files.');
+        }
+        
+        if (appState.uploadedData.marketing.data.length === 0) {
+            throw new Error('Marketing data file is empty. Please upload a valid CSV file with data.');
+        }
+        
+        if (appState.uploadedData.revenue.data.length === 0) {
+            throw new Error('Revenue data file is empty. Please upload a valid CSV file with data.');
+        }
+        
         // Gather additional costs
         const additionalCosts = {
-            teamCosts: parseFloat(document.getElementById('teamCosts').value) || 0,
-            toolCosts: parseFloat(document.getElementById('toolCosts').value) || 0,
-            overheadCosts: parseFloat(document.getElementById('overheadCosts').value) || 0
+            teamCosts: parseFloat(document.getElementById('teamCosts')?.value) || 0,
+            toolCosts: parseFloat(document.getElementById('toolCosts')?.value) || 0,
+            overheadCosts: parseFloat(document.getElementById('overheadCosts')?.value) || 0
         };
         
         // Prepare analysis configuration
         const analysisConfig = {
             ...appState.businessModel,
             timeRange: {
-                start: appState.projectConfig.startDate,
-                end: appState.projectConfig.endDate
+                start: appState.projectConfig?.startDate || new Date(Date.now() - 365*24*60*60*1000).toISOString().split('T')[0],
+                end: appState.projectConfig?.endDate || new Date().toISOString().split('T')[0]
             }
         };
         
         updateAnalysisProgress(30, 'Running CAC calculations...');
+        
+        const requestBody = {
+            businessModel: appState.businessModel || {},
+            marketingData: appState.uploadedData.marketing.data,
+            revenueData: appState.uploadedData.revenue.data,
+            customerData: appState.uploadedData.customer ? appState.uploadedData.customer.data : [],
+            additionalCosts,
+            analysisConfig
+        };
+        
+        console.log('Sending request:', requestBody); // Debug log
         
         const response = await fetch('/api/analyze-cac', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({
-                businessModel: appState.businessModel,
-                marketingData: appState.uploadedData.marketing.data,
-                revenueData: appState.uploadedData.revenue.data,
-                customerData: appState.uploadedData.customer ? appState.uploadedData.customer.data : [],
-                additionalCosts,
-                analysisConfig
-            })
+            body: JSON.stringify(requestBody)
         });
         
         if (!response.ok) {
-            throw new Error(`Analysis failed: ${response.statusText}`);
+            const errorText = await response.text();
+            console.error('Server error:', errorText);
+            throw new Error(`Analysis failed: ${response.statusText} - ${errorText}`);
         }
         
         updateAnalysisProgress(80, 'Processing results...');
         
         const results = await response.json();
-        appState.analysisResults = results.calculations;
+        console.log('Analysis results:', results); // Debug log
+        
+        // Store results with enhanced data
+        appState.analysisResults = results;
         appState.dataQuality = results.dataQuality;
         
         updateAnalysisProgress(100, 'Analysis complete!');
@@ -316,7 +340,31 @@ async function runAnalysis() {
     } catch (error) {
         console.error('Analysis error:', error);
         showNotification(`Analysis failed: ${error.message}`, 'error');
-        showStep('data');
+        
+        // Show detailed error in analysis section
+        const analysisContent = document.getElementById('analysisContent');
+        if (analysisContent) {
+            analysisContent.innerHTML = `
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="card-title">❌ Analysis Error</h2>
+                    </div>
+                    <div style="background: #fee2e2; border: 1px solid #fecaca; border-radius: 8px; padding: 1.5rem; margin-bottom: 2rem;">
+                        <h4 style="color: #dc2626; margin-bottom: 1rem;">Error Details:</h4>
+                        <p style="color: #7f1d1d; margin-bottom: 1rem;">${error.message}</p>
+                        <div style="background: #fef2f2; padding: 1rem; border-radius: 6px; font-size: 0.9rem; color: #7f1d1d;">
+                            <strong>Debugging Info:</strong><br>
+                            - Marketing data: ${appState.uploadedData?.marketing?.data?.length || 0} rows<br>
+                            - Revenue data: ${appState.uploadedData?.revenue?.data?.length || 0} rows<br>
+                            - Business model: ${appState.businessModel ? 'Set' : 'Not set'}<br>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" onclick="showStep('data')">← Back to Data Input</button>
+                </div>
+            `;
+        }
+        
+        // Don't redirect on error, show error in place
     }
 }
 
@@ -1176,6 +1224,148 @@ function implementScenario(scenarioIndex) {
         
         showNotification('Simulation results ready!', 'success');
     }, 2000);
+}
+
+// Demo Data Functions
+async function loadDemoData() {
+    try {
+        showNotification('Loading demo data...', 'info');
+        
+        // Load the sample CSV file
+        const response = await fetch('/sample-marketing-data-18m.csv');
+        if (!response.ok) {
+            throw new Error('Could not load demo data');
+        }
+        
+        const csvText = await response.text();
+        
+        // Parse CSV data
+        const lines = csvText.split('\n');
+        const headers = lines[0].split(',').map(h => h.trim());
+        const data = [];
+        
+        for (let i = 1; i < lines.length; i++) {
+            if (lines[i].trim()) {
+                const values = lines[i].split(',').map(v => v.trim());
+                const row = {};
+                headers.forEach((header, index) => {
+                    row[header] = values[index];
+                });
+                data.push(row);
+            }
+        }
+        
+        // Split into marketing and revenue data based on the sample structure
+        const marketingData = data.map(row => ({
+            date: row.date,
+            channel: row.channel,
+            spend: parseFloat(row.spend) || 0,
+            campaign: row.campaign || row.channel + ' Campaign'
+        }));
+        
+        const revenueData = data.map(row => ({
+            date: row.date,
+            revenue: parseFloat(row.revenue) || 0,
+            customers: parseInt(row.customers) || 0,
+            new_customers: parseInt(row.customers) || 0,
+            channel: row.channel
+        }));
+        
+        // Update app state
+        appState.uploadedData = {
+            marketing: {
+                headers: ['date', 'channel', 'spend', 'campaign'],
+                data: marketingData,
+                filename: 'Demo Marketing Data (18 months)'
+            },
+            revenue: {
+                headers: ['date', 'revenue', 'customers', 'new_customers', 'channel'],
+                data: revenueData,
+                filename: 'Demo Revenue Data (18 months)'
+            }
+        };
+        
+        // Update UI
+        updateDataPreview('marketing', marketingData, 'Demo Marketing Data (18 months)');
+        updateDataPreview('revenue', revenueData, 'Demo Revenue Data (18 months)');
+        updateAnalyzeButton();
+        
+        showNotification('Demo data loaded successfully! 🎉', 'success');
+        
+    } catch (error) {
+        console.error('Error loading demo data:', error);
+        showNotification('Failed to load demo data. Please upload your own files.', 'error');
+    }
+}
+
+function uploadOwnData() {
+    // Hide the demo section and show upload forms
+    const demoSection = document.querySelector('[style*="background: var(--surface-alt)"]');
+    if (demoSection) {
+        demoSection.style.display = 'none';
+    }
+    showNotification('Upload your own CSV or Excel files below', 'info');
+}
+
+function updateDataPreview(type, data, filename) {
+    const preview = document.getElementById(`${type}Preview`);
+    if (!preview) return;
+    
+    preview.style.display = 'block';
+    preview.innerHTML = `
+        <div style="background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 1rem;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                <div>
+                    <h4 style="margin: 0; color: var(--accent-color);">✅ ${filename}</h4>
+                    <p style="margin: 0; font-size: 0.9rem; color: var(--text-secondary);">${data.length} rows loaded</p>
+                </div>
+                <button class="btn btn-sm btn-secondary" onclick="clearData('${type}')">Clear</button>
+            </div>
+            
+            <!-- Data Preview Table -->
+            <div style="overflow-x: auto; max-height: 200px; border: 1px solid var(--border); border-radius: 6px;">
+                <table style="width: 100%; border-collapse: collapse; font-size: 0.85rem;">
+                    <thead style="background: var(--surface); position: sticky; top: 0;">
+                        <tr>
+                            ${Object.keys(data[0] || {}).map(key => 
+                                `<th style="padding: 0.5rem; border-bottom: 1px solid var(--border); text-align: left; font-weight: 600;">${key}</th>`
+                            ).join('')}
+                        </tr>
+                    </thead>
+                    <tbody>
+                        ${data.slice(0, 5).map(row => `
+                            <tr>
+                                ${Object.values(row).map(value => 
+                                    `<td style="padding: 0.5rem; border-bottom: 1px solid var(--border); white-space: nowrap;">${value}</td>`
+                                ).join('')}
+                            </tr>
+                        `).join('')}
+                        ${data.length > 5 ? `
+                            <tr>
+                                <td colspan="${Object.keys(data[0] || {}).length}" style="padding: 0.5rem; text-align: center; color: var(--text-muted); font-style: italic;">
+                                    ... and ${data.length - 5} more rows
+                                </td>
+                            </tr>
+                        ` : ''}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    `;
+}
+
+function clearData(type) {
+    if (appState.uploadedData && appState.uploadedData[type]) {
+        delete appState.uploadedData[type];
+    }
+    
+    const preview = document.getElementById(`${type}Preview`);
+    if (preview) {
+        preview.style.display = 'none';
+    }
+    
+    updateAnalyzeButton();
+    showNotification(`${type.charAt(0).toUpperCase() + type.slice(1)} data cleared`, 'info');
 }
 
 // Utility functions
