@@ -334,7 +334,36 @@ async function runAnalysis() {
         
         setTimeout(() => {
             showStep('results');
-            displayResults(results);
+            
+            // Simple test first
+            const resultsContainer = document.getElementById('resultsContent');
+            console.log('About to display results:', results);
+            console.log('Container found:', !!resultsContainer);
+            
+            if (!resultsContainer) {
+                console.error('No results container found!');
+                return;
+            }
+            
+            // Try simple HTML first
+            resultsContainer.innerHTML = `
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="card-title">🎉 Analysis Complete!</h2>
+                        <p class="card-description">Your CAC analysis has been completed successfully.</p>
+                    </div>
+                    <div style="padding: 2rem; text-align: center;">
+                        <h3>Simple Blended CAC: $${results.calculations?.simpleBlended?.value || 'N/A'}</h3>
+                        <p style="margin-top: 1rem;">More detailed results coming soon...</p>
+                        <button class="btn btn-primary" onclick="displayFullResults()" style="margin-top: 2rem;">
+                            Show Full Analysis
+                        </button>
+                    </div>
+                </div>
+            `;
+            
+            // Store results globally for the detailed view
+            window.fullResults = results;
         }, 1000);
         
     } catch (error) {
@@ -374,12 +403,21 @@ function updateAnalysisProgress(percent, message) {
 }
 
 function displayResults(results) {
+    console.log('displayResults called with:', results); // Debug log
+    
     const resultsContainer = document.getElementById('resultsContent');
+    console.log('resultsContainer:', resultsContainer); // Debug log
+    
+    if (!resultsContainer) {
+        console.error('Results container not found!');
+        return;
+    }
     
     // Initialize analytics dashboard
     setTimeout(() => initializeAnalyticsDashboard(results), 500);
     
-    resultsContainer.innerHTML = `
+    try {
+        resultsContainer.innerHTML = `
         <div class="card">
             <div class="card-header">
                 <h2 class="card-title">CAC Analysis Results</h2>
@@ -434,6 +472,23 @@ function displayResults(results) {
             </div>
         </div>
     `;
+    
+    console.log('Results HTML generated successfully'); // Debug log
+    
+    } catch (error) {
+        console.error('Error in displayResults:', error);
+        resultsContainer.innerHTML = `
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-title">❌ Display Error</h2>
+                </div>
+                <div style="background: #fee2e2; border: 1px solid #fecaca; border-radius: 8px; padding: 1.5rem;">
+                    <p style="color: #dc2626; margin-bottom: 1rem;">Error displaying results: ${error.message}</p>
+                    <p style="color: #7f1d1d; font-size: 0.9rem;">Check console for details.</p>
+                </div>
+            </div>
+        `;
+    }
 }
 
 function generateResultCard(title, data, isComplex = false) {
@@ -1366,6 +1421,16 @@ function clearData(type) {
     
     updateAnalyzeButton();
     showNotification(`${type.charAt(0).toUpperCase() + type.slice(1)} data cleared`, 'info');
+}
+
+// Full Results Display Function
+function displayFullResults() {
+    if (!window.fullResults) {
+        showNotification('No results data available', 'error');
+        return;
+    }
+    
+    displayResults(window.fullResults);
 }
 
 // Utility functions
