@@ -345,22 +345,63 @@ async function runAnalysis() {
                 return;
             }
             
-            // Try simple HTML first
-            resultsContainer.innerHTML = `
-                <div class="card">
-                    <div class="card-header">
-                        <h2 class="card-title">🎉 Analysis Complete!</h2>
-                        <p class="card-description">Your CAC analysis has been completed successfully.</p>
+            // Try simple HTML first with error handling
+            try {
+                console.log('Rendering simple results...', results.calculations);
+                
+                resultsContainer.innerHTML = `
+                    <div class="card">
+                        <div class="card-header">
+                            <h2 class="card-title">🎉 Analysis Complete!</h2>
+                            <p class="card-description">Your CAC analysis has been completed successfully.</p>
+                        </div>
+                        <div style="padding: 2rem; text-align: center;">
+                            <h3>Simple Blended CAC: $${results.calculations?.simpleBlended?.value || 'N/A'}</h3>
+                            <p style="margin-top: 1rem; color: var(--text-secondary);">Analysis includes 5 methodologies and budget optimization scenarios.</p>
+                            <button class="btn btn-primary" onclick="displayFullResults()" style="margin-top: 2rem;">
+                                📊 Show Full Analysis & Budget Scenarios
+                            </button>
+                            
+                            <!-- Quick Stats -->
+                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; margin-top: 2rem;">
+                                <div style="background: var(--surface); padding: 1rem; border-radius: 8px;">
+                                    <div style="font-size: 1.2rem; font-weight: 600; color: var(--primary-color);">$${results.calculations?.fullyLoaded?.value || 'N/A'}</div>
+                                    <div style="font-size: 0.8rem; color: var(--text-secondary);">Fully-Loaded CAC</div>
+                                </div>
+                                <div style="background: var(--surface); padding: 1rem; border-radius: 8px;">
+                                    <div style="font-size: 1.2rem; font-weight: 600; color: var(--accent-color);">${Object.keys(results.calculations?.channelSpecific?.channels || {}).length}</div>
+                                    <div style="font-size: 0.8rem; color: var(--text-secondary);">Channels Analyzed</div>
+                                </div>
+                                <div style="background: var(--surface); padding: 1rem; border-radius: 8px;">
+                                    <div style="font-size: 1.2rem; font-weight: 600; color: var(--warning-color);">${Math.round(results.metadata?.confidence * 10 || 0)}/10</div>
+                                    <div style="font-size: 0.8rem; color: var(--text-secondary);">Data Confidence</div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div style="padding: 2rem; text-align: center;">
-                        <h3>Simple Blended CAC: $${results.calculations?.simpleBlended?.value || 'N/A'}</h3>
-                        <p style="margin-top: 1rem;">More detailed results coming soon...</p>
-                        <button class="btn btn-primary" onclick="displayFullResults()" style="margin-top: 2rem;">
-                            Show Full Analysis
-                        </button>
+                `;
+                
+                console.log('Simple results rendered successfully');
+                
+            } catch (renderError) {
+                console.error('Error rendering simple results:', renderError);
+                resultsContainer.innerHTML = `
+                    <div class="card">
+                        <div class="card-header">
+                            <h2 class="card-title">⚠️ Partial Results</h2>
+                        </div>
+                        <div style="padding: 2rem;">
+                            <p>Analysis completed but display encountered an error:</p>
+                            <div style="background: var(--surface); padding: 1rem; border-radius: 8px; margin: 1rem 0; font-family: monospace; font-size: 0.9rem;">
+                                ${renderError.message}
+                            </div>
+                            <button class="btn btn-primary" onclick="console.log('Full results:', window.fullResults)">
+                                🔍 Log Full Results to Console
+                            </button>
+                        </div>
                     </div>
-                </div>
-            `;
+                `;
+            }
             
             // Store results globally for the detailed view
             window.fullResults = results;
@@ -477,14 +518,32 @@ function displayResults(results) {
     
     } catch (error) {
         console.error('Error in displayResults:', error);
+        console.error('Error stack:', error.stack);
+        console.error('Results data:', results);
+        
         resultsContainer.innerHTML = `
             <div class="card">
                 <div class="card-header">
                     <h2 class="card-title">❌ Display Error</h2>
                 </div>
-                <div style="background: #fee2e2; border: 1px solid #fecaca; border-radius: 8px; padding: 1.5rem;">
-                    <p style="color: #dc2626; margin-bottom: 1rem;">Error displaying results: ${error.message}</p>
-                    <p style="color: #7f1d1d; font-size: 0.9rem;">Check console for details.</p>
+                <div style="background: #fee2e2; border: 1px solid #fecaca; border-radius: 8px; padding: 1.5rem; margin-bottom: 2rem;">
+                    <p style="color: #dc2626; margin-bottom: 1rem;"><strong>Error displaying results:</strong> ${error.message}</p>
+                    <div style="background: #fef2f2; padding: 1rem; border-radius: 6px; font-size: 0.9rem; color: #7f1d1d; margin-bottom: 1rem;">
+                        <strong>Error Details:</strong><br>
+                        ${error.stack ? error.stack.split('\n').slice(0, 3).join('<br>') : 'No stack trace available'}
+                    </div>
+                    <div style="background: #f3f4f6; padding: 1rem; border-radius: 6px; margin-bottom: 1rem;">
+                        <strong>Raw CAC Values:</strong><br>
+                        • Simple: $${results?.calculations?.simpleBlended?.value || 'N/A'}<br>
+                        • Fully-Loaded: $${results?.calculations?.fullyLoaded?.value || 'N/A'}<br>
+                        • Channels: ${Object.keys(results?.calculations?.channelSpecific?.channels || {}).length || 0}
+                    </div>
+                    <button class="btn btn-primary" onclick="console.log('Full results object:', window.fullResults || results)" style="margin-right: 1rem;">
+                        🔍 Log to Console
+                    </button>
+                    <button class="btn btn-secondary" onclick="location.reload()">
+                        🔄 Reload Page
+                    </button>
                 </div>
             </div>
         `;
