@@ -1,0 +1,1212 @@
+date,channel,campaign_name,customers,new_customers,revenue,roas,avg_order_value,ltv
+2025-05-26,Google Ads,Search - Brand,6,6,824,1.34,122.97,307.42
+2025-05-26,Google Ads,Search - Generic,9,9,2087,2.81,243.12,607.79
+2025-05-26,Facebook,Conversions,1,1,309,1.66,306.57,766.42
+2025-05-26,Facebook,Lead Generation,1,1,141,0.64,176.29,440.73
+2025-05-26,Facebook,Remarketing,2,2,348,1.45,192.84,482.09
+2025-05-26,LinkedIn,Event Ads,2,2,570,1.92,258.14,645.36
+2025-05-26,LinkedIn,Text Ads,1,1,209,1.12,193.84,484.59
+2025-05-26,TikTok,App Install,1,1,319,2.59,316.94,792.34
+2025-05-26,TikTok,Conversions,1,1,277,4.02,304.27,760.67
+2025-05-26,TikTok,Conversions,1,1,138,1.49,164.05,410.13
+2025-05-26,TikTok,Conversions,2,2,537,4.59,238.37,595.92
+2025-05-26,Pinterest,Brand Awareness,1,1,350,3.57,308.37,770.92
+2025-05-26,Pinterest,App Install,1,1,243,3.8,204.79,511.98
+2025-05-26,Pinterest,App Install,2,2,484,4.1,206.14,515.34
+2025-05-27,Google Ads,Search - Brand,9,9,1131,1.44,140.44,351.11
+2025-05-27,Google Ads,Search - Generic,6,6,1404,2.84,200.71,501.78
+2025-05-27,Facebook,Remarketing,1,1,298,1.54,304.7,761.75
+2025-05-27,Facebook,Video Views,2,2,330,1.44,162.39,405.96
+2025-05-27,Facebook,Traffic,2,2,583,2.93,317.93,794.83
+2025-05-27,LinkedIn,Event Ads,2,2,242,0.6,144.59,361.47
+2025-05-27,LinkedIn,Text Ads,2,2,642,1.79,283.14,707.85
+2025-05-27,TikTok,Reach,2,2,694,4.37,289.87,724.66
+2025-05-27,TikTok,Reach,3,3,376,2.1,148.02,370.05
+2025-05-27,Pinterest,Traffic,1,1,334,2.44,299.87,749.68
+2025-05-27,Pinterest,App Install,2,2,330,2.17,166.52,416.3
+2025-05-28,Google Ads,Shopping,5,5,853,1.9,190.45,476.12
+2025-05-28,Google Ads,Display - Remarketing,7,7,849,1.49,125.24,313.1
+2025-05-28,Facebook,Video Views,1,1,308,1.75,297.55,743.88
+2025-05-28,Facebook,Remarketing,1,1,210,1.04,186.15,465.37
+2025-05-28,Facebook,Traffic,2,2,550,2.61,250.28,625.71
+2025-05-28,LinkedIn,Sponsored Content,2,2,364,0.87,179.08,447.69
+2025-05-28,LinkedIn,Sponsored Content,2,2,523,1.59,256.4,641
+2025-05-28,TikTok,Video Views,3,3,1036,3.85,313.66,784.14
+2025-05-28,TikTok,Conversions,4,4,959,3.52,216.48,541.2
+2025-05-28,Pinterest,Brand Awareness,1,1,163,2.59,168.15,420.39
+2025-05-28,Pinterest,Conversions,1,1,192,1.87,162.23,405.56
+2025-05-29,Google Ads,Video - YouTube,7,7,849,1.44,150.31,375.79
+2025-05-29,Google Ads,Display - Remarketing,5,5,1699,3.78,299.01,747.52
+2025-05-29,Facebook,Lead Generation,2,2,332,1.05,169.79,424.47
+2025-05-29,Facebook,Conversions,1,1,123,0.48,144.54,361.35
+2025-05-29,Facebook,Conversions,2,2,460,2.06,286.95,717.37
+2025-05-29,LinkedIn,Message Ads,1,1,114,0.57,133.59,333.98
+2025-05-29,LinkedIn,Message Ads,2,2,424,1.36,232.8,582
+2025-05-29,LinkedIn,Text Ads,1,1,232,0.91,272.07,680.17
+2025-05-29,TikTok,App Install,1,1,134,2.03,135.21,338.04
+2025-05-29,TikTok,App Install,2,2,426,4.78,212.68,531.7
+2025-05-29,TikTok,Traffic,1,1,116,1.29,138.81,347.02
+2025-05-29,Pinterest,Traffic,1,1,184,2.36,171.86,429.66
+2025-05-29,Pinterest,Conversions,1,1,135,2.18,158.2,395.49
+2025-05-30,Google Ads,Video - YouTube,3,3,411,1.61,120.43,301.08
+2025-05-30,Google Ads,Search - Brand,4,4,529,1.5,146.03,365.07
+2025-05-30,Google Ads,Shopping,7,7,1632,3.9,210.3,525.75
+2025-05-30,Google Ads,Video - YouTube,3,3,672,2.75,203.91,509.77
+2025-05-30,Facebook,Remarketing,1,1,188,1.34,190.01,475.03
+2025-05-30,Facebook,Video Views,1,1,200,1.23,198.89,497.22
+2025-05-30,Facebook,Remarketing,1,1,367,2.66,316.83,792.08
+2025-05-30,Facebook,Conversions,1,1,159,0.84,150.13,375.34
+2025-05-30,LinkedIn,Sponsored Content,1,1,180,1.01,170.92,427.29
+2025-05-30,LinkedIn,Dynamic Ads,2,2,366,1.27,203.15,507.88
+2025-05-30,LinkedIn,Dynamic Ads,1,1,182,0.84,174.87,437.18
+2025-05-30,TikTok,Conversions,3,3,1122,7.68,319.31,798.28
+2025-05-30,TikTok,Traffic,1,1,143,2.13,132.87,332.17
+2025-05-30,TikTok,Reach,1,1,202,2.04,226.16,565.4
+2025-05-30,TikTok,App Install,2,2,505,4.47,241.06,602.65
+2025-05-30,Pinterest,App Install,1,1,229,2.2,222.76,556.91
+2025-05-30,Pinterest,App Install,1,1,340,2.45,286.97,717.42
+2025-05-31,Google Ads,Video - YouTube,3,3,425,1.28,130.21,325.52
+2025-05-31,Google Ads,Search - Generic,3,3,772,1.96,218.87,547.17
+2025-05-31,Facebook,Conversions,1,1,199,1.47,242.32,605.81
+2025-05-31,Facebook,Lead Generation,1,1,320,2.56,317.04,792.6
+2025-05-31,Facebook,Conversions,1,1,212,1.88,223.87,559.67
+2025-05-31,Facebook,Lead Generation,1,1,144,1.69,135.93,339.83
+2025-05-31,LinkedIn,Event Ads,1,1,203,1.38,239.81,599.52
+2025-05-31,LinkedIn,Event Ads,1,1,153,1.13,155.56,388.9
+2025-05-31,TikTok,Conversions,1,1,257,4.85,312.84,782.1
+2025-05-31,TikTok,App Install,1,1,168,3.37,163.79,409.47
+2025-05-31,TikTok,Traffic,1,1,192,2.24,173,432.49
+2025-05-31,TikTok,Conversions,1,1,228,4.3,196.18,490.45
+2025-05-31,Pinterest,Traffic,1,1,163,1.68,172.28,430.7
+2025-05-31,Pinterest,Traffic,1,1,146,2.06,171.63,429.07
+2025-06-01,Google Ads,Search - Generic,1,1,127,0.63,150.29,375.73
+2025-06-01,Google Ads,Search - Brand,2,2,388,1.92,208.48,521.21
+2025-06-01,Google Ads,Search - Brand,2,2,552,2.73,280.62,701.55
+2025-06-01,Facebook,Lead Generation,1,1,235,2.37,220.36,550.89
+2025-06-01,Facebook,Remarketing,1,1,177,1.43,197.21,493.03
+2025-06-01,Facebook,Remarketing,1,1,254,2.31,238.04,595.09
+2025-06-01,Facebook,Lead Generation,1,1,267,2.9,277.69,694.23
+2025-06-01,LinkedIn,Text Ads,1,1,309,1.71,306.73,766.82
+2025-06-01,LinkedIn,Text Ads,1,1,179,1.06,152.24,380.61
+2025-06-01,TikTok,Reach,1,1,255,2.01,213.35,533.38
+2025-06-01,TikTok,Reach,1,1,208,2.66,182.9,457.26
+2025-06-01,Pinterest,Conversions,1,1,237,2.49,285.89,714.71
+2025-06-01,Pinterest,Brand Awareness,1,1,275,2.84,301.52,753.81
+2025-06-02,Google Ads,Shopping,6,6,1617,3.37,266.17,665.43
+2025-06-02,Google Ads,Search - Generic,4,4,875,1.86,190.12,475.31
+2025-06-02,Facebook,Lead Generation,2,2,421,2.02,187.44,468.61
+2025-06-02,Facebook,Remarketing,2,2,269,1.23,121.47,303.68
+2025-06-02,Facebook,Lead Generation,1,1,328,2.14,290.08,725.2
+2025-06-02,LinkedIn,Message Ads,3,3,793,1.75,229.55,573.87
+2025-06-02,LinkedIn,Dynamic Ads,3,3,626,1.4,208.24,520.61
+2025-06-02,TikTok,Reach,1,1,120,1.6,144.5,361.25
+2025-06-02,TikTok,Traffic,1,1,186,1.87,181.75,454.38
+2025-06-02,TikTok,App Install,1,1,248,2.38,233.06,582.64
+2025-06-02,TikTok,Video Views,1,1,218,1.88,220.92,552.3
+2025-06-02,Pinterest,Video Views,1,1,285,3.31,318.61,796.51
+2025-06-02,Pinterest,Conversions,1,1,256,3.72,250.19,625.47
+2025-06-02,Pinterest,Brand Awareness,1,1,185,2.28,184.14,460.36
+2025-06-03,Google Ads,Search - Brand,3,3,809,3.49,233.01,582.52
+2025-06-03,Google Ads,Display - Remarketing,5,5,1157,3.91,271.26,678.14
+2025-06-03,Facebook,Conversions,4,4,1005,2.65,220.66,551.65
+2025-06-03,Facebook,Remarketing,2,2,515,1.99,309.29,773.21
+2025-06-03,LinkedIn,Event Ads,1,1,211,0.83,206.83,517.07
+2025-06-03,LinkedIn,Message Ads,1,1,233,1.29,244.28,610.71
+2025-06-03,LinkedIn,Dynamic Ads,1,1,204,1.14,245.47,613.67
+2025-06-03,TikTok,Conversions,2,2,380,2.9,233.2,583
+2025-06-03,TikTok,App Install,2,2,420,2.36,207.63,519.07
+2025-06-03,Pinterest,Video Views,1,1,233,4.09,275.86,689.64
+2025-06-03,Pinterest,Traffic,1,1,154,3.13,155.74,389.35
+2025-06-04,Google Ads,Search - Brand,6,6,1146,2.16,174.14,435.35
+2025-06-04,Google Ads,Display - Remarketing,5,5,1414,2.81,306.28,765.71
+2025-06-04,Facebook,Conversions,1,1,202,1.3,182.55,456.37
+2025-06-04,Facebook,Video Views,2,2,530,2.76,265.33,663.32
+2025-06-04,Facebook,Lead Generation,2,2,529,2.56,221.8,554.5
+2025-06-04,Facebook,Remarketing,1,1,218,1.57,269.75,674.38
+2025-06-04,LinkedIn,Event Ads,1,1,297,1.6,271.44,678.59
+2025-06-04,LinkedIn,Text Ads,2,2,362,1.29,163.63,409.06
+2025-06-04,LinkedIn,Event Ads,2,2,519,1.76,302.77,756.93
+2025-06-04,TikTok,Reach,2,2,334,1.97,190.06,475.16
+2025-06-04,TikTok,Video Views,2,2,224,1.33,121.91,304.76
+2025-06-04,Pinterest,Video Views,1,1,269,2.9,245.02,612.56
+2025-06-05,Google Ads,Shopping,5,5,606,1.31,139.52,348.79
+2025-06-05,Facebook,Lead Generation,2,2,701,3.54,312.1,780.26
+2025-06-05,Facebook,Lead Generation,1,1,147,0.9,180.05,450.14
+2025-06-05,Facebook,Conversions,1,1,182,1.04,152.99,382.47
+2025-06-05,LinkedIn,Message Ads,2,2,298,0.72,170.68,426.7
+2025-06-05,LinkedIn,Dynamic Ads,2,2,324,0.79,196.8,492
+2025-06-05,TikTok,Reach,1,1,152,0.96,130.61,326.53
+2025-06-05,TikTok,App Install,2,2,237,1.1,131.45,328.62
+2025-06-05,Pinterest,Brand Awareness,1,1,182,2.09,217.02,542.56
+2025-06-05,Pinterest,App Install,1,1,257,2.92,308.82,772.05
+2025-06-06,Google Ads,Search - Brand,5,5,1158,2.67,218.35,545.88
+2025-06-06,Google Ads,Search - Brand,4,4,665,1.58,163.16,407.9
+2025-06-06,Facebook,Lead Generation,2,2,260,1.4,134.73,336.83
+2025-06-06,Facebook,Traffic,1,1,252,1.75,284.38,710.96
+2025-06-06,Facebook,Lead Generation,1,1,152,1.24,175.22,438.05
+2025-06-06,Facebook,Lead Generation,1,1,235,1.26,280.22,700.55
+2025-06-06,LinkedIn,Dynamic Ads,1,1,246,1.27,271.03,677.58
+2025-06-06,LinkedIn,Sponsored Content,1,1,157,0.63,182.27,455.68
+2025-06-06,LinkedIn,Sponsored Content,1,1,210,1.27,250.38,625.95
+2025-06-06,TikTok,Video Views,2,2,540,5.19,309.37,773.41
+2025-06-06,TikTok,Conversions,1,1,197,2.49,245.44,613.59
+2025-06-06,TikTok,Reach,1,1,172,1.85,156.23,390.58
+2025-06-06,Pinterest,Conversions,1,1,154,1.95,144.92,362.31
+2025-06-06,Pinterest,Brand Awareness,1,1,221,1.86,208.99,522.47
+2025-06-07,Google Ads,Shopping,3,3,624,3.51,177.21,443.02
+2025-06-07,Google Ads,Display - Remarketing,3,3,450,1.84,128.6,321.51
+2025-06-07,Google Ads,Video - YouTube,2,2,511,2.46,272.66,681.66
+2025-06-07,Google Ads,Shopping,2,2,613,2.48,319.07,797.68
+2025-06-07,Facebook,Lead Generation,2,2,245,0.98,137.65,344.14
+2025-06-07,Facebook,Video Views,1,1,217,1.36,193.4,483.5
+2025-06-07,LinkedIn,Event Ads,1,1,254,1.22,315.45,788.62
+2025-06-07,TikTok,Conversions,1,1,233,5.55,233.5,583.74
+2025-06-07,TikTok,Video Views,1,1,161,1.79,171.01,427.52
+2025-06-07,TikTok,Conversions,1,1,233,3.75,259.56,648.91
+2025-06-07,TikTok,App Install,1,1,214,2.4,233.57,583.91
+2025-06-07,Pinterest,App Install,1,1,191,5.03,196.31,490.79
+2025-06-07,Pinterest,App Install,1,1,290,3.58,299.85,749.62
+2025-06-08,Google Ads,Shopping,4,4,608,1.93,160.19,400.48
+2025-06-08,Google Ads,Display - Remarketing,2,2,300,1.34,139.12,347.8
+2025-06-08,Facebook,Remarketing,1,1,188,1.46,230.48,576.19
+2025-06-08,Facebook,Conversions,1,1,192,1.16,190.78,476.94
+2025-06-08,Facebook,Traffic,1,1,304,2.22,285.78,714.44
+2025-06-08,LinkedIn,Event Ads,1,1,216,0.87,230.66,576.65
+2025-06-08,LinkedIn,Event Ads,1,1,255,1.68,261.96,654.89
+2025-06-08,TikTok,Reach,1,1,241,3.3,220.16,550.41
+2025-06-08,TikTok,Reach,1,1,274,3.47,257.19,642.99
+2025-06-08,Pinterest,Video Views,1,1,152,1.57,158.78,396.95
+2025-06-08,Pinterest,Brand Awareness,1,1,165,1.78,148.36,370.89
+2025-06-09,Google Ads,Display - Remarketing,5,5,1122,3.02,215.65,539.13
+2025-06-09,Google Ads,Search - Brand,4,4,529,1.69,135.73,339.33
+2025-06-09,Google Ads,Video - YouTube,3,3,657,2.67,214.79,536.98
+2025-06-09,Google Ads,Video - YouTube,2,2,405,2.15,248.92,622.31
+2025-06-09,Facebook,Lead Generation,1,1,220,1.71,232.35,580.88
+2025-06-09,Facebook,Lead Generation,1,1,274,2.06,252.19,630.48
+2025-06-09,Facebook,Remarketing,1,1,188,1.3,196.83,492.08
+2025-06-09,Facebook,Video Views,1,1,170,0.81,147.27,368.18
+2025-06-09,LinkedIn,Text Ads,1,1,300,2.07,308.07,770.17
+2025-06-09,LinkedIn,Dynamic Ads,1,1,299,1.66,262.17,655.42
+2025-06-09,LinkedIn,Sponsored Content,1,1,184,0.95,156.14,390.35
+2025-06-09,TikTok,App Install,2,2,479,2.36,276.78,691.95
+2025-06-09,TikTok,Traffic,3,3,492,2.29,153.57,383.93
+2025-06-09,Pinterest,Conversions,2,2,212,2.02,127.63,319.07
+2025-06-09,Pinterest,App Install,1,1,150,2.09,133.39,333.47
+2025-06-09,Pinterest,Traffic,1,1,170,2.57,164.96,412.4
+2025-06-10,Google Ads,Search - Brand,4,4,805,2.79,249.7,624.25
+2025-06-10,Google Ads,Search - Generic,5,5,653,1.71,121.19,302.97
+2025-06-10,Google Ads,Display - Remarketing,5,5,776,2.25,155.17,387.92
+2025-06-10,Facebook,Video Views,1,1,317,2.56,319.63,799.08
+2025-06-10,Facebook,Video Views,2,2,637,3.15,316.66,791.64
+2025-06-10,Facebook,Lead Generation,2,2,698,3.97,307.73,769.32
+2025-06-10,Facebook,Remarketing,2,2,371,1.85,231.36,578.41
+2025-06-10,LinkedIn,Event Ads,1,1,300,2.12,295.04,737.61
+2025-06-10,LinkedIn,Text Ads,1,1,251,1.19,221.05,552.62
+2025-06-10,LinkedIn,Message Ads,1,1,125,0.74,139.52,348.81
+2025-06-10,LinkedIn,Event Ads,1,1,164,0.78,178.78,446.94
+2025-06-10,TikTok,Reach,3,3,461,2.35,187.47,468.67
+2025-06-10,TikTok,Reach,2,2,327,2.21,146.33,365.84
+2025-06-10,Pinterest,Traffic,1,1,307,3.49,271.1,677.76
+2025-06-10,Pinterest,Brand Awareness,1,1,256,4.41,235.15,587.88
+2025-06-10,Pinterest,Video Views,1,1,178,2.15,166.63,416.57
+2025-06-11,Google Ads,Video - YouTube,4,4,857,1.51,212.73,531.82
+2025-06-11,Google Ads,Search - Brand,5,5,1182,1.86,209.77,524.42
+2025-06-11,Facebook,Conversions,2,2,498,1.75,305.94,764.84
+2025-06-11,Facebook,Video Views,3,3,479,1.18,145.97,364.94
+2025-06-11,LinkedIn,Sponsored Content,1,1,126,0.77,155.46,388.66
+2025-06-11,LinkedIn,Dynamic Ads,1,1,243,1.34,217,542.49
+2025-06-11,LinkedIn,Sponsored Content,2,2,713,3.21,308.4,771
+2025-06-11,LinkedIn,Sponsored Content,1,1,269,2.06,224.64,561.6
+2025-06-11,TikTok,Reach,1,1,132,1.28,137.98,344.94
+2025-06-11,TikTok,App Install,1,1,146,1.68,141.54,353.86
+2025-06-11,TikTok,Video Views,1,1,152,1.73,167.8,419.5
+2025-06-11,Pinterest,App Install,1,1,147,1.77,136.2,340.49
+2025-06-11,Pinterest,Conversions,2,2,454,2.58,268.56,671.4
+2025-06-12,Google Ads,Display - Remarketing,3,3,646,3.09,240.89,602.23
+2025-06-12,Google Ads,Search - Generic,5,5,674,2.14,165.63,414.07
+2025-06-12,Google Ads,Search - Brand,2,2,448,1.95,274.59,686.47
+2025-06-12,Google Ads,Video - YouTube,3,3,580,2.41,196.27,490.68
+2025-06-12,Facebook,Video Views,1,1,218,2.06,205.64,514.1
+2025-06-12,Facebook,Conversions,1,1,257,1.85,278.32,695.8
+2025-06-12,Facebook,Traffic,1,1,164,1.39,197.92,494.8
+2025-06-12,Facebook,Video Views,1,1,283,1.65,290.37,725.93
+2025-06-12,LinkedIn,Sponsored Content,1,1,173,0.59,175.16,437.9
+2025-06-12,LinkedIn,Event Ads,2,2,434,1.17,195.28,488.21
+2025-06-12,TikTok,Traffic,2,2,347,2.8,173.62,434.06
+2025-06-12,TikTok,Traffic,1,1,175,1.56,163.17,407.91
+2025-06-12,TikTok,Conversions,1,1,301,3.08,286.99,717.46
+2025-06-12,TikTok,Traffic,1,1,240,2.63,238.42,596.05
+2025-06-12,Pinterest,Brand Awareness,1,1,311,3.42,263.77,659.43
+2025-06-12,Pinterest,App Install,1,1,209,2.05,219.7,549.25
+2025-06-12,Pinterest,App Install,1,1,273,2.51,270.72,676.79
+2025-06-13,Google Ads,Display - Remarketing,7,7,1899,5.04,319.78,799.46
+2025-06-13,Google Ads,Video - YouTube,4,4,516,1.64,146.08,365.2
+2025-06-13,Google Ads,Search - Generic,5,5,535,1.33,123.05,307.62
+2025-06-13,Facebook,Remarketing,1,1,239,0.78,232.78,581.95
+2025-06-13,Facebook,Lead Generation,3,3,914,2.53,293.55,733.87
+2025-06-13,LinkedIn,Message Ads,1,1,266,1.5,239.42,598.56
+2025-06-13,LinkedIn,Message Ads,1,1,153,0.56,190.23,475.58
+2025-06-13,LinkedIn,Event Ads,1,1,207,0.97,251.22,628.05
+2025-06-13,TikTok,Traffic,1,1,271,2.37,265.02,662.56
+2025-06-13,TikTok,Traffic,1,1,265,2.7,296.15,740.37
+2025-06-13,TikTok,App Install,2,2,357,3.28,170.63,426.59
+2025-06-13,Pinterest,App Install,1,1,328,3.95,311.98,779.95
+2025-06-13,Pinterest,Brand Awareness,1,1,134,1.57,134.03,335.08
+2025-06-14,Google Ads,Shopping,1,1,110,0.82,123.89,309.73
+2025-06-14,Google Ads,Search - Brand,2,2,625,3.51,275.68,689.2
+2025-06-14,Google Ads,Search - Brand,4,4,691,2.91,161.19,402.98
+2025-06-14,Google Ads,Shopping,2,2,308,1.56,163.18,407.94
+2025-06-14,Facebook,Video Views,1,1,234,1.29,237.73,594.32
+2025-06-14,Facebook,Remarketing,1,1,303,1.93,299.56,748.89
+2025-06-14,LinkedIn,Sponsored Content,1,1,282,1.97,247.65,619.13
+2025-06-14,LinkedIn,Sponsored Content,1,1,211,2.01,243.7,609.26
+2025-06-14,TikTok,Reach,1,1,263,4.97,273.43,683.58
+2025-06-14,Pinterest,Brand Awareness,1,1,259,2.54,219.58,548.95
+2025-06-14,Pinterest,Video Views,1,1,235,2.64,195.92,489.81
+2025-06-15,Google Ads,Search - Generic,4,4,560,1.6,141.32,353.29
+2025-06-15,Google Ads,Display - Remarketing,4,4,721,2.3,151.56,378.9
+2025-06-15,Facebook,Lead Generation,1,1,198,1.35,166.98,417.46
+2025-06-15,Facebook,Remarketing,1,1,252,1.71,248.09,620.22
+2025-06-15,Facebook,Conversions,1,1,130,1.02,153.37,383.42
+2025-06-15,LinkedIn,Dynamic Ads,1,1,277,1.55,262.06,655.15
+2025-06-15,LinkedIn,Dynamic Ads,1,1,207,1.22,211.01,527.52
+2025-06-15,TikTok,Video Views,1,1,209,2.45,194.62,486.55
+2025-06-15,TikTok,Traffic,1,1,340,4.86,294.2,735.51
+2025-06-15,Pinterest,Traffic,1,1,325,4.7,287.13,717.83
+2025-06-15,Pinterest,Conversions,1,1,251,4.64,232.97,582.43
+2025-06-16,Google Ads,Display - Remarketing,3,3,695,2.31,239.66,599.16
+2025-06-16,Google Ads,Video - YouTube,4,4,699,1.67,174.37,435.92
+2025-06-16,Google Ads,Search - Brand,4,4,1463,4.39,314.12,785.29
+2025-06-16,Facebook,Conversions,1,1,209,1.44,182.48,456.21
+2025-06-16,Facebook,Lead Generation,1,1,299,2.3,278.5,696.24
+2025-06-16,Facebook,Video Views,1,1,247,1.14,225.84,564.59
+2025-06-16,Facebook,Traffic,1,1,176,1.07,194.24,485.61
+2025-06-16,LinkedIn,Sponsored Content,1,1,316,2.08,283.38,708.45
+2025-06-16,LinkedIn,Message Ads,1,1,167,0.83,203.25,508.11
+2025-06-16,LinkedIn,Dynamic Ads,1,1,216,1.49,220.74,551.84
+2025-06-16,LinkedIn,Event Ads,1,1,102,0.54,125.05,312.63
+2025-06-16,TikTok,Video Views,1,1,220,2.17,228.29,570.72
+2025-06-16,TikTok,App Install,1,1,295,2.92,293.73,734.32
+2025-06-16,TikTok,Traffic,1,1,288,2.69,276.5,691.26
+2025-06-16,TikTok,App Install,1,1,280,3.07,311.88,779.69
+2025-06-16,Pinterest,Traffic,1,1,348,4.98,319.67,799.17
+2025-06-16,Pinterest,Conversions,1,1,202,2.69,179.23,448.08
+2025-06-16,Pinterest,Conversions,1,1,315,4.77,311.53,778.83
+2025-06-17,Google Ads,Video - YouTube,6,6,1025,2.01,209.65,524.13
+2025-06-17,Google Ads,Shopping,13,13,3319,4.69,261.29,653.23
+2025-06-17,Facebook,Lead Generation,1,1,250,1.7,217.66,544.14
+2025-06-17,Facebook,Lead Generation,1,1,171,1.67,144.08,360.19
+2025-06-17,Facebook,Conversions,1,1,125,0.85,136.98,342.44
+2025-06-17,Facebook,Traffic,1,1,198,1.5,175.65,439.14
+2025-06-17,LinkedIn,Sponsored Content,1,1,255,1.88,305.14,762.86
+2025-06-17,LinkedIn,Event Ads,1,1,159,0.69,157.68,394.2
+2025-06-17,LinkedIn,Message Ads,1,1,188,0.94,198.72,496.8
+2025-06-17,TikTok,App Install,1,1,147,1.55,142.5,356.24
+2025-06-17,TikTok,App Install,2,2,392,2.58,174.13,435.31
+2025-06-17,TikTok,Traffic,2,2,564,5.32,255.82,639.56
+2025-06-17,Pinterest,App Install,1,1,140,1.78,154.42,386.04
+2025-06-17,Pinterest,Conversions,1,1,134,2.26,139.27,348.18
+2025-06-17,Pinterest,Brand Awareness,1,1,311,4.39,306.83,767.09
+2025-06-18,Google Ads,Search - Brand,7,7,1145,1.89,154.33,385.84
+2025-06-18,Google Ads,Search - Brand,6,6,582,1.13,120.72,301.81
+2025-06-18,Facebook,Video Views,2,2,268,1.5,155.64,389.1
+2025-06-18,Facebook,Lead Generation,1,1,215,0.81,217.13,542.83
+2025-06-18,Facebook,Video Views,2,2,327,1.44,191.65,479.12
+2025-06-18,LinkedIn,Dynamic Ads,1,1,306,2,261.85,654.62
+2025-06-18,LinkedIn,Sponsored Content,1,1,242,1.25,259.06,647.64
+2025-06-18,LinkedIn,Event Ads,2,2,295,1.19,142.37,355.92
+2025-06-18,TikTok,Video Views,4,4,1011,4.14,310.25,775.62
+2025-06-18,TikTok,App Install,3,3,785,4.13,288.49,721.22
+2025-06-18,Pinterest,Video Views,1,1,312,5.89,315.25,788.12
+2025-06-18,Pinterest,Brand Awareness,1,1,142,1.56,151.45,378.62
+2025-06-18,Pinterest,Brand Awareness,1,1,173,2.54,185.3,463.26
+2025-06-18,Pinterest,Brand Awareness,1,1,169,2.22,165.67,414.18
+2025-06-19,Google Ads,Display - Remarketing,4,4,1095,4.3,312.4,781
+2025-06-19,Google Ads,Display - Remarketing,2,2,423,2.22,189.85,474.62
+2025-06-19,Google Ads,Display - Remarketing,4,4,484,1.85,150.69,376.72
+2025-06-19,Google Ads,Video - YouTube,4,4,754,2.6,215.02,537.55
+2025-06-19,Facebook,Video Views,1,1,250,2.1,265.04,662.59
+2025-06-19,Facebook,Traffic,1,1,123,0.74,147.02,367.55
+2025-06-19,Facebook,Lead Generation,2,2,211,1.11,126.38,315.94
+2025-06-19,Facebook,Remarketing,1,1,156,1.35,160.85,402.13
+2025-06-19,LinkedIn,Dynamic Ads,1,1,195,0.78,211.45,528.61
+2025-06-19,LinkedIn,Message Ads,1,1,306,1.58,299.49,748.73
+2025-06-19,LinkedIn,Sponsored Content,1,1,223,0.95,195.28,488.21
+2025-06-19,TikTok,Conversions,2,2,623,4.52,291.19,727.97
+2025-06-19,TikTok,App Install,2,2,568,3.26,245.52,613.79
+2025-06-19,TikTok,App Install,1,1,196,1.79,171.74,429.34
+2025-06-19,Pinterest,Traffic,1,1,132,1.27,141.02,352.56
+2025-06-19,Pinterest,Brand Awareness,1,1,270,1.83,248.97,622.41
+2025-06-20,Google Ads,Display - Remarketing,4,4,474,0.9,120.74,301.85
+2025-06-20,Google Ads,Shopping,7,7,913,1.58,122.51,306.27
+2025-06-20,Facebook,Lead Generation,2,2,634,2.19,268.17,670.42
+2025-06-20,Facebook,Conversions,2,2,625,3.12,262.35,655.89
+2025-06-20,LinkedIn,Sponsored Content,3,3,521,1.28,155.37,388.43
+2025-06-20,LinkedIn,Text Ads,2,2,525,1.28,281.23,703.08
+2025-06-20,TikTok,App Install,1,1,144,1.34,173.24,433.09
+2025-06-20,TikTok,Traffic,2,2,327,2.19,154.92,387.29
+2025-06-20,TikTok,Reach,2,2,631,4.48,316.67,791.67
+2025-06-20,Pinterest,Video Views,1,1,264,2.18,293.93,734.83
+2025-06-20,Pinterest,Conversions,2,2,427,3.34,208.06,520.14
+2025-06-21,Google Ads,Search - Brand,2,2,253,1.25,139.5,348.76
+2025-06-21,Google Ads,Display - Remarketing,1,1,249,1.89,282.76,706.91
+2025-06-21,Google Ads,Display - Remarketing,1,1,271,2.31,286.01,715.03
+2025-06-21,Google Ads,Shopping,2,2,476,2.9,219.93,549.83
+2025-06-21,Facebook,Video Views,1,1,187,1.59,222.96,557.41
+2025-06-21,Facebook,Remarketing,1,1,351,4.38,297.3,743.26
+2025-06-21,Facebook,Lead Generation,1,1,218,2.32,268.9,672.26
+2025-06-21,LinkedIn,Message Ads,1,1,170,0.83,166.8,417.01
+2025-06-21,LinkedIn,Message Ads,1,1,190,0.83,184.69,461.73
+2025-06-21,TikTok,Reach,1,1,179,2.19,201.92,504.81
+2025-06-21,TikTok,App Install,1,1,343,4.63,301.36,753.4
+2025-06-21,TikTok,App Install,1,1,317,5.29,288.75,721.88
+2025-06-21,Pinterest,Brand Awareness,1,1,158,2.43,134.24,335.61
+2025-06-22,Google Ads,Video - YouTube,3,3,419,2.03,122.34,305.84
+2025-06-22,Google Ads,Search - Generic,2,2,291,1.25,146.95,367.37
+2025-06-22,Google Ads,Search - Brand,1,1,299,1.83,300.65,751.63
+2025-06-22,Facebook,Conversions,1,1,169,1.32,165.55,413.87
+2025-06-22,Facebook,Lead Generation,2,2,528,3.11,254.63,636.58
+2025-06-22,Facebook,Traffic,1,1,212,1.76,203.82,509.55
+2025-06-22,LinkedIn,Message Ads,1,1,301,1.69,277.58,693.96
+2025-06-22,LinkedIn,Sponsored Content,2,2,631,2.62,288.68,721.7
+2025-06-22,TikTok,Video Views,1,1,310,4.08,307.69,769.22
+2025-06-22,TikTok,Reach,1,1,135,3.15,126.31,315.77
+2025-06-22,TikTok,Video Views,1,1,218,5.07,196.37,490.92
+2025-06-23,Google Ads,Search - Brand,2,2,509,2.27,292.98,732.45
+2025-06-23,Google Ads,Search - Generic,3,3,1022,4.28,289.79,724.47
+2025-06-23,Google Ads,Display - Remarketing,3,3,682,2.23,252.08,630.21
+2025-06-23,Google Ads,Video - YouTube,3,3,1019,4.25,297.41,743.54
+2025-06-23,Facebook,Traffic,1,1,244,1.4,244.76,611.89
+2025-06-23,Facebook,Traffic,2,2,359,1.5,150.15,375.37
+2025-06-23,Facebook,Traffic,1,1,119,0.78,145.25,363.12
+2025-06-23,LinkedIn,Message Ads,1,1,107,0.61,120.2,300.5
+2025-06-23,LinkedIn,Message Ads,1,1,266,1.49,317.12,792.8
+2025-06-23,LinkedIn,Message Ads,1,1,242,1.29,205.77,514.42
+2025-06-23,TikTok,Video Views,1,1,279,3.1,284.7,711.74
+2025-06-23,TikTok,Video Views,1,1,186,2.62,228.84,572.1
+2025-06-23,TikTok,Traffic,1,1,139,2.08,142.37,355.93
+2025-06-23,TikTok,Conversions,1,1,222,1.85,240.83,602.08
+2025-06-23,Pinterest,Video Views,1,1,137,1.27,147.92,369.8
+2025-06-23,Pinterest,Brand Awareness,2,2,334,2.23,204.45,511.12
+2025-06-24,Google Ads,Search - Generic,2,2,396,1.47,181.07,452.67
+2025-06-24,Google Ads,Video - YouTube,3,3,505,1.55,140.99,352.46
+2025-06-24,Facebook,Video Views,1,1,319,2.28,312.77,781.93
+2025-06-24,Facebook,Conversions,1,1,345,2.16,309.34,773.34
+2025-06-24,Facebook,Video Views,1,1,172,1.32,169.31,423.27
+2025-06-24,LinkedIn,Dynamic Ads,1,1,235,1.22,213.37,533.43
+2025-06-24,LinkedIn,Message Ads,1,1,126,0.79,123.9,309.76
+2025-06-24,LinkedIn,Event Ads,2,2,533,1.86,233.95,584.88
+2025-06-24,TikTok,Video Views,1,1,221,2.21,272.48,681.2
+2025-06-24,TikTok,Reach,1,1,183,2.18,185.08,462.71
+2025-06-24,TikTok,Traffic,2,2,523,3.12,298.59,746.46
+2025-06-24,Pinterest,Conversions,1,1,234,2.63,289.94,724.85
+2025-06-25,Google Ads,Search - Generic,8,8,1173,1.95,143.21,358.03
+2025-06-25,Google Ads,Search - Generic,6,6,1572,3.01,284.23,710.57
+2025-06-25,Facebook,Remarketing,3,3,423,1.52,154.01,385.02
+2025-06-25,Facebook,Conversions,1,1,149,1.22,174.01,435.03
+2025-06-25,Facebook,Video Views,2,2,426,1.76,209.65,524.12
+2025-06-25,LinkedIn,Message Ads,1,1,265,1.4,266.36,665.9
+2025-06-25,LinkedIn,Message Ads,1,1,198,1.28,214.34,535.86
+2025-06-25,LinkedIn,Dynamic Ads,1,1,215,1.56,257.17,642.93
+2025-06-25,LinkedIn,Text Ads,1,1,262,1.6,296.98,742.44
+2025-06-25,TikTok,App Install,1,1,213,3.18,252.4,631.01
+2025-06-25,TikTok,Video Views,1,1,262,3.49,246.68,616.69
+2025-06-25,TikTok,Reach,1,1,191,2.3,179.51,448.79
+2025-06-25,TikTok,Conversions,1,1,239,2.95,238.97,597.42
+2025-06-25,Pinterest,Brand Awareness,1,1,188,3.08,181.8,454.49
+2025-06-25,Pinterest,Conversions,1,1,298,3.17,282.92,707.3
+2025-06-26,Google Ads,Search - Brand,4,4,1149,4.43,270.51,676.28
+2025-06-26,Google Ads,Display - Remarketing,3,3,683,2.92,254.1,635.24
+2025-06-26,Google Ads,Display - Remarketing,3,3,737,3.29,218.28,545.69
+2025-06-26,Google Ads,Search - Brand,4,4,967,3.7,216.69,541.72
+2025-06-26,Facebook,Conversions,1,1,109,0.53,124.19,310.48
+2025-06-26,Facebook,Traffic,1,1,110,0.59,121.24,303.09
+2025-06-26,LinkedIn,Message Ads,1,1,251,0.92,307.78,769.45
+2025-06-26,LinkedIn,Text Ads,1,1,174,0.44,205.15,512.88
+2025-06-26,TikTok,Reach,2,2,249,2.09,130.32,325.81
+2025-06-26,TikTok,Video Views,1,1,189,2.78,167.21,418.03
+2025-06-26,TikTok,App Install,1,1,159,1.81,175.24,438.1
+2025-06-26,TikTok,Traffic,1,1,295,3.73,312,779.99
+2025-06-26,Pinterest,Traffic,1,1,348,6.21,314.79,786.98
+2025-06-26,Pinterest,Traffic,1,1,318,3.54,278.25,695.62
+2025-06-26,Pinterest,App Install,1,1,236,3.58,254.15,635.38
+2025-06-27,Google Ads,Video - YouTube,5,5,797,1.76,167.91,419.78
+2025-06-27,Google Ads,Shopping,9,9,2891,6.38,305.1,762.76
+2025-06-27,Google Ads,Search - Brand,5,5,1345,3.2,291.07,727.68
+2025-06-27,Facebook,Video Views,2,2,223,0.76,127.39,318.47
+2025-06-27,Facebook,Lead Generation,2,2,450,1.41,245.31,613.27
+2025-06-27,LinkedIn,Dynamic Ads,1,1,188,0.88,208.83,522.08
+2025-06-27,LinkedIn,Event Ads,1,1,176,0.67,175.62,439.06
+2025-06-27,LinkedIn,Message Ads,1,1,242,1.22,227.13,567.84
+2025-06-27,TikTok,Traffic,1,1,344,3.62,308.37,770.92
+2025-06-27,TikTok,Reach,1,1,215,2.36,200.01,500.03
+2025-06-27,TikTok,Traffic,2,2,237,2.08,129.14,322.84
+2025-06-27,Pinterest,App Install,1,1,236,3.52,258.77,646.94
+2025-06-27,Pinterest,Conversions,1,1,264,5.17,261.47,653.67
+2025-06-28,Google Ads,Shopping,1,1,231,2.01,288.89,722.21
+2025-06-28,Google Ads,Video - YouTube,2,2,377,2.19,182.98,457.46
+2025-06-28,Google Ads,Search - Brand,1,1,273,2.15,315.56,788.9
+2025-06-28,Google Ads,Video - YouTube,1,1,205,1.57,214.96,537.4
+2025-06-28,Facebook,Lead Generation,1,1,178,2.17,208.54,521.35
+2025-06-28,LinkedIn,Text Ads,1,1,105,0.74,123.18,307.95
+2025-06-28,TikTok,Conversions,1,1,157,2.79,158.44,396.09
+2025-06-28,TikTok,Reach,1,1,237,4.84,227.95,569.88
+2025-06-28,TikTok,App Install,1,1,244,5.19,226.39,565.98
+2025-06-28,Pinterest,Brand Awareness,1,1,209,2.09,240.6,601.49
+2025-06-28,Pinterest,App Install,1,1,243,3.92,229.46,573.65
+2025-06-29,Google Ads,Search - Brand,2,2,369,1.83,185.21,463.02
+2025-06-29,Google Ads,Video - YouTube,2,2,340,1.58,151.06,377.66
+2025-06-29,Google Ads,Display - Remarketing,1,1,230,1.57,208.24,520.6
+2025-06-29,Facebook,Traffic,1,1,176,2.23,164.78,411.95
+2025-06-29,Facebook,Lead Generation,1,1,317,3.41,315.04,787.6
+2025-06-29,Facebook,Conversions,1,1,267,2.13,301.48,753.7
+2025-06-29,LinkedIn,Dynamic Ads,1,1,301,1.24,315.53,788.83
+2025-06-29,TikTok,Traffic,1,1,290,2.44,247.89,619.73
+2025-06-29,TikTok,Conversions,1,1,228,3.35,209.87,524.68
+2025-06-29,Pinterest,Conversions,1,1,356,4.45,312.47,781.17
+2025-06-29,Pinterest,Video Views,1,1,241,3.3,298.58,746.46
+2025-06-30,Google Ads,Search - Brand,7,7,754,1.28,125.39,313.48
+2025-06-30,Google Ads,Search - Brand,8,8,1671,3.43,219.31,548.28
+2025-06-30,Facebook,Remarketing,1,1,239,1.63,211.54,528.85
+2025-06-30,Facebook,Video Views,2,2,507,3.36,230.12,575.31
+2025-06-30,Facebook,Lead Generation,1,1,203,1.37,217.46,543.65
+2025-06-30,Facebook,Traffic,1,1,236,2.53,282.41,706.03
+2025-06-30,LinkedIn,Sponsored Content,1,1,186,0.8,180.86,452.15
+2025-06-30,LinkedIn,Dynamic Ads,1,1,280,1.87,261.12,652.79
+2025-06-30,LinkedIn,Text Ads,1,1,301,1.27,292.55,731.37
+2025-06-30,TikTok,Reach,2,2,267,1.9,166.97,417.42
+2025-06-30,Pinterest,Brand Awareness,1,1,228,4.08,204.48,511.2
+2025-06-30,Pinterest,Conversions,1,1,240,3.04,299.52,748.79
+2025-07-01,Google Ads,Search - Brand,9,9,2385,3.57,298.16,745.41
+2025-07-01,Facebook,Video Views,2,2,454,1.82,201.76,504.4
+2025-07-01,Facebook,Conversions,2,2,253,0.89,133.66,334.16
+2025-07-01,LinkedIn,Text Ads,1,1,173,0.9,173.83,434.56
+2025-07-01,LinkedIn,Message Ads,1,1,209,0.79,195.79,489.46
+2025-07-01,LinkedIn,Message Ads,1,1,153,0.84,152.35,380.88
+2025-07-01,TikTok,Video Views,1,1,270,3,264.07,660.17
+2025-07-01,TikTok,Traffic,1,1,139,1.35,155.66,389.14
+2025-07-01,TikTok,Video Views,1,1,231,2.85,197.53,493.81
+2025-07-01,Pinterest,App Install,1,1,263,2.96,224.81,562.02
+2025-07-01,Pinterest,Traffic,1,1,142,2.05,163.9,409.74
+2025-07-02,Google Ads,Display - Remarketing,2,2,496,1.93,263.19,657.98
+2025-07-02,Google Ads,Search - Brand,2,2,431,1.77,224.65,561.62
+2025-07-02,Google Ads,Shopping,5,5,747,2.31,132.03,330.09
+2025-07-02,Google Ads,Search - Generic,4,4,887,2.87,213.58,533.95
+2025-07-02,Facebook,Video Views,1,1,274,1.28,270.61,676.53
+2025-07-02,LinkedIn,Sponsored Content,2,2,529,2.32,257.69,644.21
+2025-07-02,LinkedIn,Message Ads,1,1,376,1.72,313.91,784.77
+2025-07-02,LinkedIn,Event Ads,1,1,190,0.71,161.25,403.13
+2025-07-02,TikTok,Video Views,2,2,578,5.5,268.14,670.35
+2025-07-02,TikTok,App Install,2,2,245,1.72,122.55,306.37
+2025-07-02,TikTok,App Install,1,1,182,1.94,209.88,524.69
+2025-07-02,Pinterest,Traffic,1,1,223,2.72,202.35,505.88
+2025-07-02,Pinterest,Brand Awareness,1,1,155,1.74,179.96,449.91
+2025-07-02,Pinterest,App Install,1,1,155,2.09,172.19,430.47
+2025-07-03,Google Ads,Search - Generic,2,2,536,2.15,308.12,770.29
+2025-07-03,Google Ads,Search - Generic,3,3,414,1.19,128.47,321.18
+2025-07-03,Google Ads,Search - Brand,5,5,997,3.29,202.37,505.92
+2025-07-03,Facebook,Conversions,1,1,213,1.17,184.97,462.43
+2025-07-03,Facebook,Video Views,1,1,144,0.58,148.73,371.84
+2025-07-03,LinkedIn,Sponsored Content,2,2,610,2.05,266.2,665.51
+2025-07-03,LinkedIn,Text Ads,2,2,435,1.38,217.57,543.94
+2025-07-03,TikTok,App Install,1,1,318,2.69,302.91,757.27
+2025-07-03,TikTok,Conversions,1,1,226,2.72,231.71,579.28
+2025-07-03,TikTok,Traffic,1,1,249,4.01,208.66,521.65
+2025-07-03,TikTok,Conversions,2,2,213,2.42,122.65,306.63
+2025-07-03,Pinterest,Video Views,1,1,223,2.75,214.85,537.13
+2025-07-03,Pinterest,Video Views,1,1,153,2.18,187.87,469.66
+2025-07-03,Pinterest,Traffic,1,1,245,4.89,262.64,656.6
+2025-07-04,Google Ads,Video - YouTube,2,2,564,3.01,237.87,594.66
+2025-07-04,Google Ads,Display - Remarketing,5,5,1500,4.56,286.06,715.16
+2025-07-04,Google Ads,Shopping,2,2,441,2.23,210.55,526.38
+2025-07-04,Google Ads,Shopping,2,2,467,2.3,223.14,557.86
+2025-07-04,Facebook,Lead Generation,3,3,546,2.28,177.77,444.43
+2025-07-04,Facebook,Lead Generation,2,2,286,1.09,176.55,441.37
+2025-07-04,LinkedIn,Message Ads,1,1,139,0.56,140.7,351.75
+2025-07-04,LinkedIn,Sponsored Content,2,2,270,0.87,143.75,359.36
+2025-07-04,TikTok,Conversions,2,2,526,4.74,304.96,762.4
+2025-07-04,TikTok,App Install,1,1,193,2.54,167.52,418.8
+2025-07-04,TikTok,Traffic,1,1,248,2.85,251.65,629.13
+2025-07-04,Pinterest,Brand Awareness,2,2,574,3.83,292.66,731.64
+2025-07-04,Pinterest,App Install,1,1,186,1.98,208.59,521.48
+2025-07-05,Google Ads,Shopping,3,3,965,3.16,298.78,746.96
+2025-07-05,Google Ads,Shopping,2,2,702,2.11,313.32,783.3
+2025-07-05,Facebook,Remarketing,1,1,182,1.9,180.18,450.44
+2025-07-05,Facebook,Video Views,1,1,140,1.64,159.19,397.96
+2025-07-05,Facebook,Remarketing,1,1,202,1.63,203.9,509.75
+2025-07-05,Facebook,Traffic,1,1,181,2.35,198.4,495.99
+2025-07-05,LinkedIn,Text Ads,1,1,148,0.58,170.17,425.43
+2025-07-05,LinkedIn,Event Ads,1,1,282,1.18,311.53,778.84
+2025-07-05,TikTok,Traffic,1,1,249,3.08,222.12,555.29
+2025-07-05,TikTok,Video Views,1,1,135,2.11,124.23,310.56
+2025-07-05,Pinterest,Video Views,1,1,165,2.46,201.19,502.97
+2025-07-05,Pinterest,Traffic,1,1,213,3.05,230.72,576.8
+2025-07-06,Google Ads,Shopping,6,6,1432,3.88,274.24,685.59
+2025-07-06,Google Ads,Shopping,5,5,1084,2.84,246.78,616.95
+2025-07-06,Facebook,Video Views,1,1,245,1.66,293.05,732.63
+2025-07-06,Facebook,Traffic,1,1,205,2.28,194.42,486.06
+2025-07-06,LinkedIn,Text Ads,1,1,135,0.52,161.92,404.8
+2025-07-06,LinkedIn,Dynamic Ads,1,1,205,1.48,218.37,545.92
+2025-07-06,TikTok,App Install,1,1,171,3.16,190.09,475.22
+2025-07-06,Pinterest,App Install,1,1,271,3.76,303.3,758.26
+2025-07-06,Pinterest,Conversions,1,1,177,3.16,173.57,433.92
+2025-07-07,Google Ads,Search - Generic,1,1,155,0.87,149.19,372.98
+2025-07-07,Google Ads,Video - YouTube,2,2,464,2.74,248.1,620.25
+2025-07-07,Google Ads,Video - YouTube,2,2,562,2.46,280.02,700.06
+2025-07-07,Google Ads,Video - YouTube,4,4,586,2.2,154.75,386.87
+2025-07-07,Facebook,Video Views,4,4,819,2.15,215.88,539.69
+2025-07-07,Facebook,Video Views,1,1,180,0.7,161.13,402.82
+2025-07-07,LinkedIn,Message Ads,1,1,132,1.11,159.06,397.65
+2025-07-07,LinkedIn,Message Ads,1,1,203,1.03,227.42,568.56
+2025-07-07,LinkedIn,Dynamic Ads,1,1,156,0.99,171.05,427.62
+2025-07-07,TikTok,Conversions,2,2,399,2.85,247.2,618
+2025-07-07,TikTok,Reach,1,1,201,1.72,200.98,502.45
+2025-07-07,TikTok,Reach,2,2,500,3.97,213.02,532.54
+2025-07-07,Pinterest,Video Views,1,1,252,2.87,284.31,710.77
+2025-07-07,Pinterest,Brand Awareness,2,2,654,5.36,309.39,773.46
+2025-07-08,Google Ads,Display - Remarketing,3,3,838,3.07,276,690.01
+2025-07-08,Google Ads,Display - Remarketing,1,1,191,1.04,226.31,565.79
+2025-07-08,Google Ads,Shopping,4,4,900,3.45,269.08,672.7
+2025-07-08,Google Ads,Search - Brand,2,2,444,2.19,193.34,483.35
+2025-07-08,Facebook,Remarketing,1,1,134,1.07,159.21,398.02
+2025-07-08,Facebook,Video Views,1,1,206,1.35,172.56,431.39
+2025-07-08,Facebook,Video Views,2,2,254,1.53,136.51,341.28
+2025-07-08,Facebook,Video Views,1,1,200,1.59,183.88,459.71
+2025-07-08,LinkedIn,Message Ads,1,1,192,0.69,188.16,470.41
+2025-07-08,LinkedIn,Dynamic Ads,1,1,335,1.33,300.53,751.33
+2025-07-08,TikTok,Conversions,2,2,358,3.04,221.06,552.65
+2025-07-08,TikTok,Conversions,1,1,252,5.36,277.63,694.09
+2025-07-08,TikTok,App Install,1,1,313,3.56,288.73,721.82
+2025-07-08,TikTok,Reach,2,2,220,1.9,121.42,303.54
+2025-07-08,Pinterest,Video Views,1,1,117,2.26,132,330.01
+2025-07-08,Pinterest,Traffic,1,1,338,4.28,295.03,737.58
+2025-07-09,Google Ads,Display - Remarketing,2,2,270,1.12,128.57,321.42
+2025-07-09,Google Ads,Video - YouTube,3,3,724,3.07,296.9,742.24
+2025-07-09,Google Ads,Video - YouTube,4,4,1091,3.77,244.51,611.27
+2025-07-09,Google Ads,Video - YouTube,3,3,631,3.49,194.73,486.82
+2025-07-09,Facebook,Video Views,2,2,405,1.83,187.75,469.39
+2025-07-09,LinkedIn,Sponsored Content,1,1,306,1.23,300.17,750.42
+2025-07-09,LinkedIn,Message Ads,1,1,239,1.05,200.05,500.12
+2025-07-09,TikTok,Reach,1,1,336,4.1,284.51,711.29
+2025-07-09,Pinterest,Brand Awareness,1,1,152,2.08,160.5,401.25
+2025-07-09,Pinterest,Traffic,1,1,221,3.24,270.24,675.6
+2025-07-09,Pinterest,Brand Awareness,1,1,149,2.56,126.99,317.48
+2025-07-10,Google Ads,Video - YouTube,7,7,866,1.5,132.28,330.69
+2025-07-10,Google Ads,Search - Brand,4,4,898,2.09,197.64,494.1
+2025-07-10,Facebook,Remarketing,2,2,354,1.64,193.61,484.02
+2025-07-10,Facebook,Conversions,2,2,402,1.71,204.63,511.58
+2025-07-10,LinkedIn,Message Ads,2,2,593,1.8,272.72,681.8
+2025-07-10,LinkedIn,Event Ads,2,2,627,1.82,306.72,766.8
+2025-07-10,TikTok,App Install,1,1,138,1.55,120.64,301.59
+2025-07-10,TikTok,App Install,1,1,239,3.11,222.1,555.26
+2025-07-10,TikTok,Conversions,1,1,340,3.91,300.22,750.55
+2025-07-10,Pinterest,Brand Awareness,1,1,268,1.72,272.17,680.43
+2025-07-10,Pinterest,Video Views,1,1,354,3.17,314.59,786.48
+2025-07-11,Google Ads,Search - Generic,3,3,403,1.3,137.96,344.9
+2025-07-11,Google Ads,Shopping,1,1,197,0.89,230.49,576.23
+2025-07-11,Google Ads,Search - Brand,2,2,468,2.84,250.82,627.04
+2025-07-11,Google Ads,Video - YouTube,2,2,332,1.65,156.6,391.5
+2025-07-11,Facebook,Lead Generation,1,1,229,1.58,260.27,650.67
+2025-07-11,Facebook,Lead Generation,1,1,177,1.06,217.94,544.86
+2025-07-11,Facebook,Lead Generation,1,1,247,1.35,221.84,554.59
+2025-07-11,LinkedIn,Event Ads,1,1,131,0.68,141.45,353.63
+2025-07-11,LinkedIn,Sponsored Content,1,1,182,1.2,179,447.5
+2025-07-11,LinkedIn,Sponsored Content,1,1,255,1.44,302.24,755.6
+2025-07-11,TikTok,Conversions,2,2,438,4.34,264.8,662
+2025-07-11,TikTok,Video Views,1,1,111,1.52,135.85,339.62
+2025-07-11,TikTok,Reach,2,2,342,3,195.78,489.45
+2025-07-11,Pinterest,Conversions,2,2,347,2.08,213.4,533.5
+2025-07-11,Pinterest,Brand Awareness,1,1,325,3.65,295.93,739.82
+2025-07-12,Google Ads,Video - YouTube,2,2,299,1.36,126.57,316.43
+2025-07-12,Google Ads,Video - YouTube,1,1,126,0.82,145.26,363.15
+2025-07-12,Google Ads,Display - Remarketing,2,2,469,2.76,247.54,618.84
+2025-07-12,Facebook,Traffic,1,1,162,1.14,171.87,429.68
+2025-07-12,Facebook,Traffic,1,1,245,1.72,261.85,654.62
+2025-07-12,LinkedIn,Sponsored Content,1,1,180,1.5,221.86,554.65
+2025-07-12,LinkedIn,Sponsored Content,1,1,332,2.59,283.92,709.79
+2025-07-12,TikTok,Reach,1,1,179,2.01,173,432.49
+2025-07-12,TikTok,Conversions,1,1,187,1.85,163.34,408.35
+2025-07-13,Google Ads,Search - Brand,5,5,1067,2.87,239.31,598.27
+2025-07-13,Google Ads,Shopping,4,4,1017,3.39,216.82,542.06
+2025-07-13,Facebook,Video Views,1,1,195,2.35,165.17,412.93
+2025-07-13,Facebook,Traffic,1,1,310,4.37,259.97,649.92
+2025-07-13,LinkedIn,Text Ads,1,1,194,0.89,198.82,497.04
+2025-07-13,LinkedIn,Event Ads,1,1,204,1.28,208.05,520.11
+2025-07-13,TikTok,Reach,1,1,308,6.04,306.79,766.97
+2025-07-13,TikTok,Reach,1,1,115,1.69,138.09,345.21
+2025-07-14,Google Ads,Shopping,3,3,624,1.62,216.55,541.37
+2025-07-14,Google Ads,Display - Remarketing,4,4,889,2.91,237.79,594.46
+2025-07-14,Google Ads,Video - YouTube,3,3,712,2.76,228.17,570.42
+2025-07-14,Facebook,Traffic,1,1,312,1.53,263.2,658.01
+2025-07-14,Facebook,Lead Generation,1,1,174,1.29,160.78,401.95
+2025-07-14,Facebook,Lead Generation,1,1,200,1.15,191.87,479.67
+2025-07-14,LinkedIn,Sponsored Content,1,1,216,1.22,256.72,641.79
+2025-07-14,LinkedIn,Dynamic Ads,1,1,338,1.73,303.99,759.98
+2025-07-14,LinkedIn,Message Ads,1,1,251,1.67,276.8,692
+2025-07-14,TikTok,Traffic,1,1,199,2.09,216.09,540.22
+2025-07-14,TikTok,App Install,1,1,234,2.79,246.61,616.54
+2025-07-14,TikTok,Reach,2,2,327,2.2,145.98,364.95
+2025-07-15,Google Ads,Search - Brand,7,7,803,1.52,138.81,347.03
+2025-07-15,Google Ads,Search - Generic,10,10,2868,4.73,310.41,776.03
+2025-07-15,Facebook,Video Views,1,1,267,1.82,309.05,772.63
+2025-07-15,Facebook,Lead Generation,1,1,195,1.86,207.57,518.92
+2025-07-15,Facebook,Remarketing,1,1,246,1.44,220.52,551.31
+2025-07-15,Facebook,Video Views,1,1,229,1.89,217.85,544.63
+2025-07-15,LinkedIn,Text Ads,2,2,413,1.04,242.31,605.77
+2025-07-15,LinkedIn,Message Ads,2,2,330,1.12,187.63,469.07
+2025-07-15,TikTok,App Install,1,1,174,2.29,152.52,381.3
+2025-07-15,TikTok,Reach,1,1,286,2.7,319.27,798.17
+2025-07-15,TikTok,Conversions,1,1,154,3.08,157.01,392.51
+2025-07-15,TikTok,App Install,2,2,375,3.32,158.55,396.38
+2025-07-15,Pinterest,Brand Awareness,1,1,152,2.72,157.26,393.16
+2025-07-15,Pinterest,Brand Awareness,1,1,243,3.8,279.05,697.62
+2025-07-15,Pinterest,Conversions,1,1,232,4.94,233.97,584.93
+2025-07-16,Google Ads,Shopping,3,3,481,1.45,152.85,382.11
+2025-07-16,Google Ads,Search - Generic,3,3,471,1.47,131.4,328.5
+2025-07-16,Google Ads,Display - Remarketing,4,4,693,2.01,169.87,424.68
+2025-07-16,Facebook,Remarketing,2,2,434,1.9,187.08,467.69
+2025-07-16,Facebook,Conversions,2,2,303,1.15,132.28,330.71
+2025-07-16,LinkedIn,Dynamic Ads,1,1,158,0.69,160.16,400.41
+2025-07-16,LinkedIn,Event Ads,1,1,142,0.86,136.72,341.81
+2025-07-16,TikTok,App Install,3,3,800,4.47,230.95,577.39
+2025-07-16,TikTok,Video Views,2,2,526,3.17,286.26,715.66
+2025-07-16,Pinterest,App Install,1,1,233,4.75,230.98,577.46
+2025-07-16,Pinterest,Video Views,1,1,169,3.07,162.63,406.58
+2025-07-16,Pinterest,Traffic,1,1,204,2.72,247.46,618.65
+2025-07-17,Google Ads,Video - YouTube,4,4,1169,2.54,300.37,750.92
+2025-07-17,Google Ads,Search - Generic,3,3,524,1.42,200.94,502.34
+2025-07-17,Facebook,Video Views,1,1,234,1.66,234.23,585.58
+2025-07-17,Facebook,Video Views,1,1,238,2.07,222.78,556.95
+2025-07-17,Facebook,Remarketing,2,2,293,1.75,175.52,438.79
+2025-07-17,Facebook,Video Views,1,1,220,1.89,243.86,609.66
+2025-07-17,LinkedIn,Dynamic Ads,1,1,344,1.84,307.78,769.45
+2025-07-17,LinkedIn,Message Ads,1,1,232,1.29,278,695.01
+2025-07-17,TikTok,Video Views,1,1,276,5.11,243.1,607.74
+2025-07-17,TikTok,Reach,1,1,343,3.61,315.66,789.15
+2025-07-17,TikTok,Reach,1,1,153,1.89,190.22,475.54
+2025-07-17,Pinterest,Traffic,2,2,405,2.98,177.55,443.86
+2025-07-17,Pinterest,Traffic,1,1,256,2.76,305.73,764.32
+2025-07-18,Google Ads,Display - Remarketing,6,6,946,2.16,138.43,346.08
+2025-07-18,Google Ads,Shopping,3,3,710,2.41,239.78,599.45
+2025-07-18,Google Ads,Search - Brand,4,4,730,2.13,185.02,462.55
+2025-07-18,Facebook,Traffic,1,1,239,1.12,215.43,538.58
+2025-07-18,Facebook,Lead Generation,1,1,278,1.75,255.6,639
+2025-07-18,Facebook,Video Views,1,1,119,0.81,131.25,328.13
+2025-07-18,LinkedIn,Message Ads,1,1,132,1.23,138.55,346.37
+2025-07-18,LinkedIn,Text Ads,1,1,316,1.89,308.46,771.14
+2025-07-18,LinkedIn,Text Ads,1,1,212,1.21,220.43,551.07
+2025-07-18,LinkedIn,Dynamic Ads,1,1,308,1.68,273.45,683.63
+2025-07-18,TikTok,Conversions,1,1,306,3.16,280.92,702.29
+2025-07-18,TikTok,Reach,1,1,228,3.4,259.22,648.06
+2025-07-18,TikTok,Reach,1,1,215,2.99,180.75,451.88
+2025-07-18,TikTok,Reach,1,1,174,1.79,161.4,403.51
+2025-07-18,Pinterest,App Install,1,1,295,2.84,284.56,711.4
+2025-07-18,Pinterest,Conversions,1,1,171,1.62,142.66,356.65
+2025-07-19,Google Ads,Search - Brand,2,2,376,2.12,165.96,414.89
+2025-07-19,Google Ads,Search - Brand,2,2,588,2.82,294.76,736.89
+2025-07-19,Google Ads,Search - Brand,2,2,390,2.17,178.23,445.57
+2025-07-19,Facebook,Video Views,1,1,256,3.37,277.2,693.01
+2025-07-19,Facebook,Traffic,1,1,205,2.26,210.48,526.19
+2025-07-19,Facebook,Video Views,1,1,103,1.32,125.67,314.18
+2025-07-19,Facebook,Remarketing,1,1,306,4.5,266.88,667.19
+2025-07-19,LinkedIn,Dynamic Ads,1,1,155,0.65,139.46,348.64
+2025-07-19,TikTok,Video Views,1,1,295,3.98,267.53,668.83
+2025-07-19,TikTok,Conversions,1,1,162,2.21,150.26,375.65
+2025-07-19,TikTok,Reach,1,1,328,5.47,305.64,764.1
+2025-07-19,Pinterest,App Install,1,1,251,4.64,274.17,685.42
+2025-07-20,Google Ads,Shopping,2,2,289,1.57,140.81,352.02
+2025-07-20,Google Ads,Shopping,3,3,676,2.4,194.32,485.79
+2025-07-20,Google Ads,Display - Remarketing,2,2,321,1.45,147.05,367.64
+2025-07-20,Facebook,Lead Generation,1,1,259,1.66,311.21,778.03
+2025-07-20,Facebook,Conversions,1,1,187,1.46,173.38,433.45
+2025-07-20,Facebook,Conversions,1,1,117,0.85,139.77,349.42
+2025-07-20,LinkedIn,Dynamic Ads,1,1,325,1.67,311.11,777.76
+2025-07-20,LinkedIn,Event Ads,1,1,169,1.01,179.55,448.88
+2025-07-20,TikTok,Video Views,1,1,277,3.8,272.17,680.43
+2025-07-20,TikTok,Reach,1,1,172,2.91,169.89,424.72
+2025-07-20,TikTok,App Install,1,1,146,1.83,139.82,349.55
+2025-07-21,Google Ads,Shopping,3,3,433,1.83,158.42,396.05
+2025-07-21,Google Ads,Shopping,6,6,1260,3.24,208.35,520.86
+2025-07-21,Facebook,Video Views,1,1,159,0.72,188.55,471.38
+2025-07-21,LinkedIn,Dynamic Ads,1,1,289,0.83,280.15,700.38
+2025-07-21,LinkedIn,Dynamic Ads,1,1,307,1.12,318.37,795.92
+2025-07-21,TikTok,App Install,1,1,173,1.73,166.66,416.65
+2025-07-21,TikTok,Conversions,1,1,242,3.02,271.18,677.94
+2025-07-21,TikTok,Traffic,1,1,137,1.45,161.42,403.55
+2025-07-21,Pinterest,App Install,1,1,121,1.15,132.26,330.66
+2025-07-21,Pinterest,Video Views,1,1,330,5.08,279.56,698.9
+2025-07-22,Google Ads,Shopping,3,3,404,1.76,156.41,391.02
+2025-07-22,Google Ads,Search - Brand,2,2,330,1.44,169.57,423.93
+2025-07-22,Google Ads,Search - Brand,3,3,376,1.33,142.99,357.49
+2025-07-22,Facebook,Traffic,2,2,451,2.44,192.01,480.04
+2025-07-22,Facebook,Conversions,1,1,133,1.46,150.33,375.83
+2025-07-22,Facebook,Lead Generation,1,1,210,1.15,223.53,558.84
+2025-07-22,Facebook,Video Views,1,1,167,1.61,146.86,367.14
+2025-07-22,LinkedIn,Text Ads,1,1,162,1.57,165.74,414.36
+2025-07-22,LinkedIn,Sponsored Content,1,1,311,1.97,298.73,746.82
+2025-07-22,LinkedIn,Message Ads,1,1,314,1.83,319.75,799.38
+2025-07-22,TikTok,Video Views,2,2,302,2.13,160.04,400.1
+2025-07-22,TikTok,Traffic,2,2,548,3.22,250.41,626.03
+2025-07-22,Pinterest,App Install,1,1,132,1.66,126.17,315.43
+2025-07-22,Pinterest,Traffic,1,1,184,3.34,170.09,425.24
+2025-07-22,Pinterest,Traffic,1,1,167,1.88,187.92,469.79
+2025-07-23,Google Ads,Video - YouTube,3,3,822,3.75,298.84,747.1
+2025-07-23,Google Ads,Video - YouTube,3,3,972,2.4,291.35,728.36
+2025-07-23,Google Ads,Search - Brand,2,2,363,1.67,159.92,399.81
+2025-07-23,Facebook,Conversions,1,1,200,1.68,176.13,440.33
+2025-07-23,Facebook,Traffic,1,1,316,1.53,311.95,779.87
+2025-07-23,Facebook,Lead Generation,2,2,423,2.63,238.76,596.89
+2025-07-23,LinkedIn,Text Ads,1,1,212,1.31,210.11,525.28
+2025-07-23,LinkedIn,Message Ads,1,1,136,0.82,147.54,368.85
+2025-07-23,LinkedIn,Event Ads,1,1,190,1.38,234.53,586.32
+2025-07-23,TikTok,Reach,1,1,271,3.76,311.46,778.65
+2025-07-23,TikTok,Reach,1,1,196,2.23,184.75,461.87
+2025-07-23,TikTok,App Install,1,1,191,2.25,232.12,580.29
+2025-07-23,TikTok,Traffic,1,1,356,5.66,316.95,792.39
+2025-07-23,Pinterest,App Install,1,1,182,2.56,169.1,422.76
+2025-07-23,Pinterest,Brand Awareness,1,1,241,4.64,271.06,677.65
+2025-07-23,Pinterest,Brand Awareness,1,1,264,4.71,264.37,660.93
+2025-07-23,Pinterest,App Install,1,1,186,2.7,172.09,430.22
+2025-07-24,Google Ads,Video - YouTube,5,5,1336,2.39,235.02,587.56
+2025-07-24,Google Ads,Search - Brand,9,9,1181,2.11,142.98,357.45
+2025-07-24,Facebook,Traffic,1,1,186,1.83,230.18,575.44
+2025-07-24,Facebook,Conversions,1,1,196,1.33,201.26,503.16
+2025-07-24,Facebook,Conversions,1,1,253,1.47,265.57,663.93
+2025-07-24,Facebook,Lead Generation,1,1,263,2.16,308.85,772.13
+2025-07-24,LinkedIn,Sponsored Content,1,1,179,0.99,203.3,508.24
+2025-07-24,LinkedIn,Event Ads,1,1,116,0.89,137.84,344.6
+2025-07-24,LinkedIn,Sponsored Content,1,1,135,0.88,122.08,305.21
+2025-07-24,TikTok,Reach,1,1,313,3.63,288.73,721.82
+2025-07-24,TikTok,Reach,2,2,431,3.75,209.66,524.14
+2025-07-24,Pinterest,Video Views,1,1,194,2.98,162.43,406.06
+2025-07-25,Google Ads,Display - Remarketing,2,2,646,3.2,303.19,757.99
+2025-07-25,Google Ads,Search - Brand,3,3,517,2.16,169.27,423.18
+2025-07-25,Google Ads,Video - YouTube,4,4,749,2.62,196.44,491.09
+2025-07-25,Google Ads,Video - YouTube,5,5,1267,4.46,211.22,528.04
+2025-07-25,Facebook,Conversions,1,1,235,2.24,214.95,537.37
+2025-07-25,Facebook,Remarketing,1,1,161,1.1,184.71,461.78
+2025-07-25,Facebook,Remarketing,1,1,172,1.14,161.1,402.74
+2025-07-25,LinkedIn,Dynamic Ads,2,2,429,1.6,248.12,620.31
+2025-07-25,LinkedIn,Message Ads,1,1,341,1.47,295.07,737.68
+2025-07-25,TikTok,App Install,2,2,508,4.7,251.35,628.37
+2025-07-25,TikTok,Traffic,1,1,251,2.82,270.32,675.8
+2025-07-25,TikTok,Reach,1,1,284,2.68,288.55,721.36
+2025-07-25,Pinterest,Video Views,1,1,151,2.4,127.69,319.24
+2025-07-25,Pinterest,Video Views,1,1,202,2.96,222.65,556.64
+2025-07-25,Pinterest,Conversions,1,1,183,2.26,213.9,534.74
+2025-07-26,Google Ads,Display - Remarketing,5,5,758,2.12,156.45,391.11
+2025-07-26,Google Ads,Display - Remarketing,2,2,518,1.7,305.02,762.54
+2025-07-26,Facebook,Video Views,1,1,189,3.15,174.97,437.43
+2025-07-26,Facebook,Traffic,1,1,157,1.94,147.87,369.67
+2025-07-26,LinkedIn,Event Ads,1,1,135,1.24,150.7,376.76
+2025-07-26,TikTok,Conversions,1,1,200,2.7,184.89,462.23
+2025-07-26,Pinterest,App Install,1,1,248,4.95,242.3,605.76
+2025-07-26,Pinterest,Brand Awareness,1,1,340,6.29,299.36,748.41
+2025-07-27,Google Ads,Display - Remarketing,2,2,565,3.07,249.83,624.58
+2025-07-27,Google Ads,Video - YouTube,2,2,363,1.67,191.12,477.8
+2025-07-27,Google Ads,Display - Remarketing,3,3,474,1.98,155.19,387.99
+2025-07-27,Facebook,Conversions,1,1,250,2.75,293.74,734.36
+2025-07-27,Facebook,Lead Generation,1,1,214,2.46,240.21,600.52
+2025-07-27,LinkedIn,Sponsored Content,1,1,142,0.81,128.79,321.97
+2025-07-27,LinkedIn,Event Ads,1,1,206,1.43,207.64,519.09
+2025-07-27,TikTok,App Install,1,1,202,2.4,250.68,626.7
+2025-07-28,Google Ads,Search - Brand,4,4,869,2.58,233.73,584.33
+2025-07-28,Google Ads,Video - YouTube,4,4,896,2.77,196.25,490.64
+2025-07-28,Google Ads,Video - YouTube,4,4,1234,4.57,292.72,731.8
+2025-07-28,Facebook,Lead Generation,1,1,179,1.48,212.1,530.26
+2025-07-28,Facebook,Remarketing,1,1,290,2.16,302.76,756.89
+2025-07-28,Facebook,Lead Generation,1,1,269,2.59,292.23,730.58
+2025-07-28,Facebook,Lead Generation,1,1,129,0.77,131.88,329.7
+2025-07-28,LinkedIn,Event Ads,1,1,137,0.9,120.5,301.25
+2025-07-28,LinkedIn,Sponsored Content,1,1,132,0.94,129.43,323.58
+2025-07-28,LinkedIn,Dynamic Ads,1,1,213,1.21,257.62,644.06
+2025-07-28,TikTok,App Install,1,1,279,4.29,304.8,762
+2025-07-28,TikTok,Conversions,1,1,275,4.67,310.67,776.68
+2025-07-28,TikTok,Conversions,1,1,189,3.56,160.55,401.38
+2025-07-28,TikTok,App Install,1,1,315,4.78,305.33,763.32
+2025-07-28,Pinterest,App Install,1,1,262,4.04,262.79,656.98
+2025-07-29,Google Ads,Video - YouTube,7,7,1033,2.25,154.82,387.04
+2025-07-29,Google Ads,Video - YouTube,6,6,1232,3.04,220.33,550.82
+2025-07-29,Facebook,Traffic,1,1,238,1.51,282.43,706.09
+2025-07-29,Facebook,Remarketing,1,1,294,1.65,270.49,676.23
+2025-07-29,LinkedIn,Dynamic Ads,1,1,123,0.83,131.74,329.36
+2025-07-29,LinkedIn,Message Ads,1,1,204,1.11,247.48,618.7
+2025-07-29,TikTok,App Install,2,2,421,2.65,230.04,575.11
+2025-07-29,TikTok,Traffic,2,2,328,1.73,198.7,496.74
+2025-07-29,Pinterest,App Install,1,1,321,6.84,278.75,696.87
+2025-07-30,Google Ads,Shopping,6,6,985,2.59,179.3,448.24
+2025-07-30,Google Ads,Search - Brand,4,4,936,2.42,206.92,517.31
+2025-07-30,Facebook,Video Views,1,1,292,1.51,309.84,774.59
+2025-07-30,Facebook,Video Views,1,1,264,2.38,317.32,793.29
+2025-07-30,Facebook,Remarketing,1,1,144,1.21,133.21,333.02
+2025-07-30,LinkedIn,Dynamic Ads,1,1,218,0.97,212.96,532.41
+2025-07-30,LinkedIn,Dynamic Ads,1,1,302,1.41,319.38,798.44
+2025-07-30,TikTok,Traffic,1,1,211,3.19,208.66,521.65
+2025-07-30,TikTok,Conversions,1,1,208,2.5,219.33,548.33
+2025-07-30,TikTok,Conversions,1,1,130,1.79,150.09,375.24
+2025-07-30,TikTok,App Install,1,1,167,3.64,152.45,381.12
+2025-07-30,Pinterest,App Install,1,1,255,4.26,264.23,660.57
+2025-07-30,Pinterest,Brand Awareness,1,1,299,5.15,318.39,795.99
+2025-07-30,Pinterest,App Install,1,1,269,5.49,245.37,613.44
+2025-07-31,Google Ads,Video - YouTube,2,2,638,2.58,282.82,707.05
+2025-07-31,Google Ads,Display - Remarketing,2,2,368,1.81,166.09,415.22
+2025-07-31,Google Ads,Search - Brand,2,2,457,2.12,249.97,624.92
+2025-07-31,Facebook,Conversions,2,2,259,1.31,122.27,305.67
+2025-07-31,Facebook,Traffic,1,1,255,2.32,257.5,643.76
+2025-07-31,Facebook,Remarketing,1,1,366,3.13,314.13,785.32
+2025-07-31,LinkedIn,Text Ads,1,1,207,1.44,247.79,619.46
+2025-07-31,LinkedIn,Sponsored Content,1,1,144,0.87,142.24,355.59
+2025-07-31,LinkedIn,Event Ads,1,1,300,2.22,297.23,743.06
+2025-07-31,LinkedIn,Text Ads,1,1,259,1.63,267.76,669.39
+2025-07-31,TikTok,Reach,1,1,282,3.82,263.58,658.94
+2025-07-31,TikTok,Conversions,1,1,292,3.65,287.54,718.86
+2025-07-31,TikTok,Traffic,1,1,146,2.06,128.5,321.24
+2025-07-31,TikTok,App Install,1,1,356,4.95,308.14,770.34
+2025-07-31,Pinterest,Traffic,1,1,199,1.57,222.28,555.71
+2025-07-31,Pinterest,Conversions,1,1,265,3.49,271.02,677.54
+2025-08-01,Google Ads,Video - YouTube,3,3,885,2.5,259.74,649.34
+2025-08-01,Google Ads,Search - Brand,4,4,768,1.61,175.29,438.21
+2025-08-01,Google Ads,Search - Brand,4,4,680,1.71,188.22,470.56
+2025-08-01,Facebook,Traffic,1,1,170,1.25,167.94,419.85
+2025-08-01,Facebook,Remarketing,1,1,354,2.2,296.32,740.79
+2025-08-01,Facebook,Remarketing,1,1,324,2.05,286.73,716.81
+2025-08-01,Facebook,Remarketing,2,2,662,3.41,282.16,705.39
+2025-08-01,LinkedIn,Dynamic Ads,1,1,201,0.89,184.61,461.51
+2025-08-01,LinkedIn,Event Ads,1,1,232,1.03,204.18,510.44
+2025-08-01,LinkedIn,Message Ads,2,2,375,1.51,160.35,400.87
+2025-08-01,LinkedIn,Text Ads,1,1,170,0.69,148.6,371.5
+2025-08-01,TikTok,App Install,4,4,460,2.25,135.86,339.65
+2025-08-01,TikTok,Reach,1,1,114,1.25,136.57,341.43
+2025-08-01,TikTok,Conversions,2,2,498,2.74,248.61,621.53
+2025-08-01,Pinterest,Video Views,1,1,195,1.43,171.81,429.53
+2025-08-01,Pinterest,Traffic,1,1,131,1.12,149.35,373.36
+2025-08-02,Google Ads,Search - Generic,2,2,331,1.96,148.12,370.29
+2025-08-02,Google Ads,Search - Brand,2,2,405,3,210.4,526.01
+2025-08-02,Google Ads,Display - Remarketing,1,1,147,1.12,147.22,368.04
+2025-08-02,Google Ads,Display - Remarketing,3,3,1006,4.34,282.8,707
+2025-08-02,Facebook,Remarketing,1,1,136,1.03,120.63,301.57
+2025-08-02,Facebook,Video Views,1,1,203,1.42,193.13,482.82
+2025-08-02,Facebook,Conversions,2,2,556,3.81,253.17,632.92
+2025-08-02,Facebook,Lead Generation,1,1,133,1.75,121.19,302.97
+2025-08-02,LinkedIn,Sponsored Content,1,1,212,1.68,228.49,571.22
+2025-08-02,LinkedIn,Text Ads,1,1,178,1.27,184.17,460.44
+2025-08-02,LinkedIn,Dynamic Ads,1,1,289,1.82,253.93,634.81
+2025-08-02,TikTok,Conversions,2,2,520,3.31,262.06,655.16
+2025-08-02,TikTok,Traffic,2,2,526,4.87,242.88,607.2
+2025-08-02,Pinterest,Brand Awareness,1,1,191,2.33,201.91,504.77
+2025-08-02,Pinterest,Video Views,1,1,359,2.6,312.37,780.91
+2025-08-03,Google Ads,Shopping,4,4,1251,4.44,268.5,671.25
+2025-08-03,Google Ads,Search - Generic,6,6,1866,4.76,285.08,712.7
+2025-08-03,Facebook,Video Views,1,1,274,1.31,247.45,618.64
+2025-08-03,Facebook,Conversions,3,3,517,1.86,156.76,391.89
+2025-08-03,LinkedIn,Message Ads,1,1,219,1.62,202.23,505.57
+2025-08-03,LinkedIn,Event Ads,1,1,249,1.26,220.7,551.74
+2025-08-03,LinkedIn,Text Ads,1,1,164,0.86,185.57,463.92
+2025-08-03,TikTok,App Install,1,1,172,2.18,161.1,402.75
+2025-08-03,TikTok,Conversions,2,2,254,2.15,127.84,319.6
+2025-08-03,TikTok,App Install,1,1,295,3.14,302.92,757.31
+2025-08-03,Pinterest,Video Views,1,1,205,3.25,238.96,597.41
+2025-08-03,Pinterest,App Install,1,1,144,2.29,125.37,313.42
+2025-08-03,Pinterest,Video Views,1,1,162,2.49,139.83,349.56
+2025-08-04,Google Ads,Display - Remarketing,2,2,600,2.33,306.33,765.83
+2025-08-04,Google Ads,Search - Generic,4,4,1311,4.61,282.04,705.1
+2025-08-04,Google Ads,Search - Generic,5,5,1616,4.59,318.32,795.81
+2025-08-04,Facebook,Conversions,2,2,344,1.66,208.57,521.42
+2025-08-04,Facebook,Video Views,1,1,249,1.45,237.95,594.87
+2025-08-04,Facebook,Lead Generation,1,1,157,0.82,186.25,465.61
+2025-08-04,Facebook,Remarketing,2,2,686,3.21,299.96,749.89
+2025-08-04,LinkedIn,Dynamic Ads,1,1,253,1.04,264.65,661.63
+2025-08-04,LinkedIn,Dynamic Ads,1,1,277,1.26,308.06,770.15
+2025-08-04,LinkedIn,Text Ads,1,1,128,0.62,137.73,344.34
+2025-08-04,LinkedIn,Text Ads,1,1,136,0.66,122.49,306.23
+2025-08-04,TikTok,Conversions,2,2,385,2.47,223.52,558.8
+2025-08-04,TikTok,Conversions,2,2,478,2.32,267.81,669.53
+2025-08-04,Pinterest,Brand Awareness,1,1,152,2.54,158.02,395.06
+2025-08-04,Pinterest,Conversions,1,1,275,3.52,270.38,675.95
+2025-08-04,Pinterest,Conversions,1,1,211,3.29,192.94,482.35
+2025-08-05,Google Ads,Search - Brand,4,4,529,1.71,152.86,382.14
+2025-08-05,Google Ads,Display - Remarketing,3,3,417,1.3,135.25,338.13
+2025-08-05,Google Ads,Search - Generic,5,5,1327,3.19,224.05,560.13
+2025-08-05,Google Ads,Search - Generic,4,4,671,2.35,163.06,407.65
+2025-08-05,Facebook,Remarketing,2,2,323,0.85,188,470.01
+2025-08-05,Facebook,Video Views,2,2,564,2.34,262.21,655.51
+2025-08-05,LinkedIn,Dynamic Ads,1,1,126,0.64,138.5,346.25
+2025-08-05,LinkedIn,Dynamic Ads,1,1,276,1.63,243.39,608.48
+2025-08-05,LinkedIn,Sponsored Content,1,1,287,1.92,241.66,604.15
+2025-08-05,LinkedIn,Event Ads,2,2,468,1.84,219.94,549.86
+2025-08-05,TikTok,App Install,3,3,666,3.32,267.89,669.72
+2025-08-05,TikTok,Traffic,2,2,286,1.55,160.74,401.84
+2025-08-05,TikTok,App Install,3,3,936,5.11,281.08,702.69
+2025-08-05,Pinterest,Traffic,2,2,339,2.95,210.93,527.33
+2025-08-05,Pinterest,Conversions,1,1,121,1.34,132.5,331.26
+2025-08-05,Pinterest,Video Views,1,1,227,2.29,249.36,623.41
+2025-08-06,Google Ads,Display - Remarketing,5,5,1576,3.49,272.45,681.13
+2025-08-06,Google Ads,Display - Remarketing,5,5,1174,3.23,237.53,593.84
+2025-08-06,Google Ads,Shopping,2,2,440,1.49,247.02,617.56
+2025-08-06,Facebook,Remarketing,3,3,632,1.43,238.08,595.21
+2025-08-06,Facebook,Video Views,2,2,233,1.03,130.7,326.75
+2025-08-06,LinkedIn,Dynamic Ads,3,3,389,0.87,156.97,392.42
+2025-08-06,LinkedIn,Dynamic Ads,1,1,180,0.47,172.74,431.86
+2025-08-06,TikTok,Traffic,2,2,479,3.77,274.67,686.68
+2025-08-06,TikTok,Conversions,4,4,867,3.14,202.76,506.91
+2025-08-06,Pinterest,App Install,1,1,294,3.12,282.36,705.9
+2025-08-06,Pinterest,App Install,1,1,224,4.07,224.73,561.84
+2025-08-06,Pinterest,Brand Awareness,1,1,178,2.28,217.24,543.11
+2025-08-07,Google Ads,Video - YouTube,6,6,1097,2.3,200.26,500.66
+2025-08-07,Google Ads,Video - YouTube,12,12,3122,4.21,241.91,604.78
+2025-08-07,Facebook,Lead Generation,1,1,277,1.59,280.05,700.12
+2025-08-07,Facebook,Conversions,1,1,246,1.8,304.86,762.16
+2025-08-07,Facebook,Conversions,2,2,659,3.01,281.75,704.37
+2025-08-07,Facebook,Traffic,2,2,508,2.34,253.91,634.77
+2025-08-07,LinkedIn,Sponsored Content,1,1,118,0.41,139.73,349.32
+2025-08-07,LinkedIn,Sponsored Content,2,2,449,0.98,196.42,491.05
+2025-08-07,TikTok,Reach,2,2,430,3.34,234.32,585.81
+2025-08-07,TikTok,Traffic,2,2,320,2.01,158.53,396.32
+2025-08-07,TikTok,Conversions,1,1,225,2.37,204.14,510.35
+2025-08-07,Pinterest,App Install,1,1,253,2.09,284.07,710.18
+2025-08-08,Google Ads,Shopping,6,6,1647,3.13,243.97,609.93
+2025-08-08,Google Ads,Search - Generic,10,10,1444,2.08,155.77,389.42
+2025-08-08,Facebook,Video Views,2,2,449,1.87,227.17,567.94
+2025-08-08,Facebook,Traffic,1,1,286,1.63,295.79,739.47
+2025-08-08,Facebook,Video Views,3,3,621,2.23,190.21,475.52
+2025-08-08,LinkedIn,Dynamic Ads,1,1,170,1.11,191.66,479.15
+2025-08-08,LinkedIn,Text Ads,1,1,255,1.69,298.43,746.08
+2025-08-08,LinkedIn,Message Ads,1,1,206,0.84,187.18,467.96
+2025-08-08,LinkedIn,Message Ads,1,1,130,0.54,141.92,354.79
+2025-08-08,TikTok,App Install,3,3,467,2.59,176.93,442.32
+2025-08-08,TikTok,Reach,1,1,273,2.65,245.26,613.15
+2025-08-08,TikTok,Traffic,2,2,544,3.75,305.11,762.77
+2025-08-08,Pinterest,Traffic,1,1,184,2.49,175.14,437.85
+2025-08-08,Pinterest,Video Views,1,1,228,2.78,239.89,599.72
+2025-08-08,Pinterest,Brand Awareness,1,1,131,1.73,148.16,370.39
+2025-08-08,Pinterest,Video Views,1,1,210,2.18,227.36,568.39
+2025-08-09,Google Ads,Display - Remarketing,2,2,305,1.03,175.68,439.19
+2025-08-09,Google Ads,Video - YouTube,4,4,953,2.41,260.86,652.15
+2025-08-09,Facebook,Traffic,1,1,266,2.74,227.53,568.83
+2025-08-09,Facebook,Remarketing,1,1,319,3.8,298.57,746.43
+2025-08-09,Facebook,Video Views,1,1,356,3.21,302.25,755.62
+2025-08-09,Facebook,Lead Generation,1,1,291,3.16,300.68,751.71
+2025-08-09,LinkedIn,Dynamic Ads,1,1,205,0.87,226.62,566.55
+2025-08-09,LinkedIn,Text Ads,1,1,183,0.67,210.02,525.05
+2025-08-09,TikTok,App Install,1,1,209,2.05,254.07,635.18
+2025-08-09,TikTok,Conversions,2,2,524,4.59,293.05,732.63
+2025-08-09,TikTok,Conversions,1,1,125,1.58,145.92,364.79
+2025-08-09,Pinterest,Video Views,1,1,260,3.46,261.18,652.95
+2025-08-09,Pinterest,App Install,1,1,375,5.6,315.16,787.89
+2025-08-10,Google Ads,Search - Brand,3,3,414,1.09,127.53,318.84
+2025-08-10,Google Ads,Video - YouTube,4,4,1089,2.09,240.94,602.35
+2025-08-10,Facebook,Remarketing,2,2,465,2.4,208.65,521.63
+2025-08-10,Facebook,Traffic,2,2,266,1.26,160.79,401.98
+2025-08-10,LinkedIn,Event Ads,1,1,312,1.92,264.31,660.77
+2025-08-10,TikTok,Video Views,1,1,193,2.96,199.23,498.09
+2025-08-10,TikTok,Reach,1,1,134,1.57,144.82,362.06
+2025-08-10,TikTok,Video Views,1,1,257,4.28,263.06,657.66
+2025-08-10,TikTok,Conversions,1,1,235,4.99,246.25,615.62
+2025-08-10,Pinterest,Traffic,1,1,179,2.59,164.7,411.75
+2025-08-10,Pinterest,Conversions,1,1,219,2.49,201,502.49
+2025-08-10,Pinterest,Conversions,1,1,280,4.92,256.5,641.24
+2025-08-11,Google Ads,Shopping,4,4,605,1.99,128.95,322.36
+2025-08-11,Google Ads,Video - YouTube,3,3,589,2.23,213.38,533.46
+2025-08-11,Google Ads,Shopping,3,3,713,2.59,230.84,577.11
+2025-08-11,Google Ads,Video - YouTube,3,3,656,2.53,237.17,592.93
+2025-08-11,Facebook,Lead Generation,2,2,643,3.32,319.81,799.52
+2025-08-11,Facebook,Lead Generation,2,2,439,2.07,244.08,610.21
+2025-08-11,Facebook,Conversions,2,2,335,1.78,152.99,382.47
+2025-08-11,Facebook,Remarketing,1,1,198,1.4,188.78,471.95
+2025-08-11,LinkedIn,Message Ads,1,1,235,1.51,246.19,615.47
+2025-08-11,LinkedIn,Message Ads,1,1,116,0.54,131.58,328.96
+2025-08-11,LinkedIn,Dynamic Ads,1,1,160,1.09,140.18,350.46
+2025-08-11,TikTok,App Install,3,3,561,3.51,233.24,583.11
+2025-08-11,TikTok,Traffic,2,2,465,3.19,200.87,502.18
+2025-08-11,TikTok,Traffic,3,3,614,3.84,193.29,483.21
+2025-08-11,Pinterest,Video Views,2,2,255,1.56,151.47,378.67
+2025-08-11,Pinterest,Traffic,2,2,732,3.79,309.21,773.03
+2025-08-12,Google Ads,Display - Remarketing,5,5,1608,2.97,268.64,671.59
+2025-08-12,Google Ads,Search - Brand,6,6,1455,2.59,210.9,527.25
+2025-08-12,Facebook,Lead Generation,1,1,178,1.02,187.08,467.7
+2025-08-12,Facebook,Remarketing,1,1,160,0.9,138.66,346.64
+2025-08-12,Facebook,Lead Generation,1,1,152,0.89,128.95,322.38
+2025-08-12,LinkedIn,Message Ads,1,1,278,1.84,238.97,597.42
+2025-08-12,LinkedIn,Text Ads,1,1,163,0.6,190.92,477.3
+2025-08-12,LinkedIn,Text Ads,1,1,112,0.77,120.39,300.98
+2025-08-12,LinkedIn,Event Ads,1,1,154,0.65,140.71,351.78
+2025-08-12,TikTok,Conversions,2,2,293,2.71,144.85,362.12
+2025-08-12,TikTok,Conversions,2,2,435,3.5,210.67,526.69
+2025-08-12,TikTok,Video Views,1,1,166,1.39,207.03,517.58
+2025-08-12,Pinterest,App Install,1,1,226,2.01,268.1,670.26
+2025-08-12,Pinterest,Brand Awareness,1,1,198,2.15,231.73,579.34
+2025-08-12,Pinterest,Traffic,1,1,229,1.82,226.42,566.04
+2025-08-13,Google Ads,Search - Generic,5,5,1304,3.34,235.12,587.79
+2025-08-13,Google Ads,Display - Remarketing,3,3,738,2.65,260.81,652.02
+2025-08-13,Google Ads,Video - YouTube,3,3,485,1.71,193.68,484.19
+2025-08-13,Google Ads,Video - YouTube,3,3,816,3.76,271.49,678.72
+2025-08-13,Facebook,Video Views,1,1,261,1.91,304.2,760.5
+2025-08-13,Facebook,Traffic,1,1,199,1.24,198.54,496.34
+2025-08-13,Facebook,Conversions,2,2,442,2.27,204.56,511.41
+2025-08-13,Facebook,Conversions,1,1,237,1.63,255.33,638.33
+2025-08-13,LinkedIn,Text Ads,1,1,344,1.62,298.65,746.62
+2025-08-13,LinkedIn,Dynamic Ads,1,1,202,0.82,209.6,524
+2025-08-13,LinkedIn,Message Ads,1,1,288,1.12,241.96,604.91
+2025-08-13,TikTok,Video Views,1,1,279,3.13,296.23,740.57
+2025-08-13,TikTok,Traffic,1,1,216,2.4,227.86,569.64
+2025-08-13,TikTok,App Install,1,1,315,3.43,289.49,723.73
+2025-08-13,TikTok,Reach,2,2,313,2.24,169.14,422.85
+2025-08-13,Pinterest,Conversions,1,1,259,3.15,252.48,631.2
+2025-08-13,Pinterest,Traffic,1,1,259,3.98,287.1,717.76
+2025-08-13,Pinterest,Brand Awareness,1,1,346,4.55,309.07,772.68
+2025-08-13,Pinterest,Conversions,1,1,208,2.6,230.48,576.21
+2025-08-14,Google Ads,Search - Brand,5,5,772,2.29,135.12,337.81
+2025-08-14,Google Ads,Search - Generic,3,3,537,1.95,169.35,423.37
+2025-08-14,Google Ads,Display - Remarketing,4,4,925,3.53,205.29,513.22
+2025-08-14,Google Ads,Video - YouTube,3,3,440,1.27,170.22,425.54
+2025-08-14,Facebook,Video Views,2,2,310,1.26,172.67,431.68
+2025-08-14,Facebook,Conversions,3,3,329,1.15,131.81,329.52
+2025-08-14,Facebook,Traffic,1,1,274,1.36,257.21,643.02
+2025-08-14,LinkedIn,Text Ads,2,2,432,1.05,204.42,511.05
+2025-08-14,LinkedIn,Sponsored Content,2,2,552,1.57,301.33,753.32
+2025-08-14,TikTok,Conversions,2,2,481,3.29,276.08,690.19
+2025-08-14,TikTok,App Install,2,2,397,2.48,189.41,473.52
+2025-08-14,TikTok,Traffic,4,4,782,3.85,198.22,495.56
+2025-08-14,Pinterest,Conversions,2,2,488,2.99,282.6,706.5
+2025-08-14,Pinterest,Traffic,1,1,225,2.14,190.89,477.24
+2025-08-15,Google Ads,Search - Brand,6,6,877,2.18,151.37,378.42
+2025-08-15,Google Ads,Shopping,2,2,687,2.97,297.75,744.38
+2025-08-15,Google Ads,Display - Remarketing,3,3,772,2.69,214.76,536.9
+2025-08-15,Facebook,Remarketing,3,3,435,1.56,122.09,305.22
+2025-08-15,Facebook,Video Views,3,3,868,3.04,303.13,757.84
+2025-08-15,LinkedIn,Message Ads,2,2,312,0.66,151.11,377.78
+2025-08-15,LinkedIn,Message Ads,3,3,833,1.77,250.86,627.15
+2025-08-15,TikTok,Reach,7,7,1033,3.16,147.26,368.14
+2025-08-15,TikTok,Conversions,3,3,665,3.18,269.99,674.97
+2025-08-15,Pinterest,Traffic,1,1,194,1.72,195.67,489.19
+2025-08-15,Pinterest,Conversions,1,1,206,1.98,207.67,519.17
+2025-08-15,Pinterest,App Install,1,1,181,2.59,176.49,441.22
+2025-08-16,Google Ads,Search - Generic,3,3,1055,4.53,312.73,781.82
+2025-08-16,Google Ads,Search - Generic,4,4,896,2.97,268.88,672.19
+2025-08-16,Facebook,Conversions,1,1,304,1.62,256.41,641.02
+2025-08-16,Facebook,Conversions,2,2,440,2.1,252.84,632.1
+2025-08-16,LinkedIn,Sponsored Content,1,1,153,1.08,153.03,382.57
+2025-08-16,LinkedIn,Message Ads,1,1,120,0.81,142.64,356.61
+2025-08-16,TikTok,Video Views,1,1,134,2.67,166.54,416.36
+2025-08-16,TikTok,App Install,1,1,285,3.8,256.59,641.47
+2025-08-16,TikTok,App Install,1,1,186,2.49,180.75,451.89
+2025-08-16,Pinterest,Traffic,1,1,260,4.2,296.89,742.22
+2025-08-17,Google Ads,Display - Remarketing,4,4,655,1.75,166.16,415.4
+2025-08-17,Google Ads,Search - Generic,4,4,634,1.63,144.18,360.46
+2025-08-17,Facebook,Remarketing,1,1,239,1.72,210.92,527.3
+2025-08-17,Facebook,Traffic,1,1,148,1.1,153.17,382.93
+2025-08-17,Facebook,Traffic,1,1,204,2.46,246.22,615.56
+2025-08-17,Facebook,Traffic,1,1,218,1.59,182.81,457.02
+2025-08-17,LinkedIn,Sponsored Content,1,1,140,0.97,172.77,431.92
+2025-08-17,TikTok,Reach,1,1,288,3.27,279.54,698.84
+2025-08-17,TikTok,Reach,1,1,142,1.67,141.07,352.69
+2025-08-17,Pinterest,App Install,1,1,238,3.51,221.25,553.13
+2025-08-17,Pinterest,Traffic,1,1,327,4.8,273.27,683.18
+2025-08-18,Google Ads,Search - Brand,5,5,1178,2.9,205.64,514.1
+2025-08-18,Google Ads,Video - YouTube,4,4,1113,2.77,250.83,627.07
+2025-08-18,Google Ads,Shopping,4,4,772,2.42,197.94,494.84
+2025-08-18,Facebook,Video Views,2,2,649,1.89,286.32,715.81
+2025-08-18,Facebook,Video Views,1,1,163,0.66,138.24,345.59
+2025-08-18,LinkedIn,Sponsored Content,1,1,125,0.61,139.5,348.76
+2025-08-18,LinkedIn,Text Ads,1,1,225,1.01,239.58,598.95
+2025-08-18,LinkedIn,Message Ads,1,1,146,0.92,143.82,359.54
+2025-08-18,TikTok,Conversions,1,1,299,3.22,318.67,796.68
+2025-08-18,TikTok,Reach,1,1,231,2.02,250.22,625.56
+2025-08-18,TikTok,Reach,1,1,270,2.39,276.73,691.83
+2025-08-18,Pinterest,Conversions,1,1,119,1.45,123.49,308.72
+2025-08-18,Pinterest,Video Views,1,1,228,3.25,275.47,688.67
+2025-08-18,Pinterest,App Install,1,1,164,2.61,149.29,373.22
+2025-08-18,Pinterest,Brand Awareness,1,1,223,2.23,253.51,633.77
+2025-08-19,Google Ads,Display - Remarketing,5,5,1066,2.36,255.18,637.95
+2025-08-19,Google Ads,Shopping,4,4,727,1.64,196.52,491.3
+2025-08-19,Google Ads,Shopping,4,4,981,2.46,227.1,567.75
+2025-08-19,Facebook,Lead Generation,3,3,918,2.75,319.89,799.71
+2025-08-19,Facebook,Lead Generation,6,6,1067,2.11,175.62,439.05
+2025-08-19,LinkedIn,Message Ads,1,1,153,1,129.35,323.39
+2025-08-19,LinkedIn,Dynamic Ads,1,1,138,0.84,146.16,365.41
+2025-08-19,LinkedIn,Dynamic Ads,1,1,269,1.92,298.99,747.47
+2025-08-19,LinkedIn,Dynamic Ads,1,1,334,1.65,285.2,713.01
+2025-08-19,TikTok,Traffic,3,3,563,2.9,174.74,436.84
+2025-08-19,TikTok,App Install,3,3,362,1.59,150.55,376.37
+2025-08-19,Pinterest,Conversions,1,1,286,1.82,260.09,650.21
+2025-08-19,Pinterest,Brand Awareness,1,1,266,2.16,262.93,657.32
+2025-08-20,Google Ads,Shopping,7,7,2182,4.11,277.25,693.12
+2025-08-20,Google Ads,Shopping,5,5,1354,3.57,228.76,571.91
+2025-08-20,Google Ads,Shopping,4,4,886,2.5,199.38,498.46
+2025-08-20,Facebook,Lead Generation,2,2,637,2.48,276.73,691.83
+2025-08-20,Facebook,Video Views,3,3,562,1.49,222.57,556.43
+2025-08-20,LinkedIn,Message Ads,1,1,232,1.32,217.86,544.65
+2025-08-20,LinkedIn,Sponsored Content,1,1,142,0.53,161.03,402.58
+2025-08-20,LinkedIn,Sponsored Content,2,2,580,2.23,307.83,769.57
+2025-08-20,TikTok,Conversions,2,2,384,3.92,203.63,509.08
+2025-08-20,TikTok,Video Views,1,1,283,2.83,314.91,787.27
+2025-08-20,TikTok,Reach,1,1,289,2.49,302.03,755.08
+2025-08-20,Pinterest,App Install,1,1,271,2.36,252.1,630.24
+2025-08-20,Pinterest,Video Views,1,1,160,1.59,159.21,398.03
+2025-08-20,Pinterest,Video Views,1,1,211,2.6,183.85,459.63
+2025-08-21,Google Ads,Video - YouTube,5,5,674,1.87,136.74,341.84
+2025-08-21,Google Ads,Search - Generic,4,4,1299,3.24,295.97,739.93
+2025-08-21,Google Ads,Display - Remarketing,4,4,908,2.01,209.88,524.71
+2025-08-21,Facebook,Video Views,3,3,351,1.03,145.26,363.15
+2025-08-21,Facebook,Traffic,2,2,579,2.8,246.53,616.33
+2025-08-21,Facebook,Video Views,3,3,758,2.8,212.78,531.96
+2025-08-21,LinkedIn,Sponsored Content,1,1,229,1.27,197.47,493.69
+2025-08-21,LinkedIn,Text Ads,1,1,137,0.9,130.14,325.35
+2025-08-21,LinkedIn,Sponsored Content,1,1,295,2,289.94,724.84
+2025-08-21,LinkedIn,Dynamic Ads,1,1,168,0.73,185.79,464.47
+2025-08-21,TikTok,App Install,2,2,624,3.95,271.05,677.62
+2025-08-21,TikTok,Reach,5,5,1359,5.03,267.98,669.95
+2025-08-21,Pinterest,Conversions,1,1,173,1.41,203.65,509.12
+2025-08-21,Pinterest,Brand Awareness,2,2,282,1.99,151.65,379.13
+2025-08-22,Google Ads,Shopping,10,10,2948,3.99,317.62,794.05
+2025-08-22,Facebook,Remarketing,3,3,676,2.03,201.54,503.84
+2025-08-22,Facebook,Video Views,3,3,696,1.58,252.08,630.19
+2025-08-22,LinkedIn,Message Ads,2,2,292,0.92,162.2,405.5
+2025-08-22,LinkedIn,Dynamic Ads,1,1,169,0.62,201.13,502.83
+2025-08-22,LinkedIn,Event Ads,2,2,618,2.01,281.04,702.6
+2025-08-22,TikTok,Reach,4,4,687,2.52,211.1,527.76
+2025-08-22,TikTok,App Install,3,3,597,2.32,212.61,531.53
+2025-08-22,Pinterest,App Install,1,1,192,2.75,180.75,451.87
+2025-08-22,Pinterest,Conversions,1,1,235,3.13,285.6,714.01
+2025-08-22,Pinterest,Brand Awareness,1,1,288,4.43,268.11,670.27
+2025-08-22,Pinterest,Video Views,1,1,287,4.64,305.17,762.93
+2025-08-23,Google Ads,Search - Brand,5,5,1518,4.4,272.11,680.27
+2025-08-23,Google Ads,Shopping,4,4,1022,2.8,288.14,720.35
+2025-08-23,Google Ads,Display - Remarketing,4,4,1282,3.83,307.79,769.47
+2025-08-23,Facebook,Video Views,1,1,313,2.72,289.67,724.18
+2025-08-23,Facebook,Traffic,1,1,240,1.91,264.29,660.72
+2025-08-23,Facebook,Video Views,1,1,205,1.53,217.46,543.65
+2025-08-23,LinkedIn,Dynamic Ads,1,1,293,1.93,275.41,688.53
+2025-08-23,LinkedIn,Event Ads,1,1,242,2.12,239.19,597.97
+2025-08-23,TikTok,Conversions,1,1,252,2.47,302.99,757.49
+2025-08-23,TikTok,Reach,1,1,219,1.81,254.23,635.56
+2025-08-23,TikTok,App Install,1,1,155,2.32,158.06,395.14
+2025-08-23,Pinterest,Traffic,1,1,150,1.87,131.08,327.71
+2025-08-23,Pinterest,Conversions,1,1,207,4.22,205.17,512.92
+2025-08-24,Google Ads,Search - Generic,4,4,1129,2.82,300.23,750.58
+2025-08-24,Google Ads,Display - Remarketing,5,5,1532,3.76,317.67,794.18
+2025-08-24,Facebook,Traffic,1,1,234,1.49,202.79,506.97
+2025-08-24,Facebook,Traffic,1,1,305,1.77,266.95,667.38
+2025-08-24,Facebook,Video Views,1,1,318,1.95,288.87,722.17
+2025-08-24,LinkedIn,Dynamic Ads,1,1,221,1.51,213.35,533.38
+2025-08-24,LinkedIn,Event Ads,1,1,146,0.99,140.91,352.28
+2025-08-24,TikTok,Traffic,2,2,395,3.73,244.47,611.18
+2025-08-24,TikTok,Conversions,2,2,484,3.16,203.64,509.11
+2025-08-24,Pinterest,Video Views,1,1,295,4.91,261.66,654.16
+2025-08-24,Pinterest,App Install,1,1,253,2.75,271.91,679.76
+2025-08-25,Google Ads,Search - Brand,6,6,647,1.58,123.36,308.4
+2025-08-25,Google Ads,Video - YouTube,5,5,1413,4.19,241.82,604.55
+2025-08-25,Google Ads,Shopping,5,5,1582,4.44,290.96,727.41
+2025-08-25,Google Ads,Search - Brand,2,2,480,1.87,201.25,503.13
+2025-08-25,Facebook,Remarketing,1,1,186,0.77,188.19,470.48
+2025-08-25,Facebook,Remarketing,1,1,219,1.17,260.81,652.02
+2025-08-25,Facebook,Traffic,1,1,200,1.04,235.9,589.75
+2025-08-25,LinkedIn,Sponsored Content,2,2,727,2.29,318.67,796.67
+2025-08-25,LinkedIn,Dynamic Ads,1,1,321,1.77,293.64,734.11
+2025-08-25,LinkedIn,Sponsored Content,2,2,281,0.94,142.39,355.98
+2025-08-25,TikTok,Video Views,4,4,629,2.94,159.67,399.17
+2025-08-25,TikTok,Traffic,3,3,915,5.98,285.43,713.57
+2025-08-25,Pinterest,Video Views,1,1,295,3.32,258.41,646.02
+2025-08-25,Pinterest,Traffic,1,1,144,1.89,163.38,408.44
+2025-08-25,Pinterest,Brand Awareness,1,1,169,2.64,196.46,491.16
+2025-08-25,Pinterest,Brand Awareness,1,1,220,3.67,230.55,576.37

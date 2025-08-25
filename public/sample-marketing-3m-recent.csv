@@ -1,0 +1,1388 @@
+date,channel,campaign_name,spend,clicks,customers,conversions,ctr,cvr,cpc,impressions,creative_id,creative_type,ad_name
+2025-05-26,Google Ads,Search - Brand,616,184,6,6,2.45,3.26,3.34,7501,googleads_search_-_brand_carousel_54,Carousel,Search - Brand - Carousel 1
+2025-05-26,Google Ads,Search - Generic,742,235,9,9,2.25,3.83,3.15,10452,googleads_search_-_generic_image_8,Image,Search - Generic - Image 2
+2025-05-26,Facebook,Conversions,186,56,1,1,1.12,1.79,3.35,5009,facebook_conversions_collection_21,Collection,Conversions - Collection 1
+2025-05-26,Facebook,Lead Generation,221,67,1,1,0.92,1.49,3.29,7281,facebook_lead_generation_collection_90,Collection,Lead Generation - Collection 2
+2025-05-26,Facebook,Remarketing,240,69,2,2,1.31,2.9,3.46,5284,,,
+2025-05-26,LinkedIn,Event Ads,297,38,2,2,0.69,5.26,7.76,5479,linkedin_event_ads_image_48,Image,Event Ads - Image 1
+2025-05-26,LinkedIn,Text Ads,186,19,1,1,0.67,5.26,9.54,2817,,,
+2025-05-26,LinkedIn,Dynamic Ads,224,20,1,1,0.91,5,10.95,2198,linkedin_dynamic_ads_video_14,Video,Dynamic Ads - Video 3
+2025-05-26,TikTok,App Install,123,80,1,1,2.47,1.25,1.55,3239,tiktok_app_install_collection_81,Collection,App Install - Collection 1
+2025-05-26,TikTok,Conversions,69,43,1,1,3.02,2.33,1.61,1422,tiktok_conversions_text_65,Text,Conversions - Text 2
+2025-05-26,TikTok,Conversions,93,72,1,1,2.76,1.39,1.29,2613,tiktok_conversions_image_62,Image,Conversions - Image 3
+2025-05-26,TikTok,Conversions,117,84,2,2,2.82,2.38,1.4,2974,tiktok_conversions_collection_27,Collection,Conversions - Collection 4
+2025-05-26,Pinterest,Brand Awareness,98,47,1,1,1.53,2.13,2.09,,pinterest_brand_awareness_video_77,Video,Brand Awareness - Video 1
+2025-05-26,Pinterest,App Install,64,31,1,1,1.39,3.23,2.08,2236,pinterest_app_install_video_73,Video,App Install - Video 2
+2025-05-26,Pinterest,App Install,118,75,2,2,1.27,2.67,1.56,5906,pinterest_app_install_image_88,Image,App Install - Image 3
+2025-05-27,Google Ads,Search - Brand,786,265,9,9,2.23,3.4,2.97,11865,googleads_search_-_brand_carousel_37,Carousel,Search - Brand - Carousel 1
+2025-05-27,Google Ads,Search - Generic,494,180,6,6,1.91,3.33,2.75,9412,,,
+2025-05-27,Facebook,Remarketing,193,77,1,1,1.37,1.3,2.52,5619,facebook_remarketing_video_30,Video,Remarketing - Video 1
+2025-05-27,Facebook,Video Views,229,82,2,2,1.37,2.44,2.79,,facebook_video_views_collection_9,Collection,Video Views - Collection 2
+2025-05-27,Facebook,Traffic,199,60,2,2,1.14,3.33,3.34,5278,facebook_traffic_video_65,Video,Traffic - Video 3
+2025-05-27,LinkedIn,Event Ads,401,41,2,2,0.84,4.88,9.76,4896,linkedin_event_ads_image_13,Image,Event Ads - Image 1
+2025-05-27,LinkedIn,Text Ads,358,47,2,2,0.81,4.26,7.69,5805,linkedin_text_ads_carousel_52,Carousel,Text Ads - Carousel 2
+2025-05-27,TikTok,Reach,159,89,2,2,2.89,2.25,1.78,3081,tiktok_reach_video_20,Video,Reach - Video 1
+2025-05-27,TikTok,Reach,179,130,3,3,2.38,2.31,1.38,5460,tiktok_reach_collection_94,Collection,Reach - Collection 2
+2025-05-27,Pinterest,Traffic,137,65,1,1,1.62,1.54,2.09,4024,pinterest_traffic_text_89,Text,Traffic - Text 1
+2025-05-27,Pinterest,App Install,152,84,2,2,1.18,2.38,1.81,,,,
+2025-05-28,Google Ads,Shopping,449,118,5,5,1.85,4.24,3.8,6377,googleads_shopping_carousel_62,Carousel,Shopping - Carousel 1
+2025-05-28,Google Ads,Display - Remarketing,569,191,7,7,1.85,3.66,2.98,,,,
+2025-05-28,Facebook,Video Views,176,69,1,1,1.13,1.45,2.56,6093,,,
+2025-05-28,Facebook,Remarketing,201,64,1,1,1.11,1.56,3.15,5776,facebook_remarketing_carousel_12,Carousel,Remarketing - Carousel 2
+2025-05-28,Facebook,Traffic,211,73,2,2,1.03,2.74,2.9,7063,,,
+2025-05-28,LinkedIn,Sponsored Content,417,49,2,2,0.67,4.08,8.57,7278,linkedin_sponsored_content_carousel_55,Carousel,Sponsored Content - Carousel 1
+2025-05-28,LinkedIn,Sponsored Content,329,43,2,2,0.71,4.65,7.68,6071,linkedin_sponsored_content_collection_78,Collection,Sponsored Content - Collection 2
+2025-05-28,TikTok,Video Views,269,168,3,3,3.44,1.79,1.6,4880,tiktok_video_views_collection_42,Collection,Video Views - Collection 1
+2025-05-28,TikTok,Conversions,272,190,4,4,3.32,2.11,1.43,5728,tiktok_conversions_image_95,Image,Conversions - Image 2
+2025-05-28,Pinterest,Brand Awareness,63,30,1,1,1.26,3.33,2.1,2379,pinterest_brand_awareness_text_51,Text,Brand Awareness - Text 1
+2025-05-28,Pinterest,App Install,62,28,0,0,1.31,0,2.24,2131,pinterest_app_install_video_36,Video,App Install - Video 2
+2025-05-28,Pinterest,Conversions,103,58,1,1,1.68,1.72,1.76,3454,,,
+2025-05-28,Pinterest,Brand Awareness,49,19,0,0,1.29,0,2.54,1475,pinterest_brand_awareness_text_58,Text,Brand Awareness - Text 4
+2025-05-29,Google Ads,Video - YouTube,588,156,7,7,2.56,4.49,3.77,6086,googleads_video_-_youtube_text_3,Text,Video - YouTube - Text 1
+2025-05-29,Google Ads,Display - Remarketing,450,140,5,5,2.13,3.57,3.21,6583,googleads_display_-_remarketing_collection_83,Collection,Display - Remarketing - Collection 2
+2025-05-29,Facebook,Lead Generation,318,107,2,2,0.98,1.87,2.96,10948,facebook_lead_generation_image_29,Image,Lead Generation - Image 1
+2025-05-29,Facebook,Conversions,258,75,1,1,1.14,1.33,3.43,6572,facebook_conversions_carousel_80,Carousel,Conversions - Carousel 2
+2025-05-29,Facebook,Conversions,223,66,2,2,1.02,3.03,3.39,6465,facebook_conversions_video_31,Video,Conversions - Video 3
+2025-05-29,LinkedIn,Message Ads,200,20,1,1,0.9,5,9.81,2227,linkedin_message_ads_carousel_67,Carousel,Message Ads - Carousel 1
+2025-05-29,LinkedIn,Message Ads,311,37,2,2,0.75,5.41,8.31,4901,,,
+2025-05-29,LinkedIn,Text Ads,256,33,1,1,0.94,3.03,7.64,3528,,,
+2025-05-29,TikTok,App Install,66,46,1,1,2.36,2.17,1.45,1951,tiktok_app_install_image_63,Image,App Install - Image 1
+2025-05-29,TikTok,App Install,89,72,2,2,3.05,2.78,1.24,2364,tiktok_app_install_text_37,Text,App Install - Text 2
+2025-05-29,TikTok,Traffic,90,53,1,1,2.43,1.89,1.68,2180,tiktok_traffic_image_38,Image,Traffic - Image 3
+2025-05-29,TikTok,App Install,85,49,1,1,2.37,2.04,1.74,2068,tiktok_app_install_video_56,Video,App Install - Video 4
+2025-05-29,Pinterest,Traffic,78,32,1,1,1.46,3.13,2.47,2188,pinterest_traffic_carousel_99,Carousel,Traffic - Carousel 1
+2025-05-29,Pinterest,Brand Awareness,132,92,2,2,1.21,2.17,1.43,7626,pinterest_brand_awareness_carousel_46,Carousel,Brand Awareness - Carousel 2
+2025-05-29,Pinterest,Conversions,62,24,1,1,1.32,4.17,2.56,1814,pinterest_conversions_video_86,Video,Conversions - Video 3
+2025-05-30,Google Ads,Video - YouTube,255,76,3,3,2.27,3.95,3.36,3354,googleads_video_-_youtube_collection_9,Collection,Video - YouTube - Collection 1
+2025-05-30,Google Ads,Search - Brand,352,104,4,4,2.26,3.85,3.39,4599,googleads_search_-_brand_video_42,Video,Search - Brand - Video 2
+2025-05-30,Google Ads,Shopping,418,152,7,7,2.74,4.61,2.75,5556,,,
+2025-05-30,Google Ads,Video - YouTube,244,65,3,3,1.92,4.62,3.73,3377,googleads_video_-_youtube_carousel_98,Carousel,Video - YouTube - Carousel 4
+2025-05-30,Facebook,Remarketing,141,49,1,1,1.3,2.04,2.85,3767,facebook_remarketing_collection_17,Collection,Remarketing - Collection 1
+2025-05-30,Facebook,Video Views,163,62,1,1,1.1,1.61,2.62,5658,,,
+2025-05-30,Facebook,Remarketing,138,38,1,1,1.33,2.63,3.64,,,,
+2025-05-30,Facebook,Conversions,188,55,1,1,1.11,1.82,3.42,4948,,,
+2025-05-30,LinkedIn,Sponsored Content,179,19,1,1,0.71,5.26,9.25,2664,linkedin_sponsored_content_video_17,Video,Sponsored Content - Video 1
+2025-05-30,LinkedIn,Dynamic Ads,289,36,2,2,0.73,5.56,8.1,4964,linkedin_dynamic_ads_video_79,Video,Dynamic Ads - Video 2
+2025-05-30,LinkedIn,Dynamic Ads,215,27,1,1,0.96,3.7,7.87,2821,linkedin_dynamic_ads_text_15,Text,Dynamic Ads - Text 3
+2025-05-30,TikTok,Conversions,146,135,3,3,3.09,2.22,1.08,4373,tiktok_conversions_text_2,Text,Conversions - Text 1
+2025-05-30,TikTok,Traffic,67,47,1,1,2.72,2.13,1.43,1725,tiktok_traffic_video_9,Video,Traffic - Video 2
+2025-05-30,TikTok,Reach,99,67,1,1,3.24,1.49,1.48,2069,tiktok_reach_collection_38,Collection,Reach - Collection 3
+2025-05-30,TikTok,App Install,113,76,2,2,2.49,2.63,1.48,,tiktok_app_install_image_29,Image,App Install - Image 4
+2025-05-30,Pinterest,App Install,104,53,1,1,1.73,1.89,1.97,3068,pinterest_app_install_collection_85,Collection,App Install - Collection 1
+2025-05-30,Pinterest,App Install,139,60,1,1,1.73,1.67,2.33,3471,pinterest_app_install_text_79,Text,App Install - Text 2
+2025-05-31,Google Ads,Video - YouTube,333,98,3,3,2.44,3.06,3.39,4016,googleads_video_-_youtube_video_22,Video,Video - YouTube - Video 1
+2025-05-31,Google Ads,Search - Generic,393,91,3,3,1.88,3.3,4.3,4840,googleads_search_-_generic_image_63,Image,Search - Generic - Image 2
+2025-05-31,Facebook,Conversions,135,36,1,1,1.2,2.78,3.76,,facebook_conversions_image_21,Image,Conversions - Image 1
+2025-05-31,Facebook,Lead Generation,125,33,1,1,1,3.03,3.79,3315,,,
+2025-05-31,Facebook,Conversions,113,38,1,1,1.17,2.63,2.97,3256,facebook_conversions_carousel_35,Carousel,Conversions - Carousel 3
+2025-05-31,Facebook,Lead Generation,85,30,1,1,0.97,3.33,2.82,3096,facebook_lead_generation_video_1,Video,Lead Generation - Video 4
+2025-05-31,LinkedIn,Event Ads,147,14,1,1,0.68,7.14,10.7,2058,linkedin_event_ads_text_45,Text,Event Ads - Text 1
+2025-05-31,LinkedIn,Event Ads,136,14,1,1,0.83,7.14,9.57,1694,linkedin_event_ads_text_37,Text,Event Ads - Text 2
+2025-05-31,LinkedIn,Sponsored Content,128,11,0,0,0.8,0,11.8,1374,linkedin_sponsored_content_carousel_35,Carousel,Sponsored Content - Carousel 3
+2025-05-31,TikTok,Conversions,53,33,1,1,2.7,3.03,1.61,1223,tiktok_conversions_carousel_45,Carousel,Conversions - Carousel 1
+2025-05-31,TikTok,App Install,50,28,1,1,3.23,3.57,1.76,866,tiktok_app_install_video_53,Video,App Install - Video 2
+2025-05-31,TikTok,Traffic,86,65,1,1,2.44,1.54,1.32,2669,tiktok_traffic_carousel_83,Carousel,Traffic - Carousel 3
+2025-05-31,TikTok,Conversions,53,31,1,1,3.27,3.23,1.69,947,tiktok_conversions_collection_57,Collection,Conversions - Collection 4
+2025-05-31,Pinterest,Traffic,97,55,1,1,1.56,1.82,1.76,3517,pinterest_traffic_video_2,Video,Traffic - Video 1
+2025-05-31,Pinterest,Traffic,71,30,1,1,1.34,3.33,2.37,2240,pinterest_traffic_video_48,Video,Traffic - Video 2
+2025-06-01,Google Ads,Search - Generic,202,51,1,1,2.52,1.96,3.97,2027,googleads_search_-_generic_image_50,Image,Search - Generic - Image 1
+2025-06-01,Google Ads,Search - Brand,202,47,2,2,2.08,4.26,4.28,2260,googleads_search_-_brand_text_86,Text,Search - Brand - Text 2
+2025-06-01,Google Ads,Search - Brand,202,59,2,2,2.31,3.39,3.45,2558,googleads_search_-_brand_image_21,Image,Search - Brand - Image 3
+2025-06-01,Facebook,Lead Generation,99,27,1,1,1.14,3.7,3.72,2369,,,
+2025-06-01,Facebook,Remarketing,124,39,1,1,0.98,2.56,3.15,3991,facebook_remarketing_image_14,Image,Remarketing - Image 2
+2025-06-01,Facebook,Remarketing,110,42,1,1,1.11,2.38,2.61,3792,facebook_remarketing_image_33,Image,Remarketing - Image 3
+2025-06-01,Facebook,Lead Generation,92,25,1,1,1.02,4,3.62,2448,facebook_lead_generation_text_11,Text,Lead Generation - Text 4
+2025-06-01,LinkedIn,Text Ads,180,17,1,1,0.85,5.88,10.49,1991,linkedin_text_ads_video_76,Video,Text Ads - Video 1
+2025-06-01,LinkedIn,Sponsored Content,114,9,0,0,0.92,0,12.37,977,linkedin_sponsored_content_carousel_81,Carousel,Sponsored Content - Carousel 2
+2025-06-01,LinkedIn,Text Ads,168,18,1,1,0.81,5.56,9.1,2225,linkedin_text_ads_collection_42,Collection,Text Ads - Collection 3
+2025-06-01,TikTok,Reach,127,65,1,1,2.44,1.54,1.95,2663,tiktok_reach_collection_42,Collection,Reach - Collection 1
+2025-06-01,TikTok,Reach,78,50,1,1,2.97,2,1.56,1682,,,
+2025-06-01,Pinterest,Conversions,95,40,1,1,1.21,2.5,2.35,3316,pinterest_conversions_collection_92,Collection,Conversions - Collection 1
+2025-06-01,Pinterest,Brand Awareness,97,53,1,1,1.43,1.89,1.83,3704,pinterest_brand_awareness_video_86,Video,Brand Awareness - Video 2
+2025-06-02,Google Ads,Shopping,480,121,6,6,2.31,4.96,3.96,5246,googleads_shopping_video_82,Video,Shopping - Video 1
+2025-06-02,Google Ads,Search - Generic,470,133,4,4,1.85,3.01,3.54,7205,googleads_search_-_generic_collection_63,Collection,Search - Generic - Collection 2
+2025-06-02,Facebook,Lead Generation,208,63,2,2,1.25,3.17,3.28,5037,facebook_lead_generation_text_60,Text,Lead Generation - Text 1
+2025-06-02,Facebook,Remarketing,218,89,2,2,1.21,2.25,2.44,7353,,,
+2025-06-02,Facebook,Lead Generation,153,53,1,1,1.08,1.89,2.9,4885,facebook_lead_generation_image_77,Image,Lead Generation - Image 3
+2025-06-02,LinkedIn,Message Ads,453,69,3,3,0.73,4.35,6.58,9508,linkedin_message_ads_carousel_57,Carousel,Message Ads - Carousel 1
+2025-06-02,LinkedIn,Dynamic Ads,446,57,3,3,0.79,5.26,7.76,7174,linkedin_dynamic_ads_image_56,Image,Dynamic Ads - Image 2
+2025-06-02,TikTok,Reach,75,50,1,1,2.76,2,1.5,1814,tiktok_reach_collection_46,Collection,Reach - Collection 1
+2025-06-02,TikTok,Traffic,99,74,1,1,2.37,1.35,1.33,3118,tiktok_traffic_text_26,Text,Traffic - Text 2
+2025-06-02,TikTok,App Install,104,63,1,1,2.5,1.59,1.66,2523,tiktok_app_install_image_30,Image,App Install - Image 3
+2025-06-02,TikTok,Video Views,116,91,1,1,2.4,1.1,1.27,3796,tiktok_video_views_carousel_76,Carousel,Video Views - Carousel 4
+2025-06-02,Pinterest,Video Views,86,36,1,1,1.43,2.78,2.37,2526,pinterest_video_views_carousel_34,Carousel,Video Views - Carousel 1
+2025-06-02,Pinterest,Conversions,69,37,1,1,1.37,2.7,1.87,2705,pinterest_conversions_text_63,Text,Conversions - Text 2
+2025-06-02,Pinterest,Brand Awareness,81,33,1,1,1.3,3.03,2.42,2534,pinterest_brand_awareness_image_59,Image,Brand Awareness - Image 3
+2025-06-03,Google Ads,Display - Remarketing,244,61,2,2,2.13,3.28,4.02,2868,,,
+2025-06-03,Google Ads,Search - Brand,232,67,3,3,2.27,4.48,3.46,2947,googleads_search_-_brand_image_21,Image,Search - Brand - Image 2
+2025-06-03,Google Ads,Display - Remarketing,296,112,5,5,2.63,4.46,2.63,4254,googleads_display_-_remarketing_image_69,Image,Display - Remarketing - Image 3
+2025-06-03,Google Ads,Video - YouTube,234,75,2,2,2.46,2.67,3.11,,googleads_video_-_youtube_collection_34,Collection,Video - YouTube - Collection 4
+2025-06-03,Facebook,Conversions,379,119,4,4,0.95,3.36,3.18,12522,facebook_conversions_carousel_59,Carousel,Conversions - Carousel 1
+2025-06-03,Facebook,Remarketing,259,91,2,2,1.25,2.2,2.84,7300,facebook_remarketing_image_62,Image,Remarketing - Image 2
+2025-06-03,LinkedIn,Event Ads,253,30,1,1,0.75,3.33,8.35,3995,linkedin_event_ads_video_71,Video,Event Ads - Video 1
+2025-06-03,LinkedIn,Message Ads,181,22,1,1,0.96,4.55,8.15,2298,linkedin_message_ads_text_54,Text,Message Ads - Text 2
+2025-06-03,LinkedIn,Dynamic Ads,178,23,1,1,0.79,4.35,7.9,2913,linkedin_dynamic_ads_collection_58,Collection,Dynamic Ads - Collection 3
+2025-06-03,TikTok,Conversions,131,76,2,2,2.91,2.63,1.73,2616,tiktok_conversions_carousel_34,Carousel,Conversions - Carousel 1
+2025-06-03,TikTok,App Install,178,125,2,2,3.14,1.6,1.43,3983,tiktok_app_install_text_96,Text,App Install - Text 2
+2025-06-03,Pinterest,Video Views,57,28,1,1,1.27,3.57,2.05,2199,,,
+2025-06-03,Pinterest,Traffic,69,29,1,1,1.72,3.45,2.36,1686,pinterest_traffic_image_20,Image,Traffic - Image 2
+2025-06-03,Pinterest,Traffic,49,27,1,1,1.44,3.7,1.84,1876,pinterest_traffic_carousel_30,Carousel,Traffic - Carousel 3
+2025-06-03,Pinterest,Traffic,72,30,0,0,1.29,0,2.37,,pinterest_traffic_collection_30,Collection,Traffic - Collection 4
+2025-06-04,Google Ads,Search - Brand,531,145,6,6,1.85,4.14,3.65,7848,googleads_search_-_brand_video_21,Video,Search - Brand - Video 1
+2025-06-04,Google Ads,Display - Remarketing,503,160,5,5,2.29,3.13,3.13,7000,googleads_display_-_remarketing_image_71,Image,Display - Remarketing - Image 2
+2025-06-04,Facebook,Conversions,156,44,1,1,0.92,2.27,3.55,4778,,,
+2025-06-04,Facebook,Video Views,192,82,2,2,1.12,2.44,2.34,7337,,,
+2025-06-04,Facebook,Lead Generation,207,88,2,2,1.04,2.27,2.35,8472,,,
+2025-06-04,Facebook,Remarketing,139,46,1,1,1.11,2.17,3.01,4159,,,
+2025-06-04,LinkedIn,Event Ads,186,16,1,1,0.86,6.25,11.52,1863,linkedin_event_ads_carousel_87,Carousel,Event Ads - Carousel 1
+2025-06-04,LinkedIn,Text Ads,281,38,2,2,0.85,5.26,7.46,4476,linkedin_text_ads_image_88,Image,Text Ads - Image 2
+2025-06-04,LinkedIn,Event Ads,294,39,2,2,0.7,5.13,7.46,5607,linkedin_event_ads_text_80,Text,Event Ads - Text 3
+2025-06-04,TikTok,Reach,170,102,2,2,2.67,1.96,1.67,3816,tiktok_reach_image_16,Image,Reach - Image 1
+2025-06-04,TikTok,Video Views,168,108,2,2,2.69,1.85,1.55,4022,tiktok_video_views_text_80,Text,Video Views - Text 2
+2025-06-04,Pinterest,Video Views,93,50,1,1,1.24,2,1.87,4043,pinterest_video_views_image_46,Image,Video Views - Image 1
+2025-06-04,Pinterest,Conversions,69,34,1,1,1.27,2.94,2.03,,pinterest_conversions_text_63,Text,Conversions - Text 2
+2025-06-05,Google Ads,Shopping,461,118,5,5,1.84,4.24,3.91,6398,googleads_shopping_collection_83,Collection,Shopping - Collection 1
+2025-06-05,Google Ads,Search - Brand,726,241,7,7,2.1,2.9,3.01,,googleads_search_-_brand_image_49,Image,Search - Brand - Image 2
+2025-06-05,Facebook,Lead Generation,198,78,2,2,1.21,2.56,2.53,,facebook_lead_generation_image_10,Image,Lead Generation - Image 1
+2025-06-05,Facebook,Conversions,94,26,0,0,1.12,0,3.64,,facebook_conversions_video_0,Video,Conversions - Video 2
+2025-06-05,Facebook,Lead Generation,163,45,1,1,1.17,2.22,3.63,3834,facebook_lead_generation_text_26,Text,Lead Generation - Text 3
+2025-06-05,Facebook,Conversions,175,63,1,1,0.92,1.59,2.76,6850,facebook_conversions_text_41,Text,Conversions - Text 4
+2025-06-05,LinkedIn,Message Ads,415,51,2,2,0.91,3.92,8.11,5614,linkedin_message_ads_image_50,Image,Message Ads - Image 1
+2025-06-05,LinkedIn,Dynamic Ads,410,57,2,2,0.88,3.51,7.24,6441,linkedin_dynamic_ads_carousel_98,Carousel,Dynamic Ads - Carousel 2
+2025-06-05,TikTok,Reach,159,91,1,1,2.79,1.1,1.75,3266,,,
+2025-06-05,TikTok,App Install,216,127,2,2,3.47,1.57,1.7,,,,
+2025-06-05,Pinterest,Brand Awareness,87,52,1,1,1.37,1.92,1.68,3804,pinterest_brand_awareness_collection_9,Collection,Brand Awareness - Collection 1
+2025-06-05,Pinterest,Video Views,82,44,1,1,1.32,2.27,1.88,3342,pinterest_video_views_carousel_14,Carousel,Video Views - Carousel 2
+2025-06-05,Pinterest,App Install,88,50,1,1,1.7,2,1.77,2936,pinterest_app_install_image_61,Image,App Install - Image 3
+2025-06-06,Google Ads,Search - Brand,433,121,5,5,2.18,4.13,3.57,5563,googleads_search_-_brand_carousel_90,Carousel,Search - Brand - Carousel 1
+2025-06-06,Google Ads,Search - Brand,420,116,4,4,1.95,3.45,3.61,,googleads_search_-_brand_image_23,Image,Search - Brand - Image 2
+2025-06-06,Facebook,Lead Generation,186,69,2,2,1.24,2.9,2.7,5587,,,
+2025-06-06,Facebook,Traffic,144,57,1,1,1.11,1.75,2.52,5135,facebook_traffic_collection_49,Collection,Traffic - Collection 2
+2025-06-06,Facebook,Lead Generation,123,39,1,1,1.13,2.56,3.12,3448,facebook_lead_generation_collection_20,Collection,Lead Generation - Collection 3
+2025-06-06,Facebook,Lead Generation,187,55,1,1,1.08,1.82,3.4,5087,facebook_lead_generation_carousel_45,Carousel,Lead Generation - Carousel 4
+2025-06-06,LinkedIn,Dynamic Ads,193,18,1,1,0.69,5.56,10.89,2599,linkedin_dynamic_ads_carousel_31,Carousel,Dynamic Ads - Carousel 1
+2025-06-06,LinkedIn,Sponsored Content,248,24,1,1,0.72,4.17,10.38,3332,linkedin_sponsored_content_collection_27,Collection,Sponsored Content - Collection 2
+2025-06-06,LinkedIn,Sponsored Content,166,15,1,1,0.88,6.67,10.84,,linkedin_sponsored_content_image_90,Image,Sponsored Content - Image 3
+2025-06-06,TikTok,Video Views,104,88,2,2,2.75,2.27,1.18,3198,tiktok_video_views_collection_53,Collection,Video Views - Collection 1
+2025-06-06,TikTok,Conversions,79,62,1,1,3.4,1.61,1.26,1823,tiktok_conversions_carousel_68,Carousel,Conversions - Carousel 2
+2025-06-06,TikTok,Reach,93,65,1,1,3.39,1.54,1.43,1916,,,
+2025-06-06,TikTok,Traffic,105,65,1,1,2.97,1.54,1.61,2192,,,
+2025-06-06,Pinterest,Conversions,79,33,1,1,1.3,3.03,2.4,2530,pinterest_conversions_carousel_37,Carousel,Conversions - Carousel 1
+2025-06-06,Pinterest,Brand Awareness,119,50,1,1,1.32,2,2.4,3792,pinterest_brand_awareness_image_43,Image,Brand Awareness - Image 2
+2025-06-07,Google Ads,Shopping,178,60,3,3,2.7,5,2.96,2225,,,
+2025-06-07,Google Ads,Display - Remarketing,245,60,3,3,1.96,5,4.1,,googleads_display_-_remarketing_collection_21,Collection,Display - Remarketing - Collection 2
+2025-06-07,Google Ads,Video - YouTube,208,59,2,2,2.68,3.39,3.51,2203,googleads_video_-_youtube_carousel_56,Carousel,Video - YouTube - Carousel 3
+2025-06-07,Google Ads,Shopping,247,67,2,2,2.02,2.99,3.68,3312,googleads_shopping_image_67,Image,Shopping - Image 4
+2025-06-07,Facebook,Lead Generation,250,65,2,2,1.03,3.08,3.82,6320,facebook_lead_generation_carousel_58,Carousel,Lead Generation - Carousel 1
+2025-06-07,Facebook,Video Views,159,51,1,1,1.28,1.96,3.14,3971,facebook_video_views_text_8,Text,Video Views - Text 2
+2025-06-07,LinkedIn,Event Ads,208,22,1,1,0.76,4.55,9.29,2894,linkedin_event_ads_video_58,Video,Event Ads - Video 1
+2025-06-07,LinkedIn,Dynamic Ads,172,14,0,0,0.73,0,12.69,1929,linkedin_dynamic_ads_image_63,Image,Dynamic Ads - Image 2
+2025-06-07,TikTok,Conversions,42,25,1,1,2.34,4,1.7,1068,tiktok_conversions_image_74,Image,Conversions - Image 1
+2025-06-07,TikTok,Video Views,90,59,1,1,3.27,1.69,1.53,1803,tiktok_video_views_video_69,Video,Video Views - Video 2
+2025-06-07,TikTok,Conversions,62,41,1,1,3.39,2.44,1.52,1208,,,
+2025-06-07,TikTok,App Install,89,50,1,1,2.44,2,1.78,2047,tiktok_app_install_text_97,Text,App Install - Text 4
+2025-06-07,Pinterest,App Install,38,19,1,1,1.31,5.26,1.97,,pinterest_app_install_carousel_96,Carousel,App Install - Carousel 1
+2025-06-07,Pinterest,App Install,81,36,1,1,1.37,2.78,2.25,2632,pinterest_app_install_carousel_86,Carousel,App Install - Carousel 2
+2025-06-07,Pinterest,Traffic,39,18,0,0,1.59,0,2.12,,pinterest_traffic_collection_19,Collection,Traffic - Collection 3
+2025-06-08,Google Ads,Shopping,315,88,4,4,2.34,4.55,3.57,3768,googleads_shopping_collection_26,Collection,Shopping - Collection 1
+2025-06-08,Google Ads,Display - Remarketing,224,56,2,2,2.07,3.57,4.03,2711,,,
+2025-06-08,Facebook,Remarketing,129,37,1,1,1.26,2.7,3.49,2932,facebook_remarketing_collection_5,Collection,Remarketing - Collection 1
+2025-06-08,Facebook,Conversions,165,62,1,1,0.99,1.61,2.64,6271,,,
+2025-06-08,Facebook,Traffic,137,36,1,1,1.1,2.78,3.85,3281,facebook_traffic_image_16,Image,Traffic - Image 3
+2025-06-08,LinkedIn,Event Ads,249,27,1,1,0.9,3.7,9.07,2993,linkedin_event_ads_text_89,Text,Event Ads - Text 1
+2025-06-08,LinkedIn,Event Ads,152,14,1,1,0.8,7.14,10.63,1759,,,
+2025-06-08,TikTok,Reach,73,40,1,1,3.47,2.5,1.81,1152,,,
+2025-06-08,TikTok,Reach,79,48,1,1,3.49,2.08,1.64,,,,
+2025-06-08,TikTok,App Install,79,59,1,1,2.91,1.69,1.34,2030,tiktok_app_install_video_28,Video,App Install - Video 3
+2025-06-08,Pinterest,Video Views,97,46,1,1,1.29,2.17,2.1,3575,pinterest_video_views_text_36,Text,Video Views - Text 1
+2025-06-08,Pinterest,Brand Awareness,93,42,1,1,1.5,2.38,2.2,,,,
+2025-06-09,Google Ads,Display - Remarketing,371,133,5,5,2.58,3.76,2.79,5147,googleads_display_-_remarketing_video_21,Video,Display - Remarketing - Video 1
+2025-06-09,Google Ads,Search - Brand,312,82,4,4,2.37,4.88,3.79,3464,googleads_search_-_brand_carousel_27,Carousel,Search - Brand - Carousel 2
+2025-06-09,Google Ads,Video - YouTube,246,71,3,3,2.11,4.23,3.48,3368,googleads_video_-_youtube_carousel_63,Carousel,Video - YouTube - Carousel 3
+2025-06-09,Google Ads,Video - YouTube,188,49,2,2,2.58,4.08,3.84,1901,googleads_video_-_youtube_text_32,Text,Video - YouTube - Text 4
+2025-06-09,Facebook,Lead Generation,129,50,1,1,1.16,2,2.57,4302,,,
+2025-06-09,Facebook,Lead Generation,133,44,1,1,0.98,2.27,3.01,4506,facebook_lead_generation_carousel_76,Carousel,Lead Generation - Carousel 2
+2025-06-09,Facebook,Remarketing,145,52,1,1,1.21,1.92,2.81,4291,facebook_remarketing_image_9,Image,Remarketing - Image 3
+2025-06-09,Facebook,Video Views,210,67,1,1,1,1.49,3.16,6698,facebook_video_views_image_26,Image,Video Views - Image 4
+2025-06-09,LinkedIn,Text Ads,145,17,1,1,0.73,5.88,8.47,2332,linkedin_text_ads_carousel_91,Carousel,Text Ads - Carousel 1
+2025-06-09,LinkedIn,Message Ads,115,11,0,0,0.93,0,10.11,1186,linkedin_message_ads_image_33,Image,Message Ads - Image 2
+2025-06-09,LinkedIn,Dynamic Ads,180,24,1,1,0.77,4.17,7.44,,linkedin_dynamic_ads_collection_94,Collection,Dynamic Ads - Collection 3
+2025-06-09,LinkedIn,Sponsored Content,193,28,1,1,0.69,3.57,6.99,4076,linkedin_sponsored_content_image_53,Image,Sponsored Content - Image 4
+2025-06-09,TikTok,App Install,203,131,2,2,2.75,1.53,1.54,4763,tiktok_app_install_image_31,Image,App Install - Image 1
+2025-06-09,TikTok,Traffic,215,149,3,3,3.28,2.01,1.44,4544,,,
+2025-06-09,Pinterest,Conversions,105,59,2,2,1.69,3.39,1.79,3494,pinterest_conversions_text_28,Text,Conversions - Text 1
+2025-06-09,Pinterest,App Install,72,42,1,1,1.17,2.38,1.71,3594,pinterest_app_install_collection_68,Collection,App Install - Collection 2
+2025-06-09,Pinterest,Traffic,66,37,1,1,1.2,2.7,1.8,3090,pinterest_traffic_image_59,Image,Traffic - Image 3
+2025-06-10,Google Ads,Search - Brand,289,94,4,4,2.45,4.26,3.09,3838,googleads_search_-_brand_image_97,Image,Search - Brand - Image 1
+2025-06-10,Google Ads,Search - Generic,383,137,5,5,2.39,3.65,2.8,5742,,,
+2025-06-10,Google Ads,Display - Remarketing,345,124,5,5,2.63,4.03,2.77,4709,googleads_display_-_remarketing_carousel_10,Carousel,Display - Remarketing - Carousel 3
+2025-06-10,Facebook,Video Views,124,40,1,1,1.37,2.5,3.13,2924,facebook_video_views_carousel_86,Carousel,Video Views - Carousel 1
+2025-06-10,Facebook,Video Views,202,73,2,2,0.93,2.74,2.76,7820,facebook_video_views_text_41,Text,Video Views - Text 2
+2025-06-10,Facebook,Lead Generation,176,66,2,2,0.99,3.03,2.65,6647,facebook_lead_generation_text_62,Text,Lead Generation - Text 3
+2025-06-10,Facebook,Remarketing,201,74,2,2,1.16,2.7,2.73,6376,facebook_remarketing_video_98,Video,Remarketing - Video 4
+2025-06-10,LinkedIn,Event Ads,141,14,1,1,0.7,7.14,10.22,1999,linkedin_event_ads_image_10,Image,Event Ads - Image 1
+2025-06-10,LinkedIn,Text Ads,210,21,1,1,0.72,4.76,10.01,2912,linkedin_text_ads_image_38,Image,Text Ads - Image 2
+2025-06-10,LinkedIn,Message Ads,168,17,1,1,0.71,5.88,10.13,2411,linkedin_message_ads_collection_55,Collection,Message Ads - Collection 3
+2025-06-10,LinkedIn,Event Ads,211,30,1,1,0.72,3.33,7.09,,,,
+2025-06-10,TikTok,Reach,196,127,3,3,2.78,2.36,1.55,,tiktok_reach_collection_2,Collection,Reach - Collection 1
+2025-06-10,TikTok,Reach,148,114,2,2,2.51,1.75,1.3,4550,tiktok_reach_carousel_59,Carousel,Reach - Carousel 2
+2025-06-10,Pinterest,Traffic,88,41,1,1,1.52,2.44,2.12,2695,pinterest_traffic_collection_39,Collection,Traffic - Collection 1
+2025-06-10,Pinterest,Conversions,37,16,0,0,1.59,0,2.36,1009,pinterest_conversions_image_14,Image,Conversions - Image 2
+2025-06-10,Pinterest,Brand Awareness,58,24,1,1,1.27,4.17,2.45,1890,pinterest_brand_awareness_image_45,Image,Brand Awareness - Image 3
+2025-06-10,Pinterest,Video Views,83,53,1,1,1.29,1.89,1.56,4105,pinterest_video_views_video_71,Video,Video Views - Video 4
+2025-06-11,Google Ads,Video - YouTube,569,148,4,4,2.59,2.7,3.85,5719,googleads_video_-_youtube_text_76,Text,Video - YouTube - Text 1
+2025-06-11,Google Ads,Search - Brand,634,198,5,5,2.02,2.53,3.2,9779,googleads_search_-_brand_video_50,Video,Search - Brand - Video 2
+2025-06-11,Facebook,Conversions,285,88,2,2,1.28,2.27,3.23,6899,facebook_conversions_text_16,Text,Conversions - Text 1
+2025-06-11,Facebook,Video Views,408,126,3,3,1.29,2.38,3.24,9780,facebook_video_views_video_26,Video,Video Views - Video 2
+2025-06-11,LinkedIn,Sponsored Content,163,21,1,1,0.84,4.76,7.59,2498,linkedin_sponsored_content_collection_61,Collection,Sponsored Content - Collection 1
+2025-06-11,LinkedIn,Dynamic Ads,181,20,1,1,0.7,5,8.9,2839,linkedin_dynamic_ads_text_64,Text,Dynamic Ads - Text 2
+2025-06-11,LinkedIn,Sponsored Content,222,28,2,2,0.81,7.14,7.81,3453,linkedin_sponsored_content_image_15,Image,Sponsored Content - Image 3
+2025-06-11,LinkedIn,Sponsored Content,131,16,1,1,0.68,6.25,8.26,2351,linkedin_sponsored_content_text_66,Text,Sponsored Content - Text 4
+2025-06-11,TikTok,Reach,103,60,1,1,3.02,1.67,1.72,1987,tiktok_reach_text_31,Text,Reach - Text 1
+2025-06-11,TikTok,App Install,87,59,1,1,3.21,1.69,1.48,1836,,,
+2025-06-11,TikTok,Video Views,88,54,1,1,2.98,1.85,1.62,1811,tiktok_video_views_video_53,Video,Video Views - Video 3
+2025-06-11,Pinterest,App Install,83,33,1,1,1.48,3.03,2.5,2224,pinterest_app_install_text_17,Text,App Install - Text 1
+2025-06-11,Pinterest,Conversions,176,94,2,2,1.28,2.13,1.88,,pinterest_conversions_video_56,Video,Conversions - Video 2
+2025-06-12,Google Ads,Display - Remarketing,209,60,3,3,1.97,5,3.5,3049,googleads_display_-_remarketing_video_95,Video,Display - Remarketing - Video 1
+2025-06-12,Google Ads,Search - Generic,315,110,5,5,2.27,4.55,2.86,4852,googleads_search_-_generic_video_84,Video,Search - Generic - Video 2
+2025-06-12,Google Ads,Search - Brand,230,57,2,2,2.44,3.51,4.03,2340,googleads_search_-_brand_collection_22,Collection,Search - Brand - Collection 3
+2025-06-12,Google Ads,Video - YouTube,241,63,3,3,1.86,4.76,3.82,,googleads_video_-_youtube_video_63,Video,Video - YouTube - Video 4
+2025-06-12,Facebook,Video Views,106,39,1,1,1.27,2.56,2.75,3073,,,
+2025-06-12,Facebook,Conversions,139,50,1,1,0.93,2,2.77,5351,facebook_conversions_image_31,Image,Conversions - Image 2
+2025-06-12,Facebook,Traffic,118,31,1,1,1.36,3.23,3.76,2282,,,
+2025-06-12,Facebook,Video Views,171,55,1,1,1.35,1.82,3.14,4068,facebook_video_views_text_24,Text,Video Views - Text 4
+2025-06-12,LinkedIn,Sponsored Content,294,27,1,1,0.68,3.7,11.06,3951,linkedin_sponsored_content_image_85,Image,Sponsored Content - Image 1
+2025-06-12,LinkedIn,Event Ads,372,40,2,2,0.84,5,9.29,4768,linkedin_event_ads_carousel_19,Carousel,Event Ads - Carousel 2
+2025-06-12,TikTok,Traffic,124,92,2,2,2.37,2.17,1.35,,tiktok_traffic_video_7,Video,Traffic - Video 1
+2025-06-12,TikTok,Traffic,112,74,1,1,2.44,1.35,1.52,3033,tiktok_traffic_collection_26,Collection,Traffic - Collection 2
+2025-06-12,TikTok,Conversions,98,71,1,1,2.51,1.41,1.37,2832,tiktok_conversions_text_47,Text,Conversions - Text 3
+2025-06-12,TikTok,Traffic,91,71,1,1,3.43,1.41,1.29,2070,tiktok_traffic_video_87,Video,Traffic - Video 4
+2025-06-12,Pinterest,Brand Awareness,91,53,1,1,1.72,1.89,1.73,3073,,,
+2025-06-12,Pinterest,App Install,102,45,1,1,1.31,2.22,2.28,3423,pinterest_app_install_image_31,Image,App Install - Image 2
+2025-06-12,Pinterest,App Install,109,50,1,1,1.44,2,2.17,3481,pinterest_app_install_video_8,Video,App Install - Video 3
+2025-06-13,Google Ads,Display - Remarketing,377,142,7,7,2.45,4.93,2.66,5790,googleads_display_-_remarketing_video_41,Video,Display - Remarketing - Video 1
+2025-06-13,Google Ads,Video - YouTube,315,98,4,4,2.27,4.08,3.2,4326,googleads_video_-_youtube_image_67,Image,Video - YouTube - Image 2
+2025-06-13,Google Ads,Search - Generic,401,113,5,5,2.2,4.42,3.54,5128,googleads_search_-_generic_text_25,Text,Search - Generic - Text 3
+2025-06-13,Facebook,Remarketing,306,83,1,1,0.96,1.2,3.67,8635,facebook_remarketing_collection_78,Collection,Remarketing - Collection 1
+2025-06-13,Facebook,Lead Generation,361,151,3,3,0.93,1.99,2.39,16212,facebook_lead_generation_carousel_74,Carousel,Lead Generation - Carousel 2
+2025-06-13,LinkedIn,Message Ads,177,19,1,1,0.71,5.26,9.29,2666,,,
+2025-06-13,LinkedIn,Message Ads,272,39,1,1,0.95,2.56,7.04,4122,,,
+2025-06-13,LinkedIn,Event Ads,213,20,1,1,0.76,5,10.61,2634,linkedin_event_ads_carousel_70,Carousel,Event Ads - Carousel 3
+2025-06-13,TikTok,Traffic,114,71,1,1,2.85,1.41,1.6,2493,tiktok_traffic_text_65,Text,Traffic - Text 1
+2025-06-13,TikTok,Traffic,98,75,1,1,3.09,1.33,1.31,2426,tiktok_traffic_collection_97,Collection,Traffic - Collection 2
+2025-06-13,TikTok,Video Views,97,79,1,1,3.22,1.27,1.23,,tiktok_video_views_image_12,Image,Video Views - Image 3
+2025-06-13,TikTok,App Install,109,83,2,2,2.34,2.41,1.31,3547,tiktok_app_install_collection_42,Collection,App Install - Collection 4
+2025-06-13,Pinterest,App Install,83,43,1,1,1.44,2.33,1.93,2982,pinterest_app_install_video_7,Video,App Install - Video 1
+2025-06-13,Pinterest,Conversions,54,22,0,0,1.3,0,2.44,1690,pinterest_conversions_collection_6,Collection,Conversions - Collection 2
+2025-06-13,Pinterest,Brand Awareness,85,44,1,1,1.38,2.27,1.93,,pinterest_brand_awareness_carousel_29,Carousel,Brand Awareness - Carousel 3
+2025-06-14,Google Ads,Shopping,135,39,1,1,2.18,2.56,3.5,,googleads_shopping_video_30,Video,Shopping - Video 1
+2025-06-14,Google Ads,Search - Brand,178,60,2,2,2.23,3.33,2.99,2688,googleads_search_-_brand_text_22,Text,Search - Brand - Text 2
+2025-06-14,Google Ads,Search - Brand,237,85,4,4,2.44,4.71,2.79,3486,googleads_search_-_brand_image_53,Image,Search - Brand - Image 3
+2025-06-14,Google Ads,Shopping,197,68,2,2,1.95,2.94,2.89,,,,
+2025-06-14,Facebook,Video Views,181,51,1,1,1.29,1.96,3.57,3952,facebook_video_views_carousel_51,Carousel,Video Views - Carousel 1
+2025-06-14,Facebook,Conversions,128,33,1,1,1.1,3.03,3.9,2993,facebook_conversions_collection_77,Collection,Conversions - Collection 2
+2025-06-14,Facebook,Remarketing,157,42,1,1,1.25,2.38,3.73,3348,,,
+2025-06-14,LinkedIn,Sponsored Content,143,13,1,1,0.8,7.69,10.88,1624,linkedin_sponsored_content_video_93,Video,Sponsored Content - Video 1
+2025-06-14,LinkedIn,Event Ads,105,10,1,1,0.95,10,10.58,1053,linkedin_event_ads_video_52,Video,Event Ads - Video 2
+2025-06-14,LinkedIn,Sponsored Content,105,11,1,1,0.82,9.09,9.65,1334,,,
+2025-06-14,LinkedIn,Dynamic Ads,117,10,0,0,0.8,0,11.59,1249,linkedin_dynamic_ads_collection_73,Collection,Dynamic Ads - Collection 4
+2025-06-14,TikTok,Conversions,48,33,0,0,3.02,0,1.46,1093,tiktok_conversions_carousel_48,Carousel,Conversions - Carousel 1
+2025-06-14,TikTok,Reach,53,31,1,1,2.85,3.23,1.69,1088,tiktok_reach_collection_24,Collection,Reach - Collection 2
+2025-06-14,TikTok,Traffic,59,31,1,1,3.18,3.23,1.92,975,tiktok_traffic_collection_43,Collection,Traffic - Collection 3
+2025-06-14,TikTok,Reach,47,25,0,0,2.73,0,1.88,915,tiktok_reach_text_3,Text,Reach - Text 4
+2025-06-14,Pinterest,Brand Awareness,102,43,1,1,1.4,2.33,2.39,3081,pinterest_brand_awareness_collection_35,Collection,Brand Awareness - Collection 1
+2025-06-14,Pinterest,Video Views,89,43,1,1,1.47,2.33,2.07,2935,pinterest_video_views_collection_76,Collection,Video Views - Collection 2
+2025-06-15,Google Ads,Search - Generic,351,91,4,4,2.47,4.4,3.84,3690,,,
+2025-06-15,Google Ads,Display - Remarketing,313,85,4,4,2.23,4.71,3.67,3806,googleads_display_-_remarketing_text_59,Text,Display - Remarketing - Text 2
+2025-06-15,Facebook,Lead Generation,147,40,1,1,0.92,2.5,3.65,4360,facebook_lead_generation_video_50,Video,Lead Generation - Video 1
+2025-06-15,Facebook,Remarketing,148,42,1,1,1.15,2.38,3.52,3659,facebook_remarketing_collection_56,Collection,Remarketing - Collection 2
+2025-06-15,Facebook,Conversions,128,35,1,1,1.24,2.86,3.68,2816,facebook_conversions_text_17,Text,Conversions - Text 3
+2025-06-15,LinkedIn,Dynamic Ads,179,21,1,1,0.96,4.76,8.4,2189,linkedin_dynamic_ads_carousel_53,Carousel,Dynamic Ads - Carousel 1
+2025-06-15,LinkedIn,Dynamic Ads,169,15,1,1,0.87,6.67,11,1724,linkedin_dynamic_ads_text_4,Text,Dynamic Ads - Text 2
+2025-06-15,LinkedIn,Event Ads,149,12,0,0,0.92,0,11.97,1308,linkedin_event_ads_carousel_94,Carousel,Event Ads - Carousel 3
+2025-06-15,TikTok,Video Views,85,50,1,1,2.57,2,1.69,1945,tiktok_video_views_carousel_90,Carousel,Video Views - Carousel 1
+2025-06-15,TikTok,Traffic,75,51,1,1,2.89,1.96,1.48,1762,tiktok_traffic_carousel_57,Carousel,Traffic - Carousel 2
+2025-06-15,TikTok,Traffic,70,43,1,1,3.43,2.33,1.62,1255,tiktok_traffic_carousel_46,Carousel,Traffic - Carousel 3
+2025-06-15,Pinterest,Traffic,54,21,0,0,1.25,0,2.61,1684,pinterest_traffic_text_11,Text,Traffic - Text 1
+2025-06-15,Pinterest,Traffic,69,40,1,1,1.27,2.5,1.72,3144,pinterest_traffic_video_57,Video,Traffic - Video 2
+2025-06-15,Pinterest,Conversions,54,24,1,1,1.35,4.17,2.22,,pinterest_conversions_collection_4,Collection,Conversions - Collection 3
+2025-06-16,Google Ads,Display - Remarketing,301,73,3,3,2.19,4.11,4.1,3331,googleads_display_-_remarketing_video_87,Video,Display - Remarketing - Video 1
+2025-06-16,Google Ads,Video - YouTube,418,115,4,4,1.85,3.48,3.64,6207,googleads_video_-_youtube_carousel_51,Carousel,Video - YouTube - Carousel 2
+2025-06-16,Google Ads,Search - Brand,333,91,4,4,2.31,4.4,3.64,3945,googleads_search_-_brand_collection_51,Collection,Search - Brand - Collection 3
+2025-06-16,Facebook,Conversions,145,42,1,1,1.09,2.38,3.44,3851,facebook_conversions_video_0,Video,Conversions - Video 1
+2025-06-16,Facebook,Lead Generation,130,47,1,1,1.21,2.13,2.74,3882,facebook_lead_generation_text_79,Text,Lead Generation - Text 2
+2025-06-16,Facebook,Video Views,217,68,1,1,1.07,1.47,3.21,6380,facebook_video_views_image_5,Image,Video Views - Image 3
+2025-06-16,Facebook,Traffic,164,49,1,1,1.19,2.04,3.37,4125,facebook_traffic_carousel_4,Carousel,Traffic - Carousel 4
+2025-06-16,LinkedIn,Sponsored Content,152,16,1,1,0.87,6.25,9.38,1839,linkedin_sponsored_content_carousel_99,Carousel,Sponsored Content - Carousel 1
+2025-06-16,LinkedIn,Message Ads,200,22,1,1,0.78,4.55,9.2,2809,linkedin_message_ads_text_79,Text,Message Ads - Text 2
+2025-06-16,LinkedIn,Dynamic Ads,145,14,1,1,0.69,7.14,10.09,2037,linkedin_dynamic_ads_collection_69,Collection,Dynamic Ads - Collection 3
+2025-06-16,LinkedIn,Event Ads,190,22,1,1,0.95,4.55,8.61,2314,linkedin_event_ads_text_73,Text,Event Ads - Text 4
+2025-06-16,TikTok,Video Views,101,73,1,1,2.49,1.37,1.38,2935,tiktok_video_views_video_10,Video,Video Views - Video 1
+2025-06-16,TikTok,App Install,101,66,1,1,2.84,1.52,1.54,2321,tiktok_app_install_carousel_69,Carousel,App Install - Carousel 2
+2025-06-16,TikTok,Traffic,107,70,1,1,2.41,1.43,1.53,2900,tiktok_traffic_video_41,Video,Traffic - Video 3
+2025-06-16,TikTok,App Install,91,53,1,1,2.45,1.89,1.72,,,,
+2025-06-16,Pinterest,Traffic,70,43,1,1,1.41,2.33,1.61,3057,pinterest_traffic_carousel_36,Carousel,Traffic - Carousel 1
+2025-06-16,Pinterest,Conversions,75,38,1,1,1.5,2.63,1.95,,pinterest_conversions_image_48,Image,Conversions - Image 2
+2025-06-16,Pinterest,Conversions,66,32,1,1,1.46,3.13,2.09,2186,,,
+2025-06-16,Pinterest,Traffic,45,21,0,0,1.2,0,2.16,1751,pinterest_traffic_text_25,Text,Traffic - Text 4
+2025-06-17,Google Ads,Video - YouTube,511,149,6,6,1.91,4.03,3.44,7800,googleads_video_-_youtube_video_94,Video,Video - YouTube - Video 1
+2025-06-17,Google Ads,Shopping,708,285,13,13,2.19,4.56,2.49,13015,googleads_shopping_text_64,Text,Shopping - Text 2
+2025-06-17,Facebook,Lead Generation,147,40,1,1,1.06,2.5,3.7,3766,,,
+2025-06-17,Facebook,Lead Generation,102,31,1,1,1.32,3.23,3.32,2355,facebook_lead_generation_image_93,Image,Lead Generation - Image 2
+2025-06-17,Facebook,Conversions,146,54,1,1,0.97,1.85,2.71,5540,facebook_conversions_video_44,Video,Conversions - Video 3
+2025-06-17,Facebook,Traffic,132,43,1,1,1.26,2.33,3.07,3416,facebook_traffic_collection_87,Collection,Traffic - Collection 4
+2025-06-17,LinkedIn,Sponsored Content,136,14,1,1,0.89,7.14,9.67,1568,,,
+2025-06-17,LinkedIn,Event Ads,121,14,0,0,0.8,0,8.44,1742,,,
+2025-06-17,LinkedIn,Event Ads,230,24,1,1,0.73,4.17,9.58,3283,linkedin_event_ads_image_60,Image,Event Ads - Image 3
+2025-06-17,LinkedIn,Message Ads,199,25,1,1,0.69,4,7.91,3626,linkedin_message_ads_carousel_82,Carousel,Message Ads - Carousel 4
+2025-06-17,TikTok,App Install,95,50,1,1,2.99,2,1.92,,tiktok_app_install_video_29,Video,App Install - Video 1
+2025-06-17,TikTok,App Install,152,109,2,2,2.42,1.83,1.4,4504,tiktok_app_install_text_0,Text,App Install - Text 2
+2025-06-17,TikTok,Traffic,106,71,2,2,2.47,2.82,1.5,2870,tiktok_traffic_text_15,Text,Traffic - Text 3
+2025-06-17,Pinterest,App Install,79,38,1,1,1.63,2.63,2.08,,,,
+2025-06-17,Pinterest,Conversions,59,25,1,1,1.32,4,2.32,1895,pinterest_conversions_carousel_66,Carousel,Conversions - Carousel 2
+2025-06-17,Pinterest,Video Views,57,30,0,0,1.28,0,1.89,2344,pinterest_video_views_image_50,Image,Video Views - Image 3
+2025-06-17,Pinterest,Brand Awareness,71,39,1,1,1.39,2.56,1.81,2815,pinterest_brand_awareness_image_3,Image,Brand Awareness - Image 4
+2025-06-18,Google Ads,Search - Brand,606,202,7,7,2.39,3.47,3.01,8451,googleads_search_-_brand_carousel_49,Carousel,Search - Brand - Carousel 1
+2025-06-18,Google Ads,Search - Brand,515,128,6,6,2.55,4.69,4.01,5028,googleads_search_-_brand_video_54,Video,Search - Brand - Video 2
+2025-06-18,Facebook,Video Views,178,70,2,2,1.13,2.86,2.54,6186,facebook_video_views_video_47,Video,Video Views - Video 1
+2025-06-18,Facebook,Lead Generation,265,82,1,1,1.34,1.22,3.23,6124,facebook_lead_generation_text_5,Text,Lead Generation - Text 2
+2025-06-18,Facebook,Video Views,227,72,2,2,0.97,2.78,3.16,7421,facebook_video_views_collection_26,Collection,Video Views - Collection 3
+2025-06-18,LinkedIn,Dynamic Ads,153,17,1,1,0.83,5.88,8.97,2041,linkedin_dynamic_ads_text_49,Text,Dynamic Ads - Text 1
+2025-06-18,LinkedIn,Sponsored Content,194,22,1,1,0.74,4.55,9,2964,linkedin_sponsored_content_collection_18,Collection,Sponsored Content - Collection 2
+2025-06-18,LinkedIn,Event Ads,248,28,2,2,0.89,7.14,8.94,3145,linkedin_event_ads_video_79,Video,Event Ads - Video 3
+2025-06-18,TikTok,Video Views,244,174,4,4,3.39,2.3,1.41,5131,tiktok_video_views_carousel_10,Carousel,Video Views - Carousel 1
+2025-06-18,TikTok,App Install,190,124,3,3,2.45,2.42,1.53,5071,tiktok_app_install_image_5,Image,App Install - Image 2
+2025-06-18,Pinterest,Video Views,53,23,1,1,1.27,4.35,2.28,1814,pinterest_video_views_collection_19,Collection,Video Views - Collection 1
+2025-06-18,Pinterest,Brand Awareness,91,42,1,1,1.22,2.38,2.18,3431,pinterest_brand_awareness_video_35,Video,Brand Awareness - Video 2
+2025-06-18,Pinterest,Brand Awareness,68,41,1,1,1.34,2.44,1.65,3065,pinterest_brand_awareness_image_6,Image,Brand Awareness - Image 3
+2025-06-18,Pinterest,Brand Awareness,76,41,1,1,1.28,2.44,1.87,3196,pinterest_brand_awareness_collection_10,Collection,Brand Awareness - Collection 4
+2025-06-19,Google Ads,Display - Remarketing,255,84,4,4,2.53,4.76,3.03,3317,googleads_display_-_remarketing_text_2,Text,Display - Remarketing - Text 1
+2025-06-19,Google Ads,Display - Remarketing,191,50,2,2,2.67,4,3.86,,googleads_display_-_remarketing_text_4,Text,Display - Remarketing - Text 2
+2025-06-19,Google Ads,Display - Remarketing,262,90,4,4,2.22,4.44,2.9,4055,googleads_display_-_remarketing_image_67,Image,Display - Remarketing - Image 3
+2025-06-19,Google Ads,Video - YouTube,290,109,4,4,1.91,3.67,2.65,,googleads_video_-_youtube_text_64,Text,Video - YouTube - Text 4
+2025-06-19,Facebook,Video Views,119,35,1,1,1.33,2.86,3.44,2627,facebook_video_views_image_51,Image,Video Views - Image 1
+2025-06-19,Facebook,Traffic,166,49,1,1,1.05,2.04,3.38,4667,facebook_traffic_carousel_85,Carousel,Traffic - Carousel 2
+2025-06-19,Facebook,Lead Generation,190,62,2,2,1.26,3.23,3.05,4907,facebook_lead_generation_carousel_87,Carousel,Lead Generation - Carousel 3
+2025-06-19,Facebook,Remarketing,116,34,1,1,1.04,2.94,3.41,3281,facebook_remarketing_carousel_94,Carousel,Remarketing - Carousel 4
+2025-06-19,LinkedIn,Dynamic Ads,250,34,1,1,0.76,2.94,7.41,4477,linkedin_dynamic_ads_video_96,Video,Dynamic Ads - Video 1
+2025-06-19,LinkedIn,Message Ads,193,20,1,1,0.68,5,9.63,2952,linkedin_message_ads_collection_12,Collection,Message Ads - Collection 2
+2025-06-19,LinkedIn,Sponsored Content,234,23,1,1,0.77,4.35,10.03,2989,linkedin_sponsored_content_text_49,Text,Sponsored Content - Text 3
+2025-06-19,TikTok,Conversions,138,113,2,2,2.48,1.77,1.22,4554,tiktok_conversions_carousel_95,Carousel,Conversions - Carousel 1
+2025-06-19,TikTok,App Install,174,144,2,2,2.73,1.39,1.21,5272,tiktok_app_install_video_75,Video,App Install - Video 2
+2025-06-19,TikTok,App Install,110,59,1,1,2.33,1.69,1.86,2528,tiktok_app_install_collection_97,Collection,App Install - Collection 3
+2025-06-19,Pinterest,Traffic,104,47,1,1,1.19,2.13,2.22,3956,pinterest_traffic_collection_4,Collection,Traffic - Collection 1
+2025-06-19,Pinterest,Brand Awareness,148,77,1,1,1.33,1.3,1.91,5804,pinterest_brand_awareness_carousel_5,Carousel,Brand Awareness - Carousel 2
+2025-06-20,Google Ads,Display - Remarketing,529,163,4,4,2.22,2.45,3.24,7328,,,
+2025-06-20,Google Ads,Shopping,579,181,7,7,2.43,3.87,3.2,7463,googleads_shopping_video_46,Video,Shopping - Video 2
+2025-06-20,Facebook,Lead Generation,289,99,2,2,0.94,2.02,2.91,,facebook_lead_generation_video_42,Video,Lead Generation - Video 1
+2025-06-20,Facebook,Conversions,200,67,2,2,1.37,2.99,2.97,4883,facebook_conversions_image_23,Image,Conversions - Image 2
+2025-06-20,LinkedIn,Sponsored Content,407,53,3,3,0.7,5.66,7.75,7582,,,
+2025-06-20,LinkedIn,Text Ads,410,45,2,2,0.88,4.44,9.08,5142,linkedin_text_ads_collection_85,Collection,Text Ads - Collection 2
+2025-06-20,TikTok,App Install,108,71,1,1,2.95,1.41,1.52,2409,tiktok_app_install_carousel_45,Carousel,App Install - Carousel 1
+2025-06-20,TikTok,Traffic,149,102,2,2,2.84,1.96,1.46,3588,,,
+2025-06-20,TikTok,Reach,141,99,2,2,3,2.02,1.43,3298,tiktok_reach_image_24,Image,Reach - Image 3
+2025-06-20,Pinterest,Video Views,121,53,1,1,1.2,1.89,2.29,4433,pinterest_video_views_collection_50,Collection,Video Views - Collection 1
+2025-06-20,Pinterest,Conversions,128,73,2,2,1.25,2.74,1.76,5859,pinterest_conversions_image_47,Image,Conversions - Image 2
+2025-06-21,Google Ads,Search - Brand,203,48,2,2,2.24,4.17,4.25,2140,googleads_search_-_brand_collection_25,Collection,Search - Brand - Collection 1
+2025-06-21,Google Ads,Display - Remarketing,132,40,1,1,2.36,2.5,3.34,1692,,,
+2025-06-21,Google Ads,Display - Remarketing,117,26,1,1,1.91,3.85,4.43,1364,googleads_display_-_remarketing_text_1,Text,Display - Remarketing - Text 3
+2025-06-21,Google Ads,Shopping,164,55,2,2,2.01,3.64,2.99,2736,googleads_shopping_video_31,Video,Shopping - Video 4
+2025-06-21,Facebook,Video Views,118,33,1,1,1.26,3.03,3.62,,,,
+2025-06-21,Facebook,Remarketing,80,22,1,1,1.29,4.55,3.69,1703,facebook_remarketing_image_46,Image,Remarketing - Image 2
+2025-06-21,Facebook,Lead Generation,94,29,1,1,1.07,3.45,3.24,2709,facebook_lead_generation_carousel_52,Carousel,Lead Generation - Carousel 3
+2025-06-21,Facebook,Conversions,75,20,0,0,1.04,0,3.74,1919,facebook_conversions_carousel_21,Carousel,Conversions - Carousel 4
+2025-06-21,LinkedIn,Message Ads,204,18,1,1,0.95,5.56,11.09,1903,linkedin_message_ads_text_71,Text,Message Ads - Text 1
+2025-06-21,LinkedIn,Message Ads,227,19,1,1,0.96,5.26,12.15,1982,linkedin_message_ads_text_59,Text,Message Ads - Text 2
+2025-06-21,TikTok,Reach,82,46,1,1,3.1,2.17,1.78,1483,tiktok_reach_collection_15,Collection,Reach - Collection 1
+2025-06-21,TikTok,App Install,74,47,1,1,2.44,2.13,1.56,1926,tiktok_app_install_video_1,Video,App Install - Video 2
+2025-06-21,TikTok,Traffic,50,32,0,0,2.67,0,1.57,1197,tiktok_traffic_collection_47,Collection,Traffic - Collection 3
+2025-06-21,TikTok,App Install,60,31,1,1,2.83,3.23,1.97,1095,,,
+2025-06-21,Pinterest,Brand Awareness,65,29,1,1,1.61,3.45,2.26,1801,pinterest_brand_awareness_text_89,Text,Brand Awareness - Text 1
+2025-06-21,Pinterest,App Install,47,18,0,0,1.42,0,2.67,1269,pinterest_app_install_carousel_92,Carousel,App Install - Carousel 2
+2025-06-21,Pinterest,Traffic,29,11,0,0,1.26,0,2.53,870,,,
+2025-06-22,Google Ads,Video - YouTube,207,66,3,3,1.94,4.55,3.12,3397,googleads_video_-_youtube_carousel_94,Carousel,Video - YouTube - Carousel 1
+2025-06-22,Google Ads,Search - Generic,234,54,2,2,2.68,3.7,4.3,2013,googleads_search_-_generic_image_95,Image,Search - Generic - Image 2
+2025-06-22,Google Ads,Search - Brand,163,40,1,1,1.96,2.5,4.08,,googleads_search_-_brand_collection_96,Collection,Search - Brand - Collection 3
+2025-06-22,Facebook,Conversions,128,39,1,1,0.94,2.56,3.29,4168,facebook_conversions_text_19,Text,Conversions - Text 1
+2025-06-22,Facebook,Lead Generation,170,58,2,2,0.97,3.45,2.94,5971,facebook_lead_generation_collection_90,Collection,Lead Generation - Collection 2
+2025-06-22,Facebook,Traffic,121,34,1,1,1.21,2.94,3.51,2812,facebook_traffic_carousel_30,Carousel,Traffic - Carousel 3
+2025-06-22,LinkedIn,Message Ads,178,14,1,1,0.9,7.14,12.65,1558,linkedin_message_ads_image_86,Image,Message Ads - Image 1
+2025-06-22,LinkedIn,Sponsored Content,241,30,2,2,0.69,6.67,8.11,4349,linkedin_sponsored_content_text_96,Text,Sponsored Content - Text 2
+2025-06-22,TikTok,Video Views,76,49,1,1,2.37,2.04,1.55,2071,tiktok_video_views_text_79,Text,Video Views - Text 1
+2025-06-22,TikTok,Reach,43,26,1,1,3.39,3.85,1.65,,,,
+2025-06-22,TikTok,Reach,57,30,0,0,2.98,0,1.91,1006,tiktok_reach_collection_77,Collection,Reach - Collection 3
+2025-06-22,TikTok,Video Views,43,30,1,1,3.01,3.33,1.42,997,,,
+2025-06-22,Pinterest,App Install,41,16,0,0,1.55,0,2.64,1030,pinterest_app_install_carousel_0,Carousel,App Install - Carousel 1
+2025-06-22,Pinterest,Brand Awareness,35,17,0,0,1.65,0,2.01,1028,pinterest_brand_awareness_collection_15,Collection,Brand Awareness - Collection 2
+2025-06-22,Pinterest,Traffic,58,27,0,0,1.37,0,2.13,1974,pinterest_traffic_video_42,Video,Traffic - Video 3
+2025-06-23,Google Ads,Search - Brand,224,71,2,2,2.19,2.82,3.15,3241,googleads_search_-_brand_video_70,Video,Search - Brand - Video 1
+2025-06-23,Google Ads,Search - Generic,239,75,3,3,1.84,4,3.21,4078,googleads_search_-_generic_video_5,Video,Search - Generic - Video 2
+2025-06-23,Google Ads,Display - Remarketing,306,83,3,3,1.92,3.61,3.68,4323,,,
+2025-06-23,Google Ads,Video - YouTube,240,70,3,3,1.9,4.29,3.42,3684,googleads_video_-_youtube_image_18,Image,Video - YouTube - Image 4
+2025-06-23,Facebook,Traffic,175,48,1,1,1.1,2.08,3.65,4354,facebook_traffic_image_26,Image,Traffic - Image 1
+2025-06-23,Facebook,Traffic,239,77,2,2,0.95,2.6,3.1,8091,facebook_traffic_video_69,Video,Traffic - Video 2
+2025-06-23,Facebook,Traffic,152,40,1,1,0.95,2.5,3.81,4193,facebook_traffic_video_84,Video,Traffic - Video 3
+2025-06-23,LinkedIn,Message Ads,175,18,1,1,0.71,5.56,9.87,2525,linkedin_message_ads_collection_74,Collection,Message Ads - Collection 1
+2025-06-23,LinkedIn,Message Ads,178,16,1,1,0.94,6.25,10.92,1698,linkedin_message_ads_video_69,Video,Message Ads - Video 2
+2025-06-23,LinkedIn,Message Ads,187,22,1,1,0.68,4.55,8.42,3246,linkedin_message_ads_image_42,Image,Message Ads - Image 3
+2025-06-23,TikTok,Video Views,90,65,1,1,2.57,1.54,1.39,,tiktok_video_views_text_62,Text,Video Views - Text 1
+2025-06-23,TikTok,Video Views,71,45,1,1,2.36,2.22,1.59,1908,tiktok_video_views_text_93,Text,Video Views - Text 2
+2025-06-23,TikTok,Traffic,67,41,1,1,2.6,2.44,1.65,1579,tiktok_traffic_image_12,Image,Traffic - Image 3
+2025-06-23,TikTok,Conversions,120,83,1,1,2.68,1.2,1.44,3092,tiktok_conversions_image_79,Image,Conversions - Image 4
+2025-06-23,Pinterest,Video Views,108,47,1,1,1.27,2.13,2.31,3694,pinterest_video_views_text_60,Text,Video Views - Text 1
+2025-06-23,Pinterest,Brand Awareness,150,78,2,2,1.2,2.56,1.93,6510,,,
+2025-06-24,Google Ads,Search - Brand,293,95,4,4,1.91,4.21,3.09,4964,googleads_search_-_brand_text_47,Text,Search - Brand - Text 1
+2025-06-24,Google Ads,Search - Generic,269,63,2,2,1.95,3.17,4.25,3237,googleads_search_-_generic_video_56,Video,Search - Generic - Video 2
+2025-06-24,Google Ads,Video - YouTube,325,99,3,3,2.05,3.03,3.3,4824,googleads_video_-_youtube_video_50,Video,Video - YouTube - Video 3
+2025-06-24,Facebook,Video Views,140,52,1,1,0.93,1.92,2.69,,facebook_video_views_collection_62,Collection,Video Views - Collection 1
+2025-06-24,Facebook,Conversions,160,53,1,1,1.22,1.89,3.01,4354,facebook_conversions_image_53,Image,Conversions - Image 2
+2025-06-24,Facebook,Lead Generation,111,31,1,1,1.07,3.23,3.57,2905,facebook_lead_generation_video_27,Video,Lead Generation - Video 3
+2025-06-24,Facebook,Video Views,131,51,1,1,0.96,1.96,2.56,5293,facebook_video_views_video_90,Video,Video Views - Video 4
+2025-06-24,LinkedIn,Dynamic Ads,192,22,1,1,0.87,4.55,8.77,,linkedin_dynamic_ads_image_15,Image,Dynamic Ads - Image 1
+2025-06-24,LinkedIn,Message Ads,160,16,1,1,0.81,6.25,9.7,1968,linkedin_message_ads_video_33,Video,Message Ads - Video 2
+2025-06-24,LinkedIn,Event Ads,286,34,2,2,0.73,5.88,8.33,4676,linkedin_event_ads_carousel_56,Carousel,Event Ads - Carousel 3
+2025-06-24,TikTok,Video Views,100,56,1,1,2.84,1.79,1.77,1973,tiktok_video_views_collection_2,Collection,Video Views - Collection 1
+2025-06-24,TikTok,Reach,84,50,1,1,3.36,2,1.68,1486,tiktok_reach_text_99,Text,Reach - Text 2
+2025-06-24,TikTok,Traffic,168,103,2,2,2.69,1.94,1.62,3835,,,
+2025-06-24,Pinterest,Brand Awareness,62,25,0,0,1.29,0,2.44,1938,,,
+2025-06-24,Pinterest,Video Views,50,27,0,0,1.54,0,1.88,1749,pinterest_video_views_carousel_40,Carousel,Video Views - Carousel 2
+2025-06-24,Pinterest,Conversions,89,40,1,1,1.65,2.5,2.25,2429,pinterest_conversions_carousel_29,Carousel,Conversions - Carousel 3
+2025-06-25,Google Ads,Search - Generic,602,205,8,8,1.96,3.9,2.94,10460,googleads_search_-_generic_carousel_96,Carousel,Search - Generic - Carousel 1
+2025-06-25,Google Ads,Search - Generic,522,142,6,6,1.91,4.23,3.68,,googleads_search_-_generic_carousel_39,Carousel,Search - Generic - Carousel 2
+2025-06-25,Facebook,Remarketing,278,103,3,3,0.97,2.91,2.69,10610,facebook_remarketing_collection_21,Collection,Remarketing - Collection 1
+2025-06-25,Facebook,Conversions,122,36,1,1,1.1,2.78,3.39,3277,facebook_conversions_video_38,Video,Conversions - Video 2
+2025-06-25,Facebook,Video Views,242,88,2,2,1.03,2.27,2.76,8557,facebook_video_views_text_72,Text,Video Views - Text 3
+2025-06-25,LinkedIn,Message Ads,189,25,1,1,0.73,4,7.52,3422,,,
+2025-06-25,LinkedIn,Message Ads,155,17,1,1,0.95,5.88,9.04,1782,,,
+2025-06-25,LinkedIn,Dynamic Ads,138,16,1,1,0.79,6.25,8.88,,linkedin_dynamic_ads_collection_45,Collection,Dynamic Ads - Collection 3
+2025-06-25,LinkedIn,Text Ads,164,20,1,1,0.91,5,8.31,2192,linkedin_text_ads_video_11,Video,Text Ads - Video 4
+2025-06-25,TikTok,App Install,67,51,1,1,2.94,1.96,1.32,,,,
+2025-06-25,TikTok,Video Views,75,41,1,1,2.37,2.44,1.84,1729,tiktok_video_views_video_19,Video,Video Views - Video 2
+2025-06-25,TikTok,Reach,83,45,1,1,3.14,2.22,1.85,1434,tiktok_reach_text_21,Text,Reach - Text 3
+2025-06-25,TikTok,Conversions,81,47,1,1,2.7,2.13,1.72,,tiktok_conversions_collection_15,Collection,Conversions - Collection 4
+2025-06-25,Pinterest,Brand Awareness,61,33,1,1,1.7,3.03,1.85,1941,pinterest_brand_awareness_carousel_73,Carousel,Brand Awareness - Carousel 1
+2025-06-25,Pinterest,Conversions,55,22,0,0,1.26,0,2.49,1751,pinterest_conversions_carousel_9,Carousel,Conversions - Carousel 2
+2025-06-25,Pinterest,Conversions,94,55,1,1,1.24,1.82,1.72,4440,pinterest_conversions_video_8,Video,Conversions - Video 3
+2025-06-26,Google Ads,Search - Brand,259,93,4,4,2.01,4.3,2.79,4625,googleads_search_-_brand_video_22,Video,Search - Brand - Video 1
+2025-06-26,Google Ads,Display - Remarketing,234,66,3,3,2.19,4.55,3.53,3015,googleads_display_-_remarketing_carousel_97,Carousel,Display - Remarketing - Carousel 2
+2025-06-26,Google Ads,Display - Remarketing,224,68,3,3,2.02,4.41,3.29,3368,,,
+2025-06-26,Google Ads,Search - Brand,261,76,4,4,2.16,5.26,3.41,3520,googleads_search_-_brand_collection_66,Collection,Search - Brand - Collection 4
+2025-06-26,Facebook,Conversions,206,60,1,1,0.93,1.67,3.43,6468,facebook_conversions_video_25,Video,Conversions - Video 1
+2025-06-26,Facebook,Lead Generation,214,82,2,2,1.22,2.44,2.62,6723,,,
+2025-06-26,Facebook,Traffic,187,67,1,1,1.16,1.49,2.79,5793,facebook_traffic_text_61,Text,Traffic - Text 3
+2025-06-26,LinkedIn,Message Ads,271,25,1,1,0.95,4,10.91,2618,linkedin_message_ads_image_50,Image,Message Ads - Image 1
+2025-06-26,LinkedIn,Text Ads,395,40,1,1,0.99,2.5,9.97,4021,linkedin_text_ads_collection_98,Collection,Text Ads - Collection 2
+2025-06-26,TikTok,Reach,119,97,2,2,2.58,2.06,1.23,3763,,,
+2025-06-26,TikTok,Video Views,68,49,1,1,2.51,2.04,1.4,1952,tiktok_video_views_carousel_99,Carousel,Video Views - Carousel 2
+2025-06-26,TikTok,App Install,88,56,1,1,2.98,1.79,1.56,,,,
+2025-06-26,TikTok,Traffic,79,45,1,1,3.4,2.22,1.74,1324,tiktok_traffic_carousel_90,Carousel,Traffic - Carousel 4
+2025-06-26,Pinterest,Traffic,56,26,1,1,1.18,3.85,2.14,2207,pinterest_traffic_text_3,Text,Traffic - Text 1
+2025-06-26,Pinterest,Traffic,90,53,1,1,1.63,1.89,1.68,,pinterest_traffic_image_42,Image,Traffic - Image 2
+2025-06-26,Pinterest,App Install,66,30,1,1,1.19,3.33,2.19,2529,pinterest_app_install_video_53,Video,App Install - Video 3
+2025-06-27,Google Ads,Video - YouTube,452,134,5,5,2.27,3.73,3.38,5900,googleads_video_-_youtube_collection_51,Collection,Video - YouTube - Collection 1
+2025-06-27,Google Ads,Shopping,453,182,9,9,2.26,4.95,2.49,8061,,,
+2025-06-27,Google Ads,Search - Brand,420,112,5,5,2.57,4.46,3.74,4359,googleads_search_-_brand_image_3,Image,Search - Brand - Image 3
+2025-06-27,Facebook,Video Views,294,80,2,2,1.35,2.5,3.68,5908,facebook_video_views_video_85,Video,Video Views - Video 1
+2025-06-27,Facebook,Lead Generation,320,100,2,2,1.15,2,3.2,8712,facebook_lead_generation_collection_66,Collection,Lead Generation - Collection 2
+2025-06-27,LinkedIn,Dynamic Ads,213,28,1,1,0.74,3.57,7.67,,linkedin_dynamic_ads_carousel_69,Carousel,Dynamic Ads - Carousel 1
+2025-06-27,LinkedIn,Event Ads,264,27,1,1,0.7,3.7,9.9,,linkedin_event_ads_video_24,Video,Event Ads - Video 2
+2025-06-27,LinkedIn,Message Ads,198,20,1,1,0.89,5,9.99,2248,linkedin_message_ads_text_61,Text,Message Ads - Text 3
+2025-06-27,TikTok,Traffic,95,56,1,1,2.88,1.79,1.69,1944,tiktok_traffic_text_19,Text,Traffic - Text 1
+2025-06-27,TikTok,Reach,91,54,1,1,3.3,1.85,1.67,1636,tiktok_reach_text_94,Text,Reach - Text 2
+2025-06-27,TikTok,Traffic,114,82,2,2,3.49,2.44,1.39,2352,tiktok_traffic_video_12,Video,Traffic - Video 3
+2025-06-27,Pinterest,Traffic,33,14,0,0,1.34,0,2.35,,pinterest_traffic_text_55,Text,Traffic - Text 1
+2025-06-27,Pinterest,App Install,67,31,1,1,1.49,3.23,2.13,2082,,,
+2025-06-27,Pinterest,App Install,46,21,0,0,1.35,0,2.19,1551,pinterest_app_install_carousel_69,Carousel,App Install - Carousel 3
+2025-06-27,Pinterest,Conversions,51,20,1,1,1.49,5,2.52,1343,,,
+2025-06-28,Google Ads,Shopping,115,26,1,1,2.34,3.85,4.37,1112,googleads_shopping_image_29,Image,Shopping - Image 1
+2025-06-28,Google Ads,Video - YouTube,172,58,2,2,2.38,3.45,2.99,2432,googleads_video_-_youtube_video_99,Video,Video - YouTube - Video 2
+2025-06-28,Google Ads,Search - Brand,127,28,1,1,2.28,3.57,4.47,,googleads_search_-_brand_collection_61,Collection,Search - Brand - Collection 3
+2025-06-28,Google Ads,Video - YouTube,131,36,1,1,2.33,2.78,3.65,1546,googleads_video_-_youtube_collection_63,Collection,Video - YouTube - Collection 4
+2025-06-28,Facebook,Lead Generation,102,29,1,1,1,3.45,3.57,2890,,,
+2025-06-28,Facebook,Lead Generation,82,25,1,1,1.05,4,3.24,2391,facebook_lead_generation_carousel_40,Carousel,Lead Generation - Carousel 2
+2025-06-28,Facebook,Conversions,55,14,0,0,1.07,0,4.05,1313,facebook_conversions_text_17,Text,Conversions - Text 3
+2025-06-28,Facebook,Video Views,68,22,0,0,0.97,0,3.06,2264,facebook_video_views_carousel_77,Carousel,Video Views - Carousel 4
+2025-06-28,LinkedIn,Text Ads,143,13,1,1,0.86,7.69,11.2,1506,,,
+2025-06-28,LinkedIn,Sponsored Content,193,18,1,1,0.89,5.56,10.49,2012,linkedin_sponsored_content_image_67,Image,Sponsored Content - Image 2
+2025-06-28,TikTok,Conversions,56,32,1,1,2.98,3.13,1.75,1075,,,
+2025-06-28,TikTok,Video Views,41,29,0,0,2.6,0,1.4,1114,tiktok_video_views_image_5,Image,Video Views - Image 2
+2025-06-28,TikTok,Reach,49,34,1,1,2.62,2.94,1.44,,tiktok_reach_image_31,Image,Reach - Image 3
+2025-06-28,TikTok,App Install,47,34,1,1,2.85,2.94,1.37,1194,tiktok_app_install_collection_84,Collection,App Install - Collection 4
+2025-06-28,Pinterest,Brand Awareness,100,43,1,1,1.26,2.33,2.35,3419,pinterest_brand_awareness_text_58,Text,Brand Awareness - Text 1
+2025-06-28,Pinterest,App Install,62,32,1,1,1.37,3.13,1.93,2337,pinterest_app_install_text_61,Text,App Install - Text 2
+2025-06-29,Google Ads,Search - Brand,202,54,2,2,2.27,3.7,3.76,2384,,,
+2025-06-29,Google Ads,Video - YouTube,215,62,2,2,2.34,3.23,3.48,2645,googleads_video_-_youtube_image_18,Image,Video - YouTube - Image 2
+2025-06-29,Google Ads,Display - Remarketing,146,32,1,1,1.96,3.13,4.52,1635,,,
+2025-06-29,Facebook,Traffic,79,22,1,1,1.18,4.55,3.54,1864,facebook_traffic_collection_52,Collection,Traffic - Collection 1
+2025-06-29,Facebook,Traffic,90,24,0,0,1.14,0,3.76,,facebook_traffic_image_21,Image,Traffic - Image 2
+2025-06-29,Facebook,Lead Generation,93,31,1,1,1.25,3.23,2.98,2483,facebook_lead_generation_video_29,Video,Lead Generation - Video 3
+2025-06-29,Facebook,Conversions,125,46,1,1,1.19,2.17,2.7,3860,facebook_conversions_carousel_46,Carousel,Conversions - Carousel 4
+2025-06-29,LinkedIn,Dynamic Ads,175,14,0,0,0.81,0,12.81,1723,,,
+2025-06-29,LinkedIn,Dynamic Ads,243,22,1,1,0.82,4.55,11.07,2671,linkedin_dynamic_ads_image_68,Image,Dynamic Ads - Image 2
+2025-06-29,TikTok,Traffic,119,61,1,1,3.26,1.64,1.96,1869,,,
+2025-06-29,TikTok,Conversions,68,44,1,1,3.01,2.27,1.54,1463,tiktok_conversions_carousel_3,Carousel,Conversions - Carousel 2
+2025-06-29,Pinterest,Conversions,80,42,1,1,1.44,2.38,1.92,2917,pinterest_conversions_image_93,Image,Conversions - Image 1
+2025-06-29,Pinterest,Video Views,73,27,1,1,1.21,3.7,2.66,2240,pinterest_video_views_carousel_97,Carousel,Video Views - Carousel 2
+2025-06-30,Google Ads,Search - Brand,588,165,7,7,2.74,4.24,3.57,6018,googleads_search_-_brand_text_15,Text,Search - Brand - Text 1
+2025-06-30,Google Ads,Search - Brand,487,164,8,8,2.09,4.88,2.97,7863,googleads_search_-_brand_carousel_45,Carousel,Search - Brand - Carousel 2
+2025-06-30,Facebook,Remarketing,147,55,1,1,1.33,1.82,2.66,4141,facebook_remarketing_carousel_49,Carousel,Remarketing - Carousel 1
+2025-06-30,Facebook,Video Views,151,56,2,2,1.17,3.57,2.68,4767,facebook_video_views_collection_81,Collection,Video Views - Collection 2
+2025-06-30,Facebook,Lead Generation,148,56,1,1,1.16,1.79,2.66,4818,facebook_lead_generation_video_91,Video,Lead Generation - Video 3
+2025-06-30,Facebook,Traffic,93,28,1,1,1.21,3.57,3.27,2308,facebook_traffic_video_7,Video,Traffic - Video 4
+2025-06-30,LinkedIn,Sponsored Content,233,25,1,1,0.85,4,9.38,2958,,,
+2025-06-30,LinkedIn,Dynamic Ads,150,13,1,1,0.83,7.69,11.79,1560,linkedin_dynamic_ads_carousel_89,Carousel,Dynamic Ads - Carousel 2
+2025-06-30,LinkedIn,Text Ads,238,23,1,1,0.89,4.35,10.54,2586,,,
+2025-06-30,TikTok,Traffic,140,100,1,1,3.03,1,1.4,3296,,,
+2025-06-30,TikTok,Reach,141,88,2,2,2.84,2.27,1.61,3097,tiktok_reach_text_92,Text,Reach - Text 2
+2025-06-30,Pinterest,Brand Awareness,56,30,1,1,1.3,3.33,1.84,2315,pinterest_brand_awareness_image_58,Image,Brand Awareness - Image 1
+2025-06-30,Pinterest,Brand Awareness,53,29,1,1,1.59,3.45,1.82,1820,,,
+2025-06-30,Pinterest,App Install,58,28,1,1,1.73,3.57,2.05,,,,
+2025-06-30,Pinterest,Conversions,79,39,1,1,1.18,2.56,2.04,3293,pinterest_conversions_image_17,Image,Conversions - Image 4
+2025-07-01,Google Ads,Search - Brand,668,191,9,9,2.32,4.71,3.5,,googleads_search_-_brand_video_33,Video,Search - Brand - Video 1
+2025-07-01,Google Ads,Shopping,359,119,3,3,1.97,2.52,3.02,6031,googleads_shopping_collection_56,Collection,Shopping - Collection 2
+2025-07-01,Facebook,Video Views,249,73,2,2,1.01,2.74,3.39,7229,facebook_video_views_collection_91,Collection,Video Views - Collection 1
+2025-07-01,Facebook,Conversions,283,89,2,2,1.36,2.25,3.2,6528,facebook_conversions_carousel_74,Carousel,Conversions - Carousel 2
+2025-07-01,LinkedIn,Text Ads,192,21,1,1,0.92,4.76,9.07,2289,,,
+2025-07-01,LinkedIn,Message Ads,265,34,1,1,0.83,2.94,7.9,,linkedin_message_ads_collection_13,Collection,Message Ads - Collection 2
+2025-07-01,LinkedIn,Message Ads,183,23,1,1,0.94,4.35,7.84,2454,linkedin_message_ads_video_30,Video,Message Ads - Video 3
+2025-07-01,TikTok,Video Views,90,68,1,1,2.66,1.47,1.33,2557,tiktok_video_views_video_53,Video,Video Views - Video 1
+2025-07-01,TikTok,Traffic,103,61,1,1,2.81,1.64,1.68,2172,tiktok_traffic_carousel_10,Carousel,Traffic - Carousel 2
+2025-07-01,TikTok,Video Views,81,43,1,1,2.4,2.33,1.89,1791,tiktok_video_views_video_91,Video,Video Views - Video 3
+2025-07-01,Pinterest,App Install,89,43,1,1,1.26,2.33,2.06,3426,pinterest_app_install_collection_75,Collection,App Install - Collection 1
+2025-07-01,Pinterest,Traffic,69,37,1,1,1.21,2.7,1.85,3050,pinterest_traffic_image_27,Image,Traffic - Image 2
+2025-07-01,Pinterest,Conversions,56,28,0,0,1.48,0,2.03,1892,pinterest_conversions_text_55,Text,Conversions - Text 3
+2025-07-02,Google Ads,Display - Remarketing,257,65,2,2,2.09,3.08,3.94,3113,googleads_display_-_remarketing_collection_81,Collection,Display - Remarketing - Collection 1
+2025-07-02,Google Ads,Search - Brand,244,62,2,2,2.36,3.23,3.96,2632,googleads_search_-_brand_collection_3,Collection,Search - Brand - Collection 2
+2025-07-02,Google Ads,Shopping,324,111,5,5,2.14,4.5,2.91,5196,googleads_shopping_image_32,Image,Shopping - Image 3
+2025-07-02,Google Ads,Search - Generic,309,95,4,4,2.02,4.21,3.25,4706,googleads_search_-_generic_carousel_24,Carousel,Search - Generic - Carousel 4
+2025-07-02,Facebook,Traffic,217,71,2,2,1.26,2.82,3.06,5654,facebook_traffic_collection_98,Collection,Traffic - Collection 1
+2025-07-02,Facebook,Video Views,214,55,1,1,1.13,1.82,3.91,4883,,,
+2025-07-02,LinkedIn,Sponsored Content,228,29,2,2,0.74,6.9,7.94,3928,linkedin_sponsored_content_image_76,Image,Sponsored Content - Image 1
+2025-07-02,LinkedIn,Message Ads,219,20,1,1,0.89,5,11.07,2245,linkedin_message_ads_text_45,Text,Message Ads - Text 2
+2025-07-02,LinkedIn,Event Ads,269,30,1,1,0.8,3.33,9.09,3752,linkedin_event_ads_image_90,Image,Event Ads - Image 3
+2025-07-02,TikTok,Video Views,105,74,2,2,3.38,2.7,1.41,,,,
+2025-07-02,TikTok,App Install,142,94,2,2,2.47,2.13,1.5,3806,tiktok_app_install_image_69,Image,App Install - Image 2
+2025-07-02,TikTok,App Install,94,53,1,1,3.14,1.89,1.78,1686,tiktok_app_install_carousel_55,Carousel,App Install - Carousel 3
+2025-07-02,Pinterest,Traffic,82,49,1,1,1.18,2.04,1.68,4157,pinterest_traffic_video_80,Video,Traffic - Video 1
+2025-07-02,Pinterest,Brand Awareness,89,41,1,1,1.36,2.44,2.17,3014,pinterest_brand_awareness_collection_19,Collection,Brand Awareness - Collection 2
+2025-07-02,Pinterest,App Install,74,43,1,1,1.75,2.33,1.74,2460,pinterest_app_install_carousel_46,Carousel,App Install - Carousel 3
+2025-07-03,Google Ads,Search - Generic,249,79,2,2,2.02,2.53,3.13,3905,googleads_search_-_generic_carousel_59,Carousel,Search - Generic - Carousel 1
+2025-07-03,Google Ads,Search - Generic,349,117,3,3,2.65,2.56,2.98,4423,googleads_search_-_generic_video_69,Video,Search - Generic - Video 2
+2025-07-03,Google Ads,Search - Brand,303,109,5,5,2.74,4.59,2.79,,googleads_search_-_brand_image_89,Image,Search - Brand - Image 3
+2025-07-03,Facebook,Conversions,181,46,1,1,1.01,2.17,3.98,4576,facebook_conversions_collection_57,Collection,Conversions - Collection 1
+2025-07-03,Facebook,Video Views,248,81,1,1,0.93,1.23,3.08,8756,,,
+2025-07-03,LinkedIn,Sponsored Content,298,29,2,2,0.75,6.9,10.21,3877,linkedin_sponsored_content_text_26,Text,Sponsored Content - Text 1
+2025-07-03,LinkedIn,Text Ads,314,35,2,2,0.69,5.71,8.87,5077,linkedin_text_ads_image_87,Image,Text Ads - Image 2
+2025-07-03,TikTok,App Install,118,75,1,1,2.59,1.33,1.58,2900,tiktok_app_install_carousel_57,Carousel,App Install - Carousel 1
+2025-07-03,TikTok,Conversions,83,45,1,1,2.66,2.22,1.83,1692,,,
+2025-07-03,TikTok,Traffic,62,38,1,1,2.6,2.63,1.65,1462,tiktok_traffic_video_78,Video,Traffic - Video 3
+2025-07-03,TikTok,Conversions,88,64,2,2,2.48,3.13,1.37,,tiktok_conversions_carousel_27,Carousel,Conversions - Carousel 4
+2025-07-03,Pinterest,Video Views,81,41,1,1,1.65,2.44,1.96,2491,pinterest_video_views_video_4,Video,Video Views - Video 1
+2025-07-03,Pinterest,Video Views,70,30,1,1,1.56,3.33,2.35,1918,,,
+2025-07-03,Pinterest,Traffic,50,26,1,1,1.59,3.85,1.89,1631,pinterest_traffic_image_33,Image,Traffic - Image 3
+2025-07-03,Pinterest,Video Views,38,19,0,0,1.37,0,2,1385,pinterest_video_views_collection_64,Collection,Video Views - Collection 4
+2025-07-04,Google Ads,Video - YouTube,187,43,2,2,2.68,4.65,4.33,1604,googleads_video_-_youtube_video_96,Video,Video - YouTube - Video 1
+2025-07-04,Google Ads,Display - Remarketing,329,106,5,5,1.97,4.72,3.11,5389,,,
+2025-07-04,Google Ads,Shopping,198,55,2,2,2.06,3.64,3.61,2676,googleads_shopping_image_56,Image,Shopping - Image 3
+2025-07-04,Google Ads,Shopping,203,56,2,2,2.58,3.57,3.61,2173,googleads_shopping_text_75,Text,Shopping - Text 4
+2025-07-04,Facebook,Lead Generation,239,91,3,3,1.17,3.3,2.62,7780,,,
+2025-07-04,Facebook,Lead Generation,262,70,2,2,1.1,2.86,3.72,6341,facebook_lead_generation_carousel_52,Carousel,Lead Generation - Carousel 2
+2025-07-04,LinkedIn,Message Ads,247,24,1,1,0.68,4.17,10.22,3549,linkedin_message_ads_carousel_23,Carousel,Message Ads - Carousel 1
+2025-07-04,LinkedIn,Sponsored Content,309,39,2,2,0.99,5.13,8,3950,linkedin_sponsored_content_text_99,Text,Sponsored Content - Text 2
+2025-07-04,TikTok,Conversions,111,66,2,2,3.34,3.03,1.69,1976,tiktok_conversions_collection_87,Collection,Conversions - Collection 1
+2025-07-04,TikTok,Conversions,98,57,1,1,3.24,1.75,1.71,1759,tiktok_conversions_image_80,Image,Conversions - Image 2
+2025-07-04,TikTok,App Install,76,52,1,1,2.75,1.92,1.47,1889,tiktok_app_install_collection_2,Collection,App Install - Collection 3
+2025-07-04,TikTok,Traffic,87,67,1,1,3.11,1.49,1.31,2154,tiktok_traffic_collection_63,Collection,Traffic - Collection 4
+2025-07-04,Pinterest,Brand Awareness,150,92,2,2,1.26,2.17,1.63,7305,pinterest_brand_awareness_carousel_97,Carousel,Brand Awareness - Carousel 1
+2025-07-04,Pinterest,App Install,94,50,1,1,1.32,2,1.89,3787,pinterest_app_install_image_68,Image,App Install - Image 2
+2025-07-05,Google Ads,Shopping,306,79,3,3,2.58,3.8,3.86,3067,googleads_shopping_carousel_88,Carousel,Shopping - Carousel 1
+2025-07-05,Google Ads,Shopping,333,84,2,2,1.86,2.38,3.95,,googleads_shopping_video_74,Video,Shopping - Video 2
+2025-07-05,Facebook,Remarketing,96,25,1,1,1.02,4,3.82,2440,facebook_remarketing_image_46,Image,Remarketing - Image 1
+2025-07-05,Facebook,Video Views,85,24,1,1,1.14,4.17,3.5,,,,
+2025-07-05,Facebook,Remarketing,124,45,1,1,1.23,2.22,2.76,3659,facebook_remarketing_text_36,Text,Remarketing - Text 3
+2025-07-05,Facebook,Traffic,77,24,1,1,1.05,4.17,3.24,2281,facebook_traffic_video_68,Video,Traffic - Video 4
+2025-07-05,LinkedIn,Text Ads,255,24,1,1,0.86,4.17,10.61,2783,linkedin_text_ads_carousel_44,Carousel,Text Ads - Carousel 1
+2025-07-05,LinkedIn,Event Ads,239,20,1,1,0.78,5,11.96,2574,linkedin_event_ads_carousel_86,Carousel,Event Ads - Carousel 2
+2025-07-05,TikTok,Traffic,81,44,1,1,2.65,2.27,1.84,1658,tiktok_traffic_carousel_55,Carousel,Traffic - Carousel 1
+2025-07-05,TikTok,Video Views,64,44,1,1,3.4,2.27,1.44,1295,tiktok_video_views_collection_49,Collection,Video Views - Collection 2
+2025-07-05,Pinterest,Video Views,67,32,1,1,1.39,3.13,2.07,2310,pinterest_video_views_carousel_40,Carousel,Video Views - Carousel 1
+2025-07-05,Pinterest,Traffic,70,31,1,1,1.59,3.23,2.25,1946,pinterest_traffic_text_90,Text,Traffic - Text 2
+2025-07-06,Google Ads,Shopping,369,120,6,6,2.41,5,3.08,4977,googleads_shopping_carousel_33,Carousel,Shopping - Carousel 1
+2025-07-06,Google Ads,Shopping,381,109,5,5,2.03,4.59,3.51,5358,googleads_shopping_image_82,Image,Shopping - Image 2
+2025-07-06,Facebook,Remarketing,86,21,0,0,1.03,0,4.01,2033,facebook_remarketing_video_84,Video,Remarketing - Video 1
+2025-07-06,Facebook,Video Views,148,50,1,1,1.37,2,2.99,3659,,,
+2025-07-06,Facebook,Traffic,90,23,1,1,1.34,4.35,3.93,1721,facebook_traffic_text_74,Text,Traffic - Text 3
+2025-07-06,LinkedIn,Text Ads,260,32,1,1,0.78,3.13,8.06,4129,,,
+2025-07-06,LinkedIn,Dynamic Ads,138,11,1,1,0.76,9.09,12.89,1453,linkedin_dynamic_ads_image_60,Image,Dynamic Ads - Image 2
+2025-07-06,TikTok,App Install,59,32,0,0,2.58,0,1.86,1242,tiktok_app_install_image_69,Image,App Install - Image 1
+2025-07-06,TikTok,App Install,54,33,1,1,3.06,3.03,1.65,1078,tiktok_app_install_text_54,Text,App Install - Text 2
+2025-07-06,TikTok,Video Views,67,45,1,1,2.6,2.22,1.49,1734,tiktok_video_views_video_9,Video,Video Views - Video 3
+2025-07-06,TikTok,App Install,35,21,0,0,2.89,0,1.7,726,,,
+2025-07-06,Pinterest,App Install,72,37,1,1,1.47,2.7,1.95,2512,pinterest_app_install_video_19,Video,App Install - Video 1
+2025-07-06,Pinterest,Conversions,66,30,1,1,1.32,3.33,2.21,2272,,,
+2025-07-06,Pinterest,Conversions,56,29,1,1,1.49,3.45,1.94,1946,pinterest_conversions_collection_8,Collection,Conversions - Collection 3
+2025-07-07,Google Ads,Search - Generic,179,43,1,1,2.45,2.33,4.15,1755,,,
+2025-07-07,Google Ads,Video - YouTube,169,50,2,2,1.99,4,3.38,,googleads_video_-_youtube_text_62,Text,Video - YouTube - Text 2
+2025-07-07,Google Ads,Video - YouTube,228,77,2,2,2.4,2.6,2.98,3210,googleads_video_-_youtube_video_79,Video,Video - YouTube - Video 3
+2025-07-07,Google Ads,Video - YouTube,266,83,4,4,2.21,4.82,3.21,3752,googleads_video_-_youtube_carousel_20,Carousel,Video - YouTube - Carousel 4
+2025-07-07,Facebook,Video Views,381,161,4,4,1.17,2.48,2.37,13755,facebook_video_views_image_33,Image,Video Views - Image 1
+2025-07-07,Facebook,Video Views,256,68,1,1,1.37,1.47,3.77,,,,
+2025-07-07,LinkedIn,Message Ads,119,11,1,1,0.68,9.09,11.18,1611,linkedin_message_ads_text_27,Text,Message Ads - Text 1
+2025-07-07,LinkedIn,Message Ads,143,14,0,0,0.68,0,10.2,2056,linkedin_message_ads_text_12,Text,Message Ads - Text 2
+2025-07-07,LinkedIn,Message Ads,196,27,1,1,0.96,3.7,7.36,2807,linkedin_message_ads_video_76,Video,Message Ads - Video 3
+2025-07-07,LinkedIn,Dynamic Ads,158,17,1,1,0.75,5.88,9.33,2260,linkedin_dynamic_ads_text_50,Text,Dynamic Ads - Text 4
+2025-07-07,TikTok,Conversions,140,81,2,2,3.43,2.47,1.72,2360,tiktok_conversions_video_44,Video,Conversions - Video 1
+2025-07-07,TikTok,Reach,117,74,1,1,2.93,1.35,1.57,2527,tiktok_reach_image_62,Image,Reach - Image 2
+2025-07-07,TikTok,Reach,126,84,2,2,3.46,2.38,1.5,2429,tiktok_reach_collection_61,Collection,Reach - Collection 3
+2025-07-07,Pinterest,Video Views,88,34,1,1,1.58,2.94,2.61,2147,pinterest_video_views_text_80,Text,Video Views - Text 1
+2025-07-07,Pinterest,Brand Awareness,122,70,2,2,1.68,2.86,1.75,4169,,,
+2025-07-08,Google Ads,Display - Remarketing,273,68,3,3,2.27,4.41,3.99,2991,googleads_display_-_remarketing_video_63,Video,Display - Remarketing - Video 1
+2025-07-08,Google Ads,Display - Remarketing,184,44,1,1,2.43,2.27,4.21,1811,googleads_display_-_remarketing_collection_73,Collection,Display - Remarketing - Collection 2
+2025-07-08,Google Ads,Shopping,261,82,4,4,2.3,4.88,3.18,3564,googleads_shopping_carousel_54,Carousel,Shopping - Carousel 3
+2025-07-08,Google Ads,Search - Brand,203,48,2,2,1.91,4.17,4.27,2518,googleads_search_-_brand_video_84,Video,Search - Brand - Video 4
+2025-07-08,Facebook,Remarketing,125,43,1,1,1.2,2.33,2.89,3578,facebook_remarketing_collection_87,Collection,Remarketing - Collection 1
+2025-07-08,Facebook,Video Views,153,42,1,1,1.02,2.38,3.68,4117,facebook_video_views_collection_58,Collection,Video Views - Collection 2
+2025-07-08,Facebook,Video Views,166,62,2,2,1.37,3.23,2.68,4532,,,
+2025-07-08,Facebook,Video Views,126,35,1,1,1,2.86,3.58,3485,facebook_video_views_video_26,Video,Video Views - Video 4
+2025-07-08,LinkedIn,Message Ads,278,32,1,1,0.73,3.13,8.67,4370,linkedin_message_ads_text_60,Text,Message Ads - Text 1
+2025-07-08,LinkedIn,Dynamic Ads,252,25,1,1,0.83,4,9.94,3013,linkedin_dynamic_ads_collection_96,Collection,Dynamic Ads - Collection 2
+2025-07-08,TikTok,Conversions,118,78,2,2,3.04,2.56,1.51,2562,tiktok_conversions_collection_78,Collection,Conversions - Collection 1
+2025-07-08,TikTok,Conversions,47,29,1,1,3.45,3.45,1.62,840,tiktok_conversions_video_93,Video,Conversions - Video 2
+2025-07-08,TikTok,App Install,88,51,1,1,2.4,1.96,1.71,2124,tiktok_app_install_video_61,Video,App Install - Video 3
+2025-07-08,TikTok,Reach,116,76,2,2,2.62,2.63,1.52,2902,tiktok_reach_video_59,Video,Reach - Video 4
+2025-07-08,Pinterest,Brand Awareness,53,30,1,1,1.3,3.33,1.75,2305,pinterest_brand_awareness_image_22,Image,Brand Awareness - Image 1
+2025-07-08,Pinterest,Video Views,39,19,0,0,1.74,0,2.02,,pinterest_video_views_collection_86,Collection,Video Views - Collection 2
+2025-07-08,Pinterest,Video Views,52,23,1,1,1.46,4.35,2.24,1573,pinterest_video_views_text_30,Text,Video Views - Text 3
+2025-07-08,Pinterest,Traffic,79,46,1,1,1.25,2.17,1.7,3684,pinterest_traffic_carousel_56,Carousel,Traffic - Carousel 4
+2025-07-09,Google Ads,Display - Remarketing,241,61,2,2,2.13,3.28,3.97,,googleads_display_-_remarketing_carousel_50,Carousel,Display - Remarketing - Carousel 1
+2025-07-09,Google Ads,Video - YouTube,236,82,3,3,1.84,3.66,2.87,4468,,,
+2025-07-09,Google Ads,Video - YouTube,289,77,4,4,2.54,5.19,3.76,3036,googleads_video_-_youtube_video_85,Video,Video - YouTube - Video 3
+2025-07-09,Google Ads,Video - YouTube,181,55,3,3,2.57,5.45,3.27,2144,googleads_video_-_youtube_video_65,Video,Video - YouTube - Video 4
+2025-07-09,Facebook,Conversions,317,118,3,3,1.02,2.54,2.68,11615,facebook_conversions_carousel_55,Carousel,Conversions - Carousel 1
+2025-07-09,Facebook,Video Views,221,75,2,2,1.24,2.67,2.95,6067,,,
+2025-07-09,LinkedIn,Sponsored Content,249,28,1,1,0.88,3.57,8.99,3195,linkedin_sponsored_content_collection_32,Collection,Sponsored Content - Collection 1
+2025-07-09,LinkedIn,Message Ads,227,23,1,1,0.85,4.35,9.97,2710,linkedin_message_ads_carousel_27,Carousel,Message Ads - Carousel 2
+2025-07-09,TikTok,Reach,82,46,1,1,2.8,2.17,1.77,1642,tiktok_reach_text_85,Text,Reach - Text 1
+2025-07-09,TikTok,Conversions,69,37,0,0,2.71,0,1.88,1364,tiktok_conversions_image_51,Image,Conversions - Image 2
+2025-07-09,TikTok,Traffic,55,29,0,0,2.54,0,1.93,1141,tiktok_traffic_image_48,Image,Traffic - Image 3
+2025-07-09,TikTok,App Install,54,31,0,0,2.46,0,1.75,1258,tiktok_app_install_image_20,Image,App Install - Image 4
+2025-07-09,Pinterest,Brand Awareness,73,42,1,1,1.18,2.38,1.73,3568,pinterest_brand_awareness_carousel_93,Carousel,Brand Awareness - Carousel 1
+2025-07-09,Pinterest,Traffic,68,32,1,1,1.21,3.13,2.1,2650,pinterest_traffic_image_73,Image,Traffic - Image 2
+2025-07-09,Pinterest,Brand Awareness,58,30,1,1,1.39,3.33,1.96,2157,pinterest_brand_awareness_video_67,Video,Brand Awareness - Video 3
+2025-07-10,Google Ads,Video - YouTube,578,152,7,7,1.9,4.61,3.79,8012,googleads_video_-_youtube_image_83,Image,Video - YouTube - Image 1
+2025-07-10,Google Ads,Search - Brand,429,120,4,4,2.06,3.33,3.57,5832,googleads_search_-_brand_image_62,Image,Search - Brand - Image 2
+2025-07-10,Facebook,Remarketing,216,61,2,2,1.14,3.28,3.56,5360,,,
+2025-07-10,Facebook,Conversions,235,77,2,2,1.21,2.6,3.04,6381,,,
+2025-07-10,LinkedIn,Message Ads,330,38,2,2,0.71,5.26,8.78,,,,
+2025-07-10,LinkedIn,Event Ads,345,39,2,2,0.96,5.13,8.77,4046,linkedin_event_ads_image_75,Image,Event Ads - Image 2
+2025-07-10,TikTok,Reach,51,27,0,0,2.59,0,1.87,,,,
+2025-07-10,TikTok,App Install,89,56,1,1,2.34,1.79,1.59,2395,,,
+2025-07-10,TikTok,App Install,77,42,1,1,2.71,2.38,1.83,1551,tiktok_app_install_text_34,Text,App Install - Text 3
+2025-07-10,TikTok,Conversions,87,68,1,1,2.74,1.47,1.28,2484,tiktok_conversions_collection_88,Collection,Conversions - Collection 4
+2025-07-10,Pinterest,Brand Awareness,156,83,1,1,1.18,1.2,1.87,7053,pinterest_brand_awareness_carousel_25,Carousel,Brand Awareness - Carousel 1
+2025-07-10,Pinterest,Video Views,112,51,1,1,1.2,1.96,2.2,4233,,,
+2025-07-11,Google Ads,Search - Generic,310,85,3,3,2.09,3.53,3.66,4069,googleads_search_-_generic_text_36,Text,Search - Generic - Text 1
+2025-07-11,Google Ads,Shopping,222,53,1,1,2.4,1.89,4.19,2209,googleads_shopping_carousel_45,Carousel,Shopping - Carousel 2
+2025-07-11,Google Ads,Search - Brand,165,48,2,2,1.9,4.17,3.42,2524,googleads_search_-_brand_carousel_74,Carousel,Search - Brand - Carousel 3
+2025-07-11,Google Ads,Video - YouTube,201,54,2,2,1.86,3.7,3.74,,,,
+2025-07-11,Facebook,Lead Generation,145,50,1,1,1.06,2,2.93,4737,facebook_lead_generation_image_30,Image,Lead Generation - Image 1
+2025-07-11,Facebook,Lead Generation,167,57,1,1,1.09,1.75,2.95,5223,facebook_lead_generation_collection_89,Collection,Lead Generation - Collection 2
+2025-07-11,Facebook,Lead Generation,183,73,1,1,1.06,1.37,2.52,,,,
+2025-07-11,LinkedIn,Event Ads,193,18,1,1,0.72,5.56,10.83,2485,,,
+2025-07-11,LinkedIn,Sponsored Content,152,12,1,1,0.95,8.33,12.24,1261,linkedin_sponsored_content_collection_83,Collection,Sponsored Content - Collection 2
+2025-07-11,LinkedIn,Sponsored Content,177,21,1,1,0.68,4.76,8.27,3108,linkedin_sponsored_content_image_33,Image,Sponsored Content - Image 3
+2025-07-11,TikTok,Conversions,101,76,2,2,2.82,2.63,1.33,2696,tiktok_conversions_collection_46,Collection,Conversions - Collection 1
+2025-07-11,TikTok,Video Views,73,44,1,1,2.53,2.27,1.65,1742,,,
+2025-07-11,TikTok,Reach,114,82,2,2,2.68,2.44,1.39,3064,,,
+2025-07-11,Pinterest,Conversions,167,97,2,2,1.41,2.06,1.71,6858,,,
+2025-07-11,Pinterest,Brand Awareness,89,39,1,1,1.37,2.56,2.3,2838,pinterest_brand_awareness_carousel_68,Carousel,Brand Awareness - Carousel 2
+2025-07-12,Google Ads,Video - YouTube,220,65,2,2,2.16,3.08,3.41,3004,googleads_video_-_youtube_text_70,Text,Video - YouTube - Text 1
+2025-07-12,Google Ads,Video - YouTube,153,39,1,1,2.05,2.56,3.89,1898,,,
+2025-07-12,Google Ads,Display - Remarketing,170,45,2,2,1.97,4.44,3.77,2286,googleads_display_-_remarketing_text_24,Text,Display - Remarketing - Text 3
+2025-07-12,Facebook,Traffic,142,36,1,1,1.26,2.78,3.9,2862,facebook_traffic_image_52,Image,Traffic - Image 1
+2025-07-12,Facebook,Traffic,142,38,1,1,1.19,2.63,3.77,3180,,,
+2025-07-12,LinkedIn,Sponsored Content,120,14,1,1,0.79,7.14,8.45,1779,linkedin_sponsored_content_text_8,Text,Sponsored Content - Text 1
+2025-07-12,LinkedIn,Sponsored Content,122,10,0,0,0.81,0,11.85,1242,,,
+2025-07-12,LinkedIn,Text Ads,70,6,0,0,0.93,0,11.62,642,linkedin_text_ads_video_17,Video,Text Ads - Video 3
+2025-07-12,LinkedIn,Sponsored Content,128,15,1,1,0.84,6.67,8.73,,,,
+2025-07-12,TikTok,Reach,89,47,1,1,2.95,2.13,1.91,1592,tiktok_reach_carousel_90,Carousel,Reach - Carousel 1
+2025-07-12,TikTok,Conversions,101,65,1,1,2.9,1.54,1.55,2244,tiktok_conversions_image_10,Image,Conversions - Image 2
+2025-07-12,Pinterest,Video Views,37,15,0,0,1.47,0,2.55,1023,,,
+2025-07-12,Pinterest,Traffic,39,21,0,0,1.48,0,1.87,1418,,,
+2025-07-12,Pinterest,Video Views,41,20,0,0,1.6,0,2.07,1248,,,
+2025-07-13,Google Ads,Search - Brand,372,102,5,5,2.22,4.9,3.66,4599,googleads_search_-_brand_carousel_66,Carousel,Search - Brand - Carousel 1
+2025-07-13,Google Ads,Shopping,300,98,4,4,2.21,4.08,3.07,4438,googleads_shopping_carousel_44,Carousel,Shopping - Carousel 2
+2025-07-13,Facebook,Video Views,83,28,1,1,1.06,3.57,3,2635,facebook_video_views_carousel_39,Carousel,Video Views - Carousel 1
+2025-07-13,Facebook,Video Views,67,23,0,0,1.33,0,2.86,1727,facebook_video_views_image_46,Image,Video Views - Image 2
+2025-07-13,Facebook,Traffic,71,22,1,1,1.16,4.55,3.16,1889,,,
+2025-07-13,Facebook,Remarketing,75,19,0,0,1.21,0,4.03,1575,facebook_remarketing_collection_3,Collection,Remarketing - Collection 4
+2025-07-13,LinkedIn,Text Ads,217,20,1,1,0.96,5,10.62,2073,linkedin_text_ads_video_12,Video,Text Ads - Video 1
+2025-07-13,LinkedIn,Event Ads,159,12,1,1,0.78,8.33,12.8,,linkedin_event_ads_collection_60,Collection,Event Ads - Collection 2
+2025-07-13,TikTok,Reach,51,31,1,1,3.41,3.23,1.63,909,,,
+2025-07-13,TikTok,Reach,45,30,0,0,2.99,0,1.5,1004,tiktok_reach_collection_99,Collection,Reach - Collection 2
+2025-07-13,TikTok,Reach,68,37,1,1,2.53,2.7,1.86,1464,tiktok_reach_text_21,Text,Reach - Text 3
+2025-07-13,TikTok,Traffic,40,19,0,0,3.1,0,2.08,613,tiktok_traffic_text_16,Text,Traffic - Text 4
+2025-07-13,Pinterest,Video Views,35,19,0,0,1.74,0,1.87,1095,pinterest_video_views_carousel_90,Carousel,Video Views - Carousel 1
+2025-07-13,Pinterest,App Install,53,23,0,0,1.65,0,2.31,1398,pinterest_app_install_video_54,Video,App Install - Video 2
+2025-07-13,Pinterest,Traffic,27,10,0,0,1.25,0,2.58,801,pinterest_traffic_image_75,Image,Traffic - Image 3
+2025-07-13,Pinterest,App Install,41,16,0,0,1.69,0,2.57,945,,,
+2025-07-14,Google Ads,Shopping,385,107,3,3,1.98,2.8,3.58,5395,googleads_shopping_collection_28,Collection,Shopping - Collection 1
+2025-07-14,Google Ads,Display - Remarketing,305,96,4,4,2.47,4.17,3.16,3889,,,
+2025-07-14,Google Ads,Video - YouTube,258,63,3,3,2.02,4.76,4.09,3119,googleads_video_-_youtube_video_34,Video,Video - YouTube - Video 3
+2025-07-14,Facebook,Traffic,204,80,1,1,1.22,1.25,2.54,6578,facebook_traffic_video_34,Video,Traffic - Video 1
+2025-07-14,Facebook,Lead Generation,135,40,1,1,1,2.5,3.39,,facebook_lead_generation_carousel_9,Carousel,Lead Generation - Carousel 2
+2025-07-14,Facebook,Lead Generation,174,53,1,1,1.04,1.89,3.3,5109,facebook_lead_generation_collection_6,Collection,Lead Generation - Collection 3
+2025-07-14,LinkedIn,Sponsored Content,177,17,1,1,0.75,5.88,10.25,2266,,,
+2025-07-14,LinkedIn,Event Ads,106,11,0,0,0.8,0,9.7,,linkedin_event_ads_text_0,Text,Event Ads - Text 2
+2025-07-14,LinkedIn,Dynamic Ads,195,26,1,1,0.96,3.85,7.43,2707,linkedin_dynamic_ads_collection_88,Collection,Dynamic Ads - Collection 3
+2025-07-14,LinkedIn,Message Ads,150,18,1,1,0.7,5.56,8.14,2565,linkedin_message_ads_carousel_90,Carousel,Message Ads - Carousel 4
+2025-07-14,TikTok,Traffic,95,57,1,1,2.54,1.75,1.67,2244,tiktok_traffic_image_67,Image,Traffic - Image 1
+2025-07-14,TikTok,App Install,84,44,1,1,2.37,2.27,1.9,1855,tiktok_app_install_video_65,Video,App Install - Video 2
+2025-07-14,TikTok,Reach,149,93,2,2,2.96,2.15,1.61,3144,tiktok_reach_image_80,Image,Reach - Image 3
+2025-07-14,Pinterest,Traffic,70,28,0,0,1.24,0,2.51,2266,pinterest_traffic_video_28,Video,Traffic - Video 1
+2025-07-14,Pinterest,Video Views,144,77,2,2,1.33,2.6,1.87,5779,pinterest_video_views_text_56,Text,Video Views - Text 2
+2025-07-15,Google Ads,Search - Brand,529,153,7,7,1.83,4.58,3.45,8344,googleads_search_-_brand_video_13,Video,Search - Brand - Video 1
+2025-07-15,Google Ads,Search - Generic,607,223,10,10,2.23,4.48,2.72,9990,googleads_search_-_generic_collection_59,Collection,Search - Generic - Collection 2
+2025-07-15,Facebook,Video Views,147,48,1,1,0.93,2.08,3.05,5183,facebook_video_views_text_37,Text,Video Views - Text 1
+2025-07-15,Facebook,Lead Generation,105,38,1,1,1.06,2.63,2.78,3582,facebook_lead_generation_image_54,Image,Lead Generation - Image 2
+2025-07-15,Facebook,Remarketing,170,52,1,1,1.02,1.92,3.28,5116,facebook_remarketing_image_37,Image,Remarketing - Image 3
+2025-07-15,Facebook,Video Views,121,37,1,1,1.3,2.7,3.3,2850,facebook_video_views_video_9,Video,Video Views - Video 4
+2025-07-15,LinkedIn,Text Ads,398,44,2,2,0.75,4.55,9.08,5884,,,
+2025-07-15,LinkedIn,Message Ads,294,37,2,2,0.79,5.41,8,4698,linkedin_message_ads_collection_74,Collection,Message Ads - Collection 2
+2025-07-15,TikTok,App Install,76,46,1,1,3.42,2.17,1.64,1344,tiktok_app_install_collection_21,Collection,App Install - Collection 1
+2025-07-15,TikTok,Reach,106,63,1,1,2.73,1.59,1.69,2311,tiktok_reach_image_67,Image,Reach - Image 2
+2025-07-15,TikTok,Conversions,50,27,1,1,3.17,3.7,1.82,,tiktok_conversions_collection_92,Collection,Conversions - Collection 3
+2025-07-15,TikTok,App Install,113,86,2,2,2.63,2.33,1.31,3266,tiktok_app_install_collection_45,Collection,App Install - Collection 4
+2025-07-15,Pinterest,Brand Awareness,56,23,1,1,1.27,4.35,2.46,1809,pinterest_brand_awareness_collection_41,Collection,Brand Awareness - Collection 1
+2025-07-15,Pinterest,Brand Awareness,64,30,1,1,1.58,3.33,2.16,1899,pinterest_brand_awareness_video_98,Video,Brand Awareness - Video 2
+2025-07-15,Pinterest,Conversions,47,21,1,1,1.69,4.76,2.23,1246,pinterest_conversions_text_66,Text,Conversions - Text 3
+2025-07-15,Pinterest,Traffic,43,21,0,0,1.51,0,2.02,1393,,,
+2025-07-16,Google Ads,Shopping,331,109,3,3,1.86,2.75,3.03,5870,googleads_shopping_collection_82,Collection,Shopping - Collection 1
+2025-07-16,Google Ads,Search - Generic,321,115,3,3,2,2.61,2.8,5758,,,
+2025-07-16,Google Ads,Display - Remarketing,344,101,4,4,2.46,3.96,3.4,4112,,,
+2025-07-16,Facebook,Remarketing,229,60,2,2,1.21,3.33,3.83,4968,facebook_remarketing_image_94,Image,Remarketing - Image 1
+2025-07-16,Facebook,Conversions,263,85,2,2,1.16,2.35,3.09,7311,facebook_conversions_carousel_40,Carousel,Conversions - Carousel 2
+2025-07-16,LinkedIn,Dynamic Ads,231,26,1,1,0.74,3.85,8.73,3526,linkedin_dynamic_ads_video_13,Video,Dynamic Ads - Video 1
+2025-07-16,LinkedIn,Event Ads,165,18,1,1,0.68,5.56,9.19,2657,linkedin_event_ads_image_61,Image,Event Ads - Image 2
+2025-07-16,LinkedIn,Sponsored Content,223,26,1,1,0.67,3.85,8.61,3871,linkedin_sponsored_content_video_89,Video,Sponsored Content - Video 3
+2025-07-16,TikTok,App Install,179,139,3,3,3.07,2.16,1.29,4521,tiktok_app_install_image_96,Image,App Install - Image 1
+2025-07-16,TikTok,Video Views,166,106,2,2,3.38,1.89,1.56,,,,
+2025-07-16,Pinterest,App Install,49,27,1,1,1.2,3.7,1.83,2241,pinterest_app_install_carousel_67,Carousel,App Install - Carousel 1
+2025-07-16,Pinterest,Video Views,55,26,1,1,1.4,3.85,2.12,,pinterest_video_views_carousel_96,Carousel,Video Views - Carousel 2
+2025-07-16,Pinterest,Traffic,52,29,0,0,1.43,0,1.78,,pinterest_traffic_video_38,Video,Traffic - Video 3
+2025-07-16,Pinterest,Traffic,75,32,1,1,1.59,3.13,2.33,2007,pinterest_traffic_video_36,Video,Traffic - Video 4
+2025-07-17,Google Ads,Video - YouTube,460,120,4,4,1.84,3.33,3.84,6510,googleads_video_-_youtube_image_99,Image,Video - YouTube - Image 1
+2025-07-17,Google Ads,Search - Generic,369,88,3,3,2.22,3.41,4.17,3960,,,
+2025-07-17,Facebook,Video Views,141,46,1,1,0.98,2.17,3.08,4713,facebook_video_views_image_77,Image,Video Views - Image 1
+2025-07-17,Facebook,Video Views,115,39,1,1,1.08,2.56,2.92,,facebook_video_views_image_40,Image,Video Views - Image 2
+2025-07-17,Facebook,Remarketing,167,65,2,2,1.25,3.08,2.55,5200,,,
+2025-07-17,Facebook,Video Views,116,33,1,1,1.24,3.03,3.54,2662,facebook_video_views_image_66,Image,Video Views - Image 4
+2025-07-17,LinkedIn,Dynamic Ads,187,21,1,1,0.84,4.76,8.98,2506,linkedin_dynamic_ads_collection_77,Collection,Dynamic Ads - Collection 1
+2025-07-17,LinkedIn,Text Ads,164,17,1,1,0.97,5.88,9.5,1748,,,
+2025-07-17,LinkedIn,Message Ads,180,16,1,1,0.98,6.25,11.21,1629,,,
+2025-07-17,TikTok,Video Views,54,32,1,1,2.86,3.13,1.69,1120,,,
+2025-07-17,TikTok,Reach,95,68,1,1,3.12,1.47,1.4,2182,tiktok_reach_carousel_62,Carousel,Reach - Carousel 2
+2025-07-17,TikTok,Reach,81,50,1,1,2.78,2,1.63,1797,tiktok_reach_video_73,Video,Reach - Video 3
+2025-07-17,TikTok,App Install,56,32,0,0,2.97,0,1.74,1078,tiktok_app_install_video_67,Video,App Install - Video 4
+2025-07-17,Pinterest,Traffic,136,69,2,2,1.46,2.9,1.98,4728,pinterest_traffic_video_56,Video,Traffic - Video 1
+2025-07-17,Pinterest,Traffic,93,47,1,1,1.34,2.13,1.98,3514,pinterest_traffic_collection_18,Collection,Traffic - Collection 2
+2025-07-18,Google Ads,Display - Remarketing,438,149,6,6,2.04,4.03,2.94,7312,googleads_display_-_remarketing_video_28,Video,Display - Remarketing - Video 1
+2025-07-18,Google Ads,Shopping,294,76,3,3,2.26,3.95,3.85,3357,,,
+2025-07-18,Google Ads,Search - Brand,343,98,4,4,1.88,4.08,3.5,5209,googleads_search_-_brand_image_90,Image,Search - Brand - Image 3
+2025-07-18,Facebook,Traffic,214,71,1,1,1.15,1.41,3.01,6190,facebook_traffic_carousel_70,Carousel,Traffic - Carousel 1
+2025-07-18,Facebook,Lead Generation,159,49,1,1,0.98,2.04,3.26,5013,facebook_lead_generation_text_86,Text,Lead Generation - Text 2
+2025-07-18,Facebook,Video Views,148,42,1,1,1.33,2.38,3.49,3167,facebook_video_views_text_72,Text,Video Views - Text 3
+2025-07-18,LinkedIn,Message Ads,108,10,1,1,0.84,10,10.91,1197,linkedin_message_ads_text_22,Text,Message Ads - Text 1
+2025-07-18,LinkedIn,Text Ads,167,18,1,1,0.91,5.56,9.14,1985,linkedin_text_ads_video_49,Video,Text Ads - Video 2
+2025-07-18,LinkedIn,Text Ads,175,22,1,1,0.94,4.55,7.92,2350,linkedin_text_ads_carousel_74,Carousel,Text Ads - Carousel 3
+2025-07-18,LinkedIn,Dynamic Ads,183,18,1,1,0.75,5.56,10.35,2409,linkedin_dynamic_ads_carousel_1,Carousel,Dynamic Ads - Carousel 4
+2025-07-18,TikTok,Conversions,97,71,1,1,2.94,1.41,1.37,2415,tiktok_conversions_carousel_95,Carousel,Conversions - Carousel 1
+2025-07-18,TikTok,Reach,67,43,1,1,2.47,2.33,1.57,1744,tiktok_reach_text_42,Text,Reach - Text 2
+2025-07-18,TikTok,Reach,72,41,1,1,2.35,2.44,1.78,1744,tiktok_reach_video_78,Video,Reach - Video 3
+2025-07-18,TikTok,Reach,97,68,1,1,2.37,1.47,1.43,2864,tiktok_reach_carousel_3,Carousel,Reach - Carousel 4
+2025-07-18,Pinterest,App Install,104,42,1,1,1.32,2.38,2.49,3187,pinterest_app_install_carousel_66,Carousel,App Install - Carousel 1
+2025-07-18,Pinterest,Conversions,105,47,1,1,1.21,2.13,2.24,3870,pinterest_conversions_collection_72,Collection,Conversions - Collection 2
+2025-07-19,Google Ads,Search - Brand,177,52,2,2,2.2,3.85,3.4,2365,googleads_search_-_brand_video_5,Video,Search - Brand - Video 1
+2025-07-19,Google Ads,Search - Brand,209,62,2,2,2.31,3.23,3.37,2685,googleads_search_-_brand_video_52,Video,Search - Brand - Video 2
+2025-07-19,Google Ads,Shopping,129,31,2,2,2.04,6.45,4.12,1521,,,
+2025-07-19,Google Ads,Search - Brand,180,43,2,2,2.27,4.65,4.23,1894,googleads_search_-_brand_video_77,Video,Search - Brand - Video 4
+2025-07-19,Facebook,Video Views,76,22,1,1,1.36,4.55,3.38,1613,,,
+2025-07-19,Facebook,Traffic,91,26,1,1,1.19,3.85,3.57,2178,facebook_traffic_collection_4,Collection,Traffic - Collection 2
+2025-07-19,Facebook,Video Views,78,20,1,1,0.95,5,3.98,2098,facebook_video_views_text_44,Text,Video Views - Text 3
+2025-07-19,Facebook,Remarketing,68,22,1,1,1.12,4.55,3.09,1971,facebook_remarketing_carousel_4,Carousel,Remarketing - Carousel 4
+2025-07-19,LinkedIn,Dynamic Ads,143,13,0,0,0.73,0,11.38,1772,,,
+2025-07-19,LinkedIn,Dynamic Ads,237,23,1,1,0.68,4.35,10.19,,linkedin_dynamic_ads_image_13,Image,Dynamic Ads - Image 2
+2025-07-19,TikTok,Video Views,74,41,1,1,2.71,2.44,1.79,1513,tiktok_video_views_video_33,Video,Video Views - Video 1
+2025-07-19,TikTok,Conversions,73,39,1,1,3.23,2.56,1.85,1207,tiktok_conversions_collection_58,Collection,Conversions - Collection 2
+2025-07-19,TikTok,Reach,60,39,1,1,2.53,2.56,1.53,1539,tiktok_reach_text_17,Text,Reach - Text 3
+2025-07-19,Pinterest,App Install,54,28,1,1,1.63,3.57,1.95,1716,pinterest_app_install_video_66,Video,App Install - Video 1
+2025-07-19,Pinterest,App Install,61,23,0,0,1.66,0,2.71,1387,pinterest_app_install_image_5,Image,App Install - Image 2
+2025-07-20,Google Ads,Shopping,184,40,2,2,2.21,5,4.55,1807,googleads_shopping_carousel_47,Carousel,Shopping - Carousel 1
+2025-07-20,Google Ads,Shopping,281,77,3,3,2.41,3.9,3.65,3195,googleads_shopping_image_99,Image,Shopping - Image 2
+2025-07-20,Google Ads,Display - Remarketing,221,56,2,2,2.16,3.57,3.95,2598,,,
+2025-07-20,Facebook,Lead Generation,156,48,1,1,1.25,2.08,3.22,3825,,,
+2025-07-20,Facebook,Conversions,128,38,1,1,1.12,2.63,3.41,3392,facebook_conversions_text_74,Text,Conversions - Text 2
+2025-07-20,Facebook,Conversions,137,40,1,1,0.92,2.5,3.45,,facebook_conversions_collection_66,Collection,Conversions - Collection 3
+2025-07-20,LinkedIn,Dynamic Ads,195,17,1,1,0.71,5.88,11.37,2403,linkedin_dynamic_ads_image_5,Image,Dynamic Ads - Image 1
+2025-07-20,LinkedIn,Event Ads,168,15,1,1,0.7,6.67,11.42,2153,,,
+2025-07-20,TikTok,Video Views,73,37,1,1,2.97,2.7,1.96,1245,tiktok_video_views_text_54,Text,Video Views - Text 1
+2025-07-20,TikTok,Reach,59,41,1,1,2.75,2.44,1.43,1489,tiktok_reach_image_32,Image,Reach - Image 2
+2025-07-20,TikTok,App Install,80,42,1,1,3.35,2.38,1.88,1252,tiktok_app_install_carousel_61,Carousel,App Install - Carousel 3
+2025-07-20,Pinterest,Traffic,38,21,0,0,1.27,0,1.85,1653,pinterest_traffic_carousel_52,Carousel,Traffic - Carousel 1
+2025-07-20,Pinterest,Brand Awareness,26,12,0,0,1.25,0,2.21,959,pinterest_brand_awareness_text_9,Text,Brand Awareness - Text 2
+2025-07-20,Pinterest,App Install,23,12,0,0,1.35,0,1.92,,pinterest_app_install_carousel_21,Carousel,App Install - Carousel 3
+2025-07-20,Pinterest,Traffic,33,12,0,0,1.56,0,2.69,,pinterest_traffic_carousel_38,Carousel,Traffic - Carousel 4
+2025-07-21,Google Ads,Shopping,236,75,3,3,2.06,4,3.15,3636,googleads_shopping_carousel_96,Carousel,Shopping - Carousel 1
+2025-07-21,Google Ads,Video - YouTube,330,106,5,5,2.64,4.72,3.13,4022,googleads_video_-_youtube_image_91,Image,Video - YouTube - Image 2
+2025-07-21,Google Ads,Shopping,389,127,6,6,1.94,4.72,3.07,6553,googleads_shopping_carousel_43,Carousel,Shopping - Carousel 3
+2025-07-21,Facebook,Video Views,219,68,1,1,1.12,1.47,3.22,6098,,,
+2025-07-21,Facebook,Remarketing,300,114,2,2,0.94,1.75,2.64,12093,facebook_remarketing_carousel_26,Carousel,Remarketing - Carousel 2
+2025-07-21,LinkedIn,Dynamic Ads,349,34,1,1,0.72,2.94,10.33,4722,linkedin_dynamic_ads_image_66,Image,Dynamic Ads - Image 1
+2025-07-21,LinkedIn,Dynamic Ads,274,31,1,1,0.85,3.23,8.8,3646,linkedin_dynamic_ads_collection_28,Collection,Dynamic Ads - Collection 2
+2025-07-21,TikTok,App Install,100,62,1,1,3.09,1.61,1.61,2004,tiktok_app_install_text_66,Text,App Install - Text 1
+2025-07-21,TikTok,Conversions,80,55,1,1,2.92,1.82,1.45,1883,tiktok_conversions_carousel_16,Carousel,Conversions - Carousel 2
+2025-07-21,TikTok,Traffic,94,73,1,1,2.84,1.37,1.29,2573,tiktok_traffic_image_8,Image,Traffic - Image 3
+2025-07-21,Pinterest,App Install,105,54,1,1,1.21,1.85,1.93,4479,,,
+2025-07-21,Pinterest,Brand Awareness,59,27,0,0,1.46,0,2.18,1855,pinterest_brand_awareness_carousel_64,Carousel,Brand Awareness - Carousel 2
+2025-07-21,Pinterest,Video Views,65,28,1,1,1.23,3.57,2.33,2277,,,
+2025-07-22,Google Ads,Shopping,229,67,3,3,1.89,4.48,3.41,3539,googleads_shopping_collection_10,Collection,Shopping - Collection 1
+2025-07-22,Google Ads,Search - Brand,229,64,2,2,2.03,3.13,3.58,3145,googleads_search_-_brand_video_59,Video,Search - Brand - Video 2
+2025-07-22,Google Ads,Shopping,201,68,2,2,2.57,2.94,2.95,2641,googleads_shopping_collection_87,Collection,Shopping - Collection 3
+2025-07-22,Google Ads,Search - Brand,283,89,3,3,1.87,3.37,3.17,4752,googleads_search_-_brand_text_92,Text,Search - Brand - Text 4
+2025-07-22,Facebook,Traffic,185,62,2,2,0.95,3.23,3,6535,facebook_traffic_image_61,Image,Traffic - Image 1
+2025-07-22,Facebook,Conversions,91,33,1,1,1.04,3.03,2.77,3161,facebook_conversions_collection_62,Collection,Conversions - Collection 2
+2025-07-22,Facebook,Lead Generation,182,53,1,1,1.01,1.89,3.45,5229,facebook_lead_generation_video_57,Video,Lead Generation - Video 3
+2025-07-22,Facebook,Video Views,104,34,1,1,0.94,2.94,3.03,3622,facebook_video_views_text_23,Text,Video Views - Text 4
+2025-07-22,LinkedIn,Text Ads,103,12,1,1,0.83,8.33,8.95,1439,linkedin_text_ads_video_14,Video,Text Ads - Video 1
+2025-07-22,LinkedIn,Sponsored Content,158,21,1,1,0.96,4.76,7.65,2185,linkedin_sponsored_content_video_16,Video,Sponsored Content - Video 2
+2025-07-22,LinkedIn,Dynamic Ads,101,10,0,0,0.86,0,10.61,1165,linkedin_dynamic_ads_video_35,Video,Dynamic Ads - Video 3
+2025-07-22,LinkedIn,Message Ads,172,19,1,1,0.81,5.26,9.08,2346,linkedin_message_ads_collection_75,Collection,Message Ads - Collection 4
+2025-07-22,TikTok,Video Views,142,92,2,2,3.39,2.17,1.55,2713,tiktok_video_views_image_72,Image,Video Views - Image 1
+2025-07-22,TikTok,Traffic,170,107,2,2,3.07,1.87,1.59,3483,tiktok_traffic_video_83,Video,Traffic - Video 2
+2025-07-22,Pinterest,App Install,79,42,1,1,1.22,2.38,1.87,3429,pinterest_app_install_carousel_30,Carousel,App Install - Carousel 1
+2025-07-22,Pinterest,Traffic,55,22,1,1,1.63,4.55,2.53,1352,pinterest_traffic_image_74,Image,Traffic - Image 2
+2025-07-22,Pinterest,Traffic,89,38,1,1,1.18,2.63,2.35,3229,,,
+2025-07-23,Google Ads,Video - YouTube,219,70,3,3,2.38,4.29,3.14,2941,googleads_video_-_youtube_video_1,Video,Video - YouTube - Video 1
+2025-07-23,Google Ads,Video - YouTube,405,106,3,3,2.18,2.83,3.83,4854,googleads_video_-_youtube_collection_24,Collection,Video - YouTube - Collection 2
+2025-07-23,Google Ads,Search - Brand,217,54,2,2,2.73,3.7,4.04,1981,googleads_search_-_brand_video_99,Video,Search - Brand - Video 3
+2025-07-23,Facebook,Conversions,119,34,1,1,1.08,2.94,3.46,,facebook_conversions_image_33,Image,Conversions - Image 1
+2025-07-23,Facebook,Traffic,206,57,1,1,1.21,1.75,3.61,4728,facebook_traffic_collection_98,Collection,Traffic - Collection 2
+2025-07-23,Facebook,Lead Generation,161,60,2,2,1.22,3.33,2.68,4899,facebook_lead_generation_video_93,Video,Lead Generation - Video 3
+2025-07-23,LinkedIn,Text Ads,162,17,1,1,0.81,5.88,9.28,2108,linkedin_text_ads_collection_83,Collection,Text Ads - Collection 1
+2025-07-23,LinkedIn,Event Ads,124,14,0,0,0.73,0,8.65,1906,linkedin_event_ads_text_65,Text,Event Ads - Text 2
+2025-07-23,LinkedIn,Message Ads,165,15,1,1,0.69,6.67,11.06,,linkedin_message_ads_video_21,Video,Message Ads - Video 3
+2025-07-23,LinkedIn,Event Ads,138,16,1,1,0.9,6.25,8.5,1771,linkedin_event_ads_carousel_98,Carousel,Event Ads - Carousel 4
+2025-07-23,TikTok,Reach,72,51,1,1,2.9,1.96,1.42,1758,tiktok_reach_collection_6,Collection,Reach - Collection 1
+2025-07-23,TikTok,Reach,88,50,1,1,2.41,2,1.76,2077,tiktok_reach_carousel_16,Carousel,Reach - Carousel 2
+2025-07-23,TikTok,App Install,85,64,1,1,2.92,1.56,1.33,2191,,,
+2025-07-23,TikTok,Traffic,63,48,1,1,3.33,2.08,1.32,,tiktok_traffic_collection_34,Collection,Traffic - Collection 4
+2025-07-23,Pinterest,App Install,71,30,1,1,1.58,3.33,2.37,1899,pinterest_app_install_image_15,Image,App Install - Image 1
+2025-07-23,Pinterest,Brand Awareness,52,26,1,1,1.55,3.85,2,1681,pinterest_brand_awareness_video_59,Video,Brand Awareness - Video 2
+2025-07-23,Pinterest,Brand Awareness,56,32,1,1,1.46,3.13,1.73,2193,pinterest_brand_awareness_text_36,Text,Brand Awareness - Text 3
+2025-07-23,Pinterest,App Install,69,30,1,1,1.22,3.33,2.31,2458,pinterest_app_install_collection_48,Collection,App Install - Collection 4
+2025-07-24,Google Ads,Video - YouTube,558,145,5,5,2.68,3.45,3.84,5419,googleads_video_-_youtube_collection_40,Collection,Video - YouTube - Collection 1
+2025-07-24,Google Ads,Search - Brand,560,187,9,9,2.01,4.81,2.99,9314,googleads_search_-_brand_carousel_57,Carousel,Search - Brand - Carousel 2
+2025-07-24,Facebook,Traffic,102,28,1,1,1.36,3.57,3.66,2064,facebook_traffic_video_85,Video,Traffic - Video 1
+2025-07-24,Facebook,Conversions,148,40,1,1,0.99,2.5,3.7,4050,facebook_conversions_text_44,Text,Conversions - Text 2
+2025-07-24,Facebook,Conversions,173,50,1,1,0.95,2,3.48,5260,,,
+2025-07-24,Facebook,Lead Generation,122,36,1,1,1.29,2.78,3.39,2785,facebook_lead_generation_image_34,Image,Lead Generation - Image 4
+2025-07-24,LinkedIn,Sponsored Content,180,17,1,1,0.81,5.88,10.42,2097,,,
+2025-07-24,LinkedIn,Event Ads,130,13,1,1,0.84,7.69,9.64,1547,linkedin_event_ads_text_61,Text,Event Ads - Text 2
+2025-07-24,LinkedIn,Sponsored Content,153,17,1,1,0.96,5.88,8.91,1774,linkedin_sponsored_content_carousel_0,Carousel,Sponsored Content - Carousel 3
+2025-07-24,LinkedIn,Dynamic Ads,100,9,0,0,0.72,0,11.53,1258,linkedin_dynamic_ads_text_52,Text,Dynamic Ads - Text 4
+2025-07-24,TikTok,Reach,86,44,1,1,2.57,2.27,1.94,1715,tiktok_reach_text_72,Text,Reach - Text 1
+2025-07-24,TikTok,Reach,115,65,2,2,2.94,3.08,1.77,2209,tiktok_reach_image_67,Image,Reach - Image 2
+2025-07-24,TikTok,Video Views,108,68,1,1,3.39,1.47,1.59,2003,tiktok_video_views_collection_66,Collection,Video Views - Collection 3
+2025-07-24,Pinterest,Brand Awareness,49,25,0,0,1.47,0,1.99,1706,pinterest_brand_awareness_carousel_86,Carousel,Brand Awareness - Carousel 1
+2025-07-24,Pinterest,Video Views,50,20,0,0,1.5,0,2.47,1332,pinterest_video_views_text_38,Text,Video Views - Text 2
+2025-07-24,Pinterest,Video Views,65,39,1,1,1.42,2.56,1.65,2746,pinterest_video_views_video_9,Video,Video Views - Video 3
+2025-07-24,Pinterest,Brand Awareness,41,18,0,0,1.28,0,2.31,1409,pinterest_brand_awareness_video_99,Video,Brand Awareness - Video 4
+2025-07-25,Google Ads,Display - Remarketing,202,57,2,2,2.2,3.51,3.53,2587,googleads_display_-_remarketing_image_74,Image,Display - Remarketing - Image 1
+2025-07-25,Google Ads,Search - Brand,239,73,3,3,2.07,4.11,3.26,3524,googleads_search_-_brand_carousel_83,Carousel,Search - Brand - Carousel 2
+2025-07-25,Google Ads,Video - YouTube,286,81,4,4,2.48,4.94,3.54,3266,,,
+2025-07-25,Google Ads,Video - YouTube,284,102,5,5,1.94,4.9,2.79,5254,googleads_video_-_youtube_video_74,Video,Video - YouTube - Video 4
+2025-07-25,Facebook,Conversions,105,35,1,1,1.05,2.86,3.01,3342,facebook_conversions_carousel_65,Carousel,Conversions - Carousel 1
+2025-07-25,Facebook,Remarketing,147,54,1,1,1.32,1.85,2.73,4085,,,
+2025-07-25,Facebook,Conversions,97,25,0,0,1.35,0,3.9,1858,,,
+2025-07-25,Facebook,Remarketing,151,42,1,1,1.1,2.38,3.6,3827,,,
+2025-07-25,LinkedIn,Dynamic Ads,269,27,2,2,0.89,7.41,9.85,3023,linkedin_dynamic_ads_carousel_75,Carousel,Dynamic Ads - Carousel 1
+2025-07-25,LinkedIn,Message Ads,232,26,1,1,0.74,3.85,8.77,3518,linkedin_message_ads_carousel_36,Carousel,Message Ads - Carousel 2
+2025-07-25,TikTok,App Install,108,72,2,2,2.59,2.78,1.5,2784,tiktok_app_install_image_65,Image,App Install - Image 1
+2025-07-25,TikTok,Traffic,89,48,1,1,2.94,2.08,1.85,1634,tiktok_traffic_text_45,Text,Traffic - Text 2
+2025-07-25,TikTok,Reach,106,70,1,1,2.95,1.43,1.51,2376,tiktok_reach_text_45,Text,Reach - Text 3
+2025-07-25,Pinterest,Video Views,63,29,1,1,1.57,3.45,2.18,1853,,,
+2025-07-25,Pinterest,Video Views,68,31,1,1,1.62,3.23,2.18,1908,pinterest_video_views_text_74,Text,Video Views - Text 2
+2025-07-25,Pinterest,Conversions,81,44,1,1,1.39,2.27,1.84,3167,pinterest_conversions_collection_21,Collection,Conversions - Collection 3
+2025-07-26,Google Ads,Display - Remarketing,358,102,5,5,1.98,4.9,3.5,5157,,,
+2025-07-26,Google Ads,Display - Remarketing,305,75,2,2,2.44,2.67,4.07,3080,,,
+2025-07-26,Facebook,Video Views,60,21,1,1,1.11,4.76,2.93,1892,facebook_video_views_video_17,Video,Video Views - Video 1
+2025-07-26,Facebook,Traffic,81,22,1,1,0.96,4.55,3.71,2296,facebook_traffic_text_69,Text,Traffic - Text 2
+2025-07-26,Facebook,Lead Generation,84,29,0,0,1.04,0,2.93,2776,facebook_lead_generation_text_10,Text,Lead Generation - Text 3
+2025-07-26,Facebook,Traffic,69,19,0,0,0.95,0,3.57,,facebook_traffic_image_55,Image,Traffic - Image 4
+2025-07-26,LinkedIn,Sponsored Content,90,7,0,0,0.74,0,12.17,944,linkedin_sponsored_content_image_36,Image,Sponsored Content - Image 1
+2025-07-26,LinkedIn,Sponsored Content,107,13,1,1,0.97,7.69,8.39,1336,,,
+2025-07-26,LinkedIn,Sponsored Content,69,7,0,0,0.88,0,10.57,796,linkedin_sponsored_content_text_93,Text,Sponsored Content - Text 3
+2025-07-26,LinkedIn,Event Ads,109,12,1,1,0.9,8.33,8.76,1331,linkedin_event_ads_carousel_9,Carousel,Event Ads - Carousel 4
+2025-07-26,TikTok,Conversions,74,53,1,1,2.37,1.89,1.39,2232,tiktok_conversions_image_24,Image,Conversions - Image 1
+2025-07-26,TikTok,Video Views,42,21,0,0,3.01,0,2.01,697,tiktok_video_views_text_56,Text,Video Views - Text 2
+2025-07-26,TikTok,Reach,45,27,0,0,2.8,0,1.66,963,tiktok_reach_carousel_23,Carousel,Reach - Carousel 3
+2025-07-26,TikTok,Reach,34,18,0,0,3.05,0,1.94,590,,,
+2025-07-26,Pinterest,Video Views,37,19,0,0,1.35,0,1.98,1410,pinterest_video_views_carousel_21,Carousel,Video Views - Carousel 1
+2025-07-26,Pinterest,App Install,50,26,1,1,1.53,3.85,1.9,1697,pinterest_app_install_image_77,Image,App Install - Image 2
+2025-07-26,Pinterest,Brand Awareness,54,24,1,1,1.73,4.17,2.27,1391,pinterest_brand_awareness_image_62,Image,Brand Awareness - Image 3
+2025-07-27,Google Ads,Display - Remarketing,184,53,2,2,2.59,3.77,3.46,2047,googleads_display_-_remarketing_text_78,Text,Display - Remarketing - Text 1
+2025-07-27,Google Ads,Video - YouTube,217,55,2,2,2.01,3.64,3.97,2743,googleads_video_-_youtube_image_88,Image,Video - YouTube - Image 2
+2025-07-27,Google Ads,Display - Remarketing,239,66,3,3,1.97,4.55,3.64,3345,googleads_display_-_remarketing_collection_34,Collection,Display - Remarketing - Collection 3
+2025-07-27,Facebook,Remarketing,73,20,0,0,1.07,0,3.6,1872,facebook_remarketing_collection_31,Collection,Remarketing - Collection 1
+2025-07-27,Facebook,Conversions,91,32,1,1,1.18,3.13,2.81,2723,facebook_conversions_text_1,Text,Conversions - Text 2
+2025-07-27,Facebook,Remarketing,73,19,0,0,1.32,0,3.79,1438,facebook_remarketing_carousel_74,Carousel,Remarketing - Carousel 3
+2025-07-27,Facebook,Lead Generation,87,29,1,1,1,3.45,3.03,2913,facebook_lead_generation_carousel_2,Carousel,Lead Generation - Carousel 4
+2025-07-27,LinkedIn,Sponsored Content,174,19,1,1,0.83,5.26,9.33,2287,linkedin_sponsored_content_text_63,Text,Sponsored Content - Text 1
+2025-07-27,LinkedIn,Event Ads,144,16,1,1,0.68,6.25,9,,linkedin_event_ads_text_51,Text,Event Ads - Text 2
+2025-07-27,TikTok,Conversions,51,26,0,0,2.56,0,1.97,1016,,,
+2025-07-27,TikTok,Video Views,45,25,0,0,3.16,0,1.82,790,tiktok_video_views_collection_34,Collection,Video Views - Collection 2
+2025-07-27,TikTok,App Install,84,49,1,1,2.9,2.04,1.71,1688,tiktok_app_install_collection_27,Collection,App Install - Collection 3
+2025-07-27,Pinterest,Brand Awareness,41,17,0,0,1.71,0,2.42,996,pinterest_brand_awareness_video_28,Video,Brand Awareness - Video 1
+2025-07-27,Pinterest,Video Views,33,13,0,0,1.29,0,2.58,1010,,,
+2025-07-27,Pinterest,Traffic,37,15,0,0,1.22,0,2.43,1233,pinterest_traffic_video_56,Video,Traffic - Video 3
+2025-07-27,Pinterest,Traffic,19,8,0,0,1.2,0,2.44,668,pinterest_traffic_video_18,Video,Traffic - Video 4
+2025-07-28,Google Ads,Search - Brand,337,122,4,4,2.03,3.28,2.75,6018,googleads_search_-_brand_video_11,Video,Search - Brand - Video 1
+2025-07-28,Google Ads,Video - YouTube,323,116,4,4,2.06,3.45,2.79,,googleads_video_-_youtube_image_24,Image,Video - YouTube - Image 2
+2025-07-28,Google Ads,Video - YouTube,270,79,4,4,2.13,5.06,3.4,,googleads_video_-_youtube_collection_30,Collection,Video - YouTube - Collection 3
+2025-07-28,Facebook,Lead Generation,121,34,1,1,1.29,2.94,3.6,2637,facebook_lead_generation_collection_47,Collection,Lead Generation - Collection 1
+2025-07-28,Facebook,Remarketing,134,37,1,1,1.29,2.7,3.66,2862,facebook_remarketing_text_5,Text,Remarketing - Text 2
+2025-07-28,Facebook,Lead Generation,104,35,1,1,0.95,2.86,2.93,3699,facebook_lead_generation_carousel_16,Carousel,Lead Generation - Carousel 3
+2025-07-28,Facebook,Lead Generation,168,49,1,1,1.01,2.04,3.43,4851,facebook_lead_generation_text_45,Text,Lead Generation - Text 4
+2025-07-28,LinkedIn,Event Ads,152,15,1,1,0.97,6.67,9.84,1545,linkedin_event_ads_image_58,Image,Event Ads - Image 1
+2025-07-28,LinkedIn,Dynamic Ads,116,10,0,0,0.84,0,11.37,1184,,,
+2025-07-28,LinkedIn,Sponsored Content,141,17,1,1,0.74,5.88,8.54,2290,,,
+2025-07-28,LinkedIn,Dynamic Ads,176,20,1,1,0.89,5,8.6,2243,linkedin_dynamic_ads_image_42,Image,Dynamic Ads - Image 4
+2025-07-28,TikTok,App Install,65,41,1,1,3.27,2.44,1.6,1252,tiktok_app_install_text_95,Text,App Install - Text 1
+2025-07-28,TikTok,Conversions,59,33,1,1,2.78,3.03,1.78,1187,tiktok_conversions_carousel_18,Carousel,Conversions - Carousel 2
+2025-07-28,TikTok,Conversions,53,27,1,1,2.62,3.7,1.98,1032,,,
+2025-07-28,TikTok,App Install,66,45,1,1,2.74,2.22,1.48,1644,tiktok_app_install_video_27,Video,App Install - Video 4
+2025-07-28,Pinterest,Video Views,54,20,0,0,1.36,0,2.63,1475,pinterest_video_views_video_11,Video,Video Views - Video 1
+2025-07-28,Pinterest,Traffic,47,18,0,0,1.48,0,2.65,1218,pinterest_traffic_text_65,Text,Traffic - Text 2
+2025-07-28,Pinterest,App Install,65,33,1,1,1.58,3.03,2,2089,pinterest_app_install_image_44,Image,App Install - Image 3
+2025-07-29,Google Ads,Video - YouTube,460,156,7,7,2.73,4.49,2.96,5709,googleads_video_-_youtube_video_86,Video,Video - YouTube - Video 1
+2025-07-29,Google Ads,Video - YouTube,405,123,6,6,2.16,4.88,3.29,5685,googleads_video_-_youtube_text_25,Text,Video - YouTube - Text 2
+2025-07-29,Facebook,Traffic,158,39,1,1,1.14,2.56,4.01,3418,facebook_traffic_text_94,Text,Traffic - Text 1
+2025-07-29,Facebook,Remarketing,178,59,1,1,1.21,1.69,3.01,4881,facebook_remarketing_collection_16,Collection,Remarketing - Collection 2
+2025-07-29,LinkedIn,Sponsored Content,108,9,0,0,0.94,0,11.88,959,linkedin_sponsored_content_carousel_28,Carousel,Sponsored Content - Carousel 1
+2025-07-29,LinkedIn,Dynamic Ads,149,14,1,1,0.99,7.14,10.5,1419,,,
+2025-07-29,LinkedIn,Message Ads,171,23,1,1,0.92,4.35,7.46,2492,linkedin_message_ads_carousel_26,Carousel,Message Ads - Carousel 3
+2025-07-29,LinkedIn,Message Ads,185,20,1,1,0.79,5,9.07,2516,linkedin_message_ads_image_94,Image,Message Ads - Image 4
+2025-07-29,TikTok,App Install,159,102,2,2,3.34,1.96,1.56,3050,tiktok_app_install_collection_72,Collection,App Install - Collection 1
+2025-07-29,TikTok,Traffic,190,108,2,2,3.28,1.85,1.76,3293,tiktok_traffic_image_78,Image,Traffic - Image 2
+2025-07-29,Pinterest,Conversions,38,21,0,0,1.25,0,1.81,1675,pinterest_conversions_image_37,Image,Conversions - Image 1
+2025-07-29,Pinterest,Brand Awareness,36,14,0,0,1.58,0,2.51,884,pinterest_brand_awareness_collection_90,Collection,Brand Awareness - Collection 2
+2025-07-29,Pinterest,App Install,47,20,1,1,1.74,5,2.36,1148,pinterest_app_install_text_18,Text,App Install - Text 3
+2025-07-29,Pinterest,Brand Awareness,49,20,0,0,1.18,0,2.49,1690,pinterest_brand_awareness_text_97,Text,Brand Awareness - Text 4
+2025-07-30,Google Ads,Shopping,381,143,6,6,2.42,4.2,2.66,5920,googleads_shopping_collection_34,Collection,Shopping - Collection 1
+2025-07-30,Google Ads,Shopping,248,82,4,4,2.62,4.88,3.03,3131,googleads_shopping_image_60,Image,Shopping - Image 2
+2025-07-30,Google Ads,Search - Brand,386,106,4,4,2.7,3.77,3.63,,,,
+2025-07-30,Facebook,Video Views,193,60,1,1,1.11,1.67,3.24,5411,facebook_video_views_video_88,Video,Video Views - Video 1
+2025-07-30,Facebook,Video Views,111,30,1,1,1.01,3.33,3.68,2961,facebook_video_views_image_35,Image,Video Views - Image 2
+2025-07-30,Facebook,Remarketing,119,36,1,1,0.93,2.78,3.27,3874,facebook_remarketing_video_52,Video,Remarketing - Video 3
+2025-07-30,LinkedIn,Dynamic Ads,224,21,1,1,0.73,4.76,10.44,,linkedin_dynamic_ads_collection_4,Collection,Dynamic Ads - Collection 1
+2025-07-30,LinkedIn,Dynamic Ads,214,21,1,1,0.88,4.76,10.43,2373,linkedin_dynamic_ads_image_10,Image,Dynamic Ads - Image 2
+2025-07-30,TikTok,Traffic,66,45,1,1,2.5,2.22,1.46,1803,tiktok_traffic_image_49,Image,Traffic - Image 1
+2025-07-30,TikTok,Conversions,83,62,1,1,2.39,1.61,1.34,2592,tiktok_conversions_image_69,Image,Conversions - Image 2
+2025-07-30,TikTok,Conversions,73,54,1,1,2.35,1.85,1.35,2302,,,
+2025-07-30,TikTok,App Install,46,30,1,1,2.44,3.33,1.53,1227,tiktok_app_install_text_90,Text,App Install - Text 4
+2025-07-30,Pinterest,App Install,60,32,1,1,1.3,3.13,1.9,2468,,,
+2025-07-30,Pinterest,Brand Awareness,58,26,1,1,1.32,3.85,2.25,1974,pinterest_brand_awareness_text_73,Text,Brand Awareness - Text 2
+2025-07-30,Pinterest,App Install,49,23,1,1,1.31,4.35,2.14,1752,,,
+2025-07-30,Pinterest,Traffic,67,28,0,0,1.29,0,2.39,2177,pinterest_traffic_video_31,Video,Traffic - Video 4
+2025-07-31,Google Ads,Video - YouTube,247,74,2,2,2.01,2.7,3.32,3688,googleads_video_-_youtube_text_22,Text,Video - YouTube - Text 1
+2025-07-31,Google Ads,Display - Remarketing,204,62,2,2,2.01,3.23,3.27,3090,googleads_display_-_remarketing_text_70,Text,Display - Remarketing - Text 2
+2025-07-31,Google Ads,Search - Brand,216,72,2,2,2.28,2.78,3,3152,,,
+2025-07-31,Facebook,Conversions,197,78,2,2,0.93,2.56,2.53,8349,facebook_conversions_image_69,Image,Conversions - Image 1
+2025-07-31,Facebook,Traffic,110,40,1,1,0.96,2.5,2.76,4167,facebook_traffic_text_77,Text,Traffic - Text 2
+2025-07-31,Facebook,Remarketing,117,41,1,1,1.33,2.44,2.88,3086,facebook_remarketing_video_9,Video,Remarketing - Video 3
+2025-07-31,LinkedIn,Text Ads,144,17,1,1,0.67,5.88,8.35,2536,linkedin_text_ads_image_55,Image,Text Ads - Image 1
+2025-07-31,LinkedIn,Sponsored Content,165,21,1,1,0.92,4.76,7.86,2288,linkedin_sponsored_content_text_68,Text,Sponsored Content - Text 2
+2025-07-31,LinkedIn,Event Ads,135,11,1,1,0.86,9.09,11.76,1274,linkedin_event_ads_image_71,Image,Event Ads - Image 3
+2025-07-31,LinkedIn,Text Ads,159,17,1,1,0.9,5.88,9.45,1899,linkedin_text_ads_video_38,Video,Text Ads - Video 4
+2025-07-31,TikTok,Reach,74,46,1,1,3.05,2.17,1.61,1509,tiktok_reach_carousel_18,Carousel,Reach - Carousel 1
+2025-07-31,TikTok,Conversions,80,45,1,1,2.43,2.22,1.78,1852,tiktok_conversions_video_62,Video,Conversions - Video 2
+2025-07-31,TikTok,Traffic,71,43,1,1,3.28,2.33,1.64,1312,,,
+2025-07-31,TikTok,App Install,72,46,1,1,2.55,2.17,1.56,1802,,,
+2025-07-31,Pinterest,Traffic,127,54,1,1,1.59,1.85,2.35,3403,pinterest_traffic_text_76,Text,Traffic - Text 1
+2025-07-31,Pinterest,Conversions,76,31,1,1,1.74,3.23,2.47,1779,pinterest_conversions_collection_85,Collection,Conversions - Collection 2
+2025-08-01,Google Ads,Video - YouTube,354,109,3,3,1.95,2.75,3.25,5601,googleads_video_-_youtube_video_91,Video,Video - YouTube - Video 1
+2025-08-01,Google Ads,Search - Brand,476,136,4,4,2.02,2.94,3.5,6721,,,
+2025-08-01,Google Ads,Search - Brand,398,122,4,4,2.39,3.28,3.26,,googleads_search_-_brand_carousel_55,Carousel,Search - Brand - Carousel 3
+2025-08-01,Facebook,Traffic,136,38,1,1,1.28,2.63,3.59,2958,facebook_traffic_text_19,Text,Traffic - Text 1
+2025-08-01,Facebook,Remarketing,161,51,1,1,1.25,1.96,3.16,4064,facebook_remarketing_video_18,Video,Remarketing - Video 2
+2025-08-01,Facebook,Remarketing,158,52,1,1,1.27,1.92,3.03,4104,facebook_remarketing_carousel_56,Carousel,Remarketing - Carousel 3
+2025-08-01,Facebook,Remarketing,194,59,2,2,1.31,3.39,3.27,4492,facebook_remarketing_carousel_53,Carousel,Remarketing - Carousel 4
+2025-08-01,LinkedIn,Dynamic Ads,226,25,1,1,0.73,4,9.22,3446,linkedin_dynamic_ads_carousel_14,Carousel,Dynamic Ads - Carousel 1
+2025-08-01,LinkedIn,Event Ads,226,34,1,1,1,2.94,6.7,,linkedin_event_ads_image_0,Image,Event Ads - Image 2
+2025-08-01,LinkedIn,Message Ads,249,35,2,2,0.79,5.71,7.04,4415,,,
+2025-08-01,LinkedIn,Text Ads,246,27,1,1,0.77,3.7,9.22,,linkedin_text_ads_collection_99,Collection,Text Ads - Collection 4
+2025-08-01,TikTok,App Install,204,176,4,4,3.1,2.27,1.16,5679,tiktok_app_install_carousel_1,Carousel,App Install - Carousel 1
+2025-08-01,TikTok,Reach,91,52,1,1,2.93,1.92,1.74,,,,
+2025-08-01,TikTok,Conversions,182,118,2,2,3.33,1.69,1.55,,tiktok_conversions_image_81,Image,Conversions - Image 3
+2025-08-01,Pinterest,Video Views,136,63,1,1,1.7,1.59,2.15,3711,pinterest_video_views_image_44,Image,Video Views - Image 1
+2025-08-01,Pinterest,Traffic,117,47,1,1,1.62,2.13,2.48,2905,,,
+2025-08-02,Google Ads,Search - Generic,169,43,2,2,1.93,4.65,3.89,2231,,,
+2025-08-02,Google Ads,Search - Brand,135,39,2,2,2.15,5.13,3.44,1814,googleads_search_-_brand_carousel_55,Carousel,Search - Brand - Carousel 2
+2025-08-02,Google Ads,Display - Remarketing,131,41,1,1,1.92,2.44,3.23,2132,googleads_display_-_remarketing_carousel_15,Carousel,Display - Remarketing - Carousel 3
+2025-08-02,Google Ads,Display - Remarketing,232,61,3,3,2.1,4.92,3.81,2908,googleads_display_-_remarketing_image_19,Image,Display - Remarketing - Image 4
+2025-08-02,Facebook,Remarketing,132,44,1,1,1.32,2.27,2.97,3340,facebook_remarketing_collection_6,Collection,Remarketing - Collection 1
+2025-08-02,Facebook,Video Views,143,46,1,1,1.04,2.17,3.09,4408,facebook_video_views_video_94,Video,Video Views - Video 2
+2025-08-02,Facebook,Conversions,146,58,2,2,1.09,3.45,2.53,5304,facebook_conversions_collection_27,Collection,Conversions - Collection 3
+2025-08-02,Facebook,Lead Generation,76,28,1,1,1.09,3.57,2.71,2559,facebook_lead_generation_collection_22,Collection,Lead Generation - Collection 4
+2025-08-02,LinkedIn,Sponsored Content,126,12,1,1,0.73,8.33,10.29,1648,linkedin_sponsored_content_video_84,Video,Sponsored Content - Video 1
+2025-08-02,LinkedIn,Text Ads,140,15,1,1,0.73,6.67,9.35,2050,linkedin_text_ads_carousel_7,Carousel,Text Ads - Carousel 2
+2025-08-02,LinkedIn,Dynamic Ads,159,14,1,1,0.99,7.14,11.19,1416,linkedin_dynamic_ads_collection_66,Collection,Dynamic Ads - Collection 3
+2025-08-02,LinkedIn,Event Ads,91,8,0,0,0.7,0,11.51,1151,linkedin_event_ads_carousel_76,Carousel,Event Ads - Carousel 4
+2025-08-02,TikTok,Conversions,157,92,2,2,2.43,2.17,1.71,,tiktok_conversions_carousel_20,Carousel,Conversions - Carousel 1
+2025-08-02,TikTok,Traffic,108,63,2,2,2.57,3.17,1.71,2452,tiktok_traffic_collection_76,Collection,Traffic - Collection 2
+2025-08-02,Pinterest,Brand Awareness,82,33,1,1,1.51,3.03,2.46,2190,,,
+2025-08-02,Pinterest,Video Views,138,70,1,1,1.42,1.43,1.96,4938,pinterest_video_views_text_63,Text,Video Views - Text 2
+2025-08-03,Google Ads,Shopping,282,79,4,4,1.96,5.06,3.56,4022,googleads_shopping_collection_76,Collection,Shopping - Collection 1
+2025-08-03,Google Ads,Search - Generic,392,133,6,6,2.3,4.51,2.95,5782,googleads_search_-_generic_collection_81,Collection,Search - Generic - Collection 2
+2025-08-03,Facebook,Video Views,209,59,1,1,1.29,1.69,3.54,4557,facebook_video_views_video_43,Video,Video Views - Video 1
+2025-08-03,Facebook,Conversions,278,87,3,3,1.12,3.45,3.21,7739,facebook_conversions_video_91,Video,Conversions - Video 2
+2025-08-03,LinkedIn,Message Ads,135,14,1,1,0.71,7.14,9.35,1969,,,
+2025-08-03,LinkedIn,Event Ads,197,21,1,1,0.95,4.76,9.23,2202,linkedin_event_ads_collection_35,Collection,Event Ads - Collection 2
+2025-08-03,LinkedIn,Text Ads,190,20,1,1,0.79,5,9.53,2516,,,
+2025-08-03,TikTok,App Install,79,56,1,1,2.49,1.79,1.4,2251,tiktok_app_install_text_69,Text,App Install - Text 1
+2025-08-03,TikTok,Conversions,118,84,2,2,3.13,2.38,1.4,2680,tiktok_conversions_carousel_95,Carousel,Conversions - Carousel 2
+2025-08-03,TikTok,App Install,94,59,1,1,2.5,1.69,1.59,2361,tiktok_app_install_text_32,Text,App Install - Text 3
+2025-08-03,Pinterest,Video Views,63,32,1,1,1.21,3.13,1.97,,,,
+2025-08-03,Pinterest,App Install,63,25,1,1,1.29,4,2.49,1937,pinterest_app_install_text_63,Text,App Install - Text 2
+2025-08-03,Pinterest,Video Views,65,26,1,1,1.44,3.85,2.47,1802,pinterest_video_views_text_61,Text,Video Views - Text 3
+2025-08-04,Google Ads,Video - YouTube,226,64,2,2,2.48,3.13,3.56,,googleads_video_-_youtube_collection_64,Collection,Video - YouTube - Collection 1
+2025-08-04,Google Ads,Display - Remarketing,257,65,2,2,2.33,3.08,3.93,2786,googleads_display_-_remarketing_carousel_8,Carousel,Display - Remarketing - Carousel 2
+2025-08-04,Google Ads,Search - Generic,284,93,4,4,1.87,4.3,3.04,4983,googleads_search_-_generic_collection_73,Collection,Search - Generic - Collection 3
+2025-08-04,Google Ads,Search - Generic,352,126,5,5,2.33,3.97,2.78,5416,googleads_search_-_generic_video_93,Video,Search - Generic - Video 4
+2025-08-04,Facebook,Conversions,207,87,2,2,1.19,2.3,2.39,,facebook_conversions_image_36,Image,Conversions - Image 1
+2025-08-04,Facebook,Video Views,172,69,1,1,1,1.45,2.5,6874,facebook_video_views_text_79,Text,Video Views - Text 2
+2025-08-04,Facebook,Lead Generation,192,65,1,1,1.3,1.54,2.94,5002,,,
+2025-08-04,Facebook,Remarketing,214,65,2,2,1.1,3.08,3.27,5917,facebook_remarketing_video_40,Video,Remarketing - Video 4
+2025-08-04,LinkedIn,Dynamic Ads,244,31,1,1,0.77,3.23,7.97,4006,linkedin_dynamic_ads_image_53,Image,Dynamic Ads - Image 1
+2025-08-04,LinkedIn,Dynamic Ads,220,33,1,1,0.68,3.03,6.75,4882,,,
+2025-08-04,LinkedIn,Text Ads,206,25,1,1,0.68,4,8.24,3680,,,
+2025-08-04,LinkedIn,Text Ads,205,27,1,1,0.77,3.7,7.46,3526,linkedin_text_ads_carousel_31,Carousel,Text Ads - Carousel 4
+2025-08-04,TikTok,Conversions,156,114,2,2,3.27,1.75,1.37,,,,
+2025-08-04,TikTok,Conversions,206,147,2,2,2.5,1.36,1.4,5887,tiktok_conversions_text_52,Text,Conversions - Text 2
+2025-08-04,Pinterest,Brand Awareness,60,34,1,1,1.18,2.94,1.78,,pinterest_brand_awareness_carousel_2,Carousel,Brand Awareness - Carousel 1
+2025-08-04,Pinterest,Conversions,78,41,1,1,1.35,2.44,1.89,3040,pinterest_conversions_carousel_19,Carousel,Conversions - Carousel 2
+2025-08-04,Pinterest,Video Views,51,20,0,0,1.4,0,2.56,1430,pinterest_video_views_image_68,Image,Video Views - Image 3
+2025-08-04,Pinterest,Conversions,64,37,1,1,1.26,2.7,1.72,2938,,,
+2025-08-05,Google Ads,Search - Brand,309,88,4,4,2.39,4.55,3.53,3679,googleads_search_-_brand_text_65,Text,Search - Brand - Text 1
+2025-08-05,Google Ads,Display - Remarketing,320,97,3,3,1.98,3.09,3.3,4899,,,
+2025-08-05,Google Ads,Search - Generic,416,130,5,5,2.18,3.85,3.19,5968,,,
+2025-08-05,Google Ads,Search - Generic,285,92,4,4,2.08,4.35,3.11,,googleads_search_-_generic_collection_63,Collection,Search - Generic - Collection 4
+2025-08-05,Facebook,Remarketing,379,110,2,2,1.21,1.82,3.43,9087,facebook_remarketing_video_16,Video,Remarketing - Video 1
+2025-08-05,Facebook,Video Views,241,90,2,2,1.26,2.22,2.68,7127,facebook_video_views_collection_72,Collection,Video Views - Collection 2
+2025-08-05,LinkedIn,Dynamic Ads,196,21,1,1,0.68,4.76,9.44,3093,linkedin_dynamic_ads_image_74,Image,Dynamic Ads - Image 1
+2025-08-05,LinkedIn,Dynamic Ads,170,18,1,1,0.8,5.56,9.68,2240,,,
+2025-08-05,LinkedIn,Sponsored Content,149,15,1,1,0.85,6.67,9.72,1756,linkedin_sponsored_content_video_95,Video,Sponsored Content - Video 3
+2025-08-05,LinkedIn,Event Ads,254,33,2,2,0.84,6.06,7.81,3949,,,
+2025-08-05,TikTok,App Install,201,138,3,3,2.49,2.17,1.46,5549,tiktok_app_install_image_13,Image,App Install - Image 1
+2025-08-05,TikTok,Traffic,185,124,2,2,2.91,1.61,1.49,4265,,,
+2025-08-05,TikTok,App Install,183,117,3,3,2.52,2.56,1.57,4647,tiktok_app_install_carousel_1,Carousel,App Install - Carousel 3
+2025-08-05,Pinterest,Traffic,115,63,2,2,1.42,3.17,1.83,4431,pinterest_traffic_video_73,Video,Traffic - Video 1
+2025-08-05,Pinterest,Conversions,90,40,1,1,1.32,2.5,2.25,3026,,,
+2025-08-05,Pinterest,Video Views,99,52,1,1,1.2,1.92,1.91,4332,,,
+2025-08-06,Google Ads,Display - Remarketing,452,180,5,5,2.42,2.78,2.51,7451,,,
+2025-08-06,Google Ads,Display - Remarketing,364,111,5,5,2.11,4.5,3.29,5256,googleads_display_-_remarketing_video_25,Video,Display - Remarketing - Video 2
+2025-08-06,Google Ads,Shopping,295,84,2,2,2.26,2.38,3.51,3710,googleads_shopping_image_50,Image,Shopping - Image 3
+2025-08-06,Facebook,Remarketing,441,173,3,3,1.15,1.73,2.55,15014,facebook_remarketing_carousel_97,Carousel,Remarketing - Carousel 1
+2025-08-06,Facebook,Video Views,227,63,2,2,1.04,3.17,3.58,6084,,,
+2025-08-06,LinkedIn,Dynamic Ads,449,64,3,3,0.69,4.69,7.04,9335,,,
+2025-08-06,LinkedIn,Dynamic Ads,380,37,1,1,0.93,2.7,10.33,3979,linkedin_dynamic_ads_carousel_96,Carousel,Dynamic Ads - Carousel 2
+2025-08-06,TikTok,Traffic,127,97,2,2,3.08,2.06,1.31,3152,tiktok_traffic_text_81,Text,Traffic - Text 1
+2025-08-06,TikTok,Conversions,276,177,4,4,2.9,2.26,1.56,6106,,,
+2025-08-06,Pinterest,App Install,94,55,1,1,1.75,1.82,1.7,3144,,,
+2025-08-06,Pinterest,App Install,55,24,1,1,1.63,4.17,2.3,1470,,,
+2025-08-06,Pinterest,Brand Awareness,78,37,1,1,1.63,2.7,2.12,2263,,,
+2025-08-07,Google Ads,Video - YouTube,478,131,6,6,1.88,4.58,3.64,6986,googleads_video_-_youtube_collection_39,Collection,Video - YouTube - Collection 1
+2025-08-07,Google Ads,Video - YouTube,741,251,12,12,2.1,4.78,2.95,11962,,,
+2025-08-07,Facebook,Lead Generation,175,59,1,1,1.3,1.69,2.95,4534,,,
+2025-08-07,Facebook,Conversions,137,49,1,1,1.16,2.04,2.82,4212,facebook_conversions_text_76,Text,Conversions - Text 2
+2025-08-07,Facebook,Conversions,219,89,2,2,1.15,2.25,2.47,7725,facebook_conversions_collection_40,Collection,Conversions - Collection 3
+2025-08-07,Facebook,Traffic,217,93,2,2,1.09,2.15,2.32,8501,facebook_traffic_text_33,Text,Traffic - Text 4
+2025-08-07,LinkedIn,Sponsored Content,285,25,1,1,0.68,4,11.57,3696,linkedin_sponsored_content_collection_79,Collection,Sponsored Content - Collection 1
+2025-08-07,LinkedIn,Sponsored Content,459,58,2,2,0.76,3.45,7.85,7627,linkedin_sponsored_content_text_4,Text,Sponsored Content - Text 2
+2025-08-07,TikTok,Reach,129,103,2,2,2.83,1.94,1.25,3634,tiktok_reach_collection_24,Collection,Reach - Collection 1
+2025-08-07,TikTok,Traffic,159,102,2,2,2.55,1.96,1.57,3996,tiktok_traffic_collection_39,Collection,Traffic - Collection 2
+2025-08-07,TikTok,Conversions,95,64,1,1,2.66,1.56,1.48,,,,
+2025-08-07,Pinterest,App Install,147,82,2,2,1.68,2.44,1.79,4876,pinterest_app_install_text_83,Text,App Install - Text 1
+2025-08-07,Pinterest,App Install,121,57,1,1,1.36,1.75,2.12,4206,pinterest_app_install_collection_9,Collection,App Install - Collection 2
+2025-08-08,Google Ads,Shopping,526,135,6,6,2.62,4.44,3.89,5158,googleads_shopping_image_9,Image,Shopping - Image 1
+2025-08-08,Google Ads,Search - Generic,695,243,10,10,2.48,4.12,2.86,9801,googleads_search_-_generic_image_94,Image,Search - Generic - Image 2
+2025-08-08,Facebook,Video Views,240,72,2,2,1.05,2.78,3.35,6868,facebook_video_views_image_23,Image,Video Views - Image 1
+2025-08-08,Facebook,Traffic,175,46,1,1,0.97,2.17,3.79,4722,,,
+2025-08-08,Facebook,Video Views,278,103,3,3,1.25,2.91,2.7,8223,facebook_video_views_collection_4,Collection,Video Views - Collection 3
+2025-08-08,LinkedIn,Dynamic Ads,154,16,1,1,0.86,6.25,9.37,1869,linkedin_dynamic_ads_carousel_8,Carousel,Dynamic Ads - Carousel 1
+2025-08-08,LinkedIn,Text Ads,151,16,1,1,0.7,6.25,9.16,2290,,,
+2025-08-08,LinkedIn,Message Ads,246,27,1,1,0.96,3.7,9.21,2817,linkedin_message_ads_image_1,Image,Message Ads - Image 3
+2025-08-08,LinkedIn,Message Ads,241,33,1,1,0.77,3.03,7.28,4297,linkedin_message_ads_text_24,Text,Message Ads - Text 4
+2025-08-08,TikTok,App Install,180,142,3,3,3.11,2.11,1.27,4573,tiktok_app_install_carousel_40,Carousel,App Install - Carousel 1
+2025-08-08,TikTok,Reach,103,69,1,1,2.75,1.45,1.49,2511,,,
+2025-08-08,TikTok,Traffic,145,106,2,2,3.1,1.89,1.37,,,,
+2025-08-08,Pinterest,Traffic,74,31,1,1,1.53,3.23,2.36,2024,pinterest_traffic_carousel_91,Carousel,Traffic - Carousel 1
+2025-08-08,Pinterest,Video Views,82,48,1,1,1.49,2.08,1.72,3215,pinterest_video_views_carousel_2,Carousel,Video Views - Carousel 2
+2025-08-08,Pinterest,Brand Awareness,76,39,1,1,1.4,2.56,1.92,2783,pinterest_brand_awareness_collection_15,Collection,Brand Awareness - Collection 3
+2025-08-08,Pinterest,Video Views,96,53,1,1,1.45,1.89,1.8,3664,pinterest_video_views_image_51,Image,Video Views - Image 4
+2025-08-09,Google Ads,Display - Remarketing,295,84,2,2,1.9,2.38,3.52,4427,googleads_display_-_remarketing_image_54,Image,Display - Remarketing - Image 1
+2025-08-09,Google Ads,Video - YouTube,396,115,4,4,2.22,3.48,3.45,5177,googleads_video_-_youtube_text_61,Text,Video - YouTube - Text 2
+2025-08-09,Facebook,Traffic,97,26,1,1,0.95,3.85,3.76,2742,facebook_traffic_video_17,Video,Traffic - Video 1
+2025-08-09,Facebook,Remarketing,84,27,1,1,1.34,3.7,3.16,2021,facebook_remarketing_carousel_31,Carousel,Remarketing - Carousel 2
+2025-08-09,Facebook,Video Views,111,37,1,1,1.22,2.7,3.02,3037,,,
+2025-08-09,Facebook,Lead Generation,92,27,1,1,0.98,3.7,3.41,2765,facebook_lead_generation_text_52,Text,Lead Generation - Text 4
+2025-08-09,LinkedIn,Dynamic Ads,235,22,1,1,0.71,4.55,10.64,3096,linkedin_dynamic_ads_text_4,Text,Dynamic Ads - Text 1
+2025-08-09,LinkedIn,Text Ads,272,24,1,1,0.94,4.17,11.49,2551,linkedin_text_ads_collection_38,Collection,Text Ads - Collection 2
+2025-08-09,TikTok,App Install,102,59,1,1,2.85,1.69,1.73,2069,tiktok_app_install_video_18,Video,App Install - Video 1
+2025-08-09,TikTok,Conversions,114,86,2,2,2.65,2.33,1.33,3241,tiktok_conversions_text_29,Text,Conversions - Text 2
+2025-08-09,TikTok,Conversions,79,53,1,1,2.44,1.89,1.49,2168,tiktok_conversions_text_66,Text,Conversions - Text 3
+2025-08-09,Pinterest,Video Views,75,32,1,1,1.43,3.13,2.32,2232,,,
+2025-08-09,Pinterest,App Install,67,30,1,1,1.55,3.33,2.23,1936,pinterest_app_install_video_65,Video,App Install - Video 2
+2025-08-10,Google Ads,Search - Brand,379,92,3,3,2.5,3.26,4.11,3680,,,
+2025-08-10,Google Ads,Video - YouTube,521,158,4,4,1.96,2.53,3.3,8054,googleads_video_-_youtube_image_29,Image,Video - YouTube - Image 2
+2025-08-10,Facebook,Remarketing,194,67,2,2,1.1,2.99,2.91,,facebook_remarketing_carousel_73,Carousel,Remarketing - Carousel 1
+2025-08-10,Facebook,Traffic,211,64,2,2,1.03,3.13,3.3,6216,,,
+2025-08-10,LinkedIn,Text Ads,170,15,0,0,0.74,0,11.55,2021,linkedin_text_ads_video_1,Video,Text Ads - Video 1
+2025-08-10,LinkedIn,Event Ads,163,19,1,1,0.7,5.26,8.81,2704,linkedin_event_ads_collection_28,Collection,Event Ads - Collection 2
+2025-08-10,LinkedIn,Message Ads,128,13,0,0,0.9,0,9.64,1449,linkedin_message_ads_text_18,Text,Message Ads - Text 3
+2025-08-10,TikTok,Video Views,65,42,1,1,2.8,2.38,1.55,1502,,,
+2025-08-10,TikTok,Reach,85,66,1,1,3.4,1.52,1.28,1939,tiktok_reach_text_32,Text,Reach - Text 2
+2025-08-10,TikTok,Video Views,60,31,1,1,2.99,3.23,1.93,1037,tiktok_video_views_carousel_74,Carousel,Video Views - Carousel 3
+2025-08-10,TikTok,Conversions,47,30,1,1,3.11,3.33,1.58,966,tiktok_conversions_image_25,Image,Conversions - Image 4
+2025-08-10,Pinterest,Traffic,69,38,1,1,1.18,2.63,1.81,3208,pinterest_traffic_collection_36,Collection,Traffic - Collection 1
+2025-08-10,Pinterest,Conversions,88,37,1,1,1.41,2.7,2.37,2627,pinterest_conversions_collection_65,Collection,Conversions - Collection 2
+2025-08-10,Pinterest,Conversions,57,28,1,1,1.36,3.57,2.05,2061,pinterest_conversions_collection_85,Collection,Conversions - Collection 3
+2025-08-11,Google Ads,Shopping,304,83,4,4,2.69,4.82,3.67,3089,googleads_shopping_collection_15,Collection,Shopping - Collection 1
+2025-08-11,Google Ads,Video - YouTube,264,68,3,3,2,4.41,3.86,3395,,,
+2025-08-11,Google Ads,Shopping,275,78,3,3,2.05,3.85,3.54,,,,
+2025-08-11,Google Ads,Video - YouTube,259,67,3,3,2,4.48,3.88,3355,googleads_video_-_youtube_video_77,Video,Video - YouTube - Video 4
+2025-08-11,Facebook,Lead Generation,194,60,2,2,1.06,3.33,3.26,5681,facebook_lead_generation_text_18,Text,Lead Generation - Text 1
+2025-08-11,Facebook,Lead Generation,212,71,2,2,1.35,2.82,3,5257,facebook_lead_generation_carousel_55,Carousel,Lead Generation - Carousel 2
+2025-08-11,Facebook,Conversions,188,61,2,2,0.95,3.28,3.1,6420,,,
+2025-08-11,Facebook,Remarketing,141,38,1,1,1.29,2.63,3.67,,facebook_remarketing_collection_86,Collection,Remarketing - Collection 4
+2025-08-11,LinkedIn,Message Ads,156,16,1,1,0.75,6.25,9.49,2123,linkedin_message_ads_carousel_66,Carousel,Message Ads - Carousel 1
+2025-08-11,LinkedIn,Event Ads,169,18,1,1,0.8,5.56,9.51,2252,linkedin_event_ads_image_16,Image,Event Ads - Image 2
+2025-08-11,LinkedIn,Message Ads,217,31,1,1,0.84,3.23,7.03,,linkedin_message_ads_video_43,Video,Message Ads - Video 3
+2025-08-11,LinkedIn,Dynamic Ads,147,15,1,1,0.72,6.67,9.95,2082,linkedin_dynamic_ads_text_49,Text,Dynamic Ads - Text 4
+2025-08-11,TikTok,App Install,160,123,3,3,3.11,2.44,1.3,,tiktok_app_install_text_49,Text,App Install - Text 1
+2025-08-11,TikTok,Traffic,146,111,2,2,2.6,1.8,1.31,4267,tiktok_traffic_video_83,Video,Traffic - Video 2
+2025-08-11,TikTok,Traffic,160,142,3,3,2.65,2.11,1.13,5349,tiktok_traffic_image_83,Image,Traffic - Image 3
+2025-08-11,Pinterest,Video Views,163,76,2,2,1.37,2.63,2.13,5554,pinterest_video_views_video_51,Video,Video Views - Video 1
+2025-08-11,Pinterest,Traffic,193,103,2,2,1.18,1.94,1.88,8716,pinterest_traffic_carousel_50,Carousel,Traffic - Carousel 2
+2025-08-12,Google Ads,Display - Remarketing,542,148,5,5,2.72,3.38,3.67,5445,googleads_display_-_remarketing_video_72,Video,Display - Remarketing - Video 1
+2025-08-12,Google Ads,Search - Brand,563,183,6,6,2.24,3.28,3.07,8175,googleads_search_-_brand_carousel_71,Carousel,Search - Brand - Carousel 2
+2025-08-12,Facebook,Lead Generation,174,48,1,1,0.99,2.08,3.63,4848,facebook_lead_generation_image_79,Image,Lead Generation - Image 1
+2025-08-12,Facebook,Remarketing,179,53,1,1,1.31,1.89,3.38,4058,,,
+2025-08-12,Facebook,Lead Generation,171,61,1,1,0.94,1.64,2.81,6498,facebook_lead_generation_carousel_45,Carousel,Lead Generation - Carousel 3
+2025-08-12,LinkedIn,Message Ads,151,18,1,1,0.71,5.56,8.39,,linkedin_message_ads_video_6,Video,Message Ads - Video 1
+2025-08-12,LinkedIn,Text Ads,270,35,1,1,0.8,2.86,7.63,4392,linkedin_text_ads_collection_98,Collection,Text Ads - Collection 2
+2025-08-12,LinkedIn,Text Ads,146,13,1,1,0.75,7.69,10.86,1739,linkedin_text_ads_carousel_51,Carousel,Text Ads - Carousel 3
+2025-08-12,LinkedIn,Event Ads,237,30,1,1,0.91,3.33,7.91,3301,linkedin_event_ads_video_88,Video,Event Ads - Video 4
+2025-08-12,TikTok,Reach,101,75,1,1,2.92,1.33,1.35,,tiktok_reach_collection_21,Collection,Reach - Collection 1
+2025-08-12,TikTok,Conversions,108,72,2,2,3.24,2.78,1.5,2221,,,
+2025-08-12,TikTok,Conversions,124,79,2,2,3.42,2.53,1.57,,tiktok_conversions_carousel_70,Carousel,Conversions - Carousel 3
+2025-08-12,TikTok,Video Views,120,77,1,1,2.98,1.3,1.57,2582,tiktok_video_views_image_12,Image,Video Views - Image 4
+2025-08-12,Pinterest,App Install,112,52,1,1,1.42,1.92,2.16,3671,pinterest_app_install_video_14,Video,App Install - Video 1
+2025-08-12,Pinterest,Brand Awareness,92,44,1,1,1.6,2.27,2.08,2749,pinterest_brand_awareness_text_20,Text,Brand Awareness - Text 2
+2025-08-12,Pinterest,Traffic,126,67,1,1,1.59,1.49,1.88,4205,pinterest_traffic_carousel_54,Carousel,Traffic - Carousel 3
+2025-08-13,Google Ads,Search - Generic,390,146,5,5,1.98,3.42,2.67,7380,googleads_search_-_generic_collection_8,Collection,Search - Generic - Collection 1
+2025-08-13,Google Ads,Display - Remarketing,278,92,3,3,2.49,3.26,3.04,3700,googleads_display_-_remarketing_text_99,Text,Display - Remarketing - Text 2
+2025-08-13,Google Ads,Video - YouTube,284,73,3,3,2.09,4.11,3.91,3485,googleads_video_-_youtube_image_55,Image,Video - YouTube - Image 3
+2025-08-13,Google Ads,Video - YouTube,217,66,3,3,2.54,4.55,3.27,2598,googleads_video_-_youtube_collection_76,Collection,Video - YouTube - Collection 4
+2025-08-13,Facebook,Video Views,137,51,1,1,1.21,1.96,2.67,4217,facebook_video_views_image_86,Image,Video Views - Image 1
+2025-08-13,Facebook,Traffic,161,47,1,1,1.1,2.13,3.43,4255,facebook_traffic_carousel_54,Carousel,Traffic - Carousel 2
+2025-08-13,Facebook,Conversions,195,71,2,2,0.92,2.82,2.73,7738,facebook_conversions_text_70,Text,Conversions - Text 3
+2025-08-13,Facebook,Conversions,145,54,1,1,0.94,1.85,2.66,,facebook_conversions_collection_40,Collection,Conversions - Collection 4
+2025-08-13,LinkedIn,Text Ads,213,23,1,1,0.96,4.35,9.45,2393,linkedin_text_ads_image_47,Image,Text Ads - Image 1
+2025-08-13,LinkedIn,Dynamic Ads,246,30,1,1,0.82,3.33,8.29,3642,linkedin_dynamic_ads_carousel_98,Carousel,Dynamic Ads - Carousel 2
+2025-08-13,LinkedIn,Sponsored Content,146,14,0,0,0.72,0,10.4,,,,
+2025-08-13,LinkedIn,Message Ads,256,30,1,1,0.77,3.33,8.39,3886,,,
+2025-08-13,TikTok,Video Views,89,53,1,1,2.57,1.89,1.68,2062,tiktok_video_views_image_58,Image,Video Views - Image 1
+2025-08-13,TikTok,Traffic,90,52,1,1,2.78,1.92,1.75,1870,tiktok_traffic_collection_68,Collection,Traffic - Collection 2
+2025-08-13,TikTok,App Install,92,58,1,1,2.88,1.72,1.58,2016,tiktok_app_install_carousel_76,Carousel,App Install - Carousel 3
+2025-08-13,TikTok,Reach,140,114,2,2,2.62,1.75,1.23,4351,tiktok_reach_video_67,Video,Reach - Video 4
+2025-08-13,Pinterest,Conversions,82,38,1,1,1.75,2.63,2.18,2174,pinterest_conversions_video_86,Video,Conversions - Video 1
+2025-08-13,Pinterest,Traffic,65,35,1,1,1.65,2.86,1.83,2120,pinterest_traffic_video_86,Video,Traffic - Video 2
+2025-08-13,Pinterest,Brand Awareness,76,33,1,1,1.62,3.03,2.29,2040,,,
+2025-08-13,Pinterest,Conversions,80,45,1,1,1.22,2.22,1.79,3693,pinterest_conversions_collection_76,Collection,Conversions - Collection 4
+2025-08-14,Google Ads,Search - Brand,337,100,5,5,2.15,5,3.37,4644,googleads_search_-_brand_image_28,Image,Search - Brand - Image 1
+2025-08-14,Google Ads,Search - Generic,275,88,3,3,2.56,3.41,3.14,,googleads_search_-_generic_image_92,Image,Search - Generic - Image 2
+2025-08-14,Google Ads,Display - Remarketing,262,97,4,4,2.16,4.12,2.71,4485,googleads_display_-_remarketing_image_10,Image,Display - Remarketing - Image 3
+2025-08-14,Google Ads,Video - YouTube,347,111,3,3,1.92,2.7,3.13,5781,googleads_video_-_youtube_text_1,Text,Video - YouTube - Text 4
+2025-08-14,Facebook,Video Views,245,89,2,2,1.07,2.25,2.76,8323,facebook_video_views_text_69,Text,Video Views - Text 1
+2025-08-14,Facebook,Conversions,286,123,3,3,1.16,2.44,2.32,10571,facebook_conversions_text_1,Text,Conversions - Text 2
+2025-08-14,Facebook,Traffic,202,73,1,1,1.08,1.37,2.75,6790,facebook_traffic_image_13,Image,Traffic - Image 3
+2025-08-14,LinkedIn,Text Ads,413,41,2,2,0.78,4.88,10.14,5235,,,
+2025-08-14,LinkedIn,Sponsored Content,352,37,2,2,0.85,5.41,9.61,4360,linkedin_sponsored_content_text_37,Text,Sponsored Content - Text 2
+2025-08-14,TikTok,Conversions,146,104,2,2,3,1.92,1.4,3464,tiktok_conversions_video_57,Video,Conversions - Video 1
+2025-08-14,TikTok,App Install,160,106,2,2,2.63,1.89,1.51,4036,tiktok_app_install_image_53,Image,App Install - Image 2
+2025-08-14,TikTok,Traffic,203,176,4,4,2.65,2.27,1.15,6634,tiktok_traffic_video_74,Video,Traffic - Video 3
+2025-08-14,Pinterest,Conversions,163,75,2,2,1.23,2.67,2.19,6092,pinterest_conversions_video_6,Video,Conversions - Video 1
+2025-08-14,Pinterest,Traffic,105,57,1,1,1.71,1.75,1.86,3342,pinterest_traffic_image_57,Image,Traffic - Image 2
+2025-08-15,Google Ads,Search - Brand,403,157,6,6,2.38,3.82,2.57,6602,googleads_search_-_brand_video_96,Video,Search - Brand - Video 1
+2025-08-15,Google Ads,Shopping,329,110,4,4,2.26,3.64,2.99,4865,googleads_shopping_text_87,Text,Shopping - Text 2
+2025-08-15,Google Ads,Shopping,231,58,2,2,1.85,3.45,4,3131,googleads_shopping_collection_95,Collection,Shopping - Collection 3
+2025-08-15,Google Ads,Display - Remarketing,287,83,3,3,2.66,3.61,3.45,,googleads_display_-_remarketing_text_56,Text,Display - Remarketing - Text 4
+2025-08-15,Facebook,Remarketing,278,101,3,3,1.19,2.97,2.76,8508,facebook_remarketing_image_0,Image,Remarketing - Image 1
+2025-08-15,Facebook,Video Views,286,99,3,3,1.27,3.03,2.89,7790,facebook_video_views_image_91,Image,Video Views - Image 2
+2025-08-15,LinkedIn,Message Ads,474,64,2,2,0.8,3.13,7.41,7951,linkedin_message_ads_video_21,Video,Message Ads - Video 1
+2025-08-15,LinkedIn,Message Ads,470,55,3,3,0.95,5.45,8.5,5784,,,
+2025-08-15,TikTok,Reach,327,302,7,7,2.93,2.32,1.08,10324,tiktok_reach_text_8,Text,Reach - Text 1
+2025-08-15,TikTok,Conversions,209,154,3,3,3.11,1.95,1.36,4944,tiktok_conversions_video_77,Video,Conversions - Video 2
+2025-08-15,Pinterest,Traffic,113,52,1,1,1.23,1.92,2.18,4218,pinterest_traffic_carousel_55,Carousel,Traffic - Carousel 1
+2025-08-15,Pinterest,Conversions,104,47,1,1,1.49,2.13,2.22,3160,pinterest_conversions_text_82,Text,Conversions - Text 2
+2025-08-15,Pinterest,App Install,70,32,1,1,1.22,3.13,2.21,2620,,,
+2025-08-16,Google Ads,Search - Generic,233,57,3,3,2.17,5.26,4.07,2625,googleads_search_-_generic_video_14,Video,Search - Generic - Video 1
+2025-08-16,Google Ads,Search - Generic,237,72,3,3,2.34,4.17,3.29,3078,,,
+2025-08-16,Google Ads,Search - Generic,302,100,4,4,2.49,4,3.02,,googleads_search_-_generic_carousel_32,Carousel,Search - Generic - Carousel 3
+2025-08-16,Facebook,Conversions,188,47,1,1,1.15,2.13,3.97,4087,facebook_conversions_video_97,Video,Conversions - Video 1
+2025-08-16,Facebook,Conversions,210,68,2,2,1.14,2.94,3.09,5981,facebook_conversions_text_25,Text,Conversions - Text 2
+2025-08-16,LinkedIn,Text Ads,104,9,0,0,0.68,0,11.77,1314,linkedin_text_ads_text_31,Text,Text Ads - Text 1
+2025-08-16,LinkedIn,Sponsored Content,142,15,1,1,0.69,6.67,9.54,2181,linkedin_sponsored_content_carousel_43,Carousel,Sponsored Content - Carousel 2
+2025-08-16,LinkedIn,Message Ads,148,17,1,1,0.9,5.88,8.85,1891,linkedin_message_ads_image_5,Image,Message Ads - Image 3
+2025-08-16,LinkedIn,Event Ads,105,12,0,0,0.68,0,8.92,1773,linkedin_event_ads_text_89,Text,Event Ads - Text 4
+2025-08-16,TikTok,Video Views,50,29,1,1,2.77,3.45,1.74,,tiktok_video_views_image_76,Image,Video Views - Image 1
+2025-08-16,TikTok,App Install,75,41,1,1,3.14,2.44,1.82,1306,tiktok_app_install_collection_16,Collection,App Install - Collection 2
+2025-08-16,TikTok,App Install,75,59,1,1,2.59,1.69,1.28,2274,,,
+2025-08-16,TikTok,Reach,42,21,0,0,2.44,0,2.02,861,tiktok_reach_collection_59,Collection,Reach - Collection 4
+2025-08-16,Pinterest,Traffic,62,29,1,1,1.48,3.45,2.16,1953,,,
+2025-08-16,Pinterest,Brand Awareness,42,16,0,0,1.17,0,2.61,,,,
+2025-08-16,Pinterest,App Install,39,16,0,0,1.37,0,2.39,1169,pinterest_app_install_video_21,Video,App Install - Video 3
+2025-08-16,Pinterest,App Install,42,18,0,0,1.62,0,2.28,1113,pinterest_app_install_text_99,Text,App Install - Text 4
+2025-08-17,Google Ads,Display - Remarketing,375,110,4,4,2.3,3.64,3.41,4781,googleads_display_-_remarketing_text_62,Text,Display - Remarketing - Text 1
+2025-08-17,Google Ads,Search - Generic,388,101,4,4,2.01,3.96,3.86,5018,,,
+2025-08-17,Facebook,Remarketing,139,47,1,1,1.21,2.13,2.95,3883,,,
+2025-08-17,Facebook,Traffic,134,49,1,1,0.95,2.04,2.73,5143,,,
+2025-08-17,Facebook,Traffic,83,30,1,1,1.14,3.33,2.81,2621,facebook_traffic_carousel_25,Carousel,Traffic - Carousel 3
+2025-08-17,Facebook,Traffic,137,39,1,1,0.95,2.56,3.51,4118,,,
+2025-08-17,LinkedIn,Event Ads,97,8,0,0,0.78,0,11.75,,linkedin_event_ads_text_62,Text,Event Ads - Text 1
+2025-08-17,LinkedIn,Text Ads,94,10,0,0,0.94,0,9.44,,linkedin_text_ads_video_91,Video,Text Ads - Video 2
+2025-08-17,LinkedIn,Sponsored Content,144,15,1,1,0.72,6.67,9.31,2073,,,
+2025-08-17,LinkedIn,Event Ads,94,8,0,0,0.91,0,11.85,,linkedin_event_ads_image_10,Image,Event Ads - Image 4
+2025-08-17,TikTok,Reach,88,62,1,1,3.34,1.61,1.42,1854,tiktok_reach_carousel_78,Carousel,Reach - Carousel 1
+2025-08-17,TikTok,Reach,85,56,1,1,3.21,1.79,1.51,1746,tiktok_reach_collection_89,Collection,Reach - Collection 2
+2025-08-17,Pinterest,App Install,68,29,1,1,1.29,3.45,2.35,2245,pinterest_app_install_image_16,Image,App Install - Image 1
+2025-08-17,Pinterest,Traffic,68,39,1,1,1.17,2.56,1.73,,,,
+2025-08-17,Pinterest,App Install,74,29,0,0,1.73,0,2.52,1676,pinterest_app_install_text_95,Text,App Install - Text 3
+2025-08-18,Google Ads,Search - Brand,407,120,5,5,2.4,4.17,3.39,5004,googleads_search_-_brand_video_64,Video,Search - Brand - Video 1
+2025-08-18,Google Ads,Video - YouTube,401,114,4,4,2,3.51,3.51,5696,googleads_video_-_youtube_collection_38,Collection,Video - YouTube - Collection 2
+2025-08-18,Google Ads,Shopping,319,101,4,4,1.88,3.96,3.17,5363,,,
+2025-08-18,Facebook,Video Views,344,104,2,2,1.06,1.92,3.29,9812,facebook_video_views_image_65,Image,Video Views - Image 1
+2025-08-18,Facebook,Video Views,248,70,1,1,1.1,1.43,3.55,,,,
+2025-08-18,LinkedIn,Text Ads,239,26,1,1,0.79,3.85,9.14,3310,linkedin_text_ads_carousel_64,Carousel,Text Ads - Carousel 1
+2025-08-18,LinkedIn,Sponsored Content,206,28,1,1,0.88,3.57,7.43,3184,linkedin_sponsored_content_carousel_39,Carousel,Sponsored Content - Carousel 2
+2025-08-18,LinkedIn,Text Ads,223,25,1,1,0.79,4,9.01,3177,linkedin_text_ads_collection_55,Collection,Text Ads - Collection 3
+2025-08-18,LinkedIn,Message Ads,159,14,1,1,0.84,7.14,11.02,1657,linkedin_message_ads_text_15,Text,Message Ads - Text 4
+2025-08-18,TikTok,Conversions,93,61,1,1,2.87,1.64,1.51,2123,tiktok_conversions_video_1,Video,Conversions - Video 1
+2025-08-18,TikTok,Reach,114,90,1,1,3.33,1.11,1.27,2701,tiktok_reach_video_74,Video,Reach - Video 2
+2025-08-18,TikTok,App Install,88,51,1,1,2.85,1.96,1.73,1790,tiktok_app_install_collection_64,Collection,App Install - Collection 3
+2025-08-18,TikTok,Reach,113,68,1,1,2.87,1.47,1.66,2373,tiktok_reach_collection_6,Collection,Reach - Collection 4
+2025-08-18,Pinterest,Conversions,82,51,1,1,1.17,1.96,1.61,4358,,,
+2025-08-18,Pinterest,Video Views,70,37,1,1,1.38,2.7,1.89,2672,pinterest_video_views_image_91,Image,Video Views - Image 2
+2025-08-18,Pinterest,App Install,63,27,1,1,1.5,3.7,2.37,,pinterest_app_install_carousel_48,Carousel,App Install - Carousel 3
+2025-08-18,Pinterest,Brand Awareness,100,68,1,1,1.28,1.47,1.47,5298,,,
+2025-08-19,Google Ads,Display - Remarketing,451,128,5,5,2.63,3.91,3.52,4861,googleads_display_-_remarketing_text_48,Text,Display - Remarketing - Text 1
+2025-08-19,Google Ads,Shopping,443,123,4,4,2.02,3.25,3.6,6076,googleads_shopping_collection_7,Collection,Shopping - Collection 2
+2025-08-19,Google Ads,Shopping,399,112,4,4,1.87,3.57,3.57,5988,googleads_shopping_carousel_72,Carousel,Shopping - Carousel 3
+2025-08-19,Facebook,Lead Generation,334,94,3,3,1.22,3.19,3.55,7713,facebook_lead_generation_text_99,Text,Lead Generation - Text 1
+2025-08-19,Facebook,Lead Generation,507,213,6,6,1.08,2.82,2.38,19670,facebook_lead_generation_video_65,Video,Lead Generation - Video 2
+2025-08-19,LinkedIn,Message Ads,153,16,1,1,0.86,6.25,9.69,1853,linkedin_message_ads_text_24,Text,Message Ads - Text 1
+2025-08-19,LinkedIn,Dynamic Ads,165,22,1,1,0.72,4.55,7.43,3064,linkedin_dynamic_ads_image_38,Image,Dynamic Ads - Image 2
+2025-08-19,LinkedIn,Dynamic Ads,140,13,1,1,0.81,7.69,10.73,1603,linkedin_dynamic_ads_image_57,Image,Dynamic Ads - Image 3
+2025-08-19,LinkedIn,Dynamic Ads,202,28,1,1,0.86,3.57,7.24,3246,linkedin_dynamic_ads_image_8,Image,Dynamic Ads - Image 4
+2025-08-19,TikTok,Traffic,194,121,3,3,2.73,2.48,1.6,4433,,,
+2025-08-19,TikTok,App Install,228,177,3,3,2.68,1.69,1.29,6594,tiktok_app_install_video_9,Video,App Install - Video 2
+2025-08-19,Pinterest,Conversions,157,85,1,1,1.57,1.18,1.85,5400,pinterest_conversions_text_49,Text,Conversions - Text 1
+2025-08-19,Pinterest,Brand Awareness,123,53,1,1,1.33,1.89,2.33,3995,,,
+2025-08-20,Google Ads,Shopping,531,175,7,7,2.62,4,3.03,6688,,,
+2025-08-20,Google Ads,Shopping,379,110,5,5,2.48,4.55,3.45,4440,googleads_shopping_carousel_80,Carousel,Shopping - Carousel 2
+2025-08-20,Google Ads,Shopping,355,109,4,4,2.27,3.67,3.25,4807,googleads_shopping_image_69,Image,Shopping - Image 3
+2025-08-20,Facebook,Lead Generation,257,91,2,2,0.97,2.2,2.81,9423,facebook_lead_generation_collection_85,Collection,Lead Generation - Collection 1
+2025-08-20,Facebook,Video Views,376,137,3,3,1.04,2.19,2.74,13154,facebook_video_views_collection_41,Collection,Video Views - Collection 2
+2025-08-20,LinkedIn,Message Ads,175,19,1,1,0.73,5.26,8.99,2595,linkedin_message_ads_carousel_77,Carousel,Message Ads - Carousel 1
+2025-08-20,LinkedIn,Sponsored Content,268,26,1,1,0.8,3.85,10.2,3259,linkedin_sponsored_content_collection_92,Collection,Sponsored Content - Collection 2
+2025-08-20,LinkedIn,Sponsored Content,260,36,2,2,0.73,5.56,7.26,4929,linkedin_sponsored_content_carousel_22,Carousel,Sponsored Content - Carousel 3
+2025-08-20,TikTok,Conversions,98,75,2,2,2.37,2.67,1.31,3168,tiktok_conversions_video_93,Video,Conversions - Video 1
+2025-08-20,TikTok,Video Views,100,71,1,1,2.5,1.41,1.41,2839,tiktok_video_views_text_72,Text,Video Views - Text 2
+2025-08-20,TikTok,Reach,116,70,1,1,3.45,1.43,1.65,2028,,,
+2025-08-20,TikTok,Reach,98,65,1,1,3.13,1.54,1.51,2074,tiktok_reach_collection_15,Collection,Reach - Collection 4
+2025-08-20,Pinterest,App Install,115,75,1,1,1.27,1.33,1.53,,pinterest_app_install_image_82,Image,App Install - Image 1
+2025-08-20,Pinterest,Video Views,101,59,1,1,1.4,1.69,1.7,,,,
+2025-08-20,Pinterest,Video Views,81,39,1,1,1.25,2.56,2.07,,,,
+2025-08-21,Google Ads,Video - YouTube,360,109,5,5,1.99,4.59,3.3,5471,googleads_video_-_youtube_collection_75,Collection,Video - YouTube - Collection 1
+2025-08-21,Google Ads,Search - Generic,401,109,4,4,2.59,3.67,3.68,4211,googleads_search_-_generic_image_3,Image,Search - Generic - Image 2
+2025-08-21,Google Ads,Display - Remarketing,452,139,4,4,2.38,2.88,3.25,5850,googleads_display_-_remarketing_text_43,Text,Display - Remarketing - Text 3
+2025-08-21,Facebook,Video Views,340,136,3,3,0.98,2.21,2.5,13946,facebook_video_views_collection_2,Collection,Video Views - Collection 1
+2025-08-21,Facebook,Traffic,207,68,2,2,1.24,2.94,3.07,5475,facebook_traffic_text_81,Text,Traffic - Text 2
+2025-08-21,Facebook,Video Views,271,118,3,3,1.17,2.54,2.3,10094,facebook_video_views_collection_88,Collection,Video Views - Collection 3
+2025-08-21,LinkedIn,Sponsored Content,180,19,1,1,0.68,5.26,9.47,2810,linkedin_sponsored_content_image_89,Image,Sponsored Content - Image 1
+2025-08-21,LinkedIn,Text Ads,152,15,1,1,0.84,6.67,10.25,1796,linkedin_text_ads_video_79,Video,Text Ads - Video 2
+2025-08-21,LinkedIn,Sponsored Content,148,18,1,1,0.67,5.56,8.25,2681,linkedin_sponsored_content_carousel_60,Carousel,Sponsored Content - Carousel 3
+2025-08-21,LinkedIn,Dynamic Ads,228,29,1,1,0.86,3.45,7.9,3390,linkedin_dynamic_ads_carousel_89,Carousel,Dynamic Ads - Carousel 4
+2025-08-21,TikTok,App Install,158,87,2,2,2.39,2.3,1.83,3647,tiktok_app_install_carousel_49,Carousel,App Install - Carousel 1
+2025-08-21,TikTok,Reach,270,242,5,5,3.36,2.07,1.12,,tiktok_reach_carousel_77,Carousel,Reach - Carousel 2
+2025-08-21,Pinterest,Conversions,122,53,1,1,1.19,1.89,2.3,4467,pinterest_conversions_text_20,Text,Conversions - Text 1
+2025-08-21,Pinterest,Brand Awareness,142,82,2,2,1.37,2.44,1.74,5986,,,
+2025-08-22,Google Ads,Shopping,739,294,10,10,2.14,3.4,2.51,13735,googleads_shopping_carousel_91,Carousel,Shopping - Carousel 1
+2025-08-22,Google Ads,Search - Generic,791,241,10,10,2.52,4.15,3.28,9578,googleads_search_-_generic_text_18,Text,Search - Generic - Text 2
+2025-08-22,Facebook,Remarketing,333,130,3,3,1.21,2.31,2.57,10705,,,
+2025-08-22,Facebook,Video Views,441,171,3,3,1.34,1.75,2.58,12784,facebook_video_views_carousel_92,Carousel,Video Views - Carousel 2
+2025-08-22,LinkedIn,Message Ads,318,39,2,2,0.86,5.13,8.22,,linkedin_message_ads_carousel_85,Carousel,Message Ads - Carousel 1
+2025-08-22,LinkedIn,Dynamic Ads,272,33,1,1,0.96,3.03,8.15,3453,linkedin_dynamic_ads_text_69,Text,Dynamic Ads - Text 2
+2025-08-22,LinkedIn,Event Ads,307,37,2,2,0.88,5.41,8.22,4211,linkedin_event_ads_collection_77,Collection,Event Ads - Collection 3
+2025-08-22,TikTok,Reach,273,214,4,4,2.79,1.87,1.28,7667,,,
+2025-08-22,TikTok,App Install,257,196,3,3,2.43,1.53,1.31,8057,tiktok_app_install_carousel_75,Carousel,App Install - Carousel 2
+2025-08-22,Pinterest,App Install,70,43,1,1,1.26,2.33,1.64,3422,pinterest_app_install_video_72,Video,App Install - Video 1
+2025-08-22,Pinterest,Conversions,75,36,1,1,1.43,2.78,2.11,2512,pinterest_conversions_collection_93,Collection,Conversions - Collection 2
+2025-08-22,Pinterest,Brand Awareness,65,27,1,1,1.35,3.7,2.43,1998,pinterest_brand_awareness_carousel_27,Carousel,Brand Awareness - Carousel 3
+2025-08-22,Pinterest,Video Views,62,37,1,1,1.22,2.7,1.69,3031,pinterest_video_views_collection_41,Collection,Video Views - Collection 4
+2025-08-23,Google Ads,Search - Brand,345,108,5,5,2.35,4.63,3.18,4594,googleads_search_-_brand_video_38,Video,Search - Brand - Video 1
+2025-08-23,Google Ads,Shopping,365,115,4,4,1.94,3.48,3.16,5934,googleads_shopping_collection_74,Collection,Shopping - Collection 2
+2025-08-23,Google Ads,Display - Remarketing,335,92,4,4,1.87,4.35,3.62,4918,googleads_display_-_remarketing_collection_72,Collection,Display - Remarketing - Collection 3
+2025-08-23,Facebook,Video Views,115,42,1,1,1.04,2.38,2.73,4041,facebook_video_views_collection_32,Collection,Video Views - Collection 1
+2025-08-23,Facebook,Traffic,126,35,1,1,1.18,2.86,3.57,2959,facebook_traffic_image_46,Image,Traffic - Image 2
+2025-08-23,Facebook,Video Views,134,39,1,1,1.31,2.56,3.41,2987,,,
+2025-08-23,LinkedIn,Dynamic Ads,152,15,1,1,0.94,6.67,9.85,1601,linkedin_dynamic_ads_carousel_52,Carousel,Dynamic Ads - Carousel 1
+2025-08-23,LinkedIn,Sponsored Content,127,11,0,0,0.7,0,11.3,1566,linkedin_sponsored_content_text_73,Text,Sponsored Content - Text 2
+2025-08-23,LinkedIn,Event Ads,114,11,1,1,0.97,9.09,10.78,1130,linkedin_event_ads_collection_58,Collection,Event Ads - Collection 3
+2025-08-23,TikTok,Conversions,102,69,1,1,3.39,1.45,1.48,,tiktok_conversions_video_49,Video,Conversions - Video 1
+2025-08-23,TikTok,Reach,121,68,1,1,2.55,1.47,1.79,2667,tiktok_reach_text_36,Text,Reach - Text 2
+2025-08-23,TikTok,App Install,67,49,1,1,3.4,2.04,1.36,1440,,,
+2025-08-23,Pinterest,Traffic,80,35,1,1,1.22,2.86,2.26,2865,pinterest_traffic_carousel_53,Carousel,Traffic - Carousel 1
+2025-08-23,Pinterest,Conversions,49,25,1,1,1.49,4,1.95,1673,pinterest_conversions_video_3,Video,Conversions - Video 2
+2025-08-24,Google Ads,Search - Generic,400,96,4,4,1.89,4.17,4.16,5084,googleads_search_-_generic_carousel_54,Carousel,Search - Generic - Carousel 1
+2025-08-24,Google Ads,Display - Remarketing,407,109,5,5,2.24,4.59,3.74,4861,,,
+2025-08-24,Facebook,Traffic,157,45,1,1,1.12,2.22,3.51,4023,facebook_traffic_text_83,Text,Traffic - Text 1
+2025-08-24,Facebook,Traffic,172,55,1,1,1.12,1.82,3.14,4901,facebook_traffic_video_89,Video,Traffic - Video 2
+2025-08-24,Facebook,Video Views,163,59,1,1,1.37,1.69,2.76,4298,facebook_video_views_image_6,Image,Video Views - Image 3
+2025-08-24,LinkedIn,Message Ads,120,11,0,0,0.78,0,10.61,1414,linkedin_message_ads_video_13,Video,Message Ads - Video 1
+2025-08-24,LinkedIn,Text Ads,117,10,0,0,0.97,0,12.07,1027,linkedin_text_ads_carousel_73,Carousel,Text Ads - Carousel 2
+2025-08-24,LinkedIn,Dynamic Ads,146,14,1,1,0.8,7.14,10.59,1751,linkedin_dynamic_ads_carousel_60,Carousel,Dynamic Ads - Carousel 3
+2025-08-24,LinkedIn,Event Ads,148,15,1,1,0.69,6.67,9.79,2176,linkedin_event_ads_carousel_22,Carousel,Event Ads - Carousel 4
+2025-08-24,TikTok,Traffic,106,69,2,2,2.95,2.9,1.54,2339,tiktok_traffic_collection_63,Collection,Traffic - Collection 1
+2025-08-24,TikTok,Conversions,153,85,2,2,2.44,2.35,1.81,3478,tiktok_conversions_carousel_95,Carousel,Conversions - Carousel 2
+2025-08-24,Pinterest,Brand Awareness,47,19,0,0,1.56,0,2.44,1218,pinterest_brand_awareness_image_42,Image,Brand Awareness - Image 1
+2025-08-24,Pinterest,Video Views,60,26,1,1,1.27,3.85,2.27,2049,pinterest_video_views_carousel_63,Carousel,Video Views - Carousel 2
+2025-08-24,Pinterest,App Install,92,56,1,1,1.68,1.79,1.64,3326,pinterest_app_install_collection_34,Collection,App Install - Collection 3
+2025-08-25,Google Ads,Search - Brand,409,137,6,6,2.29,4.38,2.99,5987,googleads_search_-_brand_carousel_72,Carousel,Search - Brand - Carousel 1
+2025-08-25,Google Ads,Video - YouTube,337,109,5,5,2.49,4.59,3.09,4370,googleads_video_-_youtube_carousel_63,Carousel,Video - YouTube - Carousel 2
+2025-08-25,Google Ads,Shopping,356,99,5,5,2.64,5.05,3.58,3747,googleads_shopping_image_66,Image,Shopping - Image 3
+2025-08-25,Google Ads,Search - Brand,257,71,2,2,2.18,2.82,3.63,3250,googleads_search_-_brand_carousel_64,Carousel,Search - Brand - Carousel 4
+2025-08-25,Facebook,Remarketing,242,73,1,1,1.09,1.37,3.3,6708,,,
+2025-08-25,Facebook,Remarketing,188,51,1,1,1.09,1.96,3.68,4689,facebook_remarketing_text_93,Text,Remarketing - Text 2
+2025-08-25,Facebook,Traffic,192,59,1,1,1.15,1.69,3.26,5111,facebook_traffic_collection_7,Collection,Traffic - Collection 3
+2025-08-25,LinkedIn,Sponsored Content,317,45,2,2,0.68,4.44,7.09,6648,,,
+2025-08-25,LinkedIn,Dynamic Ads,181,18,1,1,0.98,5.56,9.98,1840,linkedin_dynamic_ads_carousel_6,Carousel,Dynamic Ads - Carousel 2
+2025-08-25,LinkedIn,Sponsored Content,299,40,2,2,0.78,5,7.42,5148,linkedin_sponsored_content_text_74,Text,Sponsored Content - Text 3
+2025-08-25,TikTok,Reach,181,166,3,3,2.38,1.81,1.09,6981,,,
+2025-08-25,TikTok,Video Views,214,201,4,4,3.07,1.99,1.07,,tiktok_video_views_collection_86,Collection,Video Views - Collection 2
+2025-08-25,TikTok,Traffic,153,108,3,3,2.86,2.78,1.42,3770,tiktok_traffic_collection_51,Collection,Traffic - Collection 3
+2025-08-25,Pinterest,Video Views,89,56,1,1,1.61,1.79,1.58,3485,pinterest_video_views_collection_47,Collection,Video Views - Collection 1
+2025-08-25,Pinterest,Traffic,76,39,1,1,1.32,2.56,1.95,2958,pinterest_traffic_collection_29,Collection,Traffic - Collection 2
+2025-08-25,Pinterest,Brand Awareness,64,35,1,1,1.52,2.86,1.81,2297,,,
+2025-08-25,Pinterest,Brand Awareness,60,32,1,1,1.25,3.13,1.85,2566,pinterest_brand_awareness_image_85,Image,Brand Awareness - Image 4

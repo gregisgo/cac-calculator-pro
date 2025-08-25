@@ -1,0 +1,1836 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAC Calculator Pro - Professional Customer Acquisition Cost Analysis</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary-color: #6b5b95;
+            --primary-dark: #5a4a7c;
+            --accent-color: #10b981;
+            --warning-color: #f59e0b;
+            --error-color: #ef4444;
+            --background: #ffffff;
+            --surface: #f8fafc;
+            --surface-alt: #f7eed5;
+            --border: #e2e8f0;
+            --text-primary: #0f1419;
+            --text-secondary: #1a1a1a;
+            --text-muted: #475569;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background: var(--background);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+            color: white;
+            border-radius: 12px;
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        
+        /* Navigation Steps */
+        .progress-nav {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .nav-steps {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .nav-step {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: 1px solid var(--border);
+            background: var(--surface);
+        }
+        
+        .nav-step.active {
+            background: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+        
+        .nav-step.completed {
+            background: var(--accent-color);
+            color: white;
+            border-color: var(--accent-color);
+        }
+        
+        .step-number {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        
+        .nav-step.active .step-number,
+        .nav-step.completed .step-number {
+            background: rgba(255, 255, 255, 0.3);
+            color: white;
+        }
+        
+        /* Sections */
+        .section {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 20px;
+            display: none;
+        }
+        
+        .section.active {
+            display: block;
+        }
+        
+        .section h2 {
+            margin-bottom: 20px;
+            color: var(--text-primary);
+        }
+        
+        /* Form Elements */
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            font-size: 1rem;
+            background: var(--background);
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(107, 91, 149, 0.1);
+        }
+        
+        /* Buttons */
+        .btn {
+            padding: 12px 24px;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            border: none;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.2s;
+            font-size: 1rem;
+        }
+        
+        .btn-primary {
+            background: var(--primary-color);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-1px);
+        }
+        
+        .btn-secondary {
+            background: var(--surface);
+            color: var(--text-primary);
+            border: 1px solid var(--border);
+        }
+        
+        .btn-secondary:hover {
+            background: var(--border);
+        }
+        
+        .btn-warning {
+            background: var(--warning-color);
+            color: white;
+        }
+        
+        .btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+        }
+        
+        /* Upload Areas */
+        .upload-methods {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .method-btn {
+            padding: 20px;
+            border: 2px solid var(--border);
+            border-radius: 8px;
+            background: var(--surface);
+            cursor: pointer;
+            text-align: center;
+            transition: all 0.3s;
+        }
+        
+        .method-btn.active {
+            border-color: var(--primary-color);
+            background: rgba(107, 91, 149, 0.05);
+        }
+        
+        .upload-area {
+            border: 2px dashed var(--border);
+            border-radius: 8px;
+            padding: 40px 20px;
+            text-align: center;
+            background: var(--surface);
+            margin: 20px 0;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .upload-area:hover {
+            border-color: var(--primary-color);
+            background: rgba(107, 91, 149, 0.05);
+        }
+        
+        .upload-area.has-file {
+            border-color: var(--accent-color);
+            background: rgba(16, 185, 129, 0.05);
+        }
+        
+        /* Channel Tabs */
+        .channel-tabs {
+            display: flex;
+            gap: 5px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .channel-tab {
+            padding: 12px 20px;
+            border: none;
+            background: var(--surface);
+            color: var(--text-primary);
+            cursor: pointer;
+            border-radius: 8px 8px 0 0;
+            transition: all 0.2s;
+        }
+        
+        .channel-tab.active {
+            background: var(--primary-color);
+            color: white;
+        }
+        
+        .channel-upload-form {
+            background: var(--surface);
+            padding: 30px;
+            border-radius: 0 8px 8px 8px;
+            border: 1px solid var(--border);
+        }
+        
+        /* Action Buttons */
+        .action-buttons {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+            margin-top: 30px;
+        }
+        
+        /* Results */
+        .results-content {
+            margin-top: 20px;
+        }
+        
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .metric-card {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .metric-card.primary {
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+            color: white;
+            border: none;
+        }
+        
+        .metric-value {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+        
+        .metric-label {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        /* Notification */
+        .notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 12px 20px;
+            border-radius: 6px;
+            color: white;
+            font-weight: 500;
+            z-index: 1000;
+            animation: slideIn 0.3s ease;
+        }
+        
+        .notification.success { background: var(--accent-color); }
+        .notification.error { background: var(--error-color); }
+        .notification.warning { background: var(--warning-color); }
+        .notification.info { background: var(--primary-color); }
+        
+        @keyframes slideIn {
+            from { transform: translateX(100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+        
+        /* Chart Controls */
+        .chart-tab, .period-btn {
+            padding: 8px 16px;
+            border: 1px solid var(--border);
+            background: var(--surface);
+            color: var(--text-primary);
+            cursor: pointer;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+        
+        .chart-tab:hover, .period-btn:hover {
+            background: var(--border);
+        }
+        
+        .chart-tab.active, .period-btn.active {
+            background: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+        
+        .chart-tab:not(:last-child) {
+            border-right: none;
+            border-radius: 6px 0 0 6px;
+        }
+        
+        .chart-tab:not(:first-child) {
+            border-radius: 0 6px 6px 0;
+        }
+        
+        .chart-tab:not(:first-child):not(:last-child) {
+            border-radius: 0;
+        }
+        
+        @media (max-width: 768px) {
+            .nav-steps { flex-direction: column; }
+            .upload-methods { grid-template-columns: 1fr; }
+            .action-buttons { flex-direction: column; }
+            .channel-tabs { flex-wrap: wrap; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Welcome Screen -->
+        <div id="welcome-screen" class="header" style="display: block; margin-bottom: 30px;">
+            <h1 style="font-size: 2.5rem; margin-bottom: 20px;">🚀 CAC Calculator Pro</h1>
+            <p style="font-size: 1.2rem; margin-bottom: 40px; opacity: 0.9;">Save significant time identifying performance insights for channel performance, growth strategy, and historical cohorted trend analysis</p>
+            
+            <div style="background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 40px; margin: 40px auto; text-align: left; max-width: 800px; color: var(--text-primary);">
+                <h3 style="margin-bottom: 30px; color: var(--primary-color); text-align: center;">📊 What This Tool Provides:</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 25px;">
+                    <div style="display: flex; align-items: flex-start; gap: 15px;">
+                        <span style="color: var(--accent-color); font-size: 1.5rem; margin-top: 2px;">📊</span>
+                        <div>
+                            <strong style="font-size: 1.1rem; color: var(--text-primary);">Pivot Table Analysis</strong>
+                            <div style="color: var(--text-muted); font-size: 0.9rem; margin-top: 5px;">Easy-to-digest channel performance in familiar spreadsheet format with color-coded insights</div>
+                        </div>
+                    </div>
+                    <div style="display: flex; align-items: flex-start; gap: 15px;">
+                        <span style="color: var(--warning-color); font-size: 1.5rem; margin-top: 2px;">⚡</span>
+                        <div>
+                            <strong style="font-size: 1.1rem; color: var(--text-primary);">Efficiency Scoring</strong>
+                            <div style="color: var(--text-muted); font-size: 0.9rem; margin-top: 5px;">0-100 scores with A-F grades for each marketing channel with industry benchmarks</div>
+                        </div>
+                    </div>
+                    <div style="display: flex; align-items: flex-start; gap: 15px;">
+                        <span style="color: var(--error-color); font-size: 1.5rem; margin-top: 2px;">🎯</span>
+                        <div>
+                            <strong style="font-size: 1.1rem; color: var(--text-primary);">Budget Optimization</strong>
+                            <div style="color: var(--text-muted); font-size: 0.9rem; margin-top: 5px;">Specific dollar recommendations with timeline-based action plans for where to spend next</div>
+                        </div>
+                    </div>
+                    <div style="display: flex; align-items: flex-start; gap: 15px;">
+                        <span style="color: #8b5cf6; font-size: 1.5rem; margin-top: 2px;">📈</span>
+                        <div>
+                            <strong style="font-size: 1.1rem; color: var(--text-primary);">18-Month Trending</strong>
+                            <div style="color: var(--text-muted); font-size: 0.9rem; margin-top: 5px;">Historical cohorted analysis to understand performance evolution over time</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <button onclick="startAnalysis()" style="background: var(--background); color: var(--primary-color); border: 2px solid var(--primary-color); padding: 15px 40px; border-radius: 8px; font-size: 1.1rem; font-weight: 600; cursor: pointer; margin-top: 30px; transition: all 0.3s; box-shadow: 0 2px 8px rgba(107, 91, 149, 0.15);">🚀 Start Analysis</button>
+        </div>
+
+        <!-- Header -->
+        <div class="header" id="main-header" style="display: none;">
+            <h1>🎯 CAC Calculator Pro</h1>
+            <p>Professional Customer Acquisition Cost Analysis Tool</p>
+        </div>
+
+        <!-- Progress Navigation -->
+        <div class="progress-nav" id="main-navigation" style="display: none;">
+            <div class="nav-steps">
+                <div class="nav-step active" data-step="setup" onclick="showStep('setup')">
+                    <span class="step-number">1</span>
+                    <span>Project Setup</span>
+                </div>
+                <div class="nav-step" data-step="business" onclick="showStep('business')">
+                    <span class="step-number">2</span>
+                    <span>Business Model</span>
+                </div>
+                <div class="nav-step" data-step="data" onclick="showStep('data')">
+                    <span class="step-number">3</span>
+                    <span>Data Input</span>
+                </div>
+                <div class="nav-step" data-step="analysis" onclick="showStep('analysis')">
+                    <span class="step-number">4</span>
+                    <span>Analysis</span>
+                </div>
+                <div class="nav-step" data-step="results" onclick="showStep('results')">
+                    <span class="step-number">5</span>
+                    <span>Results</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 1: Project Setup -->
+        <div class="section active" data-section="setup" style="display: none;">
+            <h2>📝 Project Setup</h2>
+            <div class="form-group">
+                <label for="projectName">Project Name</label>
+                <input type="text" id="projectName" placeholder="Enter project name">
+            </div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                <div class="form-group">
+                    <label for="startDate">Start Date</label>
+                    <input type="date" id="startDate">
+                </div>
+                <div class="form-group">
+                    <label for="endDate">End Date</label>
+                    <input type="date" id="endDate">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="consultantName">Consultant Name</label>
+                <input type="text" id="consultantName" placeholder="Your name or company">
+            </div>
+            <div class="form-group">
+                <label for="analysisPurpose">Analysis Purpose</label>
+                <select id="analysisPurpose">
+                    <option value="">Select purpose</option>
+                    <option value="audit">Marketing Audit</option>
+                    <option value="optimization">Campaign Optimization</option>
+                    <option value="strategy">Strategic Planning</option>
+                    <option value="reporting">Client Reporting</option>
+                </select>
+            </div>
+            <div class="action-buttons">
+                <button class="btn btn-warning" onclick="autofillProjectSetup()">⚡ Auto-fill for Testing</button>
+                <button class="btn btn-primary" onclick="nextStep('business')">Next: Business Model →</button>
+            </div>
+        </div>
+
+        <!-- Section 2: Business Model -->
+        <div class="section" data-section="business" style="display: none;">
+            <h2>🏢 Business Model Configuration</h2>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                <div class="form-group">
+                    <label for="businessType">Business Type</label>
+                    <select id="businessType">
+                        <option value="">Select business type</option>
+                        <option value="saas">SaaS</option>
+                        <option value="ecommerce">E-commerce</option>
+                        <option value="service">Service Business</option>
+                        <option value="marketplace">Marketplace</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="revenueModel">Revenue Model</label>
+                    <select id="revenueModel">
+                        <option value="">Select revenue model</option>
+                        <option value="subscription">Subscription</option>
+                        <option value="one-time">One-time Purchase</option>
+                        <option value="freemium">Freemium</option>
+                        <option value="commission">Commission</option>
+                    </select>
+                </div>
+            </div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                <div class="form-group">
+                    <label for="avgOrderValue">Average Order Value ($)</label>
+                    <input type="number" id="avgOrderValue" placeholder="150">
+                </div>
+                <div class="form-group">
+                    <label for="customerLifetime">Customer Lifetime (months)</label>
+                    <input type="number" id="customerLifetime" placeholder="24">
+                </div>
+            </div>
+            <div class="action-buttons">
+                <button class="btn btn-secondary" onclick="prevStep('setup')">← Back</button>
+                <button class="btn btn-warning" onclick="autofillBusinessModel()">⚡ Auto-fill for Testing</button>
+                <button class="btn btn-primary" onclick="nextStep('data')">Next: Data Input →</button>
+            </div>
+        </div>
+
+        <!-- Section 3: Data Input -->
+        <div class="section" data-section="data" style="display: none;">
+            <h2>📊 Data Input & Upload</h2>
+            
+            <!-- Quick Start Options -->
+            <div style="text-align: center; margin-bottom: 30px; padding: 20px; background: var(--surface); border-radius: 8px;">
+                <h3>Quick Start Options</h3>
+                <p style="margin: 10px 0; color: var(--text-muted);">Get started quickly with sample data or upload your own files</p>
+                <div style="display: flex; gap: 15px; justify-content: center;">
+                    <button class="btn btn-warning" onclick="loadDemoData()">🚀 Load Demo Data</button>
+                    <button class="btn btn-secondary" onclick="focusOnUploads()">📁 Upload My Data</button>
+                </div>
+            </div>
+
+            <!-- Upload Method Selection -->
+            <div class="upload-methods">
+                <div class="method-btn active" onclick="selectUploadMethod('unified')">
+                    <div style="font-size: 2rem; margin-bottom: 10px;">📊</div>
+                    <h4>Unified Data Upload</h4>
+                    <p style="color: var(--text-muted); margin-top: 5px;">Single file with all channel data</p>
+                </div>
+                <div class="method-btn" onclick="selectUploadMethod('channel-by-channel')">
+                    <div style="font-size: 2rem; margin-bottom: 10px;">🎯</div>
+                    <h4>Channel-by-Channel</h4>
+                    <p style="color: var(--text-muted); margin-top: 5px;">Separate files per advertising platform</p>
+                </div>
+            </div>
+
+            <!-- Unified Upload -->
+            <div id="unified-upload" class="upload-section">
+                <h4>📈 Upload Marketing & Revenue Data</h4>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                    <div class="upload-area" onclick="document.getElementById('marketing-file').click()">
+                        <div style="font-size: 3rem; margin-bottom: 15px;">📈</div>
+                        <h4>Marketing Data</h4>
+                        <p style="color: var(--text-muted); margin: 10px 0;">Daily spend, customers, clicks by channel</p>
+                        <button type="button" class="btn btn-primary">Choose File</button>
+                        <input type="file" id="marketing-file" accept=".csv,.xlsx,.xls" style="display: none;">
+                        <div id="marketing-status" class="upload-status" style="margin-top: 10px;"></div>
+                    </div>
+                    <div class="upload-area" onclick="document.getElementById('revenue-file').click()">
+                        <div style="font-size: 3rem; margin-bottom: 15px;">💰</div>
+                        <h4>Revenue Data (Optional)</h4>
+                        <p style="color: var(--text-muted); margin: 10px 0;">Revenue attribution by channel</p>
+                        <button type="button" class="btn btn-secondary">Choose File</button>
+                        <input type="file" id="revenue-file" accept=".csv,.xlsx,.xls" style="display: none;">
+                        <div id="revenue-status" class="upload-status" style="margin-top: 10px;"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Channel-by-Channel Upload -->
+            <div id="channel-by-channel-upload" class="upload-section" style="display: none;">
+                <h4>🎯 Upload by Channel</h4>
+                <div class="channel-tabs">
+                    <button class="channel-tab active" id="tab-google-ads" onclick="showChannelTab('google-ads')">
+                        📊 Google Ads
+                    </button>
+                    <button class="channel-tab" id="tab-facebook" onclick="showChannelTab('facebook')">
+                        📘 Facebook
+                    </button>
+                    <button class="channel-tab" id="tab-linkedin" onclick="showChannelTab('linkedin')">
+                        💼 LinkedIn
+                    </button>
+                    <button class="channel-tab" id="tab-tiktok" onclick="showChannelTab('tiktok')">
+                        🎵 TikTok
+                    </button>
+                    <button class="channel-tab" id="tab-other" onclick="showChannelTab('other')">
+                        🔧 Other
+                    </button>
+                </div>
+
+                <div id="channel-upload-content">
+                    <!-- Google Ads Form -->
+                    <div id="form-google-ads" class="channel-upload-form">
+                        <h4>📊 Google Ads Data</h4>
+                        <div class="upload-area" onclick="document.getElementById('google-ads-file').click()">
+                            <div style="font-size: 2rem; margin-bottom: 10px;">📊</div>
+                            <p>Upload Google Ads performance data</p>
+                            <button type="button" class="btn btn-primary">Choose File</button>
+                            <input type="file" id="google-ads-file" accept=".csv,.xlsx,.xls" style="display: none;">
+                            <div id="google-ads-status" class="upload-status"></div>
+                        </div>
+                    </div>
+
+                    <!-- Other channel forms will be created dynamically -->
+                    <div id="form-facebook" class="channel-upload-form" style="display: none;">
+                        <h4>📘 Facebook Ads Data</h4>
+                        <div class="upload-area" onclick="document.getElementById('facebook-file').click()">
+                            <div style="font-size: 2rem; margin-bottom: 10px;">📘</div>
+                            <p>Upload Facebook Ads performance data</p>
+                            <button type="button" class="btn btn-primary">Choose File</button>
+                            <input type="file" id="facebook-file" accept=".csv,.xlsx,.xls" style="display: none;">
+                            <div id="facebook-status" class="upload-status"></div>
+                        </div>
+                    </div>
+
+                    <div id="form-linkedin" class="channel-upload-form" style="display: none;">
+                        <h4>💼 LinkedIn Ads Data</h4>
+                        <div class="upload-area" onclick="document.getElementById('linkedin-file').click()">
+                            <div style="font-size: 2rem; margin-bottom: 10px;">💼</div>
+                            <p>Upload LinkedIn Ads performance data</p>
+                            <button type="button" class="btn btn-primary">Choose File</button>
+                            <input type="file" id="linkedin-file" accept=".csv,.xlsx,.xls" style="display: none;">
+                            <div id="linkedin-status" class="upload-status"></div>
+                        </div>
+                    </div>
+
+                    <div id="form-tiktok" class="channel-upload-form" style="display: none;">
+                        <h4>🎵 TikTok Ads Data</h4>
+                        <div class="upload-area" onclick="document.getElementById('tiktok-file').click()">
+                            <div style="font-size: 2rem; margin-bottom: 10px;">🎵</div>
+                            <p>Upload TikTok Ads performance data</p>
+                            <button type="button" class="btn btn-primary">Choose File</button>
+                            <input type="file" id="tiktok-file" accept=".csv,.xlsx,.xls" style="display: none;">
+                            <div id="tiktok-status" class="upload-status"></div>
+                        </div>
+                    </div>
+
+                    <div id="form-other" class="channel-upload-form" style="display: none;">
+                        <h4>🔧 Other Channel Data</h4>
+                        <div class="upload-area" onclick="document.getElementById('other-file').click()">
+                            <div style="font-size: 2rem; margin-bottom: 10px;">🔧</div>
+                            <p>Upload other channel performance data</p>
+                            <button type="button" class="btn btn-primary">Choose File</button>
+                            <input type="file" id="other-file" accept=".csv,.xlsx,.xls" style="display: none;">
+                            <div id="other-status" class="upload-status"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <button class="btn btn-secondary" onclick="prevStep('business')">← Back</button>
+                <button class="btn btn-primary" onclick="nextStep('analysis')" id="proceedToAnalysis">Next: Analysis →</button>
+            </div>
+        </div>
+
+        <!-- Section 4: Analysis -->
+        <div class="section" data-section="analysis" style="display: none;">
+            <h2>⚡ CAC Analysis</h2>
+            <div style="text-align: center; padding: 40px 20px;">
+                <div style="font-size: 4rem; margin-bottom: 20px;">🎯</div>
+                <h3>Ready to Analyze Your Marketing Performance</h3>
+                <p style="color: var(--text-muted); margin: 20px 0;">Click below to run comprehensive CAC analysis including channel performance, growth strategies, and historical trends.</p>
+                <button class="btn btn-primary" id="runAnalysisBtn" onclick="runAnalysis()" style="font-size: 1.2rem; padding: 16px 32px;">
+                    🚀 Run CAC Analysis
+                </button>
+                <div id="analysis-progress" style="margin-top: 20px; display: none;">
+                    <p>Analyzing your data...</p>
+                    <div style="width: 100%; height: 4px; background: var(--surface); border-radius: 2px; margin: 10px 0;">
+                        <div style="width: 0%; height: 100%; background: var(--primary-color); border-radius: 2px; transition: width 2s;"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="action-buttons">
+                <button class="btn btn-secondary" onclick="prevStep('data')">← Back</button>
+            </div>
+        </div>
+
+        <!-- Section 5: Results -->
+        <div class="section" data-section="results" style="display: none;">
+            <h2>📊 Analysis Results</h2>
+            <div class="results-content" id="results-content">
+                <p style="text-align: center; color: var(--text-muted); padding: 40px;">
+                    Results will appear here after running the analysis...
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Application State
+        const appState = {
+            currentStep: 'setup',
+            projectConfig: {},
+            businessModel: {},
+            uploadedData: {
+                marketing: null,
+                revenue: null
+            },
+            channelData: {},
+            uploadMethod: 'unified',
+            analysisResults: null
+        };
+
+        // Navigation Functions
+        function showStep(stepName) {
+            // Update navigation
+            document.querySelectorAll('.nav-step').forEach(step => {
+                step.classList.remove('active');
+                if (step.dataset.step === stepName) {
+                    step.classList.add('active');
+                }
+                // Mark previous steps as completed
+                const stepOrder = ['setup', 'business', 'data', 'analysis', 'results'];
+                const currentIndex = stepOrder.indexOf(stepName);
+                const stepIndex = stepOrder.indexOf(step.dataset.step);
+                if (stepIndex < currentIndex) {
+                    step.classList.add('completed');
+                } else if (stepIndex > currentIndex) {
+                    step.classList.remove('completed');
+                }
+            });
+            
+            // Update sections
+            document.querySelectorAll('.section').forEach(section => {
+                section.classList.remove('active');
+                if (section.dataset.section === stepName) {
+                    section.classList.add('active');
+                }
+            });
+            
+            appState.currentStep = stepName;
+        }
+
+        function nextStep(stepName) {
+            if (!validateCurrentStep()) return;
+            saveCurrentStepData();
+            showStep(stepName);
+        }
+
+        function prevStep(stepName) {
+            showStep(stepName);
+        }
+
+        function validateCurrentStep() {
+            const currentStep = appState.currentStep;
+            
+            switch (currentStep) {
+                case 'setup':
+                    const projectName = document.getElementById('projectName');
+                    if (!projectName || !projectName.value.trim()) {
+                        showNotification('Please enter a project name', 'error');
+                        return false;
+                    }
+                    break;
+                    
+                case 'business':
+                    const businessType = document.getElementById('businessType');
+                    const revenueModel = document.getElementById('revenueModel');
+                    if (!businessType?.value || !revenueModel?.value) {
+                        showNotification('Please complete the business model configuration', 'error');
+                        return false;
+                    }
+                    break;
+                    
+                case 'data':
+                    const hasMarketingData = appState.uploadedData.marketing?.data?.length > 0;
+                    const hasChannelData = Object.values(appState.channelData || {}).some(channel => channel && channel.data?.length > 0);
+                    
+                    if (!hasMarketingData && !hasChannelData) {
+                        showNotification('Please upload marketing data or use demo data', 'error');
+                        return false;
+                    }
+                    break;
+            }
+            
+            return true;
+        }
+
+        function saveCurrentStepData() {
+            const currentStep = appState.currentStep;
+            
+            switch (currentStep) {
+                case 'setup':
+                    appState.projectConfig = {
+                        projectName: document.getElementById('projectName')?.value || '',
+                        startDate: document.getElementById('startDate')?.value || '',
+                        endDate: document.getElementById('endDate')?.value || '',
+                        consultantName: document.getElementById('consultantName')?.value || '',
+                        analysisPurpose: document.getElementById('analysisPurpose')?.value || ''
+                    };
+                    break;
+                    
+                case 'business':
+                    appState.businessModel = {
+                        businessType: document.getElementById('businessType')?.value || '',
+                        revenueModel: document.getElementById('revenueModel')?.value || '',
+                        avgOrderValue: document.getElementById('avgOrderValue')?.value || '',
+                        customerLifetime: document.getElementById('customerLifetime')?.value || ''
+                    };
+                    break;
+            }
+        }
+
+        // Auto-fill Functions
+        function autofillProjectSetup() {
+            document.getElementById('projectName').value = 'ACME SaaS Marketing Analysis';
+            document.getElementById('startDate').value = '2024-01-01';
+            document.getElementById('endDate').value = '2024-06-30';
+            document.getElementById('consultantName').value = 'Greg Breeden - Fractional CMO';
+            document.getElementById('analysisPurpose').value = 'audit';
+            showNotification('Project setup auto-filled!', 'success');
+        }
+
+        function autofillBusinessModel() {
+            document.getElementById('businessType').value = 'saas';
+            document.getElementById('revenueModel').value = 'subscription';
+            document.getElementById('avgOrderValue').value = '99';
+            document.getElementById('customerLifetime').value = '24';
+            showNotification('Business model auto-filled!', 'success');
+        }
+
+        // Upload Method Selection
+        function selectUploadMethod(method) {
+            appState.uploadMethod = method;
+            
+            // Update method buttons
+            document.querySelectorAll('.method-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+            
+            // Show/hide upload sections
+            const channelSection = document.getElementById('channel-by-channel-upload');
+            const unifiedSection = document.getElementById('unified-upload');
+            
+            if (method === 'channel-by-channel') {
+                if (channelSection) channelSection.style.display = 'block';
+                if (unifiedSection) unifiedSection.style.display = 'none';
+            } else {
+                if (channelSection) channelSection.style.display = 'none';
+                if (unifiedSection) unifiedSection.style.display = 'block';
+            }
+            
+            showNotification(`Upload method: ${method}`, 'info');
+        }
+
+        // Channel Tab Functions
+        function showChannelTab(channel) {
+            // Update tab appearance
+            document.querySelectorAll('.channel-tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            const selectedTab = document.getElementById('tab-' + channel);
+            if (selectedTab) {
+                selectedTab.classList.add('active');
+            }
+            
+            // Show selected form
+            document.querySelectorAll('.channel-upload-form').forEach(form => {
+                form.style.display = 'none';
+            });
+            
+            const selectedForm = document.getElementById('form-' + channel);
+            if (selectedForm) {
+                selectedForm.style.display = 'block';
+            }
+            
+            showNotification(`Switched to ${channel.replace('-', ' ')} upload`, 'info');
+        }
+
+        // File Upload Functions
+        function setupFileUploads() {
+            const fileInputs = document.querySelectorAll('input[type="file"]');
+            
+            fileInputs.forEach(input => {
+                input.addEventListener('change', function(event) {
+                    const file = event.target.files[0];
+                    if (!file) return;
+                    
+                    const inputId = input.id;
+                    handleFileUpload(file, inputId);
+                });
+            });
+        }
+
+        function handleFileUpload(file, inputId) {
+            const formData = new FormData();
+            formData.append('dataFile', file);
+            
+            showNotification(`Uploading ${file.name}...`, 'info');
+            
+            fetch('/api/upload', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.error) throw new Error(data.error);
+                
+                // Store data based on input type
+                if (inputId.includes('marketing')) {
+                    appState.uploadedData.marketing = data;
+                } else if (inputId.includes('revenue')) {
+                    appState.uploadedData.revenue = data;
+                } else {
+                    // Channel-specific data
+                    const channel = inputId.replace('-file', '');
+                    if (!appState.channelData) appState.channelData = {};
+                    appState.channelData[channel] = data;
+                }
+                
+                // Update status
+                const statusElement = document.getElementById(inputId.replace('-file', '-status'));
+                if (statusElement) {
+                    statusElement.innerHTML = `<div style="color: var(--accent-color); font-weight: 500;">✅ ${file.name} (${data.rowCount} rows)</div>`;
+                }
+                
+                showNotification(`${file.name} uploaded successfully!`, 'success');
+            })
+            .catch(error => {
+                showNotification(`Upload failed: ${error.message}`, 'error');
+            });
+        }
+
+        // Demo Data Function - Enhanced 18-month dataset
+        function loadDemoData() {
+            // Auto-fill project and business model
+            autofillProjectSetup();
+            autofillBusinessModel();
+            
+            showNotification('Loading comprehensive 18-month demo dataset...', 'info');
+            
+            // Load the comprehensive sample data files
+            Promise.all([
+                fetch('sample-marketing-18m-enhanced.csv').then(response => response.text()),
+                fetch('sample-revenue-18m-enhanced.csv').then(response => response.text())
+            ])
+            .then(([marketingCSV, revenueCSV]) => {
+                const marketingData = parseCSV(marketingCSV);
+                const revenueData = parseCSV(revenueCSV);
+                
+                appState.uploadedData.marketing = { 
+                    data: marketingData, 
+                    filename: 'sample-marketing-18m-enhanced.csv',
+                    rowCount: marketingData.length 
+                };
+                appState.uploadedData.revenue = { 
+                    data: revenueData, 
+                    filename: 'sample-revenue-18m-enhanced.csv',
+                    rowCount: revenueData.length 
+                };
+                
+                // Update upload status displays
+                document.getElementById('marketing-status').innerHTML = 
+                    `<div style="color: var(--accent-color); font-weight: 500;">✅ Enhanced 18-Month Marketing Data (${marketingData.length} rows, 5 channels)</div>`;
+                document.getElementById('revenue-status').innerHTML = 
+                    `<div style="color: var(--accent-color); font-weight: 500;">✅ Enhanced 18-Month Revenue Data (${revenueData.length} rows)</div>`;
+                
+                showNotification(`Comprehensive demo data loaded! ${marketingData.length} marketing rows, ${revenueData.length} revenue rows. Ready for analysis.`, 'success');
+            })
+            .catch(error => {
+                console.error('Error loading demo data:', error);
+                // Fallback to simple demo data if files aren't available
+                loadFallbackDemoData();
+            });
+        }
+        
+        function parseCSV(csvText) {
+            const lines = csvText.trim().split('\n');
+            const headers = lines[0].split(',').map(h => h.trim().replace(/"/g, ''));
+            const data = [];
+            
+            for (let i = 1; i < lines.length; i++) {
+                const values = lines[i].split(',').map(v => v.trim().replace(/"/g, ''));
+                const row = {};
+                
+                headers.forEach((header, index) => {
+                    const value = values[index] || '';
+                    // Convert numeric fields
+                    if (!isNaN(value) && value !== '' && !['date', 'channel', 'campaign_name', 'creative_id', 'creative_type', 'ad_name', 'customer_id', 'acquisition_channel', 'acquisition_campaign', 'customer_segment'].includes(header)) {
+                        row[header] = parseFloat(value);
+                    } else {
+                        row[header] = value;
+                    }
+                });
+                
+                data.push(row);
+            }
+            
+            return data;
+        }
+        
+        function loadFallbackDemoData() {
+            const sampleMarketing = [
+                {date: '2024-01-01', channel: 'Google Ads', spend: 1000, customers: 20, clicks: 500, impressions: 10000},
+                {date: '2024-01-01', channel: 'Facebook', spend: 800, customers: 15, clicks: 400, impressions: 12000},
+                {date: '2024-01-02', channel: 'Google Ads', spend: 1200, customers: 25, clicks: 600, impressions: 11000},
+                {date: '2024-01-02', channel: 'Facebook', spend: 900, customers: 18, clicks: 450, impressions: 13000}
+            ];
+            
+            const sampleRevenue = [
+                {date: '2024-01-01', channel: 'Google Ads', revenue: 5000},
+                {date: '2024-01-01', channel: 'Facebook', revenue: 3750},
+                {date: '2024-01-02', channel: 'Google Ads', revenue: 6250},
+                {date: '2024-01-02', channel: 'Facebook', revenue: 4500}
+            ];
+            
+            appState.uploadedData.marketing = { data: sampleMarketing, filename: 'fallback-demo.csv', rowCount: sampleMarketing.length };
+            appState.uploadedData.revenue = { data: sampleRevenue, filename: 'fallback-demo.csv', rowCount: sampleRevenue.length };
+            
+            document.getElementById('marketing-status').innerHTML = `<div style="color: var(--accent-color); font-weight: 500;">✅ Fallback Demo Data (${sampleMarketing.length} rows)</div>`;
+            document.getElementById('revenue-status').innerHTML = `<div style="color: var(--accent-color); font-weight: 500;">✅ Fallback Demo Data (${sampleRevenue.length} rows)</div>`;
+            
+            showNotification('Fallback demo data loaded! Ready for analysis.', 'success');
+        }
+
+        function focusOnUploads() {
+            document.querySelector('#unified-upload').scrollIntoView({ behavior: 'smooth' });
+            showNotification('Ready to upload your data files', 'info');
+        }
+
+        // Analysis Function
+        function runAnalysis() {
+            if (!appState.uploadedData.marketing && Object.keys(appState.channelData || {}).length === 0) {
+                showNotification('Please upload data or load demo data first', 'error');
+                return;
+            }
+
+            document.getElementById('runAnalysisBtn').textContent = 'Analyzing...';
+            document.getElementById('runAnalysisBtn').disabled = true;
+            document.getElementById('analysis-progress').style.display = 'block';
+            
+            // Simulate progress
+            const progressBar = document.querySelector('#analysis-progress div div');
+            progressBar.style.width = '100%';
+
+            const analysisData = {
+                marketing: appState.uploadedData.marketing?.data || [],
+                revenue: appState.uploadedData.revenue?.data || [],
+                channels: appState.channelData || {},
+                businessModel: appState.businessModel,
+                projectConfig: appState.projectConfig
+            };
+
+            fetch('/api/analyze', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(analysisData)
+            })
+            .then(response => response.json())
+            .then(results => {
+                if (results.error) throw new Error(results.error);
+                
+                appState.analysisResults = results;
+                displayAnalysisResults(results);
+                showStep('results');
+                showNotification('Analysis completed successfully!', 'success');
+            })
+            .catch(error => {
+                showNotification(`Analysis failed: ${error.message}`, 'error');
+            })
+            .finally(() => {
+                document.getElementById('runAnalysisBtn').textContent = '🚀 Run CAC Analysis';
+                document.getElementById('runAnalysisBtn').disabled = false;
+                document.getElementById('analysis-progress').style.display = 'none';
+            });
+        }
+
+        // Start analysis function (from welcome screen)
+        function startAnalysis() {
+            document.getElementById('welcome-screen').style.display = 'none';
+            document.getElementById('main-header').style.display = 'block';
+            document.getElementById('main-navigation').style.display = 'block';
+            document.querySelector('.section[data-section="setup"]').style.display = 'block';
+        }
+
+        // Generate pivot tables (user's preferred data analysis format)
+        function generatePivotTables(results) {
+            generateChannelPivotTable(results);
+            generateMonthlyPivotTable(results);
+        }
+        
+        function generateChannelPivotTable(results) {
+            const { channelPerformance, rawData } = results;
+            if (!channelPerformance) return;
+            
+            let html = `
+            <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem; background: white; border: 1px solid #ddd; margin-bottom: 10px;">
+                <thead>
+                    <tr style="background: #f8f9fa; font-weight: bold;">
+                        <th style="padding: 12px; border: 1px solid #ddd; text-align: left;">Channel</th>
+                        <th style="padding: 12px; border: 1px solid #ddd; text-align: right;">CAC ($)</th>
+                        <th style="padding: 12px; border: 1px solid #ddd; text-align: right;">ROAS (x)</th>
+                        <th style="padding: 12px; border: 1px solid #ddd; text-align: right;">Total Spend</th>
+                        <th style="padding: 12px; border: 1px solid #ddd; text-align: right;">Customers</th>
+                        <th style="padding: 12px; border: 1px solid #ddd; text-align: right;">Revenue</th>
+                        <th style="padding: 12px; border: 1px solid #ddd; text-align: center;">Efficiency</th>
+                        <th style="padding: 12px; border: 1px solid #ddd; text-align: center;">Grade</th>
+                    </tr>
+                </thead>
+                <tbody>`;
+            
+            Object.entries(channelPerformance).forEach(([channel, data]) => {
+                const gradeColor = data.efficiencyGrade === 'A' ? '#10b981' : 
+                                 data.efficiencyGrade === 'B' ? '#3b82f6' : 
+                                 data.efficiencyGrade === 'C' ? '#f59e0b' : 
+                                 data.efficiencyGrade === 'D' ? '#ef4444' : '#dc2626';
+                
+                html += `
+                <tr>
+                    <td style="padding: 12px; border: 1px solid #ddd; font-weight: bold;">${channel}</td>
+                    <td style="padding: 12px; border: 1px solid #ddd; text-align: right;">$${(data.cac || 0).toFixed(2)}</td>
+                    <td style="padding: 12px; border: 1px solid #ddd; text-align: right;">${(data.roas || 0).toFixed(2)}x</td>
+                    <td style="padding: 12px; border: 1px solid #ddd; text-align: right;">$${(data.totalSpend || 0).toLocaleString()}</td>
+                    <td style="padding: 12px; border: 1px solid #ddd; text-align: right;">${(data.totalCustomers || 0).toLocaleString()}</td>
+                    <td style="padding: 12px; border: 1px solid #ddd; text-align: right;">$${(data.totalRevenue || 0).toLocaleString()}</td>
+                    <td style="padding: 12px; border: 1px solid #ddd; text-align: center;"><span style="background: ${gradeColor}20; color: ${gradeColor}; padding: 4px 8px; border-radius: 4px; font-weight: bold;">${data.efficiencyScore || 0}/100</span></td>
+                    <td style="padding: 12px; border: 1px solid #ddd; text-align: center;"><span style="background: ${gradeColor}; color: white; padding: 4px 8px; border-radius: 4px; font-weight: bold;">${data.efficiencyGrade || 'F'}</span></td>
+                </tr>`;
+            });
+            
+            html += `</tbody></table>`;
+            
+            // Insert at the beginning of results
+            const resultsContainer = document.getElementById('results-content');
+            if (resultsContainer) {
+                const pivotDiv = document.createElement('div');
+                pivotDiv.innerHTML = `
+                    <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 20px; margin-bottom: 20px;">
+                        <h3 style="margin-bottom: 20px; color: #6b5b95;">📊 Channel Performance Pivot Table</h3>
+                        ${html}
+                    </div>
+                `;
+                resultsContainer.insertBefore(pivotDiv, resultsContainer.firstChild);
+            }
+        }
+        
+        function generateMonthlyPivotTable(results) {
+            const { rawData } = results;
+            if (!rawData?.marketing) return;
+            
+            // Group data by month and channel
+            const monthlyData = {};
+            rawData.marketing.forEach(row => {
+                const month = row.date.substring(0, 7); // YYYY-MM
+                const channel = row.channel;
+                
+                if (!monthlyData[month]) monthlyData[month] = {};
+                if (!monthlyData[month][channel]) {
+                    monthlyData[month][channel] = { spend: 0, customers: 0, revenue: 0 };
+                }
+                
+                monthlyData[month][channel].spend += row.spend || 0;
+                monthlyData[month][channel].customers += row.customers || row.conversions || 0;
+            });
+            
+            // Add revenue data
+            if (rawData.revenue) {
+                rawData.revenue.forEach(row => {
+                    const month = row.date.substring(0, 7);
+                    const channel = row.channel;
+                    if (monthlyData[month] && monthlyData[month][channel]) {
+                        monthlyData[month][channel].revenue += row.revenue || 0;
+                    }
+                });
+            }
+            
+            const channels = [...new Set(rawData.marketing.map(row => row.channel))];
+            const months = Object.keys(monthlyData).sort();
+            
+            let html = `
+            <table style="width: 100%; border-collapse: collapse; font-size: 0.85rem; background: white; border: 1px solid #ddd;">
+                <thead>
+                    <tr style="background: #f8f9fa; font-weight: bold;">
+                        <th style="padding: 10px; border: 1px solid #ddd; text-align: left;">Month</th>`;
+            
+            channels.forEach(channel => {
+                html += `<th style="padding: 10px; border: 1px solid #ddd; text-align: center; background: #f1f5f9;" colspan="3">${channel}</th>`;
+            });
+            
+            html += `</tr><tr style="background: #f8f9fa; font-size: 0.8rem; color: #666;">
+                        <th style="padding: 8px; border: 1px solid #ddd;"></th>`;
+            
+            channels.forEach(() => {
+                html += `<th style="padding: 8px; border: 1px solid #ddd; text-align: right;">CAC</th>
+                        <th style="padding: 8px; border: 1px solid #ddd; text-align: right;">Customers</th>
+                        <th style="padding: 8px; border: 1px solid #ddd; text-align: right;">ROAS</th>`;
+            });
+            
+            html += `</tr></thead><tbody>`;
+            
+            months.slice(-12).forEach(month => { // Last 12 months
+                html += `<tr><td style="padding: 10px; border: 1px solid #ddd; font-weight: bold;">${month}</td>`;
+                
+                channels.forEach(channel => {
+                    const data = monthlyData[month][channel] || { spend: 0, customers: 0, revenue: 0 };
+                    const cac = data.customers > 0 ? data.spend / data.customers : 0;
+                    const roas = data.spend > 0 ? data.revenue / data.spend : 0;
+                    
+                    html += `
+                    <td style="padding: 8px; border: 1px solid #ddd; text-align: right; ${cac > 100 ? 'background: #fee2e2;' : cac > 50 ? 'background: #fef3c7;' : 'background: #dcfce7;'}">$${cac.toFixed(0)}</td>
+                    <td style="padding: 8px; border: 1px solid #ddd; text-align: right;">${data.customers}</td>
+                    <td style="padding: 8px; border: 1px solid #ddd; text-align: right; ${roas < 2 ? 'background: #fee2e2;' : roas < 4 ? 'background: #fef3c7;' : 'background: #dcfce7;'}">${roas.toFixed(1)}x</td>`;
+                });
+                
+                html += `</tr>`;
+            });
+            
+            html += `</tbody></table>`;
+            
+            // Insert after channel pivot table
+            const resultsContainer = document.getElementById('results-content');
+            if (resultsContainer && resultsContainer.children.length > 0) {
+                const pivotDiv = document.createElement('div');
+                pivotDiv.innerHTML = `
+                    <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 20px; margin-bottom: 20px;">
+                        <h3 style="margin-bottom: 20px; color: #6b5b95;">📈 Monthly Performance Trends</h3>
+                        ${html}
+                        <p style="font-size: 0.8rem; color: #666; margin-top: 10px;">💡 Color coding: <span style="background: #dcfce7; padding: 2px 6px; border-radius: 3px;">Good Performance</span> <span style="background: #fef3c7; padding: 2px 6px; border-radius: 3px;">Fair Performance</span> <span style="background: #fee2e2; padding: 2px 6px; border-radius: 3px;">Needs Attention</span></p>
+                    </div>
+                `;
+                resultsContainer.insertBefore(pivotDiv, resultsContainer.children[1]);
+            }
+        }
+
+        // Results Display
+        function displayAnalysisResults(results) {
+            const container = document.getElementById('results-content');
+            if (!container) return;
+
+            const channels = Object.entries(results.channelPerformance || {});
+            
+            container.innerHTML = `
+                <div class="metrics-grid">
+                    <div class="metric-card primary">
+                        <div class="metric-value">$${results.blendedCAC || '0'}</div>
+                        <div class="metric-label">Blended CAC</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">${results.totalCustomers || '0'}</div>
+                        <div class="metric-label">Total Customers</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">$${results.totalSpend || '0'}</div>
+                        <div class="metric-label">Total Spend</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">$${results.totalRevenue || '0'}</div>
+                        <div class="metric-label">Total Revenue</div>
+                    </div>
+                </div>
+
+                <div style="background: white; border: 1px solid var(--border); border-radius: 8px; padding: 30px; margin-bottom: 20px;">
+                    <h3>📊 Channel Performance Analysis</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 25px; margin-top: 25px;">
+                        ${channels.map(([channel, data]) => `
+                            <div style="background: var(--surface); padding: 25px; border-radius: 12px; border: 1px solid var(--border); position: relative;">
+                                <!-- Channel Header with Grade -->
+                                <div style="display: flex; justify-content: between; align-items: center; margin-bottom: 20px;">
+                                    <h4 style="margin: 0; font-size: 1.3rem;">${channel}</h4>
+                                    <div style="display: flex; align-items: center; gap: 10px;">
+                                        <div style="background: ${data.grade === 'A' ? '#10b981' : data.grade === 'B' ? '#f59e0b' : data.grade === 'C' ? '#f97316' : data.grade === 'D' ? '#ef4444' : '#6b7280'}; color: white; padding: 8px 12px; border-radius: 6px; font-weight: 700; font-size: 1.1rem;">${data.grade || 'F'}</div>
+                                        <div style="font-size: 0.9rem; color: var(--text-muted);">${data.efficiencyScore || 0}/100</div>
+                                    </div>
+                                </div>
+
+                                <!-- Core Metrics Grid -->
+                                <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px; margin-bottom: 20px;">
+                                    <div style="text-align: center; padding: 12px; background: white; border-radius: 8px;">
+                                        <div style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 4px;">CAC</div>
+                                        <div style="font-size: 1.4rem; font-weight: 700; color: ${(data.cac || 0) > 100 ? 'var(--error-color)' : (data.cac || 0) > 75 ? 'var(--warning-color)' : 'var(--accent-color)'};">$${(data.cac || 0).toFixed(2)}</div>
+                                        ${data.benchmark?.cac ? `<div style="font-size: 0.75rem; color: var(--text-muted);">vs $${data.benchmark.cac.benchmark} avg</div>` : ''}
+                                    </div>
+                                    <div style="text-align: center; padding: 12px; background: white; border-radius: 8px;">
+                                        <div style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 4px;">ROAS</div>
+                                        <div style="font-size: 1.4rem; font-weight: 700; color: ${(data.roas || 0) > 3 ? 'var(--accent-color)' : (data.roas || 0) > 2 ? 'var(--warning-color)' : 'var(--error-color)'};">${(data.roas || 0).toFixed(2)}x</div>
+                                        <div style="font-size: 0.75rem; color: var(--text-muted);">LTV:CAC ${data.ltvCacRatio ? data.ltvCacRatio.toFixed(1) : '0.0'}:1</div>
+                                    </div>
+                                    <div style="text-align: center; padding: 12px; background: white; border-radius: 8px;">
+                                        <div style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 4px;">Efficiency</div>
+                                        <div style="font-size: 1.4rem; font-weight: 700; color: ${(data.efficiencyScore || 0) >= 75 ? 'var(--accent-color)' : (data.efficiencyScore || 0) >= 50 ? 'var(--warning-color)' : 'var(--error-color)'};">${data.efficiencyScore || 0}</div>
+                                        <div style="font-size: 0.75rem; color: var(--text-muted);">Score /100</div>
+                                    </div>
+                                </div>
+
+                                <!-- Funnel Metrics -->
+                                <div style="background: rgba(107, 91, 149, 0.05); padding: 15px; border-radius: 8px; margin-bottom: 20px;">
+                                    <h5 style="margin: 0 0 12px 0; color: var(--primary-color);">📈 Funnel Performance</h5>
+                                    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; font-size: 0.85rem;">
+                                        <div style="text-align: center;">
+                                            <div style="font-weight: 600;">${data.impressions ? Math.round(data.impressions).toLocaleString() : 'N/A'}</div>
+                                            <div style="color: var(--text-muted);">Impressions</div>
+                                        </div>
+                                        <div style="text-align: center;">
+                                            <div style="font-weight: 600;">${data.clicks ? Math.round(data.clicks).toLocaleString() : '0'}</div>
+                                            <div style="color: var(--text-muted);">Clicks</div>
+                                            <div style="color: ${data.benchmark?.ctr?.performance === 'above' ? 'var(--accent-color)' : data.benchmark?.ctr?.performance === 'below' ? 'var(--error-color)' : 'var(--warning-color)'}; font-size: 0.75rem;">${(data.ctr || 0).toFixed(2)}% CTR</div>
+                                        </div>
+                                        <div style="text-align: center;">
+                                            <div style="font-weight: 600;">${data.customers ? Math.round(data.customers) : '0'}</div>
+                                            <div style="color: var(--text-muted);">Customers</div>
+                                            <div style="color: ${data.benchmark?.cvr?.performance === 'above' ? 'var(--accent-color)' : data.benchmark?.cvr?.performance === 'below' ? 'var(--error-color)' : 'var(--warning-color)'}; font-size: 0.75rem;">${(data.cvr || 0).toFixed(2)}% CVR</div>
+                                        </div>
+                                        <div style="text-align: center;">
+                                            <div style="font-weight: 600;">$${data.revenue ? Math.round(data.revenue).toLocaleString() : '0'}</div>
+                                            <div style="color: var(--text-muted);">Revenue</div>
+                                            <div style="color: var(--primary-color); font-size: 0.75rem;">$${data.avgRevenuePerCustomer ? Math.round(data.avgRevenuePerCustomer) : '0'}/cust</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Benchmark Comparison -->
+                                ${data.benchmark ? `
+                                    <div style="background: white; padding: 12px; border-radius: 6px; border-left: 4px solid var(--primary-color);">
+                                        <h6 style="margin: 0 0 8px 0; font-size: 0.9rem;">📊 vs Industry Benchmarks</h6>
+                                        <div style="display: flex; justify-content: space-between; font-size: 0.8rem; gap: 15px;">
+                                            ${data.benchmark.ctr ? `
+                                                <div style="text-align: center;">
+                                                    <div style="color: ${data.benchmark.ctr.performance === 'above' ? 'var(--accent-color)' : data.benchmark.ctr.performance === 'below' ? 'var(--error-color)' : 'var(--warning-color)'}; font-weight: 600;">
+                                                        ${data.benchmark.ctr.percentDiff > 0 ? '+' : ''}${data.benchmark.ctr.percentDiff.toFixed(0)}%
+                                                    </div>
+                                                    <div style="color: var(--text-muted);">CTR vs avg</div>
+                                                </div>
+                                            ` : ''}
+                                            ${data.benchmark.cvr ? `
+                                                <div style="text-align: center;">
+                                                    <div style="color: ${data.benchmark.cvr.performance === 'above' ? 'var(--accent-color)' : data.benchmark.cvr.performance === 'below' ? 'var(--error-color)' : 'var(--warning-color)'}; font-weight: 600;">
+                                                        ${data.benchmark.cvr.percentDiff > 0 ? '+' : ''}${data.benchmark.cvr.percentDiff.toFixed(0)}%
+                                                    </div>
+                                                    <div style="color: var(--text-muted);">CVR vs avg</div>
+                                                </div>
+                                            ` : ''}
+                                            ${data.benchmark.cac ? `
+                                                <div style="text-align: center;">
+                                                    <div style="color: ${data.benchmark.cac.performance === 'above' ? 'var(--accent-color)' : data.benchmark.cac.performance === 'below' ? 'var(--error-color)' : 'var(--warning-color)'}; font-weight: 600;">
+                                                        ${data.benchmark.cac.percentDiff > 0 ? '+' : ''}${data.benchmark.cac.percentDiff.toFixed(0)}%
+                                                    </div>
+                                                    <div style="color: var(--text-muted);">CAC vs avg</div>
+                                                </div>
+                                            ` : ''}
+                                        </div>
+                                    </div>
+                                ` : ''}
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+
+                <!-- Performance Trending Charts -->
+                <div style="background: white; border: 1px solid var(--border); border-radius: 8px; padding: 30px; margin-bottom: 20px;">
+                    <h3>📈 Performance Trending Analysis</h3>
+                    <p style="color: var(--text-muted); margin-bottom: 25px;">Interactive charts showing channel performance over time</p>
+                    
+                    <!-- Chart Controls -->
+                    <div style="display: flex; gap: 15px; margin-bottom: 25px; align-items: center; flex-wrap: wrap;">
+                        <div style="display: flex; gap: 5px;">
+                            <button onclick="showTrendChart('cac')" class="chart-tab active" id="chart-tab-cac">CAC Trends</button>
+                            <button onclick="showTrendChart('roas')" class="chart-tab" id="chart-tab-roas">ROAS Trends</button>
+                            <button onclick="showTrendChart('volume')" class="chart-tab" id="chart-tab-volume">Volume Trends</button>
+                            <button onclick="showTrendChart('efficiency')" class="chart-tab" id="chart-tab-efficiency">Efficiency Trends</button>
+                        </div>
+                        <div style="display: flex; gap: 5px; margin-left: auto;">
+                            <button onclick="setChartPeriod('7d')" class="period-btn">7D</button>
+                            <button onclick="setChartPeriod('30d')" class="period-btn active">30D</button>
+                            <button onclick="setChartPeriod('90d')" class="period-btn">90D</button>
+                            <button onclick="setChartPeriod('all')" class="period-btn">All Time</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Chart Container -->
+                    <div style="position: relative; height: 400px; margin-bottom: 20px;">
+                        <canvas id="trendChart"></canvas>
+                    </div>
+                    
+                    <!-- Chart Legend and Insights -->
+                    <div id="chart-insights" style="background: var(--surface); padding: 15px; border-radius: 8px; font-size: 0.9rem;">
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px;">
+                            <div>
+                                <strong>📊 Chart Insights:</strong>
+                                <div id="chart-insights-content" style="margin-top: 8px; color: var(--text-muted);">
+                                    Select a metric above to view trending analysis
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                ${results.opportunities?.length > 0 ? `
+                    <div style="background: white; border: 1px solid var(--border); border-radius: 8px; padding: 30px; margin-bottom: 20px;">
+                        <h3>⚡ Strategic Growth Opportunities</h3>
+                        <p style="color: var(--text-muted); margin: 10px 0 25px 0;">Priority actions to improve performance</p>
+                        
+                        <div style="margin-top: 20px;">
+                            ${results.opportunities.map((opp, index) => `
+                                <div style="border-left: 4px solid ${opp.priority === 'high' ? '#ef4444' : opp.priority === 'medium' ? '#f59e0b' : '#10b981'}; background: var(--surface); padding: 20px; margin-bottom: 20px; border-radius: 0 8px 8px 0;">
+                                    
+                                    <!-- Header -->
+                                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+                                        <h4 style="margin: 0; color: var(--text-primary);">
+                                            ${index + 1}. ${opp.issue}
+                                        </h4>
+                                        <div style="display: flex; gap: 8px; align-items: center;">
+                                            <span style="background: ${opp.priority === 'high' ? '#ef4444' : opp.priority === 'medium' ? '#f59e0b' : '#10b981'}; color: white; padding: 4px 8px; border-radius: 4px; font-size: 0.8rem; font-weight: 500; text-transform: uppercase;">${opp.priority}</span>
+                                            <span style="color: var(--text-muted); font-size: 0.9rem;">${opp.timeline}</span>
+                                        </div>
+                                    </div>
+
+                                    <!-- Recommendation -->
+                                    <p style="color: var(--text-secondary); margin-bottom: 15px; line-height: 1.5;">
+                                        ${opp.recommendation}
+                                    </p>
+
+                                    <!-- Budget Move (if applicable) -->
+                                    ${opp.budgetMove ? `
+                                        <div style="background: rgba(16, 185, 129, 0.1); padding: 12px; border-radius: 6px; margin-bottom: 15px;">
+                                            <strong>💰 Budget Move:</strong> 
+                                            Move $${opp.budgetMove.amount}/${opp.budgetMove.frequency} from ${opp.budgetMove.from} to ${opp.budgetMove.to}
+                                            ${opp.metrics?.expectedROI ? ` (${opp.metrics.expectedROI} expected)` : ''}
+                                        </div>
+                                    ` : ''}
+
+                                    <!-- Action Items -->
+                                    ${opp.specificActions && opp.specificActions.length > 0 ? `
+                                        <div style="background: white; padding: 12px; border-radius: 6px; margin-bottom: 15px;">
+                                            <strong style="color: var(--text-primary);">✓ Actions to Take:</strong>
+                                            <ul style="margin: 8px 0 0 16px; color: var(--text-secondary);">
+                                                ${opp.specificActions.slice(0, 3).map(action => `<li style="margin: 4px 0;">${action}</li>`).join('')}
+                                                ${opp.specificActions.length > 3 ? `<li style="margin: 4px 0; color: var(--text-muted);">...and ${opp.specificActions.length - 3} more steps</li>` : ''}
+                                            </ul>
+                                        </div>
+                                    ` : ''}
+
+                                    <!-- Expected Impact -->
+                                    <div style="background: linear-gradient(90deg, rgba(107, 91, 149, 0.1), rgba(16, 185, 129, 0.1)); padding: 12px; border-radius: 6px; text-align: center;">
+                                        <strong style="color: var(--primary-color);">🎯 Expected Impact: ${opp.impact}</strong>
+                                    </div>
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>
+                ` : ''}
+
+                ${results.timeAnalysis ? `
+                    <div style="background: white; border: 1px solid var(--border); border-radius: 8px; padding: 30px;">
+                        <h3>📈 Historical Trend Analysis</h3>
+                        <div style="margin-top: 20px;">
+                            ${generateTimeAnalysisDisplay(results.timeAnalysis)}
+                        </div>
+                    </div>
+                ` : ''}
+            `;
+            
+            // Generate pivot tables first (user preferred format for data analysis)
+            setTimeout(() => {
+                generatePivotTables(results);
+                // Chart functionality temporarily disabled - focusing on pivot table analysis
+                // initializeTrendingCharts(results);
+            }, 500);
+        }
+
+        function generateTimeAnalysisDisplay(timeAnalysis) {
+            const { daily, trends } = timeAnalysis;
+            if (!daily) return '<p>No time-based data available</p>';
+
+            const dates = Object.keys(daily).sort().slice(-7);
+            if (dates.length === 0) return '<p>No daily data available</p>';
+
+            return `
+                <div style="display: flex; gap: 15px; overflow-x: auto; padding: 15px 0;">
+                    ${dates.map(date => {
+                        const data = daily[date];
+                        const cac = data.customers > 0 ? (data.spend / data.customers).toFixed(2) : '0';
+                        return `
+                            <div style="min-width: 150px; background: var(--surface); padding: 15px; border-radius: 6px; text-align: center; border: 1px solid var(--border);">
+                                <div style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 5px;">${date}</div>
+                                <div style="font-size: 1.2rem; font-weight: 600; margin-bottom: 5px;">$${cac}</div>
+                                <div style="font-size: 0.8rem; color: var(--text-muted);">CAC</div>
+                                <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 8px;">
+                                    Spend: $${Math.round(data.spend)}<br>
+                                    Customers: ${Math.round(data.customers)}
+                                </div>
+                            </div>
+                        `;
+                    }).join('')}
+                </div>
+                ${trends ? `
+                    <div style="margin-top: 20px; padding: 15px; background: var(--surface); border-radius: 6px;">
+                        <strong>📊 Trend Analysis:</strong>
+                        <div style="margin-top: 10px; color: var(--text-muted);">
+                            CAC Trend: <strong>${trends.cac_trend}</strong><br>
+                            Weekly Performance: <strong>${trends.weekly_performance}</strong>
+                        </div>
+                    </div>
+                ` : ''}
+            `;
+        }
+
+        // Notification System
+        function showNotification(message, type = 'info') {
+            // Remove existing notifications
+            const existing = document.querySelector('.notification');
+            if (existing) existing.remove();
+            
+            const notification = document.createElement('div');
+            notification.className = `notification ${type}`;
+            notification.textContent = message;
+            
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                if (notification.parentNode) {
+                    notification.remove();
+                }
+            }, 3000);
+        }
+
+        // Chart functionality
+        let trendChart = null;
+        let chartData = null;
+        let currentChartType = 'cac';
+        let currentPeriod = '30d';
+        
+        function initializeTrendingCharts(results) {
+            console.log('initializeTrendingCharts called with:', results);
+            if (!results.timeAnalysis || !results.channelPerformance) {
+                console.log('Missing timeAnalysis or channelPerformance data');
+                return;
+            }
+            
+            // Prepare chart data from time analysis and channel performance
+            chartData = prepareChartData(results);
+            console.log('Chart data prepared:', chartData);
+            
+            // Initialize the chart
+            showTrendChart(currentChartType);
+        }
+        
+        function prepareChartData(results) {
+            const { daily } = results.timeAnalysis;
+            const channels = Object.keys(results.channelPerformance || {});
+            const rawMarketing = results.rawData?.marketing || [];
+            const rawRevenue = results.rawData?.revenue || [];
+            
+            console.log('Preparing chart data with:', { 
+                dailyKeys: Object.keys(daily || {}), 
+                channels,
+                rawMarketingRows: rawMarketing.length,
+                rawRevenueRows: rawRevenue.length
+            });
+            
+            // Group daily data by channel
+            const channelData = {};
+            
+            channels.forEach(channel => {
+                channelData[channel] = {
+                    dates: [],
+                    cac: [],
+                    roas: [],
+                    spend: [],
+                    customers: [],
+                    efficiency: []
+                };
+            });
+            
+            // Process each date in the daily data
+            Object.entries(daily || {}).forEach(([date, dayData]) => {
+                // For each channel, find the data for this date
+                channels.forEach(channel => {
+                    const channelDayData = rawMarketing.filter(row => 
+                        row.date === date && row.channel === channel
+                    );
+                    
+                    const channelDayRevenue = rawRevenue.filter(row => 
+                        row.date === date && row.channel === channel
+                    );
+                    
+                    if (channelDayData.length > 0) {
+                        channelData[channel].dates.push(date);
+                        
+                        // Calculate daily metrics for this channel
+                        const totalSpend = channelDayData.reduce((sum, row) => sum + (row.spend || 0), 0);
+                        const totalCustomers = channelDayData.reduce((sum, row) => sum + (row.customers || row.conversions || 0), 0);
+                        const totalRevenue = channelDayRevenue.reduce((sum, row) => sum + (row.revenue || 0), 0);
+                        
+                        const cac = totalCustomers > 0 ? totalSpend / totalCustomers : 0;
+                        const roas = totalSpend > 0 ? totalRevenue / totalSpend : 0;
+                        const efficiency = results.channelPerformance[channel]?.efficiencyScore || 0;
+                        
+                        channelData[channel].cac.push(cac);
+                        channelData[channel].roas.push(roas);
+                        channelData[channel].spend.push(totalSpend);
+                        channelData[channel].customers.push(totalCustomers);
+                        channelData[channel].efficiency.push(efficiency);
+                    }
+                });
+            });
+            
+            console.log('Chart data prepared:', channelData);
+            return channelData;
+        }
+        
+        function showTrendChart(chartType) {
+            currentChartType = chartType;
+            
+            // Update tab appearance
+            document.querySelectorAll('.chart-tab').forEach(tab => tab.classList.remove('active'));
+            document.getElementById(`chart-tab-${chartType}`).classList.add('active');
+            
+            if (!chartData) {
+                console.log('No chart data available');
+                return;
+            }
+            
+            console.log(`Showing ${chartType} chart with data:`, chartData);
+            
+            // Destroy existing chart
+            if (trendChart) {
+                trendChart.destroy();
+            }
+            
+            const canvas = document.getElementById('trendChart');
+            if (!canvas) {
+                console.error('Canvas element not found');
+                return;
+            }
+            
+            const ctx = canvas.getContext('2d');
+            const datasets = [];
+            const colors = ['#6b5b95', '#10b981', '#f59e0b', '#ef4444', '#3b82f6', '#8b5cf6'];
+            
+            console.log('Canvas element found:', canvas);
+            console.log('Chart.js available:', typeof Chart);
+            
+            Object.entries(chartData).forEach(([channel, data], index) => {
+                if (data.dates.length === 0) return;
+                
+                let chartValues = [];
+                let yAxisLabel = '';
+                
+                switch(chartType) {
+                    case 'cac':
+                        chartValues = data.cac;
+                        yAxisLabel = 'CAC ($)';
+                        break;
+                    case 'roas':
+                        chartValues = data.roas;
+                        yAxisLabel = 'ROAS (x)';
+                        break;
+                    case 'volume':
+                        chartValues = data.customers;
+                        yAxisLabel = 'Customers';
+                        break;
+                    case 'efficiency':
+                        chartValues = data.efficiency;
+                        yAxisLabel = 'Efficiency Score';
+                        break;
+                    default:
+                        chartValues = data.cac;
+                        yAxisLabel = 'CAC ($)';
+                }
+                
+                const chartDataPoints = data.dates.map((date, i) => ({
+                    x: date,
+                    y: parseFloat(chartValues[i]) || 0
+                }));
+                
+                console.log(`Dataset for ${channel}:`, chartDataPoints);
+                
+                datasets.push({
+                    label: channel,
+                    data: chartDataPoints,
+                    borderColor: colors[index % colors.length],
+                    backgroundColor: colors[index % colors.length] + '20',
+                    borderWidth: 3,
+                    fill: false,
+                    tension: 0.1
+                });
+            });
+            
+            console.log('Creating chart with datasets:', datasets);
+            
+            if (datasets.length === 0) {
+                console.log('No datasets to display');
+                return;
+            }
+            
+            try {
+                trendChart = new Chart(ctx, {
+                type: 'line',
+                data: { datasets },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: getChartTitle(chartType),
+                            font: { size: 16, weight: 'bold' }
+                        },
+                        legend: {
+                            display: true,
+                            position: 'top'
+                        }
+                    },
+                    scales: {
+                        x: {
+                            type: 'category',
+                            title: {
+                                display: true,
+                                text: 'Date'
+                            }
+                        },
+                        y: {
+                            title: {
+                                display: true,
+                                text: yAxisLabel
+                            },
+                            beginAtZero: chartType !== 'roas'
+                        }
+                    },
+                    interaction: {
+                        intersect: false,
+                        mode: 'index'
+                    }
+                }
+            });
+            
+            console.log('Chart created successfully:', trendChart);
+            
+            } catch (error) {
+                console.error('Error creating chart:', error);
+            }
+            
+            updateChartInsights(chartType);
+        }
+        
+        function setChartPeriod(period) {
+            currentPeriod = period;
+            
+            // Update period button appearance
+            document.querySelectorAll('.period-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            
+            // Filter data and refresh chart
+            showTrendChart(currentChartType);
+        }
+        
+        function getChartTitle(chartType) {
+            const titles = {
+                'cac': 'Customer Acquisition Cost Trends',
+                'roas': 'Return on Ad Spend Trends',
+                'volume': 'Customer Volume Trends',
+                'efficiency': 'Efficiency Score Trends'
+            };
+            return titles[chartType] || 'Performance Trends';
+        }
+        
+        function updateChartInsights(chartType) {
+            const insights = generateChartInsights(chartType);
+            document.getElementById('chart-insights-content').innerHTML = insights;
+        }
+        
+        function generateChartInsights(chartType) {
+            if (!chartData) return 'No data available for analysis.';
+            
+            const channelCount = Object.keys(chartData).length;
+            const totalDataPoints = Object.values(chartData).reduce((sum, data) => sum + data.dates.length, 0);
+            
+            let insights = `Analyzing ${channelCount} channels across ${Math.floor(totalDataPoints / channelCount)} time periods. `;
+            
+            switch(chartType) {
+                case 'cac':
+                    insights += 'Lower CAC indicates more efficient customer acquisition. Look for downward trends and compare channels.';
+                    break;
+                case 'roas':
+                    insights += 'Higher ROAS indicates better profitability. Values above 3x typically indicate strong performance.';
+                    break;
+                case 'volume':
+                    insights += 'Customer volume shows acquisition scale. Consistent or growing volume indicates sustainable growth.';
+                    break;
+                case 'efficiency':
+                    insights += 'Efficiency scores combine CAC, CTR, CVR, and ROAS. Scores above 75 indicate strong performance.';
+                    break;
+            }
+            
+            return insights;
+        }
+
+        // Initialize Application
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('CAC Calculator Pro initialized');
+            setupFileUploads();
+            
+            // Show setup step by default
+            showStep('setup');
+        });
+    </script>
+</body>
+</html>
