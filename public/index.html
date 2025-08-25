@@ -2773,6 +2773,6 @@
         </div>
     </main>
 
-    <script src="app.js"></script>\n    <script src="global-functions-fix.js"></script>\n    <script src="channel-data-functions.js"></script>\n    <script src="upload-improvements.js"></script>
+    <script src="app.js"></script>\n    <script>\n        // Emergency button fix - ensure all functions are globally available\n        window.showChannelTab = window.showChannelTab || function(channel) { \n            console.log('Channel tab clicked:', channel);\n            document.querySelectorAll('.channel-tab').forEach(tab => tab.classList.remove('active'));\n            document.getElementById('tab-' + channel)?.classList.add('active');\n        };\n        window.loadDemoData = window.loadDemoData || function() { \n            console.log('Demo data button clicked');\n            if (typeof loadDemoData === 'function') loadDemoData();\n        };\n        window.analyzeData = window.analyzeData || function() { \n            console.log('Analyze button clicked');\n            if (typeof analyzeData === 'function') analyzeData();\n        };\n    </script>\n    <script src="global-functions-fix.js"></script>\n    <script src="channel-data-functions.js"></script>\n    <script src="upload-improvements.js"></script>
 </body>
 </html>
