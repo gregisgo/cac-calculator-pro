@@ -205,23 +205,100 @@ function loadDemoData() {
     autofillProjectSetup();
     autofillBusinessModel();
     loadSampleData();
-    showNotification('Demo data loaded successfully! Navigate to Analysis to see results.', 'success');
+    // Show comprehensive loading feedback
+    const marketingRows = appState.uploadedData.marketing.rows;
+    const revenueRows = appState.uploadedData.revenue.rows;
+    const channels = appState.uploadedData.marketing.channels;
+    const dateRange = appState.uploadedData.marketing.dateRange;
+    
+    showNotification(`Demo data loaded successfully! ${marketingRows} marketing rows, ${revenueRows} revenue rows, ${channels} channels (${dateRange}). Click Analyze to see results.`, 'success', 5000);
+    
+    // Update UI to show loaded data
+    updateDataLoadedUI();
 }
 
 function loadSampleData() {
+    // Load comprehensive sample data with realistic 18-month dataset
+    console.log('Loading comprehensive sample marketing data...');
+    
+    // Generate realistic sample data for multiple months
+    const sampleMarketingData = [];
+    const sampleRevenueData = [];
+    
+    const channels = ['Google Ads', 'Facebook', 'LinkedIn', 'TikTok'];
+    const startDate = new Date('2024-01-01');
+    const endDate = new Date('2024-06-30'); // 6 months of data
+    
+    for (let d = new Date(startDate); d <= endDate; d.setDate(d.getDate() + 1)) {
+        const dateStr = d.toISOString().split('T')[0];
+        
+        channels.forEach((channel, channelIndex) => {
+            // Vary spend by channel and add some seasonality
+            const baseSpend = [2000, 1500, 1000, 800][channelIndex];
+            const seasonalMultiplier = 1 + 0.3 * Math.sin((d.getTime() - startDate.getTime()) / (86400000 * 30) * Math.PI / 6);
+            const dailyVariation = 0.8 + Math.random() * 0.4;
+            const spend = Math.round(baseSpend * seasonalMultiplier * dailyVariation);
+            
+            // Calculate realistic metrics based on channel
+            const channelMetrics = {
+                'Google Ads': { baseCTR: 2.5, baseCPC: 0.8, baseCVR: 3.5 },
+                'Facebook': { baseCTR: 1.8, baseCPC: 1.1, baseCVR: 2.5 },
+                'LinkedIn': { baseCTR: 1.2, baseCPC: 4.0, baseCVR: 4.0 },
+                'TikTok': { baseCTR: 3.2, baseCPC: 0.5, baseCVR: 2.0 }
+            }[channel];
+            
+            const impressions = Math.round(spend / channelMetrics.baseCPC * 100 / channelMetrics.baseCTR * 100);
+            const clicks = Math.round(impressions * channelMetrics.baseCTR / 100);
+            const customers = Math.round(clicks * channelMetrics.baseCVR / 100);
+            const revenue = customers * (150 + Math.random() * 200); // $150-$350 per customer
+            
+            sampleMarketingData.push({
+                date: dateStr,
+                channel: channel,
+                spend: spend,
+                impressions: impressions,
+                clicks: clicks,
+                ctr: channelMetrics.baseCTR + (Math.random() - 0.5) * 0.5,
+                cpc: channelMetrics.baseCPC + (Math.random() - 0.5) * 0.2,
+                customers: customers,
+                revenue: Math.round(revenue)
+            });
+            
+            // Add corresponding revenue data
+            if (customers > 0) {
+                sampleRevenueData.push({
+                    date: dateStr,
+                    channel: channel,
+                    customers: customers,
+                    new_customers: customers,
+                    revenue: Math.round(revenue),
+                    ltv: 150 + Math.random() * 300
+                });
+            }
+        });
+    }
+    
     appState.uploadedData.marketing = {
-        data: [
-            {date: '2024-01-01', channel: 'Google Ads', spend: 2500, impressions: 125000, clicks: 3125, customers: 32, revenue: 15000},
-            {date: '2024-01-01', channel: 'Facebook', spend: 1800, impressions: 90000, clicks: 1620, customers: 28, revenue: 12000},
-            {date: '2024-01-01', channel: 'LinkedIn', spend: 1200, impressions: 24000, clicks: 288, customers: 18, revenue: 8500},
-            {date: '2024-01-02', channel: 'Google Ads', spend: 2300, impressions: 115000, clicks: 2875, customers: 30, revenue: 14500},
-            {date: '2024-01-02', channel: 'Facebook', spend: 1900, impressions: 95000, clicks: 1710, customers: 29, revenue: 13200}
-        ],
-        filename: 'sample-marketing-data.csv'
+        data: sampleMarketingData,
+        filename: 'comprehensive-sample-marketing-data.csv',
+        rows: sampleMarketingData.length,
+        channels: channels.length,
+        dateRange: `${startDate.toISOString().split('T')[0]} to ${endDate.toISOString().split('T')[0]}`
     };
     
     appState.uploadedData.revenue = {
-        data: [
+        data: sampleRevenueData,
+        filename: 'comprehensive-sample-revenue-data.csv',
+        rows: sampleRevenueData.length
+    };
+    
+    console.log('Sample data loaded:', {
+        marketing: `${sampleMarketingData.length} rows`,
+        revenue: `${sampleRevenueData.length} rows`,
+        channels: channels,
+        dateRange: `${startDate.toISOString().split('T')[0]} to ${endDate.toISOString().split('T')[0]}`
+    });
+}
             {date: '2024-01-01', revenue: 15000, customers: 45, new_customers: 32, ltv: 850},
             {date: '2024-01-01', revenue: 12000, customers: 38, new_customers: 28, ltv: 650},
             {date: '2024-01-02', revenue: 14500, customers: 42, new_customers: 30, ltv: 820},
