@@ -1324,33 +1324,69 @@ function generateChannelUploadForms() {
                     </div>
                 </div>
                 
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+                <div class="single-upload-area">
                     <div class="upload-area">
-                        <h4>${channel.icon} Campaign Performance</h4>
-                        <div class="file-upload-zone" id="${channel.id}-campaign-upload">
-                            <div class="upload-icon">📁</div>
-                            <div class="upload-text">Upload campaign data</div>
-                            <div class="upload-subtext">Campaigns, ad sets, spend, impressions, clicks</div>
+                        <h4>${channel.icon} Complete Performance Export</h4>
+                        <div class="file-upload-zone" id="${channel.id}-performance-upload">
+                            <div class="upload-icon">📊</div>
+                            <div class="upload-text">Upload ${channel.name} performance data</div>
+                            <div class="upload-subtext">Daily performance by campaign/ad set/ad with all metrics</div>
                         </div>
-                        <input type="file" id="${channel.id}-campaign-file" accept=".csv,.xlsx,.xls" style="display: none;">
-                        <div id="${channel.id}-campaign-preview" class="file-preview" style="display: none;"></div>
-                    </div>
-                    
-                    <div class="upload-area">
-                        <h4>🎨 Creative Performance</h4>
-                        <div class="file-upload-zone" id="${channel.id}-creative-upload">
-                            <div class="upload-icon">🖼️</div>
-                            <div class="upload-text">Upload creative data</div>
-                            <div class="upload-subtext">Ad creatives, performance by asset</div>
-                        </div>
-                        <input type="file" id="${channel.id}-creative-file" accept=".csv,.xlsx,.xls" style="display: none;">
-                        <div id="${channel.id}-creative-preview" class="file-preview" style="display: none;"></div>
+                        <input type="file" id="${channel.id}-performance-file" accept=".csv,.xlsx,.xls" style="display: none;">
+                        <div id="${channel.id}-performance-preview" class="file-preview" style="display: none;"></div>
                     </div>
                 </div>
                 
-                <div style="margin-top: 1.5rem; padding: 1rem; background: var(--surface-alt); border-radius: 8px; border: 1px solid var(--border);">
-                    <h5 style="margin: 0 0 0.5rem 0; color: var(--text-primary);">📋 Required Fields</h5>
-                    <p style="margin: 0; font-size: 0.9rem; color: var(--text-secondary);">Your ${channel.name} data should include: <strong>date, campaign_name, spend, impressions, clicks, conversions</strong></p>
+                <div class="data-structure-info">
+                    <h5>📋 Expected Data Structure</h5>
+                    <div class="metric-categories">
+                        <div class="metric-category">
+                            <h6>📅 Hierarchy & Timing</h6>
+                            <ul>
+                                <li><strong>date</strong> - Daily performance data</li>
+                                <li><strong>campaign_name</strong> - Campaign identifier</li>
+                                <li><strong>ad_set_name / ad_group_name</strong> - Ad set or ad group</li>
+                                <li><strong>ad_name / keyword</strong> - Individual ad or keyword</li>
+                            </ul>
+                        </div>
+                        <div class="metric-category">
+                            <h6>🎯 Engagement Metrics</h6>
+                            <ul>
+                                <li><strong>impressions</strong> - Total impressions</li>
+                                <li><strong>clicks</strong> - Total clicks</li>
+                                <li><strong>ctr</strong> - Click-through rate (%)</li>
+                                <li><strong>cpc</strong> - Cost per click ($)</li>
+                                <li><strong>engagement_rate</strong> - Engagement rate (%)</li>
+                            </ul>
+                        </div>
+                        <div class="metric-category">
+                            <h6>💰 Conversion Metrics</h6>
+                            <ul>
+                                <li><strong>spend</strong> - Daily spend amount</li>
+                                <li><strong>conversions</strong> - Total conversions</li>
+                                <li><strong>conversion_rate</strong> - Conversion rate (%)</li>
+                                <li><strong>cost_per_conversion</strong> - Cost per conversion</li>
+                                <li><strong>revenue</strong> - Revenue generated</li>
+                                <li><strong>roas</strong> - Return on ad spend</li>
+                            </ul>
+                        </div>
+                        <div class="metric-category">
+                            <h6>📈 Delivery & Reach</h6>
+                            <ul>
+                                <li><strong>reach</strong> - Unique users reached</li>
+                                <li><strong>frequency</strong> - Average frequency</li>
+                                <li><strong>cpm</strong> - Cost per mille (per 1000 impressions)</li>
+                                <li><strong>quality_score</strong> - Quality/relevance score</li>
+                                <li><strong>delivery_status</strong> - Campaign delivery status</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="sample-data-info">
+                    <h5>💡 Sample Data Available</h5>
+                    <p>Need help formatting your data? We have sample ${channel.name} export templates with the correct structure.</p>
+                    <button class="btn btn-secondary btn-small" onclick="downloadSampleTemplate('${channel.id}')">Download ${channel.name} Template</button>
                 </div>
             </div>
         </div>

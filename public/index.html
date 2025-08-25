@@ -1227,6 +1227,92 @@
             border-color: var(--primary-color);
         }
         
+        /* Single Upload Area Styling */
+        .single-upload-area {
+            margin-bottom: 2rem;
+        }
+        
+        .data-structure-info {
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background: var(--surface-alt);
+            border-radius: 12px;
+            border: 1px solid var(--border);
+        }
+        
+        .data-structure-info h5 {
+            margin: 0 0 1rem 0;
+            color: var(--primary-color);
+            font-size: 1.1rem;
+        }
+        
+        .metric-categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+        
+        .metric-category {
+            background: white;
+            padding: 1rem;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+        }
+        
+        .metric-category h6 {
+            margin: 0 0 0.75rem 0;
+            color: var(--text-primary);
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+        
+        .metric-category ul {
+            margin: 0;
+            padding: 0 0 0 1rem;
+            list-style: none;
+        }
+        
+        .metric-category li {
+            margin: 0.25rem 0;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            position: relative;
+        }
+        
+        .metric-category li:before {
+            content: "•";
+            color: var(--primary-color);
+            font-weight: bold;
+            position: absolute;
+            left: -1rem;
+        }
+        
+        .metric-category strong {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+        
+        .sample-data-info {
+            margin-top: 1.5rem;
+            padding: 1rem;
+            background: var(--background);
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            text-align: center;
+        }
+        
+        .sample-data-info h5 {
+            margin: 0 0 0.5rem 0;
+            color: var(--text-primary);
+        }
+        
+        .sample-data-info p {
+            margin: 0 0 1rem 0;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+        
         .channel-header h3 {
             margin-bottom: 1.5rem;
             color: var(--primary-color);
@@ -2704,6 +2790,6 @@
         </div>
     </main>
 
-    <script src="app.js"></script>\n    <script src="global-functions-fix.js"></script>
+    <script src="app.js"></script>\n    <script src="global-functions-fix.js"></script>\n    <script src="channel-data-functions.js"></script>
 </body>
 </html>

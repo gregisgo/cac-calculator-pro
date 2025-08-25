@@ -3259,40 +3259,167 @@ function identifyOptimizationOpportunities(channelAnalytics, rawData) {
 
 function analyzeCampaignPerformance(data) {
   const campaigns = {};
+  const adSets = {};
+  const ads = {};
+  
   data.forEach(row => {
-    const campaign = row.campaign || row.ad_set || 'Default Campaign';
+    const campaign = row.campaign_name || row.campaign || 'Default Campaign';
+    const adSet = row.ad_set_name || row.ad_group_name || 'Default Ad Set';
+    const ad = row.ad_name || row.keyword || 'Default Ad';
     const channel = row.channel || 'Unknown';
-    const key = `${channel}_${campaign}`;
     
-    if (!campaigns[key]) {
-      campaigns[key] = {
+    // Campaign level aggregation
+    const campaignKey = `${channel}_${campaign}`;
+    if (!campaigns[campaignKey]) {
+      campaigns[campaignKey] = {
         campaign: campaign,
         channel: channel,
         spend: 0,
         customers: 0,
+        conversions: 0,
         revenue: 0,
         impressions: 0,
-        clicks: 0
+        clicks: 0,
+        reach: 0,
+        engagement_rate: 0,
+        days_active: new Set(),
+        ad_sets: new Set(),
+        ads: new Set()
       };
     }
     
-    campaigns[key].spend += parseFloat(row.spend) || 0;
-    campaigns[key].customers += parseInt(row.customers) || parseInt(row.new_customers) || 0;
-    campaigns[key].revenue += parseFloat(row.revenue) || 0;
-    campaigns[key].impressions += parseInt(row.impressions) || 0;
-    campaigns[key].clicks += parseInt(row.clicks) || 0;
+    // Ad Set level aggregation
+    const adSetKey = `${campaignKey}_${adSet}`;
+    if (!adSets[adSetKey]) {
+      adSets[adSetKey] = {
+        campaign: campaign,
+        ad_set: adSet,
+        channel: channel,
+        spend: 0,
+        customers: 0,
+        conversions: 0,
+        revenue: 0,
+        impressions: 0,
+        clicks: 0,
+        reach: 0,
+        ads: new Set(),
+        days_active: new Set()
+      };
+    }
+    
+    // Ad level tracking
+    const adKey = `${adSetKey}_${ad}`;
+    if (!ads[adKey]) {
+      ads[adKey] = {
+        campaign: campaign,
+        ad_set: adSet,
+        ad: ad,
+        channel: channel,
+        spend: 0,
+        customers: 0,
+        conversions: 0,
+        revenue: 0,
+        impressions: 0,
+        clicks: 0,
+        reach: 0,
+        days_active: new Set()
+      };
+    }
+    
+    // Aggregate metrics
+    const spend = parseFloat(row.spend) || 0;
+    const customers = parseInt(row.customers) || parseInt(row.conversions) || parseInt(row.new_customers) || 0;
+    const conversions = parseInt(row.conversions) || customers;
+    const revenue = parseFloat(row.revenue) || 0;
+    const impressions = parseInt(row.impressions) || 0;
+    const clicks = parseInt(row.clicks) || 0;
+    const reach = parseInt(row.reach) || 0;
+    const date = row.date;
+    
+    // Update campaign
+    campaigns[campaignKey].spend += spend;
+    campaigns[campaignKey].customers += customers;
+    campaigns[campaignKey].conversions += conversions;
+    campaigns[campaignKey].revenue += revenue;
+    campaigns[campaignKey].impressions += impressions;
+    campaigns[campaignKey].clicks += clicks;
+    campaigns[campaignKey].reach += reach;
+    campaigns[campaignKey].days_active.add(date);
+    campaigns[campaignKey].ad_sets.add(adSet);
+    campaigns[campaignKey].ads.add(ad);
+    
+    // Update ad set
+    adSets[adSetKey].spend += spend;
+    adSets[adSetKey].customers += customers;
+    adSets[adSetKey].conversions += conversions;
+    adSets[adSetKey].revenue += revenue;
+    adSets[adSetKey].impressions += impressions;
+    adSets[adSetKey].clicks += clicks;
+    adSets[adSetKey].reach += reach;
+    adSets[adSetKey].days_active.add(date);
+    adSets[adSetKey].ads.add(ad);
+    
+    // Update ad
+    ads[adKey].spend += spend;
+    ads[adKey].customers += customers;
+    ads[adKey].conversions += conversions;
+    ads[adKey].revenue += revenue;
+    ads[adKey].impressions += impressions;
+    ads[adKey].clicks += clicks;
+    ads[adKey].reach += reach;
+    ads[adKey].days_active.add(date);
   });
   
-  // Calculate metrics for each campaign
+  // Calculate metrics for campaigns
   Object.keys(campaigns).forEach(key => {
     const camp = campaigns[key];
     camp.cac = camp.customers > 0 ? (camp.spend / camp.customers).toFixed(2) : 0;
+    camp.cpc = camp.clicks > 0 ? (camp.spend / camp.clicks).toFixed(2) : 0;
+    camp.cpm = camp.impressions > 0 ? ((camp.spend / camp.impressions) * 1000).toFixed(2) : 0;
     camp.roas = camp.spend > 0 ? (camp.revenue / camp.spend).toFixed(2) : 0;
     camp.ctr = camp.impressions > 0 ? ((camp.clicks / camp.impressions) * 100).toFixed(2) : 0;
     camp.cvr = camp.clicks > 0 ? ((camp.customers / camp.clicks) * 100).toFixed(2) : 0;
+    camp.conversion_rate = camp.clicks > 0 ? ((camp.conversions / camp.clicks) * 100).toFixed(2) : 0;
+    camp.frequency = camp.reach > 0 ? (camp.impressions / camp.reach).toFixed(2) : 0;
+    camp.days_active = camp.days_active.size;
+    camp.ad_sets_count = camp.ad_sets.size;
+    camp.ads_count = camp.ads.size;
   });
   
-  return campaigns;
+  // Calculate metrics for ad sets
+  Object.keys(adSets).forEach(key => {
+    const adSet = adSets[key];
+    adSet.cac = adSet.customers > 0 ? (adSet.spend / adSet.customers).toFixed(2) : 0;
+    adSet.cpc = adSet.clicks > 0 ? (adSet.spend / adSet.clicks).toFixed(2) : 0;
+    adSet.cpm = adSet.impressions > 0 ? ((adSet.spend / adSet.impressions) * 1000).toFixed(2) : 0;
+    adSet.roas = adSet.spend > 0 ? (adSet.revenue / adSet.spend).toFixed(2) : 0;
+    adSet.ctr = adSet.impressions > 0 ? ((adSet.clicks / adSet.impressions) * 100).toFixed(2) : 0;
+    adSet.cvr = adSet.clicks > 0 ? ((adSet.customers / adSet.clicks) * 100).toFixed(2) : 0;
+    adSet.conversion_rate = adSet.clicks > 0 ? ((adSet.conversions / adSet.clicks) * 100).toFixed(2) : 0;
+    adSet.frequency = adSet.reach > 0 ? (adSet.impressions / adSet.reach).toFixed(2) : 0;
+    adSet.days_active = adSet.days_active.size;
+    adSet.ads_count = adSet.ads.size;
+  });
+  
+  // Calculate metrics for ads
+  Object.keys(ads).forEach(key => {
+    const ad = ads[key];
+    ad.cac = ad.customers > 0 ? (ad.spend / ad.customers).toFixed(2) : 0;
+    ad.cpc = ad.clicks > 0 ? (ad.spend / ad.clicks).toFixed(2) : 0;
+    ad.cpm = ad.impressions > 0 ? ((ad.spend / ad.impressions) * 1000).toFixed(2) : 0;
+    ad.roas = ad.spend > 0 ? (ad.revenue / ad.spend).toFixed(2) : 0;
+    ad.ctr = ad.impressions > 0 ? ((ad.clicks / ad.impressions) * 100).toFixed(2) : 0;
+    ad.cvr = ad.clicks > 0 ? ((ad.customers / ad.clicks) * 100).toFixed(2) : 0;
+    ad.conversion_rate = ad.clicks > 0 ? ((ad.conversions / ad.clicks) * 100).toFixed(2) : 0;
+    ad.frequency = ad.reach > 0 ? (ad.impressions / ad.reach).toFixed(2) : 0;
+    ad.days_active = ad.days_active.size;
+  });
+  
+  return {
+    campaigns: campaigns,
+    adSets: adSets,
+    ads: ads
+  };
 }
 
 function analyzeCreativePerformance(data) {
