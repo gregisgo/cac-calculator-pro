@@ -8,7 +8,7 @@ const moment = require('moment');
 const ExcelJS = require('exceljs');
 
 const app = express();
-const PORT = process.env.PORT || 3006;
+const PORT = process.env.PORT || 3007;
 
 // Configure multer for file uploads (memory storage)
 const upload = multer({
@@ -3141,6 +3141,274 @@ function generateOptimizationRecommendations(marketingData, revenueData, current
   return recommendations;
 }
 
+// Advanced analysis helper functions
+function calculateEfficiencyScore(cac, avgRevenue, impressions, clicks) {
+  const cacScore = Math.max(0, 100 - parseFloat(cac));
+  const revenueScore = Math.min(100, (avgRevenue / 500) * 100); // Assuming 500 is baseline
+  const clickScore = impressions > 0 ? Math.min(100, ((clicks / impressions) * 100) * 50) : 0;
+  return ((cacScore + revenueScore + clickScore) / 3).toFixed(1);
+}
+
+function analyzeTimePerformance(data) {
+  const datePerformance = {};
+  data.forEach(row => {
+    const date = row.date;
+    if (!datePerformance[date]) {
+      datePerformance[date] = { spend: 0, customers: 0, revenue: 0 };
+    }
+    datePerformance[date].spend += parseFloat(row.spend) || 0;
+    datePerformance[date].customers += parseInt(row.customers) || parseInt(row.new_customers) || 0;
+    datePerformance[date].revenue += parseFloat(row.revenue) || 0;
+  });
+  
+  const dates = Object.keys(datePerformance).sort();
+  const trends = {
+    cac_trend: 'stable',
+    spend_trend: 'stable',
+    volume_trend: 'stable'
+  };
+  
+  if (dates.length > 1) {
+    const firstCac = datePerformance[dates[0]].customers > 0 ? 
+      datePerformance[dates[0]].spend / datePerformance[dates[0]].customers : 0;
+    const lastCac = datePerformance[dates[dates.length-1]].customers > 0 ? 
+      datePerformance[dates[dates.length-1]].spend / datePerformance[dates[dates.length-1]].customers : 0;
+    
+    trends.cac_trend = lastCac > firstCac * 1.1 ? 'increasing' : lastCac < firstCac * 0.9 ? 'decreasing' : 'stable';
+  }
+  
+  return {
+    daily: datePerformance,
+    trends: trends,
+    bestDay: dates.reduce((best, date) => {
+      const dayCAC = datePerformance[date].customers > 0 ? 
+        datePerformance[date].spend / datePerformance[date].customers : Infinity;
+      const bestCAC = datePerformance[best] && datePerformance[best].customers > 0 ? 
+        datePerformance[best].spend / datePerformance[best].customers : Infinity;
+      return dayCAC < bestCAC ? date : best;
+    }, dates[0])
+  };
+}
+
+function identifyOptimizationOpportunities(channelAnalytics, rawData) {
+  const opportunities = [];
+  
+  // Find underperforming channels
+  Object.entries(channelAnalytics).forEach(([channel, metrics]) => {
+    if (parseFloat(metrics.cac) > 100) {
+      opportunities.push({
+        type: 'high_cac',
+        channel: channel,
+        priority: 'high',
+        issue: `High CAC of $${metrics.cac}`,
+        recommendation: `Consider pausing or optimizing ${channel}. Current CAC is above profitable threshold.`,
+        impact: `Potential savings: $${((parseFloat(metrics.cac) - 75) * metrics.customers).toFixed(0)}`,
+        metrics: { current_cac: metrics.cac, target_cac: '75.00', spend: metrics.spend }
+      });
+    }
+    
+    if (parseFloat(metrics.ctr) < 1.0) {
+      opportunities.push({
+        type: 'low_ctr',
+        channel: channel,
+        priority: 'medium',
+        issue: `Low CTR of ${metrics.ctr}%`,
+        recommendation: `Improve ad creative and targeting for ${channel}. Consider A/B testing new creatives.`,
+        impact: `Potential click increase: ${(metrics.impressions * 0.02 - metrics.clicks).toFixed(0)}`,
+        metrics: { current_ctr: metrics.ctr, target_ctr: '2.0', impressions: metrics.impressions }
+      });
+    }
+    
+    if (parseFloat(metrics.cvr) < 2.0) {
+      opportunities.push({
+        type: 'low_cvr',
+        channel: channel,
+        priority: 'medium',
+        issue: `Low conversion rate of ${metrics.cvr}%`,
+        recommendation: `Optimize landing pages and audience targeting for ${channel}.`,
+        impact: `Potential customers gained: ${(metrics.clicks * 0.03 - metrics.customers).toFixed(0)}`,
+        metrics: { current_cvr: metrics.cvr, target_cvr: '3.0', clicks: metrics.clicks }
+      });
+    }
+  });
+  
+  // Budget reallocation opportunities
+  const sortedChannels = Object.entries(channelAnalytics).sort((a, b) => parseFloat(a[1].cac) - parseFloat(b[1].cac));
+  if (sortedChannels.length > 1) {
+    const bestChannel = sortedChannels[0];
+    const worstChannel = sortedChannels[sortedChannels.length - 1];
+    
+    if (parseFloat(worstChannel[1].cac) > parseFloat(bestChannel[1].cac) * 1.5) {
+      opportunities.push({
+        type: 'budget_reallocation',
+        priority: 'high',
+        issue: `Budget misallocation between channels`,
+        recommendation: `Shift 25% of budget from ${worstChannel[0]} (CAC: $${worstChannel[1].cac}) to ${bestChannel[0]} (CAC: $${bestChannel[1].cac})`,
+        impact: `Estimated additional customers: ${Math.floor((worstChannel[1].spend * 0.25) / parseFloat(bestChannel[1].cac))}`,
+        metrics: {
+          from_channel: worstChannel[0],
+          to_channel: bestChannel[0],
+          potential_savings: ((parseFloat(worstChannel[1].cac) - parseFloat(bestChannel[1].cac)) * worstChannel[1].customers * 0.25).toFixed(0)
+        }
+      });
+    }
+  }
+  
+  return opportunities.slice(0, 10); // Top 10 opportunities
+}
+
+function analyzeCampaignPerformance(data) {
+  const campaigns = {};
+  data.forEach(row => {
+    const campaign = row.campaign || row.ad_set || 'Default Campaign';
+    const channel = row.channel || 'Unknown';
+    const key = `${channel}_${campaign}`;
+    
+    if (!campaigns[key]) {
+      campaigns[key] = {
+        campaign: campaign,
+        channel: channel,
+        spend: 0,
+        customers: 0,
+        revenue: 0,
+        impressions: 0,
+        clicks: 0
+      };
+    }
+    
+    campaigns[key].spend += parseFloat(row.spend) || 0;
+    campaigns[key].customers += parseInt(row.customers) || parseInt(row.new_customers) || 0;
+    campaigns[key].revenue += parseFloat(row.revenue) || 0;
+    campaigns[key].impressions += parseInt(row.impressions) || 0;
+    campaigns[key].clicks += parseInt(row.clicks) || 0;
+  });
+  
+  // Calculate metrics for each campaign
+  Object.keys(campaigns).forEach(key => {
+    const camp = campaigns[key];
+    camp.cac = camp.customers > 0 ? (camp.spend / camp.customers).toFixed(2) : 0;
+    camp.roas = camp.spend > 0 ? (camp.revenue / camp.spend).toFixed(2) : 0;
+    camp.ctr = camp.impressions > 0 ? ((camp.clicks / camp.impressions) * 100).toFixed(2) : 0;
+    camp.cvr = camp.clicks > 0 ? ((camp.customers / camp.clicks) * 100).toFixed(2) : 0;
+  });
+  
+  return campaigns;
+}
+
+function analyzeCreativePerformance(data) {
+  const creatives = {};
+  data.forEach(row => {
+    const creative = row.creative_id || row.creative_type || 'Unknown Creative';
+    if (!creatives[creative]) {
+      creatives[creative] = {
+        creative_id: creative,
+        type: row.creative_type || 'Unknown',
+        spend: 0,
+        customers: 0,
+        impressions: 0,
+        clicks: 0
+      };
+    }
+    
+    creatives[creative].spend += parseFloat(row.spend) || 0;
+    creatives[creative].customers += parseInt(row.customers) || parseInt(row.new_customers) || 0;
+    creatives[creative].impressions += parseInt(row.impressions) || 0;
+    creatives[creative].clicks += parseInt(row.clicks) || 0;
+  });
+  
+  Object.keys(creatives).forEach(creative => {
+    const cr = creatives[creative];
+    cr.cac = cr.customers > 0 ? (cr.spend / cr.customers).toFixed(2) : 0;
+    cr.ctr = cr.impressions > 0 ? ((cr.clicks / cr.impressions) * 100).toFixed(2) : 0;
+  });
+  
+  return creatives;
+}
+
+function generateCompetitiveInsights(channelAnalytics) {
+  const benchmarks = {
+    'Google Ads': { cac: 75, ctr: 2.5, cvr: 3.0 },
+    'Facebook': { cac: 65, ctr: 1.8, cvr: 2.5 },
+    'LinkedIn': { cac: 120, ctr: 0.8, cvr: 4.0 },
+    'TikTok': { cac: 55, ctr: 2.0, cvr: 2.2 }
+  };
+  
+  const insights = {};
+  Object.entries(channelAnalytics).forEach(([channel, metrics]) => {
+    const benchmark = benchmarks[channel];
+    if (benchmark) {
+      insights[channel] = {
+        cac_vs_benchmark: {
+          current: parseFloat(metrics.cac),
+          benchmark: benchmark.cac,
+          performance: parseFloat(metrics.cac) < benchmark.cac ? 'above' : 'below',
+          difference: (parseFloat(metrics.cac) - benchmark.cac).toFixed(2)
+        },
+        ctr_vs_benchmark: {
+          current: parseFloat(metrics.ctr),
+          benchmark: benchmark.ctr,
+          performance: parseFloat(metrics.ctr) > benchmark.ctr ? 'above' : 'below',
+          difference: (parseFloat(metrics.ctr) - benchmark.ctr).toFixed(2)
+        }
+      };
+    }
+  });
+  
+  return insights;
+}
+
+function getDateRange(data) {
+  const dates = data.map(row => row.date).filter(Boolean).sort();
+  return {
+    start: dates[0] || null,
+    end: dates[dates.length - 1] || null,
+    days: dates.length > 0 ? [...new Set(dates)].length : 0
+  };
+}
+
+function assessDataCompleteness(data) {
+  if (data.length === 0) return 'No Data';
+  
+  const requiredFields = ['spend', 'customers'];
+  const optionalFields = ['impressions', 'clicks', 'revenue', 'channel'];
+  
+  let score = 0;
+  const total = requiredFields.length + optionalFields.length;
+  
+  requiredFields.forEach(field => {
+    if (data.every(row => row[field] !== undefined && row[field] !== null && row[field] !== '')) {
+      score += 2; // Required fields worth more
+    }
+  });
+  
+  optionalFields.forEach(field => {
+    if (data.some(row => row[field] !== undefined && row[field] !== null && row[field] !== '')) {
+      score += 1;
+    }
+  });
+  
+  const percentage = (score / (requiredFields.length * 2 + optionalFields.length)) * 100;
+  
+  if (percentage >= 90) return 'Excellent';
+  if (percentage >= 70) return 'Good';
+  if (percentage >= 50) return 'Fair';
+  return 'Poor';
+}
+
+function identifyMissingFields(data) {
+  const allFields = ['date', 'channel', 'spend', 'customers', 'impressions', 'clicks', 'revenue', 'campaign', 'creative_id'];
+  const missing = [];
+  
+  allFields.forEach(field => {
+    const hasField = data.some(row => row[field] !== undefined && row[field] !== null && row[field] !== '');
+    if (!hasField) {
+      missing.push(field);
+    }
+  });
+  
+  return missing;
+}
+
 // Analysis endpoint
 app.post('/api/analyze', (req, res) => {
   try {
@@ -3186,24 +3454,90 @@ app.post('/api/analyze', (req, res) => {
       data.cac = data.customers > 0 ? (data.spend / data.customers).toFixed(2) : 0;
     });
     
+    // Advanced performance metrics for each channel
+    const channelAnalytics = {};
+    Object.keys(channelPerformance).forEach(channel => {
+      const channelRows = allMarketingData.filter(row => (row.channel || 'Unknown') === channel);
+      const data = channelPerformance[channel];
+      
+      // Calculate detailed metrics
+      const impressions = channelRows.reduce((sum, row) => sum + (parseInt(row.impressions) || 0), 0);
+      const clicks = channelRows.reduce((sum, row) => sum + (parseInt(row.clicks) || 0), 0);
+      const revenue = channelRows.reduce((sum, row) => sum + (parseFloat(row.revenue) || 0), 0);
+      
+      channelAnalytics[channel] = {
+        ...data,
+        impressions: impressions,
+        clicks: clicks,
+        revenue: revenue,
+        ctr: impressions > 0 ? ((clicks / impressions) * 100).toFixed(2) : 0,
+        cpc: clicks > 0 ? (data.spend / clicks).toFixed(2) : 0,
+        cvr: clicks > 0 ? ((data.customers / clicks) * 100).toFixed(2) : 0,
+        roas: data.spend > 0 ? (revenue / data.spend).toFixed(2) : 0,
+        ltv_cac_ratio: data.cac > 0 ? (850 / parseFloat(data.cac)).toFixed(1) : 0, // Assuming avg LTV of 850
+        days: [...new Set(channelRows.map(row => row.date))].length,
+        campaigns: [...new Set(channelRows.map(row => row.campaign || 'Default'))].length,
+        avgDailySpend: data.spend / Math.max(1, [...new Set(channelRows.map(row => row.date))].length),
+        efficiency_score: calculateEfficiencyScore(data.cac, revenue / Math.max(1, data.customers), impressions, clicks)
+      };
+    });
+    
+    // Time-based analysis
+    const timeAnalysis = analyzeTimePerformance(allMarketingData);
+    
+    // Optimization opportunities
+    const opportunities = identifyOptimizationOpportunities(channelAnalytics, allMarketingData);
+    
+    // Detailed campaign analysis
+    const campaignAnalysis = analyzeCampaignPerformance(allMarketingData);
+    
+    // Creative performance (if available)
+    const creativeAnalysis = analyzeCreativePerformance(allMarketingData);
+    
+    // Competitive insights
+    const competitiveInsights = generateCompetitiveInsights(channelAnalytics);
+    
     const analysisResults = {
+      // Basic metrics
       blendedCAC: blendedCAC,
       totalSpend: totalSpend.toFixed(2),
       totalCustomers: totalCustomers,
-      channelPerformance: channelPerformance,
+      totalRevenue: allMarketingData.reduce((sum, row) => sum + (parseFloat(row.revenue) || 0), 0).toFixed(2),
+      
+      // Detailed channel analytics
+      channelPerformance: channelAnalytics,
+      
+      // Time-based insights
+      timeAnalysis: timeAnalysis,
+      
+      // Optimization opportunities
+      opportunities: opportunities,
+      
+      // Campaign breakdowns
+      campaignAnalysis: campaignAnalysis,
+      
+      // Creative insights
+      creativeAnalysis: creativeAnalysis,
+      
+      // Competitive benchmarks
+      competitiveInsights: competitiveInsights,
+      
+      // Raw data for detailed tables
+      rawData: {
+        marketing: allMarketingData,
+        revenue: revenue || []
+      },
+      
+      // Data quality assessment
       dataQuality: {
         marketingRows: allMarketingData.length,
         revenueRows: (revenue || []).length,
-        completeness: allMarketingData.length > 0 ? 'Good' : 'Insufficient'
+        dateRange: getDateRange(allMarketingData),
+        completeness: assessDataCompleteness(allMarketingData),
+        missingFields: identifyMissingFields(allMarketingData)
       },
-      timestamp: new Date().toISOString(),
-      recommendations: [
-        {
-          title: 'Focus on High-Performing Channels',
-          description: 'Allocate more budget to channels with lower CAC',
-          priority: 'high'
-        }
-      ]
+      
+      timestamp: new Date().toISOString()
     };
     
     console.log('Analysis completed:', {

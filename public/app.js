@@ -446,51 +446,831 @@ function displayAnalysisResults(results) {
 
 function generateDetailedAnalysisHTML(results) {
     return `
-        <div class="analysis-dashboard">
-            <div class="dashboard-header">
-                <h2>CAC Analysis Results</h2>
-                <div class="analysis-summary" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin: 1rem 0;">
-                    <div class="metric-card" style="background: var(--surface); padding: 1.5rem; border-radius: 8px; text-align: center;">
-                        <div class="metric-value" style="font-size: 2rem; font-weight: bold; color: var(--primary-color);">$${results.blendedCAC || 'N/A'}</div>
-                        <div class="metric-label" style="color: var(--text-secondary);">Blended CAC</div>
+        <div class="comprehensive-analytics-platform">
+            <!-- Platform Header with Key Metrics -->
+            <div class="platform-header">
+                <div class="header-content">
+                    <h1>Performance Analytics Dashboard</h1>
+                    <div class="data-period">
+                        ${results.dataQuality?.dateRange ? 
+                            `${results.dataQuality.dateRange.start} → ${results.dataQuality.dateRange.end} (${results.dataQuality.dateRange.days} days)` : 
+                            'Date range not available'
+                        }
                     </div>
-                    <div class="metric-card" style="background: var(--surface); padding: 1.5rem; border-radius: 8px; text-align: center;">
-                        <div class="metric-value" style="font-size: 2rem; font-weight: bold; color: var(--primary-color);">${results.totalCustomers || 'N/A'}</div>
-                        <div class="metric-label" style="color: var(--text-secondary);">Total Customers</div>
+                </div>
+                
+                <div class="executive-metrics">
+                    <div class="metric-card primary">
+                        <div class="metric-value">$${results.blendedCAC || '0'}</div>
+                        <div class="metric-label">Blended CAC</div>
                     </div>
-                    <div class="metric-card" style="background: var(--surface); padding: 1.5rem; border-radius: 8px; text-align: center;">
-                        <div class="metric-value" style="font-size: 2rem; font-weight: bold; color: var(--primary-color);">$${results.totalSpend || 'N/A'}</div>
-                        <div class="metric-label" style="color: var(--text-secondary);">Total Spend</div>
+                    <div class="metric-card">
+                        <div class="metric-value">${results.totalCustomers || '0'}</div>
+                        <div class="metric-label">Total Customers</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">$${results.totalSpend || '0'}</div>
+                        <div class="metric-label">Total Spend</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">$${results.totalRevenue || '0'}</div>
+                        <div class="metric-label">Total Revenue</div>
                     </div>
                 </div>
             </div>
+
+            <!-- Navigation Tabs -->
+            <div class="analytics-navigation">
+                <button class="nav-tab active" onclick="showAnalyticsTab('overview')">📊 Overview</button>
+                <button class="nav-tab" onclick="showAnalyticsTab('channels')">🎯 Channel Deep-Dive</button>
+                <button class="nav-tab" onclick="showAnalyticsTab('campaigns')">🚀 Campaign Analysis</button>
+                <button class="nav-tab" onclick="showAnalyticsTab('optimization')">⚡ Optimization Ops</button>
+                <button class="nav-tab" onclick="showAnalyticsTab('creative')">🎨 Creative Performance</button>
+                <button class="nav-tab" onclick="showAnalyticsTab('competitive')">📈 Competitive Intel</button>
+                <button class="nav-tab" onclick="showAnalyticsTab('data')">🔍 Raw Data Explorer</button>
+            </div>
+
+            <!-- Analytics Content Panels -->
+            <div id="analytics-content" class="analytics-content">
+                <div id="overview-panel" class="analytics-panel active">
+                    ${generateOverviewPanel(results)}
+                </div>
+                
+                <div id="channels-panel" class="analytics-panel">
+                    ${generateChannelDeepDivePanel(results)}
+                </div>
+                
+                <div id="campaigns-panel" class="analytics-panel">
+                    ${generateCampaignAnalysisPanel(results)}
+                </div>
+                
+                <div id="optimization-panel" class="analytics-panel">
+                    ${generateOptimizationPanel(results)}
+                </div>
+                
+                <div id="creative-panel" class="analytics-panel">
+                    ${generateCreativePanel(results)}
+                </div>
+                
+                <div id="competitive-panel" class="analytics-panel">
+                    ${generateCompetitivePanel(results)}
+                </div>
+                
+                <div id="data-panel" class="analytics-panel">
+                    ${generateDataExplorerPanel(results)}
+                </div>
+            </div>
+        </div>
+
+        <style>
+            .comprehensive-analytics-platform {
+                background: var(--background);
+                min-height: 100vh;
+                padding: 0;
+            }
             
-            <div class="channel-breakdown" style="margin-top: 2rem;">
-                <h3>Channel Performance</h3>
-                <div class="channels-grid" style="display: grid; gap: 1rem; margin-top: 1rem;">
-                    ${Object.entries(results.channelPerformance || {}).map(([channel, data]) => `
-                        <div class="channel-result" style="display: flex; justify-content: space-between; align-items: center; padding: 1rem; background: var(--surface); border-radius: 8px;">
-                            <div>
-                                <div class="channel-name" style="font-weight: 600;">${channel}</div>
-                                <div style="font-size: 0.9rem; color: var(--text-secondary);">${data.customers} customers from $${data.spend.toFixed(2)}</div>
+            .platform-header {
+                background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+                color: white;
+                padding: 2rem 0;
+                margin-bottom: 2rem;
+            }
+            
+            .header-content {
+                text-align: center;
+                margin-bottom: 2rem;
+            }
+            
+            .header-content h1 {
+                font-size: 2.5rem;
+                font-weight: 700;
+                margin-bottom: 0.5rem;
+            }
+            
+            .data-period {
+                font-size: 1.1rem;
+                opacity: 0.9;
+            }
+            
+            .executive-metrics {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                gap: 1rem;
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 0 2rem;
+            }
+            
+            .metric-card {
+                background: rgba(255, 255, 255, 0.1);
+                backdrop-filter: blur(10px);
+                padding: 1.5rem;
+                border-radius: 12px;
+                text-align: center;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+            }
+            
+            .metric-card.primary {
+                background: rgba(255, 255, 255, 0.2);
+                border: 2px solid rgba(255, 255, 255, 0.3);
+            }
+            
+            .metric-value {
+                font-size: 2.5rem;
+                font-weight: 700;
+                margin-bottom: 0.5rem;
+            }
+            
+            .metric-label {
+                font-size: 1rem;
+                opacity: 0.9;
+            }
+            
+            .analytics-navigation {
+                display: flex;
+                justify-content: center;
+                margin-bottom: 2rem;
+                border-bottom: 1px solid var(--border);
+                padding: 0 2rem;
+                overflow-x: auto;
+            }
+            
+            .nav-tab {
+                background: none;
+                border: none;
+                padding: 1rem 1.5rem;
+                font-size: 1rem;
+                font-weight: 500;
+                color: var(--text-secondary);
+                cursor: pointer;
+                border-bottom: 3px solid transparent;
+                transition: all 0.3s ease;
+                white-space: nowrap;
+            }
+            
+            .nav-tab:hover {
+                color: var(--primary-color);
+                background: var(--surface);
+            }
+            
+            .nav-tab.active {
+                color: var(--primary-color);
+                border-bottom-color: var(--primary-color);
+                background: var(--surface);
+            }
+            
+            .analytics-content {
+                max-width: 1400px;
+                margin: 0 auto;
+                padding: 0 2rem 4rem;
+            }
+            
+            .analytics-panel {
+                display: none;
+            }
+            
+            .analytics-panel.active {
+                display: block;
+            }
+            
+            .panel-section {
+                background: var(--background);
+                border: 1px solid var(--border);
+                border-radius: 12px;
+                margin-bottom: 2rem;
+                padding: 0;
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            }
+            
+            .section-header {
+                background: var(--surface);
+                padding: 1.5rem;
+                border-bottom: 1px solid var(--border);
+                border-radius: 12px 12px 0 0;
+            }
+            
+            .section-title {
+                font-size: 1.5rem;
+                font-weight: 600;
+                margin-bottom: 0.5rem;
+            }
+            
+            .section-subtitle {
+                color: var(--text-secondary);
+                font-size: 1rem;
+            }
+            
+            .section-content {
+                padding: 1.5rem;
+            }
+            
+            .data-table {
+                width: 100%;
+                border-collapse: collapse;
+                background: var(--background);
+                border-radius: 8px;
+                overflow: hidden;
+                box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            }
+            
+            .data-table th {
+                background: var(--surface-alt);
+                padding: 1rem;
+                text-align: left;
+                font-weight: 600;
+                border-bottom: 1px solid var(--border);
+                font-size: 0.9rem;
+                text-transform: uppercase;
+                letter-spacing: 0.05em;
+            }
+            
+            .data-table td {
+                padding: 1rem;
+                border-bottom: 1px solid var(--border);
+                vertical-align: middle;
+            }
+            
+            .data-table tbody tr:hover {
+                background: var(--surface);
+            }
+            
+            .performance-indicator {
+                display: inline-flex;
+                align-items: center;
+                gap: 0.5rem;
+                padding: 0.25rem 0.75rem;
+                border-radius: 20px;
+                font-size: 0.85rem;
+                font-weight: 500;
+            }
+            
+            .performance-indicator.excellent {
+                background: rgba(16, 185, 129, 0.1);
+                color: #10b981;
+            }
+            
+            .performance-indicator.good {
+                background: rgba(245, 158, 11, 0.1);
+                color: #f59e0b;
+            }
+            
+            .performance-indicator.poor {
+                background: rgba(239, 68, 68, 0.1);
+                color: #ef4444;
+            }
+            
+            .opportunity-card {
+                background: var(--surface);
+                border: 1px solid var(--border);
+                border-radius: 8px;
+                padding: 1.5rem;
+                margin-bottom: 1rem;
+                position: relative;
+                overflow: hidden;
+            }
+            
+            .opportunity-card.high {
+                border-left: 4px solid #ef4444;
+            }
+            
+            .opportunity-card.medium {
+                border-left: 4px solid #f59e0b;
+            }
+            
+            .opportunity-card.low {
+                border-left: 4px solid #10b981;
+            }
+            
+            .opportunity-header {
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-start;
+                margin-bottom: 1rem;
+            }
+            
+            .opportunity-title {
+                font-weight: 600;
+                font-size: 1.1rem;
+            }
+            
+            .priority-badge {
+                padding: 0.25rem 0.75rem;
+                border-radius: 20px;
+                font-size: 0.8rem;
+                font-weight: 500;
+                text-transform: uppercase;
+            }
+            
+            .priority-badge.high {
+                background: rgba(239, 68, 68, 0.1);
+                color: #ef4444;
+            }
+            
+            .priority-badge.medium {
+                background: rgba(245, 158, 11, 0.1);
+                color: #f59e0b;
+            }
+            
+            .filter-controls {
+                display: flex;
+                gap: 1rem;
+                align-items: center;
+                margin-bottom: 1rem;
+                flex-wrap: wrap;
+            }
+            
+            .filter-input {
+                padding: 0.75rem;
+                border: 1px solid var(--border);
+                border-radius: 6px;
+                font-size: 1rem;
+                background: var(--background);
+            }
+            
+            .filter-select {
+                padding: 0.75rem;
+                border: 1px solid var(--border);
+                border-radius: 6px;
+                font-size: 1rem;
+                background: var(--background);
+                cursor: pointer;
+            }
+        </style>
+    `;
+}
+
+// Analytics Tab Navigation
+function showAnalyticsTab(tabName) {
+    // Update tab states
+    document.querySelectorAll('.nav-tab').forEach(tab => {
+        tab.classList.remove('active');
+    });
+    document.querySelector(`[onclick="showAnalyticsTab('${tabName}')"]`)?.classList.add('active');
+    
+    // Update panel states
+    document.querySelectorAll('.analytics-panel').forEach(panel => {
+        panel.classList.remove('active');
+    });
+    document.getElementById(`${tabName}-panel`)?.classList.add('active');
+}
+
+// Panel Generation Functions
+function generateOverviewPanel(results) {
+    const channels = Object.entries(results.channelPerformance || {});
+    return `
+        <div class="panel-section">
+            <div class="section-header">
+                <div class="section-title">Channel Performance Overview</div>
+                <div class="section-subtitle">Quick insights across all marketing channels</div>
+            </div>
+            <div class="section-content">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Channel</th>
+                            <th>CAC</th>
+                            <th>Spend</th>
+                            <th>Customers</th>
+                            <th>CTR</th>
+                            <th>CVR</th>
+                            <th>ROAS</th>
+                            <th>Performance</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        ${channels.map(([channel, data]) => {
+                            const performance = parseFloat(data.cac) < 75 ? 'excellent' : 
+                                              parseFloat(data.cac) < 100 ? 'good' : 'poor';
+                            return `
+                                <tr>
+                                    <td><strong>${channel}</strong></td>
+                                    <td>$${data.cac}</td>
+                                    <td>$${data.spend?.toFixed(0) || '0'}</td>
+                                    <td>${data.customers || '0'}</td>
+                                    <td>${data.ctr || '0'}%</td>
+                                    <td>${data.cvr || '0'}%</td>
+                                    <td>${data.roas || '0'}x</td>
+                                    <td><span class="performance-indicator ${performance}">${performance.toUpperCase()}</span></td>
+                                </tr>
+                            `;
+                        }).join('')}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+        <div class="panel-section">
+            <div class="section-header">
+                <div class="section-title">Time-Based Performance</div>
+                <div class="section-subtitle">Daily performance trends</div>
+            </div>
+            <div class="section-content">
+                ${generateTimeAnalysisContent(results.timeAnalysis)}
+            </div>
+        </div>
+    `;
+}
+
+function generateChannelDeepDivePanel(results) {
+    return `
+        <div class="panel-section">
+            <div class="section-header">
+                <div class="section-title">Channel Deep-Dive Analysis</div>
+                <div class="section-subtitle">Comprehensive performance metrics by channel</div>
+            </div>
+            <div class="section-content">
+                ${Object.entries(results.channelPerformance || {}).map(([channel, data]) => `
+                    <div class="channel-deep-dive" style="background: var(--surface); padding: 2rem; margin-bottom: 2rem; border-radius: 12px; border: 1px solid var(--border);">
+                        <h3 style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
+                            ${channel}
+                            <span class="performance-indicator ${parseFloat(data.cac) < 75 ? 'excellent' : parseFloat(data.cac) < 100 ? 'good' : 'poor'}">
+                                CAC: $${data.cac}
+                            </span>
+                        </h3>
+                        
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; margin-bottom: 1.5rem;">
+                            <div class="metric-tile">
+                                <div style="font-size: 1.5rem; font-weight: 700; color: var(--primary-color);">${data.customers || 0}</div>
+                                <div style="color: var(--text-secondary); font-size: 0.9rem;">Customers</div>
                             </div>
-                            <div class="channel-cac" style="font-size: 1.5rem; font-weight: 700; color: var(--primary-color);">$${data.cac}</div>
+                            <div class="metric-tile">
+                                <div style="font-size: 1.5rem; font-weight: 700; color: var(--primary-color);">$${data.spend?.toFixed(0) || '0'}</div>
+                                <div style="color: var(--text-secondary); font-size: 0.9rem;">Total Spend</div>
+                            </div>
+                            <div class="metric-tile">
+                                <div style="font-size: 1.5rem; font-weight: 700; color: var(--primary-color);">${data.impressions?.toLocaleString() || '0'}</div>
+                                <div style="color: var(--text-secondary); font-size: 0.9rem;">Impressions</div>
+                            </div>
+                            <div class="metric-tile">
+                                <div style="font-size: 1.5rem; font-weight: 700; color: var(--primary-color);">${data.clicks?.toLocaleString() || '0'}</div>
+                                <div style="color: var(--text-secondary); font-size: 0.9rem;">Clicks</div>
+                            </div>
+                            <div class="metric-tile">
+                                <div style="font-size: 1.5rem; font-weight: 700; color: var(--primary-color);">${data.ctr || '0'}%</div>
+                                <div style="color: var(--text-secondary); font-size: 0.9rem;">CTR</div>
+                            </div>
+                            <div class="metric-tile">
+                                <div style="font-size: 1.5rem; font-weight: 700; color: var(--primary-color);">${data.cvr || '0'}%</div>
+                                <div style="color: var(--text-secondary); font-size: 0.9rem;">CVR</div>
+                            </div>
+                            <div class="metric-tile">
+                                <div style="font-size: 1.5rem; font-weight: 700; color: var(--primary-color);">$${data.cpc || '0'}</div>
+                                <div style="color: var(--text-secondary); font-size: 0.9rem;">CPC</div>
+                            </div>
+                            <div class="metric-tile">
+                                <div style="font-size: 1.5rem; font-weight: 700; color: var(--primary-color);">${data.roas || '0'}x</div>
+                                <div style="color: var(--text-secondary); font-size: 0.9rem;">ROAS</div>
+                            </div>
                         </div>
-                    `).join('')}
-                </div>
-            </div>
-            
-            <div class="recommendations" style="margin-top: 2rem;">
-                <h3>Recommendations</h3>
-                ${(results.recommendations || []).map(rec => `
-                    <div class="recommendation" style="background: var(--surface); padding: 1rem; border-radius: 8px; margin: 1rem 0; border-left: 4px solid var(--accent-color);">
-                        <div style="font-weight: 600;">${rec.title}</div>
-                        <div style="color: var(--text-secondary); margin-top: 0.5rem;">${rec.description}</div>
+                        
+                        <div style="background: var(--background); padding: 1rem; border-radius: 8px; border: 1px solid var(--border);">
+                            <strong>Channel Insights:</strong>
+                            <ul style="margin-top: 0.5rem; padding-left: 1.5rem; color: var(--text-secondary);">
+                                <li>Efficiency Score: ${data.efficiency_score || 'N/A'}/100</li>
+                                <li>LTV:CAC Ratio: ${data.ltv_cac_ratio || 'N/A'}:1</li>
+                                <li>Average Daily Spend: $${data.avgDailySpend?.toFixed(0) || '0'}</li>
+                                <li>Active Days: ${data.days || 0}</li>
+                                <li>Campaigns: ${data.campaigns || 0}</li>
+                            </ul>
+                        </div>
                     </div>
                 `).join('')}
             </div>
         </div>
     `;
+}
+
+function generateOptimizationPanel(results) {
+    const opportunities = results.opportunities || [];
+    return `
+        <div class="panel-section">
+            <div class="section-header">
+                <div class="section-title">Optimization Opportunities</div>
+                <div class="section-subtitle">${opportunities.length} actionable opportunities identified</div>
+            </div>
+            <div class="section-content">
+                ${opportunities.length > 0 ? opportunities.map(opp => `
+                    <div class="opportunity-card ${opp.priority}">
+                        <div class="opportunity-header">
+                            <div class="opportunity-title">${opp.issue}</div>
+                            <div class="priority-badge ${opp.priority}">${opp.priority} priority</div>
+                        </div>
+                        <div style="color: var(--text-secondary); margin-bottom: 1rem;">
+                            ${opp.recommendation}
+                        </div>
+                        <div style="background: var(--background); padding: 1rem; border-radius: 6px; border: 1px solid var(--border);">
+                            <strong style="color: var(--accent-color);">Expected Impact:</strong> ${opp.impact}
+                        </div>
+                        ${opp.metrics ? `
+                            <div style="margin-top: 1rem; font-size: 0.9rem; color: var(--text-secondary);">
+                                <strong>Metrics:</strong> ${JSON.stringify(opp.metrics, null, 2).replace(/[{}",]/g, ' ').replace(/:/g, ': ')}
+                            </div>
+                        ` : ''}
+                    </div>
+                `).join('') : `
+                    <div style="text-align: center; padding: 3rem; color: var(--text-secondary);">
+                        <div style="font-size: 3rem; margin-bottom: 1rem;">🎯</div>
+                        <h3>No Critical Issues Detected</h3>
+                        <p>Your campaigns are performing well! Continue monitoring for new optimization opportunities.</p>
+                    </div>
+                `}
+            </div>
+        </div>
+    `;
+}
+
+function generateCampaignAnalysisPanel(results) {
+    const campaigns = Object.entries(results.campaignAnalysis || {});
+    return `
+        <div class="panel-section">
+            <div class="section-header">
+                <div class="section-title">Campaign Performance Analysis</div>
+                <div class="section-subtitle">Detailed breakdown by campaign</div>
+            </div>
+            <div class="section-content">
+                <div class="filter-controls">
+                    <input type="text" class="filter-input" placeholder="Search campaigns..." onkeyup="filterCampaigns(this.value)">
+                    <select class="filter-select" onchange="filterCampaignsByChannel(this.value)">
+                        <option value="">All Channels</option>
+                        ${[...new Set(campaigns.map(([key, camp]) => camp.channel))].map(channel => 
+                            `<option value="${channel}">${channel}</option>`
+                        ).join('')}
+                    </select>
+                </div>
+                
+                <table class="data-table" id="campaigns-table">
+                    <thead>
+                        <tr>
+                            <th>Campaign</th>
+                            <th>Channel</th>
+                            <th>CAC</th>
+                            <th>Spend</th>
+                            <th>Customers</th>
+                            <th>ROAS</th>
+                            <th>CTR</th>
+                            <th>CVR</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        ${campaigns.map(([key, campaign]) => `
+                            <tr class="campaign-row" data-channel="${campaign.channel}">
+                                <td><strong>${campaign.campaign}</strong></td>
+                                <td>${campaign.channel}</td>
+                                <td>$${campaign.cac}</td>
+                                <td>$${campaign.spend?.toFixed(0) || '0'}</td>
+                                <td>${campaign.customers || '0'}</td>
+                                <td>${campaign.roas || '0'}x</td>
+                                <td>${campaign.ctr || '0'}%</td>
+                                <td>${campaign.cvr || '0'}%</td>
+                            </tr>
+                        `).join('')}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    `;
+}
+
+function generateCreativePanel(results) {
+    const creatives = Object.entries(results.creativeAnalysis || {});
+    return `
+        <div class="panel-section">
+            <div class="section-header">
+                <div class="section-title">Creative Performance Analysis</div>
+                <div class="section-subtitle">Performance breakdown by creative assets</div>
+            </div>
+            <div class="section-content">
+                ${creatives.length > 0 ? `
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Creative ID</th>
+                                <th>Type</th>
+                                <th>CAC</th>
+                                <th>Spend</th>
+                                <th>Customers</th>
+                                <th>CTR</th>
+                                <th>Impressions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            ${creatives.map(([id, creative]) => `
+                                <tr>
+                                    <td><strong>${creative.creative_id}</strong></td>
+                                    <td>${creative.type}</td>
+                                    <td>$${creative.cac}</td>
+                                    <td>$${creative.spend?.toFixed(0) || '0'}</td>
+                                    <td>${creative.customers || '0'}</td>
+                                    <td>${creative.ctr || '0'}%</td>
+                                    <td>${creative.impressions?.toLocaleString() || '0'}</td>
+                                </tr>
+                            `).join('')}
+                        </tbody>
+                    </table>
+                ` : `
+                    <div style="text-align: center; padding: 3rem; color: var(--text-secondary);">
+                        <div style="font-size: 3rem; margin-bottom: 1rem;">🎨</div>
+                        <h3>No Creative Data Available</h3>
+                        <p>Upload data with creative_id and creative_type fields to see creative performance analysis.</p>
+                    </div>
+                `}
+            </div>
+        </div>
+    `;
+}
+
+function generateCompetitivePanel(results) {
+    const insights = Object.entries(results.competitiveInsights || {});
+    return `
+        <div class="panel-section">
+            <div class="section-header">
+                <div class="section-title">Competitive Intelligence</div>
+                <div class="section-subtitle">Performance vs industry benchmarks</div>
+            </div>
+            <div class="section-content">
+                ${insights.length > 0 ? insights.map(([channel, data]) => `
+                    <div style="background: var(--surface); padding: 2rem; margin-bottom: 1.5rem; border-radius: 8px; border: 1px solid var(--border);">
+                        <h3 style="margin-bottom: 1rem;">${channel}</h3>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+                            <div>
+                                <h4>CAC Performance</h4>
+                                <div style="display: flex; justify-content: space-between; align-items: center; margin: 0.5rem 0;">
+                                    <span>Your CAC:</span>
+                                    <strong>$${data.cac_vs_benchmark?.current || 'N/A'}</strong>
+                                </div>
+                                <div style="display: flex; justify-content: space-between; align-items: center; margin: 0.5rem 0;">
+                                    <span>Industry Benchmark:</span>
+                                    <span>$${data.cac_vs_benchmark?.benchmark || 'N/A'}</span>
+                                </div>
+                                <div style="display: flex; justify-content: space-between; align-items: center; margin: 0.5rem 0;">
+                                    <span>Performance:</span>
+                                    <span class="performance-indicator ${data.cac_vs_benchmark?.performance === 'above' ? 'excellent' : 'poor'}">
+                                        ${data.cac_vs_benchmark?.performance || 'N/A'} average
+                                    </span>
+                                </div>
+                            </div>
+                            <div>
+                                <h4>CTR Performance</h4>
+                                <div style="display: flex; justify-content: space-between; align-items: center; margin: 0.5rem 0;">
+                                    <span>Your CTR:</span>
+                                    <strong>${data.ctr_vs_benchmark?.current || 'N/A'}%</strong>
+                                </div>
+                                <div style="display: flex; justify-content: space-between; align-items: center; margin: 0.5rem 0;">
+                                    <span>Industry Benchmark:</span>
+                                    <span>${data.ctr_vs_benchmark?.benchmark || 'N/A'}%</span>
+                                </div>
+                                <div style="display: flex; justify-content: space-between; align-items: center; margin: 0.5rem 0;">
+                                    <span>Performance:</span>
+                                    <span class="performance-indicator ${data.ctr_vs_benchmark?.performance === 'above' ? 'excellent' : 'poor'}">
+                                        ${data.ctr_vs_benchmark?.performance || 'N/A'} average
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `).join('') : `
+                    <div style="text-align: center; padding: 3rem; color: var(--text-secondary);">
+                        <div style="font-size: 3rem; margin-bottom: 1rem;">📊</div>
+                        <h3>No Benchmark Data Available</h3>
+                        <p>Competitive insights will appear here when channel data matches our benchmark database.</p>
+                    </div>
+                `}
+            </div>
+        </div>
+    `;
+}
+
+function generateDataExplorerPanel(results) {
+    const marketingData = results.rawData?.marketing || [];
+    const revenueData = results.rawData?.revenue || [];
+    return `
+        <div class="panel-section">
+            <div class="section-header">
+                <div class="section-title">Raw Data Explorer</div>
+                <div class="section-subtitle">Detailed view of all imported data</div>
+            </div>
+            <div class="section-content">
+                <div class="filter-controls">
+                    <select class="filter-select" onchange="switchDataView(this.value)">
+                        <option value="marketing">Marketing Data (${marketingData.length} rows)</option>
+                        ${revenueData.length > 0 ? `<option value="revenue">Revenue Data (${revenueData.length} rows)</option>` : ''}
+                    </select>
+                    <input type="text" class="filter-input" placeholder="Search data..." onkeyup="filterRawData(this.value)">
+                </div>
+                
+                <div id="marketing-data-view">
+                    ${generateRawDataTable(marketingData, 'Marketing Data')}
+                </div>
+                
+                ${revenueData.length > 0 ? `
+                    <div id="revenue-data-view" style="display: none;">
+                        ${generateRawDataTable(revenueData, 'Revenue Data')}
+                    </div>
+                ` : ''}
+            </div>
+        </div>
+    `;
+}
+
+function generateRawDataTable(data, title) {
+    if (!data || data.length === 0) {
+        return `<p style="text-align: center; padding: 2rem; color: var(--text-secondary);">No ${title.toLowerCase()} available</p>`;
+    }
+    
+    const headers = Object.keys(data[0] || {});
+    const displayData = data.slice(0, 100); // Limit to first 100 rows for performance
+    
+    return `
+        <div style="overflow-x: auto;">
+            <table class="data-table" id="raw-data-table">
+                <thead>
+                    <tr>
+                        ${headers.map(header => `<th>${header}</th>`).join('')}
+                    </tr>
+                </thead>
+                <tbody>
+                    ${displayData.map(row => `
+                        <tr class="raw-data-row">
+                            ${headers.map(header => `<td>${row[header] || ''}</td>`).join('')}
+                        </tr>
+                    `).join('')}
+                </tbody>
+            </table>
+            ${data.length > 100 ? `<p style="text-align: center; padding: 1rem; color: var(--text-secondary);">Showing first 100 of ${data.length} rows</p>` : ''}
+        </div>
+    `;
+}
+
+function generateTimeAnalysisContent(timeAnalysis) {
+    if (!timeAnalysis || !timeAnalysis.daily) {
+        return '<p>No time-based data available</p>';
+    }
+    
+    const dailyData = Object.entries(timeAnalysis.daily).slice(0, 10); // Show recent 10 days
+    return `
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Spend</th>
+                    <th>Customers</th>
+                    <th>Revenue</th>
+                    <th>CAC</th>
+                </tr>
+            </thead>
+            <tbody>
+                ${dailyData.map(([date, data]) => `
+                    <tr>
+                        <td><strong>${date}</strong></td>
+                        <td>$${data.spend?.toFixed(0) || '0'}</td>
+                        <td>${data.customers || '0'}</td>
+                        <td>$${data.revenue?.toFixed(0) || '0'}</td>
+                        <td>$${data.customers > 0 ? (data.spend / data.customers).toFixed(2) : '0'}</td>
+                    </tr>
+                `).join('')}
+            </tbody>
+        </table>
+        
+        <div style="margin-top: 1rem; padding: 1rem; background: var(--surface); border-radius: 8px;">
+            <strong>Trend Analysis:</strong>
+            <ul style="margin-top: 0.5rem; padding-left: 1.5rem;">
+                <li>CAC Trend: ${timeAnalysis.trends?.cac_trend || 'N/A'}</li>
+                <li>Best Performing Day: ${timeAnalysis.bestDay || 'N/A'}</li>
+            </ul>
+        </div>
+    `;
+}
+
+// Interactive Functions
+function filterCampaigns(searchTerm) {
+    const rows = document.querySelectorAll('#campaigns-table .campaign-row');
+    rows.forEach(row => {
+        const text = row.textContent.toLowerCase();
+        row.style.display = text.includes(searchTerm.toLowerCase()) ? '' : 'none';
+    });
+}
+
+function filterCampaignsByChannel(channel) {
+    const rows = document.querySelectorAll('#campaigns-table .campaign-row');
+    rows.forEach(row => {
+        row.style.display = (!channel || row.dataset.channel === channel) ? '' : 'none';
+    });
+}
+
+function switchDataView(viewType) {
+    document.getElementById('marketing-data-view').style.display = viewType === 'marketing' ? 'block' : 'none';
+    const revenueView = document.getElementById('revenue-data-view');
+    if (revenueView) {
+        revenueView.style.display = viewType === 'revenue' ? 'block' : 'none';
+    }
+}
+
+function filterRawData(searchTerm) {
+    const rows = document.querySelectorAll('.raw-data-row');
+    rows.forEach(row => {
+        const text = row.textContent.toLowerCase();
+        row.style.display = text.includes(searchTerm.toLowerCase()) ? '' : 'none';
+    });
 }
 
 // Initialize functions
