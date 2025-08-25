@@ -266,10 +266,14 @@ function selectUploadMethod(method) {
 }
 
 function showChannelTab(channel) {
+    console.log('Switching to channel tab:', channel);
+    
+    // Update tab appearance
     document.querySelectorAll('.channel-tab').forEach(tab => {
         tab.classList.remove('active');
         tab.style.background = 'var(--surface)';
         tab.style.color = 'var(--text-primary)';
+        tab.style.borderColor = 'var(--border)';
     });
     
     const selectedTab = document.getElementById('tab-' + channel);
@@ -277,18 +281,25 @@ function showChannelTab(channel) {
         selectedTab.classList.add('active');
         selectedTab.style.background = 'var(--primary-color)';
         selectedTab.style.color = 'white';
+        selectedTab.style.borderColor = 'var(--primary-color)';
     }
     
+    // Hide all channel forms
     document.querySelectorAll('.channel-upload-form').forEach(form => {
         form.style.display = 'none';
     });
     
+    // Show selected channel form
     const selectedForm = document.getElementById('form-' + channel);
     if (selectedForm) {
         selectedForm.style.display = 'block';
+    } else {
+        console.warn('Channel form not found:', 'form-' + channel);
     }
     
-    showNotification('Switched to ' + channel.replace('-', ' ').toUpperCase() + ' upload', 'info');
+    // Update notification
+    const channelName = channel.replace('-', ' ').replace(/\b\w/g, l => l.toUpperCase());
+    showNotification(`Switched to ${channelName} upload`, 'info');
 }
 
 // File upload system
@@ -1275,16 +1286,306 @@ function filterRawData(searchTerm) {
 
 // Initialize functions
 function initializeChannelTabs() {
-    console.log('Channel tabs initialized');
+    console.log('Initializing channel tabs...');
+    
+    // Generate content for channel upload forms
+    const channelUploadContent = document.getElementById('channel-upload-content');
+    if (channelUploadContent) {
+        channelUploadContent.innerHTML = generateChannelUploadForms();
+        
+        // Initialize file upload zones after content is created
+        setTimeout(() => {
+            initializeChannelFileUploads();
+        }, 100);
+        
+        // Show the first channel tab by default
+        showChannelTab('google-ads');
+    }
+}
+
+function generateChannelUploadForms() {
+    const channels = [
+        { id: 'google-ads', name: 'Google Ads', icon: '🔍', color: '#4285f4' },
+        { id: 'facebook', name: 'Facebook/Meta', icon: '📘', color: '#1877f2' },
+        { id: 'linkedin', name: 'LinkedIn', icon: '💼', color: '#0a66c2' },
+        { id: 'tiktok', name: 'TikTok', icon: '🎵', color: '#000000' },
+        { id: 'twitter', name: 'Twitter/X', icon: '🐦', color: '#1da1f2' },
+        { id: 'other', name: 'Other Channels', icon: '📊', color: '#6b7280' }
+    ];
+    
+    return channels.map(channel => `
+        <div id="form-${channel.id}" class="channel-upload-form" style="display: none;">
+            <div class="channel-upload-section">
+                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
+                    <div style="font-size: 2rem;">${channel.icon}</div>
+                    <div>
+                        <h3 style="margin: 0; color: ${channel.color};">${channel.name}</h3>
+                        <p style="margin: 0.25rem 0 0 0; color: var(--text-secondary); font-size: 0.9rem;">Upload your ${channel.name.toLowerCase()} advertising data</p>
+                    </div>
+                </div>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+                    <div class="upload-area">
+                        <h4>${channel.icon} Campaign Performance</h4>
+                        <div class="file-upload-zone" id="${channel.id}-campaign-upload">
+                            <div class="upload-icon">📁</div>
+                            <div class="upload-text">Upload campaign data</div>
+                            <div class="upload-subtext">Campaigns, ad sets, spend, impressions, clicks</div>
+                        </div>
+                        <input type="file" id="${channel.id}-campaign-file" accept=".csv,.xlsx,.xls" style="display: none;">
+                        <div id="${channel.id}-campaign-preview" class="file-preview" style="display: none;"></div>
+                    </div>
+                    
+                    <div class="upload-area">
+                        <h4>🎨 Creative Performance</h4>
+                        <div class="file-upload-zone" id="${channel.id}-creative-upload">
+                            <div class="upload-icon">🖼️</div>
+                            <div class="upload-text">Upload creative data</div>
+                            <div class="upload-subtext">Ad creatives, performance by asset</div>
+                        </div>
+                        <input type="file" id="${channel.id}-creative-file" accept=".csv,.xlsx,.xls" style="display: none;">
+                        <div id="${channel.id}-creative-preview" class="file-preview" style="display: none;"></div>
+                    </div>
+                </div>
+                
+                <div style="margin-top: 1.5rem; padding: 1rem; background: var(--surface-alt); border-radius: 8px; border: 1px solid var(--border);">
+                    <h5 style="margin: 0 0 0.5rem 0; color: var(--text-primary);">📋 Required Fields</h5>
+                    <p style="margin: 0; font-size: 0.9rem; color: var(--text-secondary);">Your ${channel.name} data should include: <strong>date, campaign_name, spend, impressions, clicks, conversions</strong></p>
+                </div>
+            </div>
+        </div>
+    `).join('');
+}
+
+function initializeChannelFileUploads() {
+    console.log('Initializing channel file uploads...');
+    
+    // Get all file upload zones
+    const uploadZones = document.querySelectorAll('.file-upload-zone');
+    
+    uploadZones.forEach(zone => {
+        const zoneId = zone.id;
+        const inputId = zoneId.replace('-upload', '-file');
+        const input = document.getElementById(inputId);
+        
+        if (input) {
+            // Click to upload
+            zone.addEventListener('click', () => {
+                input.click();
+            });
+            
+            // Drag and drop
+            zone.addEventListener('dragover', (e) => {
+                e.preventDefault();
+                zone.classList.add('dragover');
+                zone.style.borderColor = 'var(--primary-color)';
+                zone.style.backgroundColor = 'rgba(59, 130, 246, 0.05)';
+            });
+            
+            zone.addEventListener('dragleave', (e) => {
+                e.preventDefault();
+                zone.classList.remove('dragover');
+                zone.style.borderColor = 'var(--border)';
+                zone.style.backgroundColor = 'var(--surface)';
+            });
+            
+            zone.addEventListener('drop', (e) => {
+                e.preventDefault();
+                zone.classList.remove('dragover');
+                zone.style.borderColor = 'var(--border)';
+                zone.style.backgroundColor = 'var(--surface)';
+                
+                const files = e.dataTransfer.files;
+                if (files.length > 0) {
+                    input.files = files;
+                    handleChannelFileUpload(input);
+                }
+            });
+            
+            // File input change
+            input.addEventListener('change', () => {
+                handleChannelFileUpload(input);
+            });
+        }
+    });
+}
+
+function handleChannelFileUpload(input) {
+    const file = input.files[0];
+    if (!file) return;
+    
+    const previewId = input.id.replace('-file', '-preview');
+    const preview = document.getElementById(previewId);
+    const zone = document.getElementById(input.id.replace('-file', '-upload'));
+    
+    if (preview && zone) {
+        // Update zone to show file selected
+        const uploadText = zone.querySelector('.upload-text');
+        const uploadSubtext = zone.querySelector('.upload-subtext');
+        
+        if (uploadText && uploadSubtext) {
+            uploadText.textContent = file.name;
+            uploadSubtext.textContent = `File selected: ${file.size} bytes`;
+            zone.style.borderColor = 'var(--accent-color)';
+            zone.style.backgroundColor = 'rgba(34, 197, 94, 0.05)';
+        }
+        
+        // Show preview
+        preview.style.display = 'block';
+        preview.innerHTML = `
+            <div style="padding: 1rem; background: var(--surface-alt); border-radius: 6px; border: 1px solid var(--border); margin-top: 1rem;">
+                <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+                    <span style="font-size: 1.2rem;">📄</span>
+                    <strong>${file.name}</strong>
+                </div>
+                <div style="font-size: 0.9rem; color: var(--text-secondary);">
+                    Size: ${(file.size / 1024).toFixed(1)} KB | Type: ${file.type || 'Unknown'}
+                </div>
+                <button class="btn btn-small" onclick="removeChannelFile('${input.id}')" style="margin-top: 0.5rem;">Remove File</button>
+            </div>
+        `;
+        
+        // Update analyze button
+        updateAnalyzeButton();
+        
+        showNotification(`File '${file.name}' uploaded successfully`, 'success');
+    }
+}
+
+function removeChannelFile(inputId) {
+    const input = document.getElementById(inputId);
+    const previewId = inputId.replace('-file', '-preview');
+    const preview = document.getElementById(previewId);
+    const zone = document.getElementById(inputId.replace('-file', '-upload'));
+    
+    if (input) {
+        input.value = '';
+        
+        if (preview) {
+            preview.style.display = 'none';
+            preview.innerHTML = '';
+        }
+        
+        if (zone) {
+            const uploadText = zone.querySelector('.upload-text');
+            const uploadSubtext = zone.querySelector('.upload-subtext');
+            
+            if (uploadText && uploadSubtext) {
+                // Reset based on channel type
+                if (inputId.includes('campaign')) {
+                    uploadText.textContent = 'Upload campaign data';
+                    uploadSubtext.textContent = 'Campaigns, ad sets, spend, impressions, clicks';
+                } else if (inputId.includes('creative')) {
+                    uploadText.textContent = 'Upload creative data';
+                    uploadSubtext.textContent = 'Ad creatives, performance by asset';
+                }
+                
+                zone.style.borderColor = 'var(--border)';
+                zone.style.backgroundColor = 'var(--surface)';
+            }
+        }
+        
+        updateAnalyzeButton();
+        showNotification('File removed', 'info');
+    }
 }
 
 // Initialize the application
 document.addEventListener('DOMContentLoaded', function() {
     console.log('CAC Calculator Pro initialized');
-    initializeFileUploads();
-    updateAnalyzeButton();
     
-    if (document.getElementById('channel-upload-content')) {
-        initializeChannelTabs();
+    try {
+        initializeFileUploads();
+        updateAnalyzeButton();
+        
+        if (document.getElementById('channel-upload-content')) {
+            console.log('Channel upload content found, initializing tabs...');
+            initializeChannelTabs();
+        } else {
+            console.log('Channel upload content not found');
+        }
+        
+        // Test button functionality
+        testButtonFunctionality();
+        
+    } catch (error) {
+        console.error('Error during initialization:', error);
     }
 });
+
+// Test function to ensure buttons are working
+function testButtonFunctionality() {
+    console.log('Testing button functionality...');
+    
+    // Test channel tabs
+    const channelTabs = document.querySelectorAll('.channel-tab');
+    console.log('Found', channelTabs.length, 'channel tabs');
+    
+    channelTabs.forEach((tab, index) => {
+        if (tab.onclick) {
+            console.log(`Channel tab ${index} has onclick handler`);
+        } else {
+            console.warn(`Channel tab ${index} missing onclick handler`);
+        }
+    });
+    
+    // Test other buttons
+    const allButtons = document.querySelectorAll('button[onclick]');
+    console.log('Found', allButtons.length, 'buttons with onclick handlers');
+}
+
+// Global error handler
+window.onerror = function(message, source, lineno, colno, error) {
+    console.error('JavaScript Error:', { message, source, lineno, colno, error });
+    showNotification('JavaScript error occurred. Check console for details.', 'error');
+    return false;
+};
+
+// Enhanced notification function with better error handling
+function showNotification(message, type = 'info', duration = 3000) {
+    console.log('Notification:', type, message);
+    
+    try {
+        // Remove existing notifications
+        const existing = document.querySelectorAll('.notification');
+        existing.forEach(n => n.remove());
+        
+        const notification = document.createElement('div');
+        notification.className = `notification notification-${type}`;
+        notification.textContent = message;
+        notification.style.cssText = `
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            color: white;
+            font-weight: 500;
+            z-index: 10000;
+            animation: slideInRight 0.3s ease;
+            max-width: 400px;
+            word-wrap: break-word;
+        `;
+        
+        // Set background color based on type
+        switch(type) {
+            case 'success': notification.style.background = '#10b981'; break;
+            case 'error': notification.style.background = '#ef4444'; break;
+            case 'warning': notification.style.background = '#f59e0b'; break;
+            default: notification.style.background = '#3b82f6';
+        }
+        
+        document.body.appendChild(notification);
+        
+        setTimeout(() => {
+            if (notification.parentNode) {
+                notification.remove();
+            }
+        }, duration);
+        
+    } catch (error) {
+        console.error('Error showing notification:', error);
+        // Fallback to alert if notification fails
+        alert(`${type.toUpperCase()}: ${message}`);
+    }
+}
